@@ -30,6 +30,8 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portafolio</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="about.html">Sobre mí</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contacto</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><button type="button" onclick="loadDoc('mydata.txt', myFunction)">Pedir Datos
+						</button></li>
                     </ul>
                 </div>
             </div>
@@ -49,6 +51,7 @@
                 </div>
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light mb-0">Desarrollador Web</p>
+                <p id="mydata">Los datos aparecerán aquí.</p>
             </div>
         </header>
         <!-- Portfolio Section-->
@@ -444,6 +447,24 @@
                 </div>
             </div>
         </div>
+        <!-- Sript AJAX para pedir datos de un TXT remoto conociendo la URL -->
+        <script>
+			function loadDoc(url, cFunction) {
+			  var xhttp;
+			  xhttp = new XMLHttpRequest();
+			  xhttp.onreadystatechange = function() {
+			    if (this.readyState == 4 && this.status == 200) {
+			      cFunction(this);
+			    }
+			  };
+			  xhttp.open("GET", url, true);
+			  xhttp.send();
+			}
+			function myFunction(xhttp) {
+			  document.getElementById("mydata").innerHTML =
+			  xhttp.responseText;
+			}
+		</script>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
