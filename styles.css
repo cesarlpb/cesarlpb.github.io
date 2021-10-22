@@ -54,7 +54,7 @@
     -moz-box-shadow:1px 1px 3px #000;
     -webkit-box-shadow:1px 1px 3px #000;
     box-shadow:none;
-    border:3px solid dimgray;
+    border:4px solid dimgray;
 }
 /*Style when mouse hovers on the close button*/
 .close:hover {
