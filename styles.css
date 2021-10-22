@@ -1,6 +1,6 @@
 /*Main Box Content*/
 .modalBox {
-    position:fixed;
+    /*position:fixed;*/
     font-family: Arial, Helvetica,sans-serif;
     top:0;
     right:0;
