@@ -38,7 +38,7 @@
 }
 /*Positioning and style of the close button*/
 .close {
-    background:white;
+    background:lightgray;
     color:black;
     line-height:35px;
     position:absolute;
@@ -54,7 +54,7 @@
     -moz-box-shadow:1px 1px 3px #000;
     -webkit-box-shadow:1px 1px 3px #000;
     box-shadow:none;
-    border:none;
+    border:3px solid dimgray;
 }
 /*Style when mouse hovers on the close button*/
 .close:hover {
