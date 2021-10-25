@@ -183,12 +183,13 @@ input[type='checkbox'] {
 }
 .multicol-ul {
   margin: 0 5%;
+  width: 90%;
   height: 180px;
   display: none;
   flex-direction: column;
   overflow-y: auto;
   overflow-x: auto;
-  flex-wrap: wrap
+  flex-wrap: wrap;
 }
 .multicol-ul li {
     padding: 0 15px;
