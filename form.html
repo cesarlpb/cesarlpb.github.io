@@ -82,8 +82,8 @@
   </div>
 </nav>
 
-			<div class="container-fluid">
-				<ul style="display: none;" class="multicol-ul" id="interests-list">
+			<div class="container-fluid" id="interests-list-container">
+				<ul class="multicol-ul" id="interests-list">
 						<li>Acupuncture</li>
 						<li>Advertising</li>
 						<li>Aesthetics</li>
@@ -976,7 +976,9 @@
     		var element = document.querySelector("#description");
     		element.style.display = "none";
     		var element2 = document.querySelector("#interests-list");
-    		element2.style.display = "flex";
+    		element2.style.display = "flex!important";
+    		var element3 = document.querySelector("#interests-list-container");
+    		element3.style.display = "flex";
     	};
 
     </script>
