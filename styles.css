@@ -162,7 +162,7 @@ input[type='checkbox'] {
 
 .help-box h2 { 
     display: inline-block; 
-    margin: 1% 10%;
+    margin: 5% 10%;
 }
 
 .help-box {
@@ -172,9 +172,24 @@ input[type='checkbox'] {
     border: 3px solid blue;
     border-radius: 40px;
     background: skyblue;
-    height: 30vh;
+    height: 60vh;
 }
 
 .help-box div {
     margin: 0%;
+}
+.help-box p {
+    margin: 0 5%;
+}
+.multicol-ul {
+  margin: 0 5%;
+  height: 180px;
+  display: none;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: auto;
+  flex-wrap: wrap
+}
+.multicol-ul li {
+    padding: 0 15px;
 }
