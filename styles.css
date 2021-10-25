@@ -157,3 +157,24 @@ input[type='checkbox'] {
     max-height: 200px;
     overflow-y: scroll;
 }
+
+/* HELP BOX */
+
+.help-box h2 { 
+    display: inline-block; 
+    margin: 1% 10%;
+}
+
+.help-box {
+    width: 90%;
+    margin: 2% 5%;
+    display: inline-block;
+    border: 3px solid blue;
+    border-radius: 40px;
+    background: skyblue;
+    /*height: 30vh;*/
+}
+
+.help-box div {
+    margin: 0%;
+}
