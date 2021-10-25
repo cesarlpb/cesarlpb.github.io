@@ -172,7 +172,7 @@ input[type='checkbox'] {
     border: 3px solid blue;
     border-radius: 40px;
     background: skyblue;
-    /*height: 30vh;*/
+    height: 30vh;
 }
 
 .help-box div {
