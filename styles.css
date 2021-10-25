@@ -184,7 +184,7 @@ input[type='checkbox'] {
 .multicol-ul {
   margin: 0 5%;
   height: 180px;
-  display: none;
+  display: none!important;
   flex-direction: column;
   overflow-y: auto;
   overflow-x: auto;
