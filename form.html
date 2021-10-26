@@ -7,80 +7,42 @@
 
 	<!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/css/bootstrap.min.css" integrity="sha512-N415hCJJdJx+1UBfULt+i+ihvOn42V/kOjOpp1UTh4CZ70Hx5bDlKryWaqEKfY/8EYOu/C2MuyaluJryK1Lb5Q==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="font-awesome.min.css">
 	<link rel="stylesheet" href="fontawesome.min.css">
 </head>
 <body>
 
 <div class="help-box">
-<h2>How to Use the Signup Form </h2>
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Zoom English</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="autohide scrolled-down fixed-top navbar navbar-expand-lg navbar-dark bg-primary">
+ <div class="container-fluid">
+   <a class="navbar-brand" href="#">Zoom English</a>
+   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
       <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        
-         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Hobbies
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">General Hobbies</a></li>
-            <li><a class="dropdown-item" href="#">Educational Hobbies</a></li>
-            <li><a class="dropdown-item" href="#">Competitive Hobbies</a></li>
-            <li><a class="dropdown-item" href="#">Collection and Indoors Hobbies</a></li>
-          </ul>
-        </li>
-        
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" onclick="showInterests()">Interests</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Sports</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Occupations</a>
-        </li>
-
-        <!--
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        --> 
-
-        <!--
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-		-->
-
-      </ul>
-      <!--
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-		-->
-
-    </div>
-  
-  </div>
+   </button>
+  <div class="collapse navbar-collapse" id="main_nav">
+	<ul class="navbar-nav ms-auto">
+		<li class="myNavBtns" ><button type="button" class="btn btn-light" onclick="showInterests()">Interests</button></li>
+		<li class="myNavBtns" ><button type="button" class="btn btn-light" onclick="showSports()">Sports</button></li>
+		<li class="nav-item dropdown myNavBtns">
+			<button type="button" class="btn btn-light" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hobbies <img src="caret-down-solid.svg" height="20px"></button>
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+	            <li><a class="dropdown-item" href="#" onclick="showGeneralHobbies()">General Hobbies</a></li>
+	            <li><a class="dropdown-item" href="#" onclick="showCompHobbies()">Educational Hobbies</a></li>
+	      </ul>
+		</li>
+		
+		<li class="myNavBtns" ><button type="button" class="btn btn-light" onclick="showOccupations()">Occupations</button></li>
+	</ul>
+  </div> <!-- navbar-collapse.// -->
+ </div> <!-- container-fluid.// -->
 </nav>
+
+<h2 id="h2">How to Fill in your Form </h2>
 
 			<div class="container-fluid" id="interests-list-container">
 				<ul class="multicol-ul" id="interests-list">
@@ -321,644 +283,877 @@
 						<li>Zoology</li>
 				</ul>
 			</div>
+
 			
-	<!---
-	<p><a class="button" href="#open" rel="nofollow">See Full Hobbies List</a></p>
-	<div id="open" class="modalBox">
-	    <div>
-	        <p><a class="close" title="Close" href="#close" rel="nofollow">X</a></p>
-
-	       	<div class="wrap-collabsible">
-			  <input id="collapsible" class="toggle" type="checkbox" >
-			  <label for="collapsible" class="lbl-toggle">General hobbies</label>
-			  <div class="collapsible-content">
-			    <div class="content-inner" style="height: 50%;overflow: auto;">
-			      <p style="height: 50%;overflow: auto;">
-
-			        <ul class="ul-scroll">
-			        	<li>3D printing</li>
-						<li>Acroyoga</li>
-						<li>Acting</li>
-						<li>Aerial silk</li>
-						<li>Airbrushing</li>
-						<li>Aircraft Spotting</li>
-						<li>Amateur radio</li>
-						<li>Animation</li>
-						<li>Anime</li>
-						<li>Antique collecting</li>
-						<li>Aquarium</li>
-						<li>Aquascaping</li>
-						<li>Archery</li>
-						<li>Art</li>
-						<li>Astrology</li>
-						<li>Backgammon</li>
-						<li>Baking</li>
-						<li>Barbershop Music</li>
-						<li>Baton twirling</li>
-						<li>Beachcombing</li>
-						<li>Beadwork</li>
-						<li>Beatboxing</li>
-						<li>Beekeeping</li>
-						<li>Beer tasting</li>
-						<li>Bell ringing</li>
-						<li>Billiards</li>
-						<li>Binge-watching</li>
-						<li>Bird watching</li>
-						<li>Blacksmithing</li>
-						<li>Blogging</li>
-						<li>Board games</li>
-						<li>Bonsai Tree</li>
-						<li>Book collecting</li>
-						<li>Book discussion clubs</li>
-						<li>Book restoration</li>
-						<li>Bookbinding</li>
-						<li>Bowling</li>
-						<li>Brazilian jiu-jitsu</li>
-						<li>Breadmaking</li>
-						<li>Bridge</li>
-						<li>Building Dollhouses</li>
-						<li>Bullet journaling</li>
-						<li>Bus spotting</li>
-						<li>Butterfly Watching</li>
-						<li>Button Collecting</li>
-						<li>Cake Decorating</li>
-						<li>Calligraphy</li>
-						<li>Calligraphy</li>
-						<li>Candle making</li>
-						<li>Candy making</li>
-						<li>Car fixing & building</li>
-						<li>Card collecting</li>
-						<li>Card games</li>
-						<li>Cardistry</li>
-						<li>Cartooning</li>
-						<li>Ceramics</li>
-						<li>Chatting</li>
-						<li>Checkers</li>
-						<li>Cheesemaking</li>
-						<li>Chess</li>
-						<li>Cleaning</li>
-						<li>Clothesmaking</li>
-						<li>Coffee roasting</li>
-						<li>Coin Collecting</li>
-						<li>Collecting Antiques</li>
-						<li>Collecting Artwork</li>
-						<li>Collecting Records</li>
-						<li>Collecting Sports Cards</li>
-						<li>Collecting Stamps</li>
-						<li>Coloring</li>
-						<li>Comic book collecting</li>
-						<li>Communication</li>
-						<li>Community activism</li>
-						<li>Computer programming</li>
-						<li>Confectionery</li>
-						<li>Conlanging</li>
-						<li>Construction</li>
-						<li>Cooking</li>
-						<li>Cooking</li>
-						<li>Cosplaying</li>
-						<li>Couch surfing</li>
-						<li>Couponing</li>
-						<li>Craft</li>
-						<li>Crafts</li>
-						<li>Creative writing</li>
-						<li>Crochet</li>
-						<li>Crocheting</li>
-						<li>Cross-Stitch</li>
-						<li>Crossword Puzzles</li>
-						<li>Cryptography</li>
-						<li>Cue sports</li>
-						<li>Dance</li>
-						<li>Decorating</li>
-						<li>Dice</li>
-						<li>Diecast Collectibles</li>
-						<li>Digital arts</li>
-						<li>Digital Photography</li>
-						<li>Dining</li>
-						<li>Diorama</li>
-						<li>Distro Hopping</li>
-						<li>Diving</li>
-						<li>DIY</li>
-						<li>Djembe</li>
-						<li>DJing</li>
-						<li>Do it yourself</li>
-						<li>Dominoes</li>
-						<li>Drama</li>
-						<li>Drawing</li>
-						<li>Drink mixing</li>
-						<li>Dumpster Diving</li>
-						<li>Electronic games</li>
-						<li>Electronics</li>
-						<li>Embroidery</li>
-						<li>Engraving</li>
-						<li>Entertaining</li>
-						<li>Experimenting</li>
-						<li>Face Painting</li>
-						<li>Fantasy sports</li>
-						<li>Fashion</li>
-						<li>Fashion design</li>
-						<li>Felting</li>
-						<li>Feng shui decorating</li>
-						<li>Filmmaking</li>
-						<li>Fingerpainting</li>
-						<li>Fishfarming</li>
-						<li>Fishkeeping</li>
-						<li>Flower arranging</li>
-						<li>Flower collecting and pressing</li>
-						<li>Fly tying</li>
-						<li>Foraging</li>
-						<li>Foreign language learning</li>
-						<li>Fossil hunting</li>
-						<li>Furniture building</li>
-						<li>Gaming</li>
-						<li>Gardening</li>
-						<li>Genealogy</li>
-						<li>Gingerbread house making</li>
-						<li>Glassblowing</li>
-						<li>Gongfu tea</li>
-						<li>Graphic design</li>
-						<li>Gunsmithing</li>
-						<li>Hacking</li>
-						<li>Handwriting Analysis</li>
-						<li>Hardware</li>
-						<li>Herp keeping</li>
-						<li>Home improvement</li>
-						<li>Homebrewing</li>
-						<li>Houseplant care</li>
-						<li>Hula hooping</li>
-						<li>Humor</li>
-						<li>Hydroponics</li>
-						<li>Ice skating</li>
-						<li>Impersonations</li>
-						<li>Insect collecting</li>
-						<li>Inventing</li>
-						<li>Jewellery Making</li>
-						<li>Jigsaw Puzzles</li>
-						<li>Journaling</li>
-						<li>Juggling</li>
-						<li>Karaoke</li>
-						<li>Karate</li>
-						<li>Kendama</li>
-						<li>Knife making</li>
-						<li>Knitting</li>
-						<li>Knot tying</li>
-						<li>Knotting</li>
-						<li>Kombucha brewing</li>
-						<li>Kung fu</li>
-						<li>Lace making</li>
-						<li>Lapidary</li>
-						<li>Leather crafting</li>
-						<li>Lego building</li>
-						<li>Listening to music</li>
-						<li>Listening to podcasts</li>
-						<li>Livestreaming</li>
-						<li>Lock picking</li>
-						<li>Machining</li>
-						<li>Macrame</li>
-						<li>Magic</li>
-						<li>Makeup</li>
-						<li>Making Model Cars</li>
-						<li>Manga</li>
-						<li>Marbles</li>
-						<li>Massaging</li>
-						<li>Matchstick Modeling</li>
-						<li>Mazes (indoor/outdoor)</li>
-						<li>Mechanics</li>
-						<li>Meditation</li>
-						<li>Memory training</li>
-						<li>Metal detecting</li>
-						<li>Metal Working</li>
-						<li>Metalworking</li>
-						<li>Mineral collecting</li>
-						<li>Miniature art</li>
-						<li>Minimalism</li>
-						<li>Model aircraft</li>
-						<li>Model building</li>
-						<li>Model cars</li>
-						<li>Model engineering</li>
-						<li>Model Railroading</li>
-						<li>Model Rockets</li>
-						<li>Modeling</li>
-						<li>Modeling Ships</li>
-						<li>Music</li>
-						<li>Nail Art</li>
-						<li>Needlepoint</li>
-						<li>Origami</li>
-						<li>Painting</li>
-						<li>Palmistry</li>
-						<li>Papermache</li>
-						<li>Pen Spinning</li>
-						<li>Performance</li>
-						<li>Pet</li>
-						<li>Pet adoption & fostering</li>
-						<li>Pet sitting</li>
-						<li>Philately</li>
-						<li>Photography</li>
-						<li>Pilates</li>
-						<li>Planning</li>
-						<li>Plastic art</li>
-						<li>Playing musical instruments</li>
-						<li>Poetry</li>
-						<li>Poi</li>
-						<li>Poker</li>
-						<li>Pole dancing</li>
-						<li>Postcrossing</li>
-						<li>Pottery</li>
-						<li>Power Nap</li>
-						<li>Practical jokes</li>
-						<li>Pressed flower craft</li>
-						<li>Proofreading and editing</li>
-						<li>Proverbs</li>
-						<li>Public speaking</li>
-						<li>Puppetry</li>
-						<li>Puzzles</li>
-						<li>Pyrography</li>
-						<li>Quilling</li>
-						<li>Quizzes</li>
-						<li>Radio-controlled car racing</li>
-						<li>Radio-controlled model playing</li>
-						<li>Rail transport modeling</li>
-						<li>Rapping</li>
-						<li>Reading</li>
-						<li>Recipe creation</li>
-						<li>Refinishing</li>
-						<li>Reiki</li>
-						<li>Reviewing Gadgets</li>
-						<li>Robot combat</li>
-						<li>Rock Collecting</li>
-						<li>Role-playing games</li>
-						<li>Rubik's Cube</li>
-						<li>Sand art</li>
-						<li>Scrabble</li>
-						<li>Scrapbooking</li>
-						<li>Scuba Diving</li>
-						<li>Sculpting</li>
-						<li>Seashell collecting</li>
-						<li>Sewing</li>
-						<li>Shoemaking</li>
-						<li>Shortwave listening</li>
-						<li>Singing</li>
-						<li>Singing In Choir</li>
-						<li>Sketching</li>
-						<li>Skipping rope</li>
-						<li>Slot car</li>
-						<li>Soap Making</li>
-						<li>Social media</li>
-						<li>Spreadsheets</li>
-						<li>Stamp collecting</li>
-						<li>Stand-up comedy</li>
-						<li>Storm Chasing</li>
-						<li>Storytelling</li>
-						<li>Stripping</li>
-						<li>Sudoku</li>
-						<li>Taboo</li>
-						<li>Talking</li>
-						<li>Tapestry</li>
-						<li>Tarot</li>
-						<li>Tatebanko</li>
-						<li>Tattooing</li>
-						<li>Taxidermy</li>
-						<li>Telling jokes</li>
-						<li>Textiles</li>
-						<li>Thrifting</li>
-						<li>Train Spotting</li>
-						<li>Treasure hunting</li>
-						<li>Trivia</li>
-						<li>Upcycling</li>
-						<li>Vehicle restoration</li>
-						<li>Video editing</li>
-						<li>Video game developing</li>
-						<li>Video Games</li>
-						<li>Video gaming</li>
-						<li>Video making</li>
-						<li>Vintage cars</li>
-						<li>Volunteering</li>
-						<li>VR Gaming</li>
-						<li>Wargaming</li>
-						<li>Watch making</li>
-						<li>Watching documentaries</li>
-						<li>Watching movies</li>
-						<li>Watching television</li>
-						<li>Wax sealing</li>
-						<li>Waxing</li>
-						<li>Weaving</li>
-						<li>Webtooning</li>
-						<li>Weight training</li>
-						<li>Welding</li>
-						<li>Whisky</li>
-						<li>Whittling</li>
-						<li>Wikipedia editing</li>
-						<li>Wine Making</li>
-						<li>Wine tasting</li>
-						<li>Winemaking</li>
-						<li>Witchcraft</li>
-						<li>Wood carving</li>
-						<li>Woodworking</li>
-						<li>Woodworking</li>
-						<li>Word searches</li>
-						<li>World Record Breaking</li>
-						<li>Worldbuilding</li>
-						<li>Wrestling</li>
-						<li>Writing</li>
-						<li>Writing Music</li>
-						<li>Writing Songs</li>
-						<li>Yo-yoing</li>
-						<li>Yoga</li>
-						<li>Zumba</li>
-						<li>Audiophile</li>
-						<li>Fishkeeping</li>
-						<li>Learning</li>
-						<li>Meditation</li>
-						<li>Microscopy</li>
-						<li>Reading</li>
-						<li>Research</li>
-						<li>Shortwave listening</li>
-						<li>Aircraft spotting</li>
-						<li>Amateur astronomy</li>
-						<li>Benchmarking</li>
-						<li>Birdwatching</li>
-						<li>Bus spotting</li>
-						<li>Butterfly watching</li>
-						<li>Geocaching</li>
-						<li>Gongoozling</li>
-						<li>Herping</li>
-						<li>Hiking/backpacking</li>
-						<li>Bodybuilding[]</li>
-						<li>People-watching</li>
-						<li>Photography</li>
-						<li>Satellite watching</li>
-						<li>Trainspotting</li>
-						<li>Whale watching</li>
-			        </ul>
-
-			      </p>
-			    </div>
-			  </div>
+			<div class="container-fluid" id="sports-list-container">
+				<ul class="multicol-ul" id="sports-list">
+					<li>Air hockey</li>
+					<li>Airsoft</li>
+					<li>Amateur geology</li>
+					<li>Archery</li>
+					<li>Axe throwing</li>
+					<li>Backpacking</li>
+					<li>Badminton</li>
+					<li>Baseball</li>
+					<li>Basketball</li>
+					<li>Beach volleyball</li>
+					<li>Beachcombing</li>
+					<li>Beekeeping</li>
+					<li>Birdwatching</li>
+					<li>BMX</li>
+					<li>Board sports</li>
+					<li>Bodybuilding</li>
+					<li>Bonsai</li>
+					<li>Boxing</li>
+					<li>Breakdancing</li>
+					<li>Camping</li>
+					<li>Canoeing</li>
+					<li>Caving</li>
+					<li>Climbing</li>
+					<li>Composting</li>
+					<li>Cricket</li>
+					<li>Croquet</li>
+					<li>Cycling</li>
+					<li>Dancing</li>
+					<li>Dog training</li>
+					<li>Dowsing</li>
+					<li>Equestrianism</li>
+					<li>Farming</li>
+					<li>Fencing</li>
+					<li>Field hockey</li>
+					<li>Figure Skating</li>
+					<li>Fishing</li>
+					<li>Fitness</li>
+					<li>Flower growing</li>
+					<li>Flying</li>
+					<li>Flying model planes</li>
+					<li>Foraging</li>
+					<li>Fossicking</li>
+					<li>Frisbee</li>
+					<li>Gardening</li>
+					<li>Geocaching</li>
+					<li>Ghost hunting</li>
+					<li>Gold prospecting</li>
+					<li>Golfing</li>
+					<li>Graffiti</li>
+					<li>Groundhopping</li>
+					<li>Gymnastics</li>
+					<li>Handball</li>
+					<li>Herping</li>
+					<li>Hiking</li>
+					<li>Horseback riding</li>
+					<li>Hunting</li>
+					<li>Ice hockey</li>
+					<li>Inline skating</li>
+					<li>Jogging</li>
+					<li>Judo</li>
+					<li>Jujitsu</li>
+					<li>Jumping rope</li>
+					<li>Kabaddi</li>
+					<li>Kart racing</li>
+					<li>Karting</li>
+					<li>Kayaking</li>
+					<li>Kite flying</li>
+					<li>Kitesurfing</li>
+					<li>Lacrosse</li>
+					<li>LARPing</li>
+					<li>Laser tag</li>
+					<li>Lomography</li>
+					<li>Long-distance running</li>
+					<li>Longboarding</li>
+					<li>Martial arts</li>
+					<li>Metal detecting</li>
+					<li>Mini Golf</li>
+					<li>Motor sports</li>
+					<li>Motorcycling</li>
+					<li>Mountain biking</li>
+					<li>Mountaineering</li>
+					<li>Mycology</li>
+					<li>Netball</li>
+					<li>Noodling</li>
+					<li>Orienteering</li>
+					<li>Paintball</li>
+					<li>Paragliding</li>
+					<li>Parkour</li>
+					<li>Pickleball</li>
+					<li>Picnicking</li>
+					<li>Polo</li>
+					<li>Powerboat racing</li>
+					<li>Powerlifting</li>
+					<li>Qigong</li>
+					<li>Race walking</li>
+					<li>Racquetball</li>
+					<li>Rafting</li>
+					<li>Rappelling</li>
+					<li>Rock climbing</li>
+					<li>Rock painting</li>
+					<li>Roller skating</li>
+					<li>Rowing</li>
+					<li>Rugby</li>
+					<li>Running</li>
+					<li>Safari</li>
+					<li>Sailing</li>
+					<li>Sand art</li>
+					<li>Scouting</li>
+					<li>Scuba diving</li>
+					<li>Shooting</li>
+					<li>Shuffleboard</li>
+					<li>Skateboarding</li>
+					<li>Skiing</li>
+					<li>Skydiving</li>
+					<li>Slacklining</li>
+					<li>Sledding</li>
+					<li>Snorkeling</li>
+					<li>Snowboarding</li>
+					<li>Snowmobiling</li>
+					<li>Snowshoeing</li>
+					<li>Soccer</li>
+					<li>Softball</li>
+					<li>Speed skating</li>
+					<li>Squash</li>
+					<li>Storm chasing</li>
+					<li>Surfing</li>
+					<li>Survivalism</li>
+					<li>Swimming</li>
+					<li>Table tennis</li>
+					<li>Taekwondo</li>
+					<li>Tai chi</li>
+					<li>Tennis</li>
+					<li>Thru-hiking</li>
+					<li>Topiary</li>
+					<li>Triathlon</li>
+					<li>Unicycling</li>
+					<li>Urban exploration</li>
+					<li>Vegetable farming</li>
+					<li>Vehicle restoration</li>
+					<li>Volleyball</li>
+					<li>Walking</li>
+					<li>Water polo</li>
+					<li>Water sports</li>
+					<li>Weightlifting</li>
+					<li>Wrestling</li>
+					<li>Zoo visiting</li>
+				</ul>
 			</div>
 
-	       	<div class="wrap-collabsible">
-			  <input id="collapsible2" class="toggle" type="checkbox" >
-			  <label for="collapsible2" class="lbl-toggle">Collection & Indoors hobbies</label>
-			  <div class="collapsible-content">
-			    <div class="content-inner">
-			      <p>
-			        <ul class="ul-scroll">
-			        	<li>Archaeology</li>
-						<li>Astronomy</li>
-						<li>Animation</li>
-						<li>Aerospace</li>
-						<li>Biology</li>
-						<li>Botany</li>
-						<li>Business</li>
-						<li>Chemistry</li>
-						<li>English</li>
-						<li>Entrepreneurship</li>
-						<li>Geography</li>
-						<li>History</li>
-						<li>Mathematics</li>
-						<li>Medical science</li>
-						<li>Microbiology</li>
-						<li>Mycology</li>
-						<li>Philosophy</li>
-						<li>Physics</li>
-						<li>Psychology</li>
-						<li>Railway studies</li>
-						<li>Research</li>
-						<li>Science and technology studies</li>
-						<li>Social studies</li>
-						<li>Sociology</li>
-						<li>Sports science</li>
-						<li>Life Science</li>
-						<li>Teaching</li>
-						<li>Web design</li>
-			        </ul>
-			      </p>
-			    </div>
-			  </div>
+			<div class="container-fluid" id="hobbies-list-container">
+				<ul class="multicol-ul" id="general-hobbies-list">
+					<li>3D printing</li>
+					<li>Acroyoga</li>
+					<li>Acting</li>
+					<li>Aerial silk</li>
+					<li>Airbrushing</li>
+					<li>Aircraft Spotting</li>
+					<li>Aircraft spotting</li>
+					<li>Amateur astronomy</li>
+					<li>Amateur radio</li>
+					<li>Animation</li>
+					<li>Anime</li>
+					<li>Antique collecting</li>
+					<li>Aquarium</li>
+					<li>Aquascaping</li>
+					<li>Archery</li>
+					<li>Art</li>
+					<li>Astrology</li>
+					<li>Audiophile</li>
+					<li>Baking</li>
+					<li>Beachcombing</li>
+					<li>Beadwork</li>
+					<li>Beatboxing</li>
+					<li>Beekeeping</li>
+					<li>Beer tasting</li>
+					<li>Benchmarking</li>
+					<li>Billiards</li>
+					<li>Binge-watching</li>
+					<li>Bird watching</li>
+					<li>Birdwatching</li>
+					<li>Blacksmithing</li>
+					<li>Blogging</li>
+					<li>Board games</li>
+					<li>Bodybuilding[]</li>
+					<li>Bonsai Tree</li>
+					<li>Book discussion clubs</li>
+					<li>Book restoration</li>
+					<li>Bookbinding</li>
+					<li>Brazilian jiu-jitsu</li>
+					<li>Breadmaking</li>
+					<li>Bridge</li>
+					<li>Building Dollhouses</li>
+					<li>Bullet journaling</li>
+					<li>Bus spotting</li>
+					<li>Butterfly Watching</li>
+					<li>Butterfly watching</li>
+					<li>Cake Decorating</li>
+					<li>Calligraphy</li>
+					<li>Candle making</li>
+					<li>Car fixing & building</li>
+					<li>Card games</li>
+					<li>Cardistry</li>
+					<li>Cartooning</li>
+					<li>Ceramics</li>
+					<li>Checkers</li>
+					<li>Cheesemaking</li>
+					<li>Chess</li>
+					<li>Clothesmaking</li>
+					<li>Coloring</li>
+					<li>Comic book collecting</li>
+					<li>Communication</li>
+					<li>Community activism</li>
+					<li>Computer programming</li>
+					<li>Confectionery</li>
+					<li>Conlanging</li>
+					<li>Construction</li>
+					<li>Cooking</li>
+					<li>Cosplaying</li>
+					<li>Couch surfing</li>
+					<li>Crafts</li>
+					<li>Creative writing</li>
+					<li>Crochet</li>
+					<li>Crocheting</li>
+					<li>Cross-Stitch</li>
+					<li>Crossword Puzzles</li>
+					<li>Cryptography</li>
+					<li>Cue sports</li>
+					<li>Dance</li>
+					<li>Decorating</li>
+					<li>Dice</li>
+					<li>Diecast Collectibles</li>
+					<li>Digital arts</li>
+					<li>Digital Photography</li>
+					<li>Dining</li>
+					<li>Diorama</li>
+					<li>Distro Hopping</li>
+					<li>Diving</li>
+					<li>DIY</li>
+					<li>Djembe</li>
+					<li>DJing</li>
+					<li>Drama</li>
+					<li>Drawing</li>
+					<li>Drink mixing</li>
+					<li>Dumpster Diving</li>
+					<li>Electronic games</li>
+					<li>Electronics</li>
+					<li>Embroidery</li>
+					<li>Engraving</li>
+					<li>Entertaining</li>
+					<li>Experimenting</li>
+					<li>Face Painting</li>
+					<li>Fantasy sports</li>
+					<li>Fashion</li>
+					<li>Fashion design</li>
+					<li>Felting</li>
+					<li>Feng shui decorating</li>
+					<li>Filmmaking</li>
+					<li>Fingerpainting</li>
+					<li>Fishfarming</li>
+					<li>Fishkeeping</li>
+					<li>Fishkeeping</li>
+					<li>Flower arranging</li>
+					<li>Flower collecting and pressing</li>
+					<li>Fly tying</li>
+					<li>Foraging</li>
+					<li>Foreign language learning</li>
+					<li>Fossil hunting</li>
+					<li>Furniture building</li>
+					<li>Gaming</li>
+					<li>Gardening</li>
+					<li>Genealogy</li>
+					<li>Geocaching</li>
+					<li>Gingerbread house making</li>
+					<li>Glassblowing</li>
+					<li>Gongfu tea</li>
+					<li>Gongoozling</li>
+					<li>Graphic design</li>
+					<li>Gunsmithing</li>
+					<li>Hacking</li>
+					<li>Handwriting Analysis</li>
+					<li>Hardware</li>
+					<li>Herp keeping</li>
+					<li>Herping</li>
+					<li>Hiking/backpacking</li>
+					<li>Home improvement</li>
+					<li>Homebrewing</li>
+					<li>Houseplant care</li>
+					<li>Hula hooping</li>
+					<li>Humor</li>
+					<li>Hydroponics</li>
+					<li>Ice skating</li>
+					<li>Impersonations</li>
+					<li>Insect collecting</li>
+					<li>Inventing</li>
+					<li>Jewellery Making</li>
+					<li>Jigsaw Puzzles</li>
+					<li>Journaling</li>
+					<li>Juggling</li>
+					<li>Karaoke</li>
+					<li>Karate</li>
+					<li>Kendama</li>
+					<li>Knife making</li>
+					<li>Knitting</li>
+					<li>Knot tying</li>
+					<li>Knotting</li>
+					<li>Kombucha brewing</li>
+					<li>Kung fu</li>
+					<li>Lace making</li>
+					<li>Lapidary</li>
+					<li>Learning</li>
+					<li>Leather crafting</li>
+					<li>Lego building</li>
+					<li>Listening to music</li>
+					<li>Listening to podcasts</li>
+					<li>Livestreaming</li>
+					<li>Lock picking</li>
+					<li>Machining</li>
+					<li>Macrame</li>
+					<li>Magic</li>
+					<li>Makeup</li>
+					<li>Making Model Cars</li>
+					<li>Manga</li>
+					<li>Marbles</li>
+					<li>Massaging</li>
+					<li>Matchstick Modeling</li>
+					<li>Mazes (indoor/outdoor)</li>
+					<li>Mechanics</li>
+					<li>Meditation</li>
+					<li>Meditation</li>
+					<li>Memory training</li>
+					<li>Metal detecting</li>
+					<li>Metal Working</li>
+					<li>Metalworking</li>
+					<li>Microscopy</li>
+					<li>Mineral collecting</li>
+					<li>Miniature art</li>
+					<li>Minimalism</li>
+					<li>Model aircraft</li>
+					<li>Model building</li>
+					<li>Model cars</li>
+					<li>Model engineering</li>
+					<li>Model Railroading</li>
+					<li>Model Rockets</li>
+					<li>Modeling</li>
+					<li>Modeling Ships</li>
+					<li>Music</li>
+					<li>Nail Art</li>
+					<li>Needlepoint</li>
+					<li>Origami</li>
+					<li>Painting</li>
+					<li>Palmistry</li>
+					<li>Papermache</li>
+					<li>Pen Spinning</li>
+					<li>People-watching</li>
+					<li>Performance</li>
+					<li>Pet</li>
+					<li>Pet adoption & fostering</li>
+					<li>Pet sitting</li>
+					<li>Philately</li>
+					<li>Photography</li>
+					<li>Photography</li>
+					<li>Pilates</li>
+					<li>Planning</li>
+					<li>Plastic art</li>
+					<li>Playing musical instruments</li>
+					<li>Poetry</li>
+					<li>Poi</li>
+					<li>Poker</li>
+					<li>Pole dancing</li>
+					<li>Postcrossing</li>
+					<li>Pottery</li>
+					<li>Power Nap</li>
+					<li>Practical jokes</li>
+					<li>Pressed flower craft</li>
+					<li>Proofreading and editing</li>
+					<li>Proverbs</li>
+					<li>Public speaking</li>
+					<li>Puppetry</li>
+					<li>Puzzles</li>
+					<li>Pyrography</li>
+					<li>Quilling</li>
+					<li>Quizzes</li>
+					<li>Radio-controlled car racing</li>
+					<li>Radio-controlled model playing</li>
+					<li>Rail transport modeling</li>
+					<li>Rapping</li>
+					<li>Reading</li>
+					<li>Reading</li>
+					<li>Recipe creation</li>
+					<li>Refinishing</li>
+					<li>Reiki</li>
+					<li>Research</li>
+					<li>Reviewing Gadgets</li>
+					<li>Robot combat</li>
+					<li>Rock Collecting</li>
+					<li>Role-playing games</li>
+					<li>Rubik's Cube</li>
+					<li>Sand art</li>
+					<li>Satellite watching</li>
+					<li>Scrabble</li>
+					<li>Scrapbooking</li>
+					<li>Scuba Diving</li>
+					<li>Sculpting</li>
+					<li>Seashell collecting</li>
+					<li>Sewing</li>
+					<li>Shoemaking</li>
+					<li>Shortwave listening</li>
+					<li>Shortwave listening</li>
+					<li>Singing</li>
+					<li>Singing In Choir</li>
+					<li>Sketching</li>
+					<li>Skipping rope</li>
+					<li>Slot car</li>
+					<li>Soap Making</li>
+					<li>Social media</li>
+					<li>Spreadsheets</li>
+					<li>Stamp collecting</li>
+					<li>Stand-up comedy</li>
+					<li>Storm Chasing</li>
+					<li>Storytelling</li>
+					<li>Stripping</li>
+					<li>Sudoku</li>
+					<li>Taboo</li>
+					<li>Talking</li>
+					<li>Tapestry</li>
+					<li>Tarot</li>
+					<li>Tatebanko</li>
+					<li>Tattooing</li>
+					<li>Taxidermy</li>
+					<li>Telling jokes</li>
+					<li>Textiles</li>
+					<li>Thrifting</li>
+					<li>Train Spotting</li>
+					<li>Trainspotting</li>
+					<li>Treasure hunting</li>
+					<li>Trivia</li>
+					<li>Upcycling</li>
+					<li>Vehicle restoration</li>
+					<li>Video editing</li>
+					<li>Video game developing</li>
+					<li>Video Games</li>
+					<li>Video gaming</li>
+					<li>Video making</li>
+					<li>Vintage cars</li>
+					<li>Volunteering</li>
+					<li>VR Gaming</li>
+					<li>Wargaming</li>
+					<li>Watch making</li>
+					<li>Watching documentaries</li>
+					<li>Watching movies</li>
+					<li>Watching television</li>
+					<li>Wax sealing</li>
+					<li>Waxing</li>
+					<li>Weaving</li>
+					<li>Webtooning</li>
+					<li>Weight training</li>
+					<li>Welding</li>
+					<li>Whale watching</li>
+					<li>Whisky</li>
+					<li>Whittling</li>
+					<li>Wikipedia editing</li>
+					<li>Wine Making</li>
+					<li>Wine tasting</li>
+					<li>Winemaking</li>
+					<li>Witchcraft</li>
+					<li>Wood carving</li>
+					<li>Woodworking</li>
+					<li>Woodworking</li>
+					<li>Word searches</li>
+					<li>World Record Breaking</li>
+					<li>Worldbuilding</li>
+					<li>Wrestling</li>
+					<li>Writing</li>
+					<li>Writing Music</li>
+					<li>Writing Songs</li>
+					<li>Yo-yoing</li>
+					<li>Yoga</li>
+					<li>Zumba</li>
+				</ul>
+				<ul class="multicol-ul" id="comp-hobbies-list">
+					<li>Action figure</li>
+					<li>Ant-keeping</li>
+					<li>Antiquing</li>
+					<li>Antiquities</li>
+					<li>Art collecting</li>
+					<li>Auto audiophilia</li>
+					<li>Backgammon</li>
+					<li>Beauty pageants</li>
+					<li>Billiards</li>
+					<li>Book collecting</li>
+					<li>Bowling</li>
+					<li>Bridge</li>
+					<li>Button collecting</li>
+					<li>Cartophily (card collecting)</li>
+					<li>Checkers (draughts)</li>
+					<li>Cheerleading</li>
+					<li>Chess</li>
+					<li>Coin collecting</li>
+					<li>Comic book collecting</li>
+					<li>Cribbage</li>
+					<li>Crystals</li>
+					<li>Darts</li>
+					<li>Debate</li>
+					<li>Dolls</li>
+					<li>Dominoes</li>
+					<li>Element collecting</li>
+					<li>Ephemera collecting</li>
+					<li>Fingerprint collecting</li>
+					<li>Flower collecting and pressing</li>
+					<li>Fossil hunting</li>
+					<li>Insect collecting</li>
+					<li>Knife collecting</li>
+					<li>Knowledge/word games</li>
+					<li>Magic</li>
+					<li>Magnet fishing</li>
+					<li>Mahjong</li>
+					<li>Marbles</li>
+					<li>Metal detecting</li>
+					<li>Mineral collecting</li>
+					<li>Model racing</li>
+					<li>Movie memorabilia collecting</li>
+					<li>Perfume</li>
+					<li>Philately</li>
+					<li>Phillumeny</li>
+					<li>Pin (lapel)</li>
+					<li>plush collecting</li>
+					<li>Poker</li>
+					<li>Pole dancing</li>
+					<li>Pool</li>
+					<li>Record collecting</li>
+					<li>Rock balancing</li>
+					<li>Rock tumbling</li>
+					<li>Role-playing games</li>
+					<li>Scutelliphily</li>
+					<li>Sea glass collecting</li>
+					<li>Seashell collecting</li>
+					<li>Shogi</li>
+					<li>Speedcubing</li>
+					<li>Sport stacking</li>
+					<li>Sports memorabilia</li>
+					<li>Stamp collecting</li>
+					<li>Stone collecting</li>
+					<li>Stuffed toy collecting</li>
+					<li>Table football</li>
+					<li>Video gaming</li>
+					<li>Vintage cars</li>
+					<li>Vintage clothing</li>
+					<li>Vinyl Records</li>
+					<li>VR Gaming</li>
+				</ul>
 			</div>
 
-			<div class="wrap-collabsible">
-			  <input id="collapsible3" class="toggle" type="checkbox" >
-			  <label for="collapsible3" class="lbl-toggle">Competitive hobbies</label>
-			  <div class="collapsible-content">
-			    <div class="content-inner">
-			      <p>
-			        <ul class="ul-scroll">
-						<li>Air hockey</li>
-						<li>Animal fancy</li>
-						<li>Axe throwing</li>
-						<li>Backgammon</li>
-						<li>Badminton</li>
-						<li>Baton twirling</li>
-						<li>Beauty pageants</li>
-						<li>Billiards</li>
-						<li>Bowling</li>
-						<li>Boxing</li>
-						<li>Bridge</li>
-						<li>Checkers (draughts)</li>
-						<li>Cheerleading</li>
-						<li>Chess</li>
-						<li>Color guard</li>
-						<li>Cribbage</li>
-						<li>Curling</li>
-						<li>Dancing</li>
-						<li>Darts</li>
-						<li>Debate</li>
-						<li>Dominoes</li>
-						<li>Eating</li>
-						<li>Esports</li>
-						<li>Fencing</li>
-						<li>Figure Skating</li>
-						<li>Go</li>
-						<li>Gymnastics</li>
-						<li>Ice hockey</li>
-						<li>Ice skating</li>
-						<li>Judo</li>
-						<li>Jujitsu</li>
-						<li>Kabaddi</li>
-						<li>Knowledge/word games</li>
-						<li>Laser tag</li>
-						<li>Magic</li>
-						<li>Mahjong</li>
-						<li>Marbles</li>
-						<li>Martial arts</li>
-						<li>Model racing</li>
-						<li>Model United Nations</li>
-						<li>Poker</li>
-						<li>Pole dancing</li>
-						<li>Pool</li>
-						<li>Radio-controlled model playing</li>
-						<li>Role-playing games</li>
-						<li>Shogi</li>
-						<li>Slot car racing</li>
-						<li>Speedcubing</li>
-						<li>Sport stacking</li>
-						<li>Table football</li>
-						<li>Table tennis</li>
-						<li>Volleyball</li>
-						<li>Video gaming</li>
-						<li>VR Gaming</li>
-						<li>Weightlifting</li>
-						<li>Wrestling</li>
-						<li>Outdoors</li>
-						<li>Airsoft</li>
-						<li>Archery</li>
-						<li>Association football</li>
-						<li>Australian rules football</li>
-						<li>Auto racing</li>
-						<li>Baseball</li>
-						<li>Beach volleyball</li>
-						<li>Breakdancing</li>
-						<li>Climbing</li>
-						<li>Cornhole</li>
-						<li>Cricket</li>
-						<li>Croquet</li>
-						<li>Cycling</li>
-						<li>Disc golf</li>
-						<li>Dog sport</li>
-						<li>Equestrianism</li>
-						<li>Exhibition drill</li>
-						<li>Field hockey</li>
-						<li>Figure skating</li>
-						<li>Fishing</li>
-						<li>Fitness</li>
-						<li>Footbag</li>
-						<li>Frisbee</li>
-						<li>Golfing</li>
-						<li>Handball</li>
-						<li>Horseback riding</li>
-						<li>Horsemanship</li>
-						<li>Horseshoes</li>
-						<li>Iceboat racing</li>
-						<li>Jukskei</li>
-						<li>Kart racing</li>
-						<li>Knife throwing</li>
-						<li>Lacrosse</li>
-						<li>Longboarding</li>
-						<li>Long-distance running</li>
-						<li>Marching band</li>
-						<li>Mini Golf</li>
-						<li>Model aircraft</li>
-						<li>Orienteering</li>
-						<li>Pickleball</li>
-						<li>Powerboat racing</li>
-						<li>Quidditch</li>
-						<li>Race walking</li>
-						<li>Racquetball</li>
-						<li>Radio-controlled car racing</li>
-						<li>Radio-controlled model playing</li>
-						<li>Roller derby</li>
-						<li>Rugby league football</li>
-						<li>Sculling or rowing</li>
-						<li>Shooting sport</li>
-						<li>Skateboarding</li>
-						<li>Skiing</li>
-						<li>Sled dog racing</li>
-						<li>Softball</li>
-						<li>Speed skating</li>
-						<li>Squash</li>
-						<li>Surfing</li>
-						<li>Swimming</li>
-						<li>Table tennis</li>
-						<li>Tennis</li>
-						<li>Tennis polo</li>
-						<li>Tether car</li>
-						<li>Tour skating</li>
-						<li>Tourism</li>
-						<li>Trapshooting</li>
-						<li>Triathlon</li>
-						<li>Ultimate frisbee</li>
-						<li>Volleyball</li>
-						<li>Water polo</li>
-			        </ul>
-			      </p>
-			    </div>
-			  </div>
+			<div class="container-fluid" id="occupations-list-container">
+				<ul class="multicol-ul" id="occupations-list">
+					<li>Accounting and taxation</li>
+					<li>Actor</li>
+					<li>Agriculture</li>
+					<li>Anthropologist</li>
+					<li>Archaeologist</li>
+					<li>Architecture</li>
+					<li>Arts</li>
+					<li>Astronaut</li>
+					<li>Astronomer</li>
+					<li>Audio engineer</li>
+					<li>Audio-visual</li>
+					<li>Author</li>
+					<li>Biochemist</li>
+					<li>Biologist</li>
+					<li>Bitcoin</li>
+					<li>Blogger</li>
+					<li>Brand</li>
+					<li>Building and civil engineering</li>
+					<li>Business and administration</li>
+					<li>Business Development</li>
+					<li>Care of the elderly and of disabled adults</li>
+					<li>Carpenter</li>
+					<li>Chaplain</li>
+					<li>Chemical engineering and processes</li>
+					<li>Chemist</li>
+					<li>Child care and youth services</li>
+					<li>Choreographer</li>
+					<li>Communications</li>
+					<li>Community sanitation</li>
+					<li>Compliance</li>
+					<li>Composer</li>
+					<li>Computer use</li>
+					<li>Computer use</li>
+					<li>Construction</li>
+					<li>Content</li>
+					<li>Copy editor</li>
+					<li>Copy writer</li>
+					<li>Costume designer</li>
+					<li>Creative consultant</li>
+					<li>Creative design strategy</li>
+					<li>Crop and livestock production</li>
+					<li>Customer Relations</li>
+					<li>Dancer</li>
+					<li>Data analytics</li>
+					<li>Database and network design and administration</li>
+					<li>Dentistry</li>
+					<li>Design</li>
+					<li>Digital</li>
+					<li>Diversity</li>
+					<li>Domestic services</li>
+					<li>Dramaturge</li>
+					<li>Earth science</li>
+					<li>Ecology</li>
+					<li>Economics</li>
+					<li>Education</li>
+					<li>Education science</li>
+					<li>Electricity and energy</li>
+					<li>Electronics and automation</li>
+					<li>Engineering and engineering trades</li>
+					<li>Engineering, manufacturing and construction</li>
+					<li>Environment</li>
+					<li>Environmental protection technology</li>
+					<li>Environmental sciences</li>
+					<li>Events</li>
+					<li>Experimental Psychologist</li>
+					<li>Fashion design</li>
+					<li>Finance, banking and insurance</li>
+					<li>Fine arts</li>
+					<li>Fisheries</li>
+					<li>Food processing</li>
+					<li>Forester</li>
+					<li>Forestry</li>
+					<li>Gaming</li>
+					<li>Geographer</li>
+					<li>Geologist</li>
+					<li>Geoprofessions</li>
+					<li>Ghostwriter</li>
+					<li>Graphic design</li>
+					<li>Hack writer</li>
+					<li>Hair and beauty services</li>
+					<li>Handicrafts</li>
+					<li>Health</li>
+					<li>Health and welfare</li>
+					<li>Historian</li>
+					<li>History and archaeology</li>
+					<li>Horticulture</li>
+					<li>Hotel, restaurants and catering</li>
+					<li>Human Resources</li>
+					<li>Hygiene and occupational health services</li>
+					<li>Industrial design (artistic)</li>
+					<li>Infopreneur</li>
+					<li>Informatics (computer science)</li>
+					<li>Information (wording and content)</li>
+					<li>Information and Communication Technologies (ICTs)</li>
+					<li>Information processing/data entry</li>
+					<li>Information science</li>
+					<li>Information searching</li>
+					<li>Information Security</li>
+					<li>Information technology</li>
+					<li>Information technology administration</li>
+					<li>Information technology security</li>
+					<li>Innovation</li>
+					<li>Interactive media design</li>
+					<li>Interior architecture</li>
+					<li>Interior decorating</li>
+					<li>Interior design</li>
+					<li>Internet use programmes</li>
+					<li>Interpretation programmes</li>
+					<li>Interpreter languages</li>
+					<li>Investment</li>
+					<li>Investments and securities</li>
+					<li>Journalism and information</li>
+					<li>Journalism and reporting</li>
+					<li>Journalist</li>
+					<li>Language acquisition</li>
+					<li>Legal</li>
+					<li>Library, information and archival studies</li>
+					<li>Licensed behavior analyst</li>
+					<li>Licensed professional counselor</li>
+					<li>Lighting designer</li>
+					<li>Lighting technician</li>
+					<li>Literary editor</li>
+					<li>Literature and linguistics</li>
+					<li>Management and administration</li>
+					<li>Manufacturing and processing</li>
+					<li>Manuscript format</li>
+					<li>Market research</li>
+					<li>Marketing</li>
+					<li>Marketing and advertising</li>
+					<li>Mass communication (wording and</li>
+					<li>Materials (glass, paper, plastic and wood)</li>
+					<li>Mathematics</li>
+					<li>Mathematics and statistics</li>
+					<li>Mechanical engineering</li>
+					<li>Mechanics and metal trades</li>
+					<li>Media</li>
+					<li>Medical</li>
+					<li>Medical diagnostic and treatment technology</li>
+					<li>Medical writing</li>
+					<li>Medicine</li>
+					<li>Mental health professional</li>
+					<li>Military and defence</li>
+					<li>Mining and extraction</li>
+					<li>Motor vehicles, ships and aircraft</li>
+					<li>Music and performing arts</li>
+					<li>Music director</li>
+					<li>Musician</li>
+					<li>Natural environments and wildlife</li>
+					<li>Natural sciences, mathematics and statistics</li>
+					<li>Naturalist</li>
+					<li>Novelist</li>
+					<li>Nursing</li>
+					<li>Nursing and midwifery</li>
+					<li>Nutrition and dietetics</li>
+					<li>Occupational health and safety</li>
+					<li>Occupational therapist</li>
+					<li>Oceanographer</li>
+					<li>Odontology</li>
+					<li>Oil and gas drilling</li>
+					<li>Operations</li>
+					<li>Optometry</li>
+					<li>Osteopathy</li>
+					<li>Paediatrics</li>
+					<li>Painter</li>
+					<li>Paleontologist</li>
+					<li>Pathologist</li>
+					<li>People</li>
+					<li>Personal services</li>
+					<li>Petroleum geologist</li>
+					<li>Pharmacy</li>
+					<li>Philosophy and ethics</li>
+					<li>Philosophy and ethics</li>
+					<li>Physical science</li>
+					<li>Physicist</li>
+					<li>Playwright</li>
+					<li>Poet</li>
+					<li>Political sciences and civics</li>
+					<li>Political scientist</li>
+					<li>Polygraph (author)</li>
+					<li>Privacy</li>
+					<li>Product Security</li>
+					<li>Production</li>
+					<li>Property master</li>
+					<li>Property sales</li>
+					<li>Protection of persons and property</li>
+					<li>Psychiatric nursing</li>
+					<li>Psychiatrist</li>
+					<li>Psychologist</li>
+					<li>Psychotherapist</li>
+					<li>Public administration</li>
+					<li>Public relations</li>
+					<li>Publicist</li>
+					<li>Radiotherapy</li>
+					<li>Railway operations</li>
+					<li>Raw material</li>
+					<li>Religion and theology</li>
+					<li>Reputation</li>
+					<li>Research</li>
+					<li>Restructuring</li>
+					<li>Revenue</li>
+					<li>Review</li>
+					<li>Risk</li>
+					<li>Scenic artist</li>
+					<li>Scenic designer</li>
+					<li>Scenographer</li>
+					<li>School counselor</li>
+					<li>Scientific</li>
+					<li>Screenwriter</li>
+					<li>Scribe</li>
+					<li>Script coordinator</li>
+					<li>Script doctor</li>
+					<li>Scrivener</li>
+					<li>Secretarial and office work</li>
+					<li>Security</li>
+					<li>Security services</li>
+					<li>Set designer</li>
+					<li>Sex therapist</li>
+					<li>Shipbuilding</li>
+					<li>Shipping</li>
+					<li>Shorthand</li>
+					<li>Simultaneous interpreter</li>
+					<li>Social and behavioural sciences</li>
+					<li>Social science</li>
+					<li>Social sciences, journalism and information</li>
+					<li>Social work and counselling</li>
+					<li>Social worker</li>
+					<li>Sociologist</li>
+					<li>Software and applications development and analysis</li>
+					<li>Software development</li>
+					<li>Software for calculating (spreadsheets),</li>
+					<li>Software for data processing, use of</li>
+					<li>Software for desktop publishing, use of</li>
+					<li>Software for word processing, use of</li>
+					<li>Software localisation</li>
+					<li>Software programming</li>
+					<li>Software testing</li>
+					<li>Solutions</li>
+					<li>Songwriter</li>
+					<li>Sound designer</li>
+					<li>Sound Engineer</li>
+					<li>Sound Technician</li>
+					<li>Speechwriter</li>
+					<li>Sports</li>
+					<li>Staff writer</li>
+					<li>Stage manager</li>
+					<li>Stagehands</li>
+					<li>Statistics</li>
+					<li>Strategic</li>
+					<li>Supply Chain</li>
+					<li>Sustainabilily</li>
+					<li>Teacher</li>
+					<li>Teacher Trainer</li>
+					<li>Technical writer</li>
+					<li>Technology</li>
+					<li>Technology Product Design</li>
+					<li>Technology Security</li>
+					<li>Textiles (clothes, footwear and leather)</li>
+					<li>Theatrical technician</li>
+					<li>Therapy and rehabilitation</li>
+					<li>Town and country planning</li>
+					<li>Toxicology</li>
+					<li>Traditional and complementary medicine and therapy</li>
+					<li>Translation</li>
+					<li>Transport services</li>
+					<li>Travel, tourism and leisure</li>
+					<li>Typesetting</li>
+					<li>Urban planner</li>
+					<li>Vehicle and motor engineering</li>
+					<li>Vetinary</li>
+					<li>Visibility</li>
+					<li>Visionary</li>
+					<li>Voice-over</li>
+					<li>Wardrobe supervisor</li>
+					<li>Web</li>
+					<li>Web design</li>
+					<li>Website content writer</li>
+					<li>Welfare</li>
+					<li>Wholesale and retail sales</li>
+					<li>Work skills</li>
+					<li>Writer</li>
+					<li>YouTuber</li>
+				</ul>
 			</div>
-
-	       	<div class="wrap-collabsible">
-			  <input id="collapsible4" class="toggle" type="checkbox" >
-			  <label for="collapsible4" class="lbl-toggle">Educational hobbies</label>
-			  <div class="collapsible-content">
-			    <div class="content-inner">
-			      <p>
-			        <ul class="ul-scroll">
-			        	<li>Action figure</li>
-						<li>Antiquing</li>
-						<li>Ant-keeping</li>
-						<li>Art collecting</li>
-						<li>Book collecting</li>
-						<li>Button collecting</li>
-						<li>Cartophily (card collecting)</li>
-						<li>Coin collecting</li>
-						<li>Comic book collecting</li>
-						<li>Compact discs</li>
-						<li>Crystals</li>
-						<li>Deltiology (postcard collecting)</li>
-						<li>Die-cast toy</li>
-						<li>Digital hoarding</li>
-						<li>Dolls</li>
-						<li>Element collecting</li>
-						<li>Ephemera collecting</li>
-						<li>Films</li>
-						<li>Fingerprint collecting</li>
-						<li>Fusilately (phonecard collecting)</li>
-						<li>Knife collecting</li>
-						<li>Lotology (lottery ticket collecting)</li>
-						<li>Movie memorabilia collecting</li>
-						<li>Perfume</li>
-						<li>Philately</li>
-						<li>Phillumeny</li>
-						<li>Pin (lapel)</li>
-						<li>plush collecting</li>
-						<li>Radio-controlled model collecting</li>
-						<li>Rail transport modelling</li>
-						<li>Record collecting</li>
-						<li>Rock tumbling</li>
-						<li>Scutelliphily</li>
-						<li>Shoes</li>
-						<li>Slot car</li>
-						<li>Sports memorabilia</li>
-						<li>Stamp collecting</li>
-						<li>Stuffed toy collecting</li>
-						<li>Tea bag collecting</li>
-						<li>Ticket collecting</li>
-						<li>Transit map collecting</li>
-						<li>Video game collecting</li>
-						<li>Vintage cars</li>
-						<li>Vintage clothing</li>
-						<li>Vinyl Records</li>
-						<li>Antiquities</li>
-						<li>Auto audiophilia</li>
-						<li>Flower collecting and pressing</li>
-						<li>Fossil hunting</li>
-						<li>Insect collecting</li>
-						<li>Leaves</li>
-						<li>Magnet fishing</li>
-						<li>Metal detecting</li>
-						<li>Mineral collecting</li>
-						<li>Rock balancing</li>
-						<li>Sea glass collecting</li>
-						<li>Seashell collecting</li>
-						<li>Stone collecting</li>
-			        </ul>
-			      </p>
-			    </div>
-			  </div>
-			</div>
-			
-	    </div>
-	</div>
-	-->
 
 	<div>
-		<p id="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
+		<div id="description" class="text-center">
+			Below you have 4 categories for reference when filling in each section. Click on each category to see the full list:
+			
+			<div style="padding: 20px;">
+			<ul id="horizontal-ul" style="padding: 10px; display: inline;">
+				<li><button type="button" class="btn btn-dark" onclick="showInterests()">Interests</button></li>
+				<li><button type="button" class="btn btn-dark" onclick="showSports()">Sports</button></li>
+				
+				<li><button type="button" class="btn btn-dark" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hobbies <img src="caret-down-white.png" height="20px"></button>
+
+				
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #212529;">
+	            <li><a class="dropdown-item" style="background-color: #212529; color: white;" href="#" onclick="showGeneralHobbies()">General Hobbies</a></li>
+	            <li><a class="dropdown-item" style="background-color: #212529; color: white;" href="#" onclick="showCompHobbies()">Educational Hobbies</a></li>
+	      </ul>
+	      </li>
+				<li><button type="button" class="btn btn-dark" onclick="showOccupations()">Occupations</button></li>
+			</ul>
+			</div>
+			
+			You can return to these lists whenever you need to by clicking the <strong>Return to Categories</strong> button.
+		</div>
 	</div>
+
+ <div class="clearfix">
+	<button type="button" id="return-btn" class="btn btn-primary float-right " style="float: right; margin-right: 10%; display: none;" onclick="showExplanation()">Return to Categories</button>
+</div>
+
 </div>
 	<div style="margin: 1%;">
 	<script type="text/javascript" src="https://form.jotform.com/jsform/212942331404345"></script>
@@ -970,16 +1165,186 @@
     	
     </script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/css/bootstrap.min.css" integrity="sha512-N415hCJJdJx+1UBfULt+i+ihvOn42V/kOjOpp1UTh4CZ70Hx5bDlKryWaqEKfY/8EYOu/C2MuyaluJryK1Lb5Q==" crossorigin="anonymous" />
+
     <script type="text/javascript">
-    	
+
+    	function showExplanation(){
+    		var element = document.querySelector("#description");
+    		element.style.display = "block";
+
+    		var h2 = document.querySelector("h2");
+    		h2.innerText = "How to Fill in your Form";
+
+    		var element2 = document.querySelector("#interests-list");
+    		element2.style.display = "none";
+    		var remove_el = document.querySelector("#general-hobbies-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#comp-hobbies-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#sports-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#occupations-list");
+    		remove_el.style.display = "none";
+    		
+    		var element3 = document.querySelector("#return-btn");
+    		element3.style.display = "none";
+    	}
+
     	function showInterests(){
     		var element = document.querySelector("#description");
     		element.style.display = "none";
     		var element2 = document.querySelector("#interests-list");
     		element2.style.display = "flex";
-    		var element3 = document.querySelector("#interests-list-container");
-    		element3.style.display = "flex";
+
+    		var h2 = document.querySelector("h2");
+    		h2.innerText = "Interests";
+
+    		var remove_el = document.querySelector("#general-hobbies-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#sports-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#occupations-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#comp-hobbies-list");
+    		remove_el.style.display = "none";
+
+    		//var element3 = document.querySelector("#interests-list-container");
+    		//element3.style.display = "flex";
+    		var element3 = document.querySelector("#return-btn");
+    		element3.style.display = "block";
     	};
+
+    	function showGeneralHobbies(){
+    		var element = document.querySelector("#description");
+    		element.style.display = "none";
+    		var element2 = document.querySelector("#general-hobbies-list");
+    		element2.style.display = "flex";
+    		var h2 = document.querySelector("h2");
+    		h2.innerText = "General Hobbies";
+
+    		var remove_el = document.querySelector("#interests-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#sports-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#occupations-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#comp-hobbies-list");
+    		remove_el.style.display = "none";
+
+
+    		var element3 = document.querySelector("#return-btn");
+    		element3.style.display = "block";
+    		//var element3 = document.querySelector("#interests-list-container");
+    		//element3.style.display = "flex";
+    	};
+
+    	  function showCompHobbies(){
+    		var element = document.querySelector("#description");
+    		element.style.display = "none";
+    		var element2 = document.querySelector("#comp-hobbies-list");
+    		element2.style.display = "flex";
+    		var h2 = document.querySelector("h2");
+    		h2.innerText = "Competitive and Collection Hobbies";
+
+    		var remove_el = document.querySelector("#general-hobbies-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#interests-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#sports-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#occupations-list");
+    		remove_el.style.display = "none";
+
+    		var element3 = document.querySelector("#return-btn");
+    		element3.style.display = "block";
+    		//var element3 = document.querySelector("#interests-list-container");
+    		//element3.style.display = "flex";
+    	};
+
+    	function showSports(){
+    		var element = document.querySelector("#description");
+    		element.style.display = "none";
+    		var element2 = document.querySelector("#sports-list");
+    		element2.style.display = "flex";
+    		var h2 = document.querySelector("h2");
+    		h2.innerText = "Sports";
+    		
+
+    		var remove_el = document.querySelector("#general-hobbies-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#interests-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#occupations-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#comp-hobbies-list");
+    		remove_el.style.display = "none";
+
+    		var element3 = document.querySelector("#return-btn");
+    		element3.style.display = "block";
+    	}
+    	function showOccupations(){
+    		var element = document.querySelector("#description");
+    		element.style.display = "none";
+    		var element2 = document.querySelector("#occupations-list");
+    		element2.style.display = "flex";
+    		var h2 = document.querySelector("h2");
+    		h2.innerText = "Occupations";
+
+    		var remove_el = document.querySelector("#general-hobbies-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#interests-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#sports-list");
+    		remove_el.style.display = "none";
+    		var remove_el = document.querySelector("#comp-hobbies-list");
+    		remove_el.style.display = "none";
+
+
+    		var element3 = document.querySelector("#return-btn");
+    		element3.style.display = "block";
+    	}
+    </script>
+
+
+    <!-- Script para auto-ocultar navbar -->
+    <script type="text/javascript">
+    	
+    	document.addEventListener("DOMContentLoaded", function(){
+
+  el_autohide = document.querySelector('.autohide');
+  
+  // add padding-top to bady (if necessary)
+  navbar_height = document.querySelector('.navbar').offsetHeight;
+  document.body.style.paddingTop = navbar_height + 'px';
+
+  if(el_autohide){
+    var last_scroll_top = 0;
+    window.addEventListener('scroll', function() {
+          let scroll_top = window.scrollY;
+         if (scrollY) {
+         	el_autohide.classList.remove('scrolled-down');
+          el_autohide.classList.add('scrolled-up');
+         }
+         /*
+         if(scroll_top < last_scroll_top) {
+              el_autohide.classList.remove('scrolled-down');
+              el_autohide.classList.add('scrolled-up');
+          }
+          else {
+              el_autohide.classList.remove('scrolled-up');
+              el_autohide.classList.add('scrolled-down');
+          }
+          */
+          last_scroll_top = scroll_top;
+    }); 
+
+    // window.addEventListener
+  }
+  // if
+
+}); 
+// DOMContentLoaded  end
 
     </script>
 

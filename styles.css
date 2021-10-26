@@ -171,7 +171,7 @@ input[type='checkbox'] {
     display: inline-block;
     border: 3px solid blue;
     border-radius: 40px;
-    background: skyblue;
+    background: lightgray;
     height: 60vh;
 }
 
@@ -193,4 +193,20 @@ input[type='checkbox'] {
 }
 .multicol-ul li {
     padding: 0 15px;
+}
+
+.scrolled-down{
+  transform:translateY(-100%); transition: all 0.3s ease-in-out;
+}
+.scrolled-up{
+  transform:translateY(0); transition: all 0.3s ease-in-out;
+}
+
+.myNavBtns {
+    margin-left: 5px; 
+    margin-right: 5px;"
+}
+
+#horizontal-ul li {
+    display: inline;
 }
