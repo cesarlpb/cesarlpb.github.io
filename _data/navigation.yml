@@ -1,0 +1,16 @@
+# main links
+main:
+  #- title: "Quick-Start Guide"
+  #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  - title: "Blue Goat Labs"
+    url: index.html
+  - title: "Portfolio"
+    url: index.html
+  - title: "Contact"
+    url: index.html
+  #- title: "Sample Posts"
+  #   url: /year-archive/
+  #- title: "Sample Collections"
+  #   url: /collection-archive/
+  #- title: "Sitemap"
+  #   url: /sitemap/
