@@ -29,9 +29,12 @@ repository               : "cesarlpb/cesarlpb.github.io"
 teaser                   : "/assets/images/404.png"
 logo                     : "/assets/images/logo_white.png"
 portfolio                : "/assets/images/portfolio.png"
+eLibertas                : "/assets/images/eLibertas.png"
+austral                  : "/assets/images/austral.png"
+bark                     : "/assets/images/bark.png"
 bgl_logo                 : "/assets/images/bgl_logo_white.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
-breadcrumbs              : true 
+breadcrumbs              : false 
 words_per_minute         : 200
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
@@ -236,14 +239,20 @@ sass:
 
 
 # Outputting
+collection: posts
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+entries_layout: grid
+show_excerpts: true
+sort_by: date 
+sort_order: forward
+timezone: Europe/Madrid # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins (previously gems:)
 plugins:
+  - jekyll-archives
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
@@ -252,6 +261,7 @@ plugins:
 
 # mimic GitHub Pages with --safe
 whitelist:
+  - jekyll-archives
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
@@ -286,6 +296,23 @@ tag_archive:
 #   permalinks:
 #    category: /categories/:name/
 #    tag: /tags/:name/
+
+# category_archive:
+#   type: jekyll-archives
+#   path: /categories/
+# tag_archive:
+#   type: jekyll-archives
+#   path: /tags/
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
 
 
 # HTML Compression
