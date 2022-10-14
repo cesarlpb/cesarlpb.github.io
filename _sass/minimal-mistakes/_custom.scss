@@ -11,7 +11,7 @@
     }
     .container{
         justify-content: center;
-        margin-left: 15%;
+        margin: 0 auto;
         padding: 0;
         width: 80%;
        }   
@@ -59,7 +59,8 @@
           display: inline-block;  
           border: 1px solid white;
           border-radius: 40px;
-          padding: 0 10px;
-          margin: 0 5px;
+          line-height: 1em;
+          padding: 5px;
+          margin: 5px;
       }
   }
