@@ -3,11 +3,11 @@ main:
   #- title: "Quick-Start Guide"
   #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "Blue Goat Labs"
-    url: index.html
+    url: https://www.bluegoatlabs.com
   - title: "Portfolio"
-    url: index.html
+    url: index.html#portfolio
   - title: "Contact"
-    url: index.html
+    url: mailto:info@bluegoatlabs.com?subject=I want to know more about BGL!&body=I'd like to book a free consultation to discuss my project.
   #- title: "Sample Posts"
   #   url: /year-archive/
   #- title: "Sample Collections"
