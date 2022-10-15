@@ -144,7 +144,7 @@ footer:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:info@bluegoatlabs.com"
+      url: "mailto:info@bluegoatlabs.com?subject=I want to know more about BGL!&body=I'd like to book a free consultation to discuss my project."
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://bluegoatlabs.com"
