@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-10-15T14:50:11+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">César Patiño’s Web Portfolio</title><subtitle>My Web Portfolio for Github</subtitle><author><name>César Patiño</name><email>cesarlpb@bluegoatlabs.com</email></author><entry><title type="html">Blue Goat Labs</title><link href="http://localhost:4000/bgl/blue-goat-labs/" rel="alternate" type="text/html" title="Blue Goat Labs" /><published>2022-10-10T00:00:00+02:00</published><updated>2022-10-10T00:00:00+02:00</updated><id>http://localhost:4000/bgl/blue-goat-labs</id><content type="html" xml:base="http://localhost:4000/bgl/blue-goat-labs/">&lt;h2 id=&quot;what-is-blue-goat-labs&quot;&gt;What is Blue Goat Labs?&lt;/h2&gt;
+&lt;p&gt;Blue Goat Labs is a startup that provides all kind of digital services, from software development to specialized coaching.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Custom software development
+    &lt;ul&gt;
+      &lt;li&gt;Multiplatform&lt;/li&gt;
+      &lt;li&gt;Web development&lt;/li&gt;
+      &lt;li&gt;Web 3 integration&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Blockchain
+    &lt;ul&gt;
+      &lt;li&gt;Solidity&lt;/li&gt;
+      &lt;li&gt;Smart contracts&lt;/li&gt;
+      &lt;li&gt;Supply chain&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Coaching
+    &lt;ul&gt;
+      &lt;li&gt;Sales training&lt;/li&gt;
+      &lt;li&gt;Marketing&lt;/li&gt;
+      &lt;li&gt;Business development&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;who-are-we&quot;&gt;Who are We?&lt;/h1&gt;
+
+&lt;p&gt;A group of experienced multidisciplinary professionals working together to provide high-quality solutions to clients. More information about the team is available at &lt;a href=&quot;https://www.bluegoatlabs.com#team&quot;&gt;our website.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;how-can-we-help-you&quot;&gt;How can we Help You?&lt;/h1&gt;
+
+&lt;p&gt;We are glad to discuss new ideas and projects. Drop us a message to &lt;a href=&quot;mailto:info@bluegoatlabs.com?subject=I want to know more about BGL!&amp;amp;body=I'd like to book a free consultation to discuss my project.&quot;&gt;book a free consultation&lt;/a&gt;.&lt;/p&gt;</content><author><name>César Patiño</name><email>cesarlpb@bluegoatlabs.com</email></author><category term="BGL" /><category term="Hello world" /><summary type="html">Turnkey Software Solutions</summary></entry><entry><title type="html">Hello, world 🐐</title><link href="http://localhost:4000/bluegoatlabs/hello-world/" rel="alternate" type="text/html" title="Hello, world 🐐" /><published>2022-10-01T00:00:00+02:00</published><updated>2022-10-01T00:00:00+02:00</updated><id>http://localhost:4000/bluegoatlabs/hello-world</id><content type="html" xml:base="http://localhost:4000/bluegoatlabs/hello-world/">&lt;p&gt;Hello, world!&lt;/p&gt;
+
+&lt;p&gt;Welcome to my new portfolio web.&lt;/p&gt;
+
+&lt;p&gt;More info about me in social links and &lt;a href=&quot;https://www.gluegoatlabs.com&quot;&gt;Blue Goat Labs website.&lt;/a&gt;&lt;/p&gt;</content><author><name>César Patiño</name><email>cesarlpb@bluegoatlabs.com</email></author><category term="BlueGoatLabs" /><category term="Hello world" /><summary type="html">Welcome to my new portfolio web! - César P.</summary></entry></feed>
