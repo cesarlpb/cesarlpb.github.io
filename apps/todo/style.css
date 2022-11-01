@@ -1,0 +1,29 @@
+body, html{
+    font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+}
+h1 { text-decoration: underline; }
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+main {
+    height: 70vh;
+    margin-top: 5vh;
+}
+
+/* Modal Styles */
+.modal-body input, 
+.modal-body label {
+    display: block;
+    margin: 5px auto;
+    
+}
+tr {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}

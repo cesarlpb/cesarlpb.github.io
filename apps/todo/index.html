@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../lib/bootstrap-5.2.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Simple To Do App</title>
+</head>
+<body>
+        <!-- Navbar -->
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs col-sm col-md-8 col-lg-7 col-xxl-6 mx-auto mt-3 mb-2" id="navId" role="tablist">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" data-bs-toggle="tab" aria-current="page">Home</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button type="button" 
+                            class="btn btn-primary my-1 mx-3 py-1 px-2 d-flex align-items-center" 
+                            data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    >
+                        <svg  class="mx-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg>
+                        <span class="mx-1" >Add To Do</span>
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button type="button"
+                        class="btn btn-danger my-1 mx-1 py-1 px-3 d-flex align-items-center" 
+                        onclick=reset()
+                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                      </svg>
+                    <span class="mx-1" >Reset</span>
+                    </button>
+                </li>
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#tab2Id">Action</a>
+                        <a class="dropdown-item" href="#tab3Id">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#tab4Id">Action</a>
+                    </div>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a href="#tab5Id" class="nav-link" data-bs-toggle="tab">Another link</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a href="#" class="nav-link disabled" data-bs-toggle="tab">Disabled</a>
+                </li> -->
+            </ul>
+        
+            <!-- Tab panes -->
+            <!-- <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="tab1Id" role="tabpanel"></div>
+                <div class="tab-pane fade" id="tab2Id" role="tabpanel"></div>
+                <div class="tab-pane fade" id="tab3Id" role="tabpanel"></div>
+                <div class="tab-pane fade" id="tab4Id" role="tabpanel"></div>
+                <div class="tab-pane fade" id="tab5Id" role="tabpanel"></div>
+            </div>         -->
+        
+        <!-- Navbar -->
+
+    <main class="bg bg-light py-3 px-2 container-md col-sm col-md-8 col-lg-7 col-xxl-6 rounded">
+        <div id="todo-container" class="row align-items-center">
+            <h1 class="text-center pb-3 my-3">To Dos</h1>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New To Do</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="toDoInput">To Do:</label>
+                            <input type="text" class="form-control" id="toDoInput" placeholder="I need to do this and that...">
+                            <hr>
+                            <label for="datePickerInput">Due Date:</label>
+                            <input class="form-control" type="date" placeholder="yyyy-MM-dd" id="datePickerInput">
+                            <!-- <label for="dateInput">Due date</label> -->
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick=saveToDo()>Save</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- Modal -->
+
+            <div id="pending" class="bg bg-warning py-3">
+                <h2 class="text-center p-1 mt-2">Pending</h2>
+                <ul id="pending-ul" class="text-center"></ul>
+            </div>
+            
+            <div id="completed" class="bg bg-success text-light py-3">
+                <h2 class="text-center py-2 mt-2">Completed</h2>
+                <table id="completed-tbl" class="text-center col-6 col-sm mx-auto"></table>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer fixed-bottom bg bg-dark text-white text-center p-3">
+            <p>Simple To Do App by César P.</p>
+            <p>2022 &copy; Blue Goat Labs</p>
+        </footer>
+        <!-- Footer -->
+    </main>
+    <script src="../lib/bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <!-- <script>
+        var triggerEl = document.querySelector('#navId a')
+        bootstrap.Tab.getInstance(triggerEl).show() // Select tab by name
+    </script> -->
+</body>
+</html>
