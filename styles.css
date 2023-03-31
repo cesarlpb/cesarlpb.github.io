@@ -1,0 +1,40 @@
+.divider-1 {
+    width: 100%;
+    height: calc(1*0.5rem);
+}
+.divider-2 {
+    width: 100%;
+    height: calc(2*0.5rem);
+}
+.divider-3 {
+    width: 100%;
+    height: calc(3*0.5rem);
+}
+.divider-4 {
+    width: 100%;
+    height: calc(4*0.5rem);
+}
+.divider-5 {
+    width: 100%;
+    height: calc(5*0.5rem);
+}
+.divider-6 {
+    width: 100%;
+    height: calc(6*0.5rem);
+}
+.divider-7 {
+    width: 100%;
+    height: calc(7*0.5rem);
+}
+.divider-8 {
+    width: 100%;
+    height: calc(8*0.5rem);
+}
+.divider-9 {
+    width: 100%;
+    height: calc(9*0.5rem);
+}
+.divider-10 {
+    width: 100%;
+    height: calc(10*0.5rem);
+}
