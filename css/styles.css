@@ -52,10 +52,12 @@
 }
 /* text css above hero image*/
 .hero_title {
-    font-size: 4.5rem;
+    font-size: 3.0rem;
+    text-shadow: 2px 2px 5px #000;
 }
 .hero_desc {
     font-size: 2rem;
+    text-shadow: 3px 3px 3px #000;
 }
 .hero-text {
     text-align: center;
@@ -64,4 +66,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+}
+
+/* About section */
+/* about section image css */
+.imageAboutPage {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
 }
