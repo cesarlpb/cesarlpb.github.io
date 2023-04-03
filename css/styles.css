@@ -125,3 +125,9 @@ Nota: usamos li::before porque ::marker no funciona en todos los navegadores
 .servicesText:hover {
     border: 1px solid #000;
 }
+/* Portfolio section */
+.img-container{
+    height: 250px;
+    min-height: 200px;
+    margin-bottom: 15px;
+}
