@@ -72,6 +72,23 @@
 /* about section image css */
 .imageAboutPage {
     display: block;
-    width: 80%;
+    width: 50%;
     margin: 10px auto;
 }
+/* Personzalizamos las viñetas 
+Fuente: https://web.dev/css-marker-pseudo-element/
+Nota: usamos li::before porque ::marker no funciona en todos los navegadores
+*/
+.about-ul {
+    list-style-type: none;
+}
+.about-ul li {
+    padding-left: 0;
+}
+.about-ul li::before {
+    content: "✅";
+    /* background: lightgray; */
+    border-radius: 1ch;
+    padding-inline: 1ch;
+    margin-inline-end: 1ch;
+  }
