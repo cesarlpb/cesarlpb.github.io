@@ -353,7 +353,22 @@
         </div>
     </div>
   </footer>
+    <script>
+        // add class navbarDark on navbar scroll
+        const header = document.querySelector('.navbar');
 
+        window.onscroll = function() {
+            let top = window.scrollY;
+            let x = window.scrollX;
+            console.log("Estoy en: (", x, ", ", top, ") px")
+            if(top >=100) {
+                header.classList.add('navbarLight');
+            }
+            else {
+                header.classList.remove('navbarLight');
+            }
+        }
+    </script>
     <script src="./js/bootstrap.min.js"></script>
 </body>
 </html>

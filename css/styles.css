@@ -150,3 +150,16 @@ Nota: usamos li::before porque ::marker no funciona en todos los navegadores
 .fab {
     color: #000000;
 }
+
+/* Navbar */
+/* display background color black on navbar scroll */
+.navbarScroll.navbarDark {
+    background-color: #212529;
+}
+.navbarScroll.navbarLight {
+    background-color: #fff!important;
+    border-bottom: 1px solid lightgray;
+}
+.navbarScroll.navbarLight a {
+    color: #000;
+}
