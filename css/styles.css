@@ -80,11 +80,25 @@
 Fuente: https://web.dev/css-marker-pseudo-element/
 Nota: usamos li::before porque ::marker no funciona en todos los navegadores
 */
-.about-ul {
+.about-ul.icons {
     list-style-type: none;
     padding-left: 0;
+    text-align: center;
+    margin: 10px auto;
 }
-.about-ul li {
+.about-ul.icons li {
+    display: inline-block;
+    padding-left: 0;
+    margin-left: 0;
+    margin: 0 25px;
+}
+.about-ul.normal {
+    width: 50%;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 10px auto;
+}
+.about-ul.normal li {
     padding-left: 0;
     margin-left: 0;
 }
@@ -149,4 +163,37 @@ Nota: usamos li::before porque ::marker no funciona en todos los navegadores
 }
 .fab {
     color: #000000;
+}
+
+/* Navbar */
+/* display background color black on navbar scroll */
+.navbarScroll.navbarDark {
+    background-color: #212529;
+}
+.navbarScroll.navbarLight {
+    background-color: #fff!important;
+    border-bottom: 1px solid lightgray;
+}
+.navbarScroll.navbarLight a {
+    color: #000;
+}
+
+/* Ejemplo */
+#my-link{
+    color: #000;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+/* ... */
+#my-link {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ... */
+#my-link {
+    border: 3px solid #000;
 }
