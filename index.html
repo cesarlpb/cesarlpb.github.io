@@ -1,37 +1,358 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100" data-bs-theme="light">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./bootstrap.min.css">
-    <title>Mi Portafolio Bootstrap</title>
+    <!-- Hoja de Bootrstrap 5 -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- Hoja de Fontawesome 6.4 -->
+    <link rel="stylesheet" href="./css/fontawesome.min.css">
+    <!-- Hoja de estilos personalizada -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Mi Portafolio Web - César Patiño</title>
 </head>
-<body class="d-flex h-100 text-center text-bg-dark" >
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="mb-auto">
-          <div>
-            <h3 class="float-md-start mb-0">Cover</h3>
-            <nav class="nav nav-masthead justify-content-center float-md-center">
-              <a class="nav-link fs-4 fw-bold py-1 px-2 text-white text-decoration-underline" aria-current="page" href="#">Home</a>
-              <a class="nav-link fs-4 fw-bold py-1 px-2 text-white text-decoration-underline" href="#">Features</a>
-              <a class="nav-link fs-4 fw-bold py-1 px-2 text-white text-decoration-underline" href="#">Contact</a>
-            </nav>
-          </div>
-        </header>
-      
-        <main class="px-3">
-          <h1>Cover your page.</h1>
-          <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-          <p class="lead">
-            <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
-          </p>
-        </main>
-      
-        <footer class="mt-auto text-white-50">
-          <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
-        </footer>
-      </div>
-    <script src="./bootstrap.min.js"></script>
+<body >
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top navbarScroll">
+    <div class="container">
+        <a class="navbar-brand" href="#">César</a>
+        <!-- Hamburger icon o toggle button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Expandir o contraer navegación">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#home">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Acerca de</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Portafolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contacto</a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+  </nav>
+   <!-- Hero o Main banner -->
+   <section class="bgimage" id="home">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero-text">
+            <h1 class="hero_title">Portafolio Web - César Patiño</h1>
+            <h2 class="">¡Hola, mundo!</h2>
+            <p class="hero_desc">Soy César, desarrollador full-stack senior.</p>
+        </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- About section-->
+  <section id="about">
+    <div class="container mt-4 pt-4">
+        <h2 class="text-center">Sobre mí</h2>
+        <div class="row mt-4">
+            <div class="col-lg-4 py-3">
+              <div class="card mx-auto" style="width: 18rem;">
+                <img src="./images/about.jpg" class= "imageAboutPage card-img-top rounded-circle" alt="profile">
+                <div class="card-body">
+                  <h5 class="card-title">Desarrollador Senior</h5>
+                  <p class="card-text">Experiencia en blockchain, apps full-stack y formaciones.</p>
+                  <div class="text-center">
+                    <a href="#" class="btn btn-outline-dark">Ver proyectos</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-8">
+                <p> 
+                  Creo aplicaciones web desde hace años. Me encanta el desarrollo web y me gusta aprender nuevas tecnologías.
+                </p>
+                
+                <div class="row mt-3">
+                  <h3 class="text-center">Stack</h3>
+                  <p>Algunas lenguajes de programación que he usado:</p>
+                  <div class="col-md-6">
+                      <ul class="about-ul">
+                          <li><i class='fas fa-check aboutIcon'></i>PHP</li>
+                          <li><i class='fas fa-check aboutIcon'></i>C#</li>
+                          <li><i class='fas fa-check aboutIcon'></i>Python</li>
+
+                      </ul>
+                  </div>
+                  
+                  <h3 class="text-center">Habilidades</h3>
+                  <p>Habilidades que he desarrollado en mi carrera:</p>
+                  <div class="col-md-6">
+                    <h2></h2>
+                      <ul class="about-ul">
+                          <li><i class='fas fa-plus aboutIcon'></i>Trabajo en equipo</li>
+                          <li><i class='fas fa-plus aboutIcon'></i>Trabajo individual</li>
+                          <li><i class='fas fa-plus aboutIcon'></i>In glés</li>
+
+                      </ul>
+                  </div>
+                </div>
+                <!-- <div class="row mt-3">
+                    <p> 
+                      texto
+                    </p>
+                </div> -->
+            </div>
+        </div>
+  </section>
+
+  <!-- Services section -->
+  <section id="services" class="bg bg-dark pb-5">
+    <div class="container bg bg-dark">
+        <h2 class="text-center text-white py-5">Servicios</h2>
+        <div class="row">
+            <div class="col-lg-4 mt-4">
+                <div class="card servicesText">
+                    <div class="card-body">
+                        <i class="fas servicesIcon fa-pencil"></i>
+                        <h4 class="card-title mt-3"></i>Diseño Web</h4>
+                        <p class="card-text mt-3">
+                          Creo tu página web desde cero. Diseño responsive y manual de estilo.
+                        </p>
+                    </div>
+                </div>  
+            </div>
+            <div class="col-lg-4 mt-4">
+                <div class="card servicesText">
+                    <div class="card-body">
+                        <i class='fas servicesIcon fa-code'></i>
+                        <h4 class="card-title mt-3">Desarrollo Web</h4>
+                        <p class="card-text mt-3">
+                          Programo tu página web con tecnologías actuales y escalables.
+                        </p>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                <div class="card servicesText">
+                    <div class="card-body">
+                        <i class='fas servicesIcon fa-laptop'></i>
+                        <h4 class="card-title mt-3"></i>Despliegue y Mantenimiento</h4>
+                        <p class="card-text mt-3">
+                          Despliego tu página web en un servidor y te doy soporte técnico.
+                        </p>
+                    </div>
+                </div>  
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-lg-4 mt-4">
+                <div class="card servicesText">
+                    <div class="card-body">
+                        <i class='fas servicesIcon fa-search'></i>
+                        <h4 class="card-title mt-3">SEO</h4>
+                        <p class="card-text mt-3">Some quick example text to build on the card title and make up the bulk of the card's content.
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                <div class="card servicesText">
+                    <div class="card-body">
+                        <i class='fas servicesIcon fa-shield-alt'></i>
+                        <h4 class="card-title mt-3">DevOps</h4>
+                        <p class="card-text mt-3">Some quick example text to build on the card title and make up the bulk of the card's content.
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                <div class="card servicesText">
+                    <div class="card-body">
+                        <i class='fas servicesIcon fa-wrench'></i>
+                        <h4 class="card-title mt-3">QA</h4>
+                        <p class="card-text mt-3">Some quick example text to build on the card title and make up the bulk of the card's content.
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                    </div>
+                </div>  
+            </div>
+        </div> -->
+    </div>
+  </section>
+
+  <!-- Portfolio section-->
+  <section id="portfolio">
+    <div class="container mt-3">
+        <h2 class="text-center">Portafolio</h2>
+        <!-- Fila con tres proyectos -->
+        <div class="row">
+
+            <div class="col-lg-4 mt-4">
+                <div class="card">
+                  <div class="img-container">
+                    <img class="card-img-top" src="./images/html.png" alt="HTML" style="height: 250px;">
+                  </div>
+                    <div class="card-body mt-1">
+                        <h4 class="card-title">Web Responsive</h4>
+                        <p class="card-text">Mi primera páginas web responsive con HTML 5.</p>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-muted disabled">Enlace</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                <div class="card portfolioContent">
+                  <div class="img-container">
+                    <img class="card-img-top" src="./images/css.png" alt="CSS" style="height: 250px;">
+                  </div>
+                    <div class="card-body mt-1">
+                        <h4 class="card-title">Animaciones con CSS</h4>
+                        <p class="card-text">Proyecto basado en estilos con CSS y animaciones</p>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-muted disabled">Enlace</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                <div class="card portfolioContent">
+                  <div class="img-container">
+                    <img class="card-img-top" src="./images/js.png" alt="Javascript" style="height: 250px;">
+                  </div>
+                    <div class="card-body mt-1">
+                        <h4 class="card-title">Calculadora con Javascript</h4>
+                        <p class="card-text">Calculadora de operaciones elementales.</p>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-muted disabled">Enlace</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- <div class="row">
+            <div class="col-lg-4 mt-4">
+                <div class="card portfolioContent">
+                    <img class="card-img-top" src="images/portfolioImage4.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Messaging Service</h4>
+                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-success">Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                <div class="card portfolioContent">
+                    <img class="card-img-top" src="images/portfolioImage1.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Twitter Clone</h4>
+                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-success">Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                <div class="card portfolioContent">
+                    <img class="card-img-top" src="images/portfolioImage4.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Blog App</h4>
+                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-success">Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+  </section>
+
+  <!-- Formulario de contacto -->
+  <!-- contact section-->
+  <section id="contact">
+    <div class="container mt-3 pb-3 contactContent">
+        <h1 class="text-center">Contacto</h1>
+
+        <div class="row mt-4">
+            <div class="col-lg-6 mb-3 mb-sm-3 mb-md-3 mb-lg-1">
+                <!-- to edit google map goto https://www.embed-map.com type your location, generate html code and copy the html  -->
+                <div class="mx-auto" style="max-width:100%;overflow:hidden;color:red;width:500px;height:500px;">
+                    <!-- <div style="overflow:hidden;resize:none;max-width:100%;width:300px;height:300px;"><div id="my-map-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Madrid,+Spain&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="embed-ded-maphtml" href="https://www.bootstrapskins.com/themes" id="grab-maps-authorization">premium bootstrap themes</a><style>#my-map-display img{max-width:none!important;background:none!important;font-size: inherit;font-weight:inherit;}</style></div> -->
+                    <div id="embedmap-canvas" style="height:100%; width:100%;max-width:100%; min-height: 500px;">
+                        <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Madrid,+Spain&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+                        </iframe>
+                    </div>
+                    <a class="googlemaps-html" href="https://www.embed-map.com" id="get-data-forembedmap">https://www.embed-map.com</a>
+                    <style>#embedmap-canvas img{max-width:none!important;background:none!important;font-size: inherit;font-weight:inherit;}
+                    </style>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mt-3 mt-sm-3 mt-md-3 mb-lg-1">
+                <!-- form fields -->
+                <form 
+                action="https://formspree.io/f/xbjeznlq"
+                method="POST"
+                >
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input id="nombre" type="text" class="form-control form-control-lg" name="nombre" placeholder="Nombre">
+                    
+                    <label for="email" class="form-label mt-3">Email:</label>
+                    <input id="email" type="email" class="form-control form-control-lg" name="email" placeholder="Email">
+                    
+                    <label for="asunto" class="form-label mt-3">Asunto:</label>
+                    <input id="asunto" type="text" class="form-control form-control-lg" name="asunto" placeholder="Asunto">
+                    
+                    <div class="mb-3 mt-3">
+                        <label for="mensaje" class="form-label">Mensaje:</label>
+                        <textarea id="mensaje" class="form-control form-control-lg" rows="3" name="mensaje" placeholder="Mensaje"></textarea>
+                    </div>
+                    <input type="submit" class="btn btn-success mt-3" value="Enviar">
+                </form>
+                
+                
+            </div>
+
+        </div>
+    </div>
+  </section>
+
+   <!-- footer section-->
+   <footer id="footer">
+    
+    <div class="container-fluid mt-3">
+        <p class="mt-2">Portafolio web - César Patiño</p>
+        <!-- social media icons -->
+        <div class="social-icons mt-2 text-center mx-auto" style="font-size: 2rem; width: 30%;">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitch"></i></a>
+        </div>
+    </div>
+  </footer>
+
+    <script src="./js/bootstrap.min.js"></script>
 </body>
 </html>
