@@ -80,11 +80,25 @@
 Fuente: https://web.dev/css-marker-pseudo-element/
 Nota: usamos li::before porque ::marker no funciona en todos los navegadores
 */
-.about-ul {
+.about-ul.icons {
     list-style-type: none;
     padding-left: 0;
+    text-align: center;
+    margin: 10px auto;
 }
-.about-ul li {
+.about-ul.icons li {
+    display: inline-block;
+    padding-left: 0;
+    margin-left: 0;
+    margin: 0 25px;
+}
+.about-ul.normal {
+    width: 50%;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 10px auto;
+}
+.about-ul.normal li {
     padding-left: 0;
     margin-left: 0;
 }
