@@ -177,3 +177,23 @@ Nota: usamos li::before porque ::marker no funciona en todos los navegadores
 .navbarScroll.navbarLight a {
     color: #000;
 }
+
+/* Ejemplo */
+#my-link{
+    color: #000;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+/* ... */
+#my-link {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ... */
+#my-link {
+    border: 3px solid #000;
+}

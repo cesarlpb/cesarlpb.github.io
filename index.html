@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Hoja de Bootstrap 5 -->
+    <!-- Hoja de Bootrstrap 5 -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <!-- Hoja de Fontawesome 6.4 -->
     <link rel="stylesheet" href="./css/fontawesome.min.css">
@@ -13,38 +13,35 @@
     <title>Mi Portafolio Web - César Patiño</title>
 </head>
 <body >
-  <!-- header -->
-  <header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top navbarScroll">
-        <div class="container">
-            <a class="navbar-brand" href="#">César</a>
-            <!-- Hamburger icon o toggle button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Expandir o contraer navegación">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#home">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Acerca de</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portafolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contacto</a>
-                    </li>
-                </ul>
-                
-            </div>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top navbarScroll">
+    <div class="container">
+        <a class="navbar-brand" href="#">César</a>
+        <!-- Hamburger icon o toggle button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Expandir o contraer navegación">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#home">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Acerca de</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Portafolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contacto</a>
+                </li>
+            </ul>
+            
         </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
    <!-- Hero o Main banner -->
    <section class="bgimage" id="home">
     <div class="container-fluid">
@@ -62,8 +59,7 @@
   <section id="about">
     <div class="container mt-4 pt-4">
         <h2 class="text-center">Sobre mí</h2>
-        
-        <div class="row mt-4 justify-content-center">
+        <div class="row mt-4">
             <div class="col-lg-4 py-3">
               <div class="card mx-auto" style="width: 18rem;">
                 <img src="./images/about.jpg" class= "imageAboutPage card-img-top rounded-circle" alt="profile">
@@ -82,26 +78,27 @@
                   Creo aplicaciones web desde hace años. Me encanta el desarrollo web y me gusta aprender nuevas tecnologías.
                 </p>
                 
-                <div class="row mt-3 mb-3 justify-content-center">
+                <div class="row mt-3">
                   <h3 class="text-center">Stack</h3>
                   <p>Algunas lenguajes de programación que he usado:</p>
-                  <div class="col mx-auto">
-                      <ul class="about-ul icons">
-                        <li><i class="fa-brands fa-html5 fs-1"></i></li>
-                        <li><i class="fa-brands fa-css3-alt fs-1"></i></li>
-                        <li><i class="fa-brands fa-php fs-1"></i></li>
-                        <li><i class="fa-brands fa-python fs-1"></i></li>
+                  <div class="col-md-6">
+                      <ul class="about-ul">
+                          <li><i class='fas fa-check aboutIcon'></i>PHP</li>
+                          <li><i class='fas fa-check aboutIcon'></i>C#</li>
+                          <li><i class='fas fa-check aboutIcon'></i>Python</li>
+
                       </ul>
                   </div>
                   
                   <h3 class="text-center">Habilidades</h3>
                   <p>Habilidades que he desarrollado en mi carrera:</p>
-                  <div class="col mx-auto">
+                  <div class="col-md-6">
                     <h2></h2>
-                      <ul class="about-ul normal">
+                      <ul class="about-ul">
                           <li><i class='fas fa-plus aboutIcon'></i>Trabajo en equipo</li>
                           <li><i class='fas fa-plus aboutIcon'></i>Trabajo individual</li>
                           <li><i class='fas fa-plus aboutIcon'></i>Inglés</li>
+
                       </ul>
                   </div>
                 </div>
@@ -124,7 +121,7 @@
                     <div class="card-body">
                         <i class="fas servicesIcon fa-pencil"></i>
                         <h4 class="card-title mt-3"></i>Diseño Web</h4>
-                        <p class="card-text mt-3 text-center">
+                        <p class="card-text mt-3">
                           Creo tu página web desde cero. Diseño responsive y manual de estilo.
                         </p>
                     </div>
@@ -135,7 +132,7 @@
                     <div class="card-body">
                         <i class='fas servicesIcon fa-code'></i>
                         <h4 class="card-title mt-3">Desarrollo Web</h4>
-                        <p class="card-text mt-3 text-center">
+                        <p class="card-text mt-3">
                           Programo tu página web con tecnologías actuales y escalables.
                         </p>
                     </div>
@@ -147,19 +144,57 @@
                     <div class="card-body">
                         <i class='fas servicesIcon fa-laptop'></i>
                         <h4 class="card-title mt-3"></i>Despliegue y Mantenimiento</h4>
-                        <p class="card-text mt-3 text-center">
+                        <p class="card-text mt-3">
                           Despliego tu página web en un servidor y te doy soporte técnico.
                         </p>
                     </div>
                 </div>  
             </div>
         </div>
-      </div>
+
+        <!-- <div class="row">
+            <div class="col-lg-4 mt-4">
+                <div class="card servicesText">
+                    <div class="card-body">
+                        <i class='fas servicesIcon fa-search'></i>
+                        <h4 class="card-title mt-3">SEO</h4>
+                        <p class="card-text mt-3">Some quick example text to build on the card title and make up the bulk of the card's content.
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                <div class="card servicesText">
+                    <div class="card-body">
+                        <i class='fas servicesIcon fa-shield-alt'></i>
+                        <h4 class="card-title mt-3">DevOps</h4>
+                        <p class="card-text mt-3">Some quick example text to build on the card title and make up the bulk of the card's content.
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                <div class="card servicesText">
+                    <div class="card-body">
+                        <i class='fas servicesIcon fa-wrench'></i>
+                        <h4 class="card-title mt-3">QA</h4>
+                        <p class="card-text mt-3">Some quick example text to build on the card title and make up the bulk of the card's content.
+                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                    </div>
+                </div>  
+            </div>
+        </div> -->
+    </div>
   </section>
 
   <!-- Portfolio section-->
   <section id="portfolio">
-    <div class="container my-5">
+    <div class="container mt-3">
         <h2 class="text-center">Portafolio</h2>
         <!-- Fila con tres proyectos -->
         <div class="row">
@@ -171,7 +206,7 @@
                   </div>
                     <div class="card-body mt-1">
                         <h4 class="card-title">Web Responsive</h4>
-                        <p class="card-text text-center">Mi primera páginas web responsive con HTML 5.</p>
+                        <p class="card-text">Mi primera páginas web responsive con HTML 5.</p>
                         <div class="text-center">
                             <a href="#" class="btn btn-muted disabled">Enlace</a>
                         </div>
@@ -186,7 +221,7 @@
                   </div>
                     <div class="card-body mt-1">
                         <h4 class="card-title">Animaciones CSS</h4>
-                        <p class="card-text text-center">Proyecto basado en estilos con CSS y animaciones</p>
+                        <p class="card-text">Proyecto basado en estilos con CSS y animaciones</p>
                         <div class="text-center">
                             <a href="#" class="btn btn-muted disabled">Enlace</a>
                         </div>
@@ -201,7 +236,7 @@
                   </div>
                     <div class="card-body mt-1">
                         <h4 class="card-title">Calculadora con JS</h4>
-                        <p class="card-text text-center">Calculadora de operaciones elementales.</p>
+                        <p class="card-text">Calculadora de operaciones elementales.</p>
                         <div class="text-center">
                             <a href="#" class="btn btn-muted disabled">Enlace</a>
                         </div>
@@ -210,9 +245,50 @@
             </div>
         </div>
         <br>
-    </section>
+        <!-- <div class="row">
+            <div class="col-lg-4 mt-4">
+                <div class="card portfolioContent">
+                    <img class="card-img-top" src="images/portfolioImage4.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Messaging Service</h4>
+                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-success">Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                <div class="card portfolioContent">
+                    <img class="card-img-top" src="images/portfolioImage1.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Twitter Clone</h4>
+                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-success">Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-4">
+                <div class="card portfolioContent">
+                    <img class="card-img-top" src="images/portfolioImage4.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Blog App</h4>
+                        <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-success">Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+  </section>
 
   <!-- Formulario de contacto -->
+  <!-- contact section-->
   <section id="contact">
     <div class="container mt-3 pb-3 contactContent">
         <h1 class="text-center">Contacto</h1>
@@ -252,9 +328,7 @@
                         <label for="mensaje" class="form-label">Mensaje:</label>
                         <textarea id="mensaje" class="form-control form-control-lg" rows="3" name="mensaje" placeholder="Mensaje"></textarea>
                     </div>
-                    <div class="text-center">
-                        <input type="submit" class="btn btn-success btn-lg mt-3 px-5" value="Enviar">
-                    </div>
+                    <input type="submit" class="btn btn-success mt-3" value="Enviar">
                 </form>
                 
                 
@@ -280,22 +354,6 @@
     </div>
   </footer>
 
-  <script>
-    // add class navbarDark on navbar scroll
-    const header = document.querySelector('.navbar');
-
-    window.onscroll = function() {
-        let top = window.scrollY;
-        let x = window.scrollX;
-        console.log("Estoy en: (", x, ", ", top, ") px")
-        if(top >=100) {
-            header.classList.add('navbarLight');
-        }
-        else {
-            header.classList.remove('navbarLight');
-        }
-    }
-  </script>
-  <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
 </body>
 </html>
