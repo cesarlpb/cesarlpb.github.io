@@ -131,3 +131,22 @@ Nota: usamos li::before porque ::marker no funciona en todos los navegadores
     min-height: 200px;
     margin-bottom: 15px;
 }
+/* Estilos de footer */
+#footer {
+    margin-top: 10px;
+    padding: 10px auto;
+    border-top: 1px solid black;
+    background-color: transparent;
+    text-align: center;
+}
+/* social media icons styling */
+.social-icons {
+    font-size: 36px;
+    cursor: pointer;
+}
+.fa-facebook:hover,.fa-instagram:hover,.fa-twitter:hover,.fa-linkedin:hover, .fa-twitch:hover {
+    color: #008000;
+}
+.fab {
+    color: #000000;
+}

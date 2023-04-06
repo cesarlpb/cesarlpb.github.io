@@ -290,7 +290,7 @@
   <!-- Formulario de contacto -->
   <!-- contact section-->
   <section id="contact">
-    <div class="container mt-3 contactContent">
+    <div class="container mt-3 pb-3 contactContent">
         <h1 class="text-center">Contacto</h1>
 
         <div class="row mt-4">
@@ -310,15 +310,26 @@
 
             <div class="col-lg-6 mt-3 mt-sm-3 mt-md-3 mb-lg-1">
                 <!-- form fields -->
-                <form>
-                    <input type="text" class="form-control form-control-lg" placeholder="Name">
-                    <input type="email" class="form-control mt-3" placeholder="Email">
-                    <input type="text" class="form-control mt-3" placeholder="Subject">
+                <form 
+                action="https://formspree.io/f/xbjeznlq"
+                method="POST"
+                >
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input id="nombre" type="text" class="form-control form-control-lg" name="nombre" placeholder="Nombre">
+                    
+                    <label for="email" class="form-label mt-3">Email:</label>
+                    <input id="email" type="email" class="form-control form-control-lg" name="email" placeholder="Email">
+                    
+                    <label for="asunto" class="form-label mt-3">Asunto:</label>
+                    <input id="asunto" type="text" class="form-control form-control-lg" name="asunto" placeholder="Asunto">
+                    
                     <div class="mb-3 mt-3">
-                        <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Project Details"></textarea>
+                        <label for="mensaje" class="form-label">Mensaje:</label>
+                        <textarea id="mensaje" class="form-control form-control-lg" rows="3" name="mensaje" placeholder="Mensaje"></textarea>
                     </div>
+                    <input type="submit" class="btn btn-success mt-3" value="Enviar">
                 </form>
-                <button type="button" class="btn btn-success mt-3">Contact Me</button>
+                
                 
             </div>
 
@@ -328,9 +339,11 @@
 
    <!-- footer section-->
    <footer id="footer">
-    <div class="container-fluid">
+    
+    <div class="container-fluid mt-3">
+        <p class="mt-2">Portafolio web - César Patiño</p>
         <!-- social media icons -->
-        <div class="social-icons mt-4 text-center mx-auto" style="font-size: 2rem; width: 30%;">
+        <div class="social-icons mt-2 text-center mx-auto" style="font-size: 2rem; width: 30%;">
             <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
             <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
