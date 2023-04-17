@@ -1,0 +1,64 @@
+body{
+    background-color: beige;
+    padding-bottom: 0;
+}
+/* Sección banner */
+#banner {
+    text-align: center;
+}
+#banner-img {
+    display: inline-block;
+    margin: 10px auto;
+}
+/* Sección tech */
+.card {
+    display: inline-block; 
+    margin:0 1px; 
+    text-align: center;
+    border: 1px solid black; 
+    width: 30%;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.card h3 {
+    text-align: center;
+}
+
+.card img {
+    display: inline-block;
+    margin: 10px auto;
+}
+/* Sección about */
+
+#about {
+    text-align: center;
+}
+#about h2, #about p {
+    text-align: left;
+}
+#about p {
+    display: inline-block;
+    width: 40%;
+    margin: 0px;
+    border: 1px solid black;
+}
+#about-img{
+    display: inline-block;
+    border: 2px solid black;
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+    margin: 0;
+    border-radius: 100%;
+}
+#about div {
+    border: 1px solid black;
+}
+/* Sección footer */
+footer {
+    background-color: lightgray;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
