@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MyLastTodoApp - I promise!</title>
+  <!-- Importar Bootstrap -->
+  <link rel="stylesheet" href="./bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <style>
+      h1, h2, p, a, label {
+          color: #fff;
+      }
+      .card {
+          border: none;
+          margin-bottom: 20px;
+          min-height: 250px;
+      }
+      .text-primary-emphasis{
+          color: #052c65;
+      }
+      .text-secondary-emphasis{
+          color: #2b2f32;
+      }
+      .text-success-emphasis{
+          color: #0a3622;
+      }
+      .text-danger-emphasis{
+          color: #58151c;
+      }
+      .text-warning-emphasis{
+          color: #664d03,
+      }
+      .text-info-emphasis{
+          color: #055160;
+      }
+      .text-light-emphasis{
+          color: #495057;
+      }
+      .text-dark{
+          color: rgba(33,37,41,1)!important;
+      }
+      .text-dark-emphasis{
+          color: #495057;
+      }
+      .text-body{
+          color: rgba(33,37,41,1)!important;
+      }
+      .text-body-emphasis{
+          color: #000;
+      }
+      .text-body-secondary{
+          color: rgba(33, 37, 41, 0.75);
+      }
+      .text-body-tertiary{
+          color: rgba(33, 37, 41, 0.5);
+      }
+      .text-black{
+          color: rgba(0,0,0,1)!important;
+      }
+      .text-white{
+          color:rgba(255, 255, 255, 1)!important;
+      }
+      .text-black-50{
+          color: rgba(0,0,0,.5)!important;
+      }
+      .text-white-50{
+          color: rgba(255,255,255,.5)!important;
+      }
+  </style>
+</head>
+<body class="bg bg-dark">
+  <div class="container col-8">
+    <h1 class="my-5">Cosas que debo hacer:</h1>
+
+    <!-- Formulario para crear un nuevo to-do -->
+    <div class="col-6 mx-auto" id="formulario">
+        <form>
+        <div class="mb-3">
+            <label for="titulo" class="form-label">Título</label>
+            <input type="text" class="form-control" id="titulo" required>
+        </div>
+        <div class="mb-3">
+            <label for="fecha" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="fecha" required>
+        </div>
+        <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <textarea class="form-control" id="descripcion" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="prioridad" class="form-label">Prioridad</label>
+            <select class="form-select" id="prioridad" required>
+            <option value="" selected>Seleccione una prioridad</option>
+            <option value="muy-alta">Fin del mundo</option>
+            <option value="alta">Alta</option>
+            <option value="normal">Normal</option>
+            <option value="baja">Baja</option>
+            <option value="meh">Meh</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <!-- Grid de cards con los to-dos -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="todos-grid">
+      <!-- Los to-dos se agregan dinámicamente aquí -->
+    </div>
+
+    <!-- Botón para borrar todos los to-dos completados -->
+    <button type="button" class="btn btn-danger my-4" id="borrar-completados">Borrar completados</button>
+  </div>
+
+  <!-- Importar jQuery y Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js"></script>
+
+  <script>
+    // Inicio el campo fecha con la fecha actual
+    function cargarFechaActual(){
+        var fecha = new Date();
+        var dia = fecha.getDate();
+        var mes = fecha.getMonth() + 1;
+        var año = fecha.getFullYear();
+        if (dia < 10) {
+        dia = '0' + dia;
+        }
+        if (mes < 10) {
+        mes = '0' + mes;
+        }
+        $('#fecha').val(año + '-' + mes + '-' + dia);
+    }
+
+    // v2
+    function cargarTodos() {
+      // Obtener los to-dos almacenados en localStorage
+      var todos = JSON.parse(localStorage.getItem('todos')) || [];
+      Object.freeze(todos);
+
+      // Generar el HTML de las cards con los to-dos
+      var html = '';
+      for (var i = 0; i < todos.length; i++) {
+          var todo = todos[i];
+
+          // Si el to-do no tiene prioridad, establecer la prioridad a "normal" por defecto
+          if (!todo.prioridad) {
+          todo.prioridad = 'normal';
+          }
+
+          // Asignar un color de fondo según la prioridad del to-do
+          var colorFondo;
+          switch (todo.prioridad) {
+          case 'muy-alta':
+              colorFondo = 'bg-danger';
+              break;
+          case 'alta':
+              colorFondo = 'bg-warning';
+              break;
+          case 'normal':
+              colorFondo = 'bg-info';
+              break;
+          case 'baja':
+              colorFondo = 'bg-secondary';
+              break;
+          case 'meh':
+              colorFondo = 'bg-muted';
+              break;
+          default:
+              colorFondo = '';
+              break;
+          }
+
+          // Generar el HTML de la card del to-do
+          html += '<div class="col">';
+          html += '  <div class="card p-3 ' + colorFondo;
+          if (todo.completed) {
+          html += ' text-muted" style="text-decoration: line-through;';
+          } else {
+          html += '"';
+          }
+          html += ' data-index="' + i + '">';
+          html += '    <div class="card-body">';
+          html += '      <h5 class="card-title text-primary-emphasis">' + todo.titulo + '</h5>';
+          html += '      <p class="card-text text-secondary-emphasis ">' + todo.descripcion + '</p>';
+          html += '      <p class="card-text"><small class="' + (todo.prioridad == "muy-alta" ? "text-white" : "text-dark") + '">' + todo.fecha + '</small></p>';
+          html += '      <button type="button" class="btn btn-secondary border-white completado">' + (todo.completed ? 'Desmarcar completado' : 'Marcar como completado') + '</button>';
+          html += '      <button type="button" class="btn btn-danger eliminar">Eliminar</button>';
+          html += '    </div>';
+          html += '  </div>';
+          html += '</div>';
+      }
+
+      // Insertar el HTML generado en el grid de to-dos
+      $('#todos-grid').html(html);
+
+      // Escuchar el evento submit del formulario para agregar un nuevo to-do
+      $('form').off('submit').submit(function(event) {
+          event.preventDefault();
+
+          // Obtener los valores del formulario
+          var titulo = $('#titulo').val();
+          var fecha = $('#fecha').val();
+          var descripcion = $('#descripcion').val();
+          var prioridad = $('#prioridad').val();
+
+          // Crear un nuevo to-do y guardarlo en localStorage
+          var todo = {
+              titulo: titulo,
+              fecha: fecha,
+              descripcion: descripcion,
+              prioridad: prioridad,
+              completed: false
+          };
+            var currentTodos = Object.assign([], todos);
+            console.log(JSON.stringify(currentTodos));
+            currentTodos.push(todo);
+            localStorage.setItem('todos', JSON.stringify(currentTodos));
+            console.log(localStorage.getItem('todos'));
+
+          // Cargar de nuevo los to-dos para actualizar la interfaz
+          cargarTodos();
+          cargarFechaActual();
+
+          // Limpiar los campos del formulario
+          $('#titulo').val('');
+          $('#fecha').val('');
+          $('#descripcion').val('');
+          $('#prioridad').val('normal');
+      });
+    
+      // Escuchar el evento click del botón "Completado"
+      $('.completado').click(function() {
+
+        // Obtener el índice del to-do correspondiente
+        var index = $(this).parents('.card').data('index');
+
+        // Marcar como completado o no completado el to-do correspondiente en localStorage
+        todos[index].completed = !todos[index].completed;
+        localStorage.setItem('todos', JSON.stringify(todos));
+
+        if(todos[index].completed) {
+        $('.card[data-index="' + index + '"]').addClass('text-muted').css({
+          'text-decoration': 'line-through',
+          'text-decoration-color': 'white'
+        });
+        $('.card[data-index="' + index + '"]').removeClass('bg-warning bg-info bg-secondary bg-muted').addClass('bg-secondary');
+        }
+        else {
+            $(this).parents('.card').removeClass('text-muted').css({
+            'text-decoration': 'none',
+            'text-decoration-color': 'unset'
+            });
+            $(this).parents('.card').removeClass('bg-danger bg-warning bg-info bg-secondary bg-muted bg-secondary');
+            var prioridad = todos[index].prioridad;
+            switch (prioridad) {
+            case 'muy alta':
+                $(this).parents('.card').addClass('bg-danger');
+                break;
+            case 'alta':
+                $(this).parents('.card').addClass('bg-warning');
+                break;
+            case 'normal':
+                $(this).parents('.card').addClass('bg-info');
+                break;
+            case 'baja':
+                $(this).parents('.card').addClass('bg-secondary');
+                break;
+            case 'meh':
+                $(this).parents('.card').addClass('bg-muted');
+                break;
+            default:
+                break;
+            }
+        }
+        });
+
+      // Escuchar el evento click del botón "Eliminar"
+      $('.eliminar').click(function() {
+          // Obtener el índice del to-do correspondiente
+          var index = $(this).parents('.card').index();
+
+          // Eliminar el to-do correspondiente de localStorage
+          currentTodos = JSON.parse(localStorage.getItem('todos'));
+          currentTodos.splice(index, 1);
+          localStorage.setItem('todos', JSON.stringify(currentTodos));
+
+          // Eliminar la card correspondiente de la interfaz
+          $(this).parents('.col').remove();
+      });
+
+      // Escuchar el evento click del botón "Borrar completados"
+      $('#borrar-completados').click(function() {
+
+      // Obtener los to-dos almacenados en localStorage
+      var todos = JSON.parse(localStorage.getItem('todos')) || [];
+
+      // Filtrar los to-dos completados y guardar los no completados en localStorage
+      todos = todos.filter(function(todo) {
+          return !todo.completed;
+      });
+      localStorage.setItem('todos', JSON.stringify(todos));
+
+      // Eliminar las cards correspondientes en la interfaz
+      $('.card.text-muted').remove();
+      });
+    
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Cargar los to-dos iniciales desde localStorage
+      cargarTodos();
+      cargarFechaActual();
+
+      // Verificar si los todos están completos y agregar la clase bg-secondary
+      var todos = JSON.parse(localStorage.getItem('todos')) || [];
+      for (var i = 0; i < todos.length; i++) {
+          var todo = todos[i];
+          if (todo.completed) {
+              $('.card').eq(i).addClass('bg-secondary').removeClass('bg-danger bg-warning bg-info bg-muted');
+          }
+      }
+    });
+  </script>
+  
+</body>
+</html>
