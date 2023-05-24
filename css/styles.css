@@ -197,3 +197,24 @@ Nota: usamos li::before porque ::marker no funciona en todos los navegadores
 #my-link {
     border: 3px solid #000;
 }
+
+/* <code> y <pre> */
+
+code {
+  background-color: #272822;
+  color: #f8f8f2!important;
+  border-radius: 0.3rem;
+  padding: 2px 5px 3px;
+  margin-right: 1px;
+  white-space: nowrap;
+}
+
+pre code {
+  white-space: inherit;
+}
+
+pre {
+  background-color: #272822;
+  padding: 5px;
+  border-radius: 0.3em;
+}

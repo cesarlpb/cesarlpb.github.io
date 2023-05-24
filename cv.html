@@ -7,6 +7,8 @@
     <title>César Patiño - Full-stack Typescript, NextJS, .NET, C# Senior Developer, Blockchain Consultor & Dev Instructor</title>
     <!-- Cambiar favicon ⬇️ -->
     <link rel="shortcut icon" href="images/c.png" type="image/x-icon">
+    <!-- Hoja de estilos personalizada -->
+    <link rel="stylesheet" href="./css/styles.css"> 
     <!-- Importamos hoja de estilos de Bootstrap CDN -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Hoja de Fontawesome v.6.4 -->
@@ -34,20 +36,28 @@
           <div class="p-3">
             <h2 class="d-inline-block fs-4 ps-1"><i class="fa-solid fa-user"></i> Perfil</h2>
             <div class="ps-3">
-              <p class="ps-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio sed enim perferendis? Veritatis laboriosam numquam velit totam saepe adipisci quaerat?</p>
-              <p class="ps-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio sed enim perferendis? Veritatis laboriosam numquam velit totam saepe adipisci quaerat?</p>
-              <p class="ps-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio sed enim perferendis? Veritatis laboriosam numquam velit totam saepe adipisci quaerat?</p>
+              <p class="ps-3">¡Hola!, soy César, <b>desarrollador full-stack</b> con <b>experiencia de +10 años</b> en programación. Soy <b>físico teórico</b> graduado en la UCM. Desde pequeño siempre me ha gustado la tecnología y la resolución de problemas, por ello encuentro la programación entretenida y apasionante al mismo tiempo.</p>
+              <p class="ps-3">Los frameworks que he utilizado con más frecuencia son: <code>.NET</code>, <code>React</code>, <code>NextJS</code>, <code>NodeJS</code> Wordpress y los lenguajes de programación que mas utilizo con: <code>Typescript</code>, <code>Javascript</code>, <code>C#</code> y <code>Python</code>.</p>
+              <p class="ps-3">Tengo experiencia en <b>Web 3</b> e integraciones de <b>API</b>. Además, he entrenado modelos de IA e implementado modelos existentes como: <b>OpenAI</b>, <b>DALL-E 2</b>, <b>Stable Diffussion</b>, etc. en proyectos para extender o crear nuevas funcionalidades.</p>
               <h3 class="fs-6 ps-3">Proyectos personales destacados:</h3>
               <ul class="list-unstyled ps-3">
-                <li><a class="text-primary fw-bold text-decoration-none" href="#">Meme generator</a> - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, unde?</li>
-                <li><a class="text-primary fw-bold text-decoration-none" href="#">Pepe profile page</a> - Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, eius?</li>
-                <li><a class="text-primary fw-bold text-decoration-none" href="#">Memes con IA</a> - Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, quia.</li>
+                <li><a class="text-dark fw-bold" href="https://punkznftgenerator.com" target="_blank">Punkz NFT Generator</a> - Un generador de NFTs en las redes de Mumbai y Polygon.</li>
+                <li><a class="text-dark fw-bold" href="https://bluegoatlabs.com/" target="_blank">Blue Goat Labs</a> - Página web de mi empresa.</li>
               </ul>
             </div>
           </div>
           <!-- Sección Experiencia -->
           <div class="p-3">
             <h2 class="d-inline-block fs-4 ps-1"><i class="fa-solid fa-suitcase"></i> Experiencia</h2>
+            
+            <div id="spinner">
+              <div class="d-flex justify-content-center py-5">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Cargando experiencia...</span>
+                </div>
+                <p class="ms-2">Cargando experiencia...</p>
+              </div>
+            </div>
             <!-- Experiencia #1 -->
             <div class="ps-3">
               <h3 class="ps-3 fs-5 mb-0">Full-stack developer en Frog Co., Madrid</h3>
@@ -155,6 +165,6 @@
           </div>
         </div>
       </div>
-
+    <script src="./js/exp.js"></script>
   </body>
 </html>
