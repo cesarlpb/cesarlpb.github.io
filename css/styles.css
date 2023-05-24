@@ -76,7 +76,7 @@
     width: 50%;
     margin: 10px auto;
 }
-/* Personzalizamos las viñetas 
+/* Personalizamos las viñetas 
 Fuente: https://web.dev/css-marker-pseudo-element/
 Nota: usamos li::before porque ::marker no funciona en todos los navegadores
 */
@@ -112,7 +112,7 @@ Nota: usamos li::before porque ::marker no funciona en todos los navegadores
 /* Quitamos emojis por iconos */
 /* .about-ul li::before {
     content: "✅";
-    background: lightgray;
+    background: white;
     border-radius: 1ch;
     padding-inline: 1ch;
     margin-inline-end: 1ch;
