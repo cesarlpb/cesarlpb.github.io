@@ -16,7 +16,7 @@ let exp = document.getElementById("experiencia"); const exps = experiencia.es;
 for(const e of exps.reverse()){
   exp.innerHTML += `<div class="ps-3">
   <div class="row align-items-center">
-    <h3 class="ps-3 fs-5 mb-0 col-6">${e.cargo}</h3>
+    <h3 class="ps-3 mb-0 col-6 fw-bold" style="font-size: 1rem">${e.cargo}</h3>
     <p class="ps-3 fw-light text-dark mb-0 col-2" style="font-size: 0.8rem;">${e.empresa}</p>
     <p class="ps-1 fw-light text-muted mb-0 col-4" style="font-size: 0.8rem;">${e.periodo}</p>
   </div>
@@ -38,7 +38,7 @@ let proj = document.getElementById("proyectos"); const projects = proyectos.es;
 for(const p of projects.reverse()){
   proj.innerHTML += `<div class="ps-3">
   <div class="row align-items-center">
-    <h3 class="ps-3 fs-6 mb-0 col-8">${p.titulo}</h3>
+    <h3 class="ps-3 mb-0 col-8" style="font-size: 1rem">${p.titulo}</h3>
     <p class="ps-3 fw-light text-dark mb-0 col-2" style="font-size: 0.8rem;">${p.tipo}</p>
     <a class="text-decoration-none text-dark col-2" style="font-size: 0.8rem;" target="_blank" href=${p.url}>Ver proyecto</a>
   </div>
@@ -50,11 +50,11 @@ for(const p of projects.reverse()){
 }
 // Sidebar
 let detallesDiv = document.getElementById("detalles"); const details = detalles.es;
-detallesDiv.innerHTML += `<h2 class="fs-6 mb-1 mt-2">Detalles</h2><p class="my-0"><i class="fa-solid fa-location-pin"></i> &nbsp;Madrid</p>
-<p class="my-0"><i class="fa-solid fa-globe"></i> España</p>
-<a class="d-block text-decoration-none text-dark" href="tel:+34123456789"><i class="fa-solid fa-phone"></i> +34 123 456 789</a>
-<a class="d-block text-decoration-none text-dark" href="mailto:pepe@larana.frog"><i class="fa-solid fa-envelope"></i> pepe@larana.frog</a>
+detallesDiv.innerHTML += `<p class="my-0"><i class="fa-solid fa-location-pin"></i> &nbsp;${details.ciudad}</p>
+<p class="my-0"><i class="fa-solid fa-globe"></i> ${details.pais}</p>
+<a class="d-block text-decoration-none text-dark fw-bold" href="${details.telegramUrl}" target="_blank"><i class="fa-brands fa-telegram"></i> ${details.telegramHandle}</a>
+<a class="d-inline-block text-decoration-none fw-bold text-dark" href="${details.form}" target="_blank"><i class="fa-solid fa-file"></i> &nbsp;Contacto</a>
 
-<h2 class="fs-6 mb-1 mt-3">Redes Sociales</h2>
-<a class="d-block text-decoration-none text-dark" href="https://github.com/pepe-croak" target="_blank"><i class="fa-brands fa-github"></i> @pepe-croak</a>
-<a class="d-block text-decoration-none text-dark" href="https://www.linkedin.com/in/pepe-croak.inc" target="_blank"><i class="fa-brands fa-linkedin"></i> @pepe-croak.inc</a>`
+<h2 class="fs-5 mb-1 mt-3">Redes Sociales</h2>
+<a class="d-block text-decoration-none text-dark fw-bold" href="${details.githubUrl}" target="_blank"><i class="fa-brands fa-github"></i> ${details.githubHandle}</a>
+<a class="d-block text-decoration-none text-dark fw-bold" href="${details.linkedinUrl}" target="_blank"><i class="fa-brands fa-linkedin"></i> ${details.linkedinHandle}</a>`

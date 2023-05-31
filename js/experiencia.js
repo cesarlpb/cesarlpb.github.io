@@ -27,13 +27,9 @@ export const experiencia = {
       periodo: "ene 2022 - may 2023",
       descripcion: `Algunas de mis tareas en este puesto: 
       <ul>
-      <li>Liderar la estrategia blockchain de la empresa para garantizar su éxito a largo plazo.</li>
-      <li>Evaluar y seleccionar tecnologías blockchain adecuadas para la empresa y sus clientes con el fin de mejorar la eficiencia y la seguridad de los procesos empresariales.</li>
-      <li>Desarrollar e implantar soluciones blockchain que satisfagan los objetivos y necesidades de la empresa y sus clientes.</li>
-      <li>Trabajar con un equipo multidisciplinar para garantizar la aplicación satisfactoria de las soluciones y mejorar la eficacia de los procesos empresariales.</li>
-      <li>Evaluar las tendencias del mercado y aplicarlas a la estrategia de la empresa para mantenerse a la vanguardia en el uso de las tecnologías blockchain.</li>
-      <li>Garantizar la seguridad y eficiencia de los procesos empresariales mediante el uso de blockchain y mantener la integridad de los datos.</li>
-      <li>Mantenerme al día de los avances y desarrollos en el campo de blockchain para garantizar una toma de decisiones informada y el éxito a largo plazo de la empresa.</li>
+      <li>Liderar la estrategia blockchain</li>
+      <li>Evaluar y seleccionar tecnologías blockchain adecuadas</li>
+      <li>Desarrollar e implantar soluciones blockchain</li>
       </ul>`,
       tags: ["Blockchain", "Ethereum", "Smart contracts", "React.js", "Django", "Django REST framework", "Next.js"]
     },
@@ -45,10 +41,7 @@ export const experiencia = {
       <ul>
       <li>Web Apps, Native Apps, dApps</li>
       <li>Blockchain, Web 3, NFTs</li>
-      <li>Training, Coaching, Consulting</li>
-      <li>Sales</li>
-      <li>Business development</li>
-      <li>Fundraising</li>`,
+      <li>Training, Coaching, Consulting</li>`,
       tags: ["API Development", "TypeScript", "Desarrollo web back end", "Desarrollo front end", "Programación", "Desarrollo front end", "Desarrollo de back end", "JavaScript", "SQL", "ASP.NET MVC", "Trabajo en equipo", "Desarrollo de software", "HTML", "CSS"]
     },
     {
