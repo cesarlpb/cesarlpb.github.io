@@ -4,14 +4,14 @@ export const proyectos = {
       tipo: "enseñanza",
       titulo: "Calculadora de operaciones básicas", 
       descripcion: "Calculadora simple con HTMl, CSS / Bootrstrap y JS",
-      url: "proyectos/calculadora/index.html",
+      url: "../calculadora/calc.html",
       tags: ["HTML", "CSS", "JS"]
     },
     {
       tipo: "enseñanza",
       titulo: "Formulario paginado", 
       descripcion: "Formulario paginado con HTMl, CSS / Bootstrap y JS",
-      url: "",
+      url: "../formulario/form.html",
       tags: ["HTML", "CSS", "JS"]
     },
     {
