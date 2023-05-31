@@ -8,7 +8,7 @@ let el = document.getElementById("idiomas"); const langs = idiomas.es;
 for(const d of langs){
   el.innerHTML += `<p class="mb-1">${d.idioma}</p>
 <div class="progress" style="height: 0.65rem;">
-  <div class="progress-bar" role="progressbar" style="width: ${d.nivel}%" aria-valuenow="${d.nivel}" aria-valuemin="0" aria-valuemax="100"></div>
+  <div class="progress-bar bg bg-dark" role="progressbar" style="width: ${d.nivel}%" aria-valuenow="${d.nivel}" aria-valuemin="0" aria-valuemax="100"></div>
 </div>`
 }
 // Experiencia
@@ -36,16 +36,16 @@ window.onload = () => {
 // Proyectos
 let proj = document.getElementById("proyectos"); const projects = proyectos.es;
 for(const p of projects.reverse()){
-  proj.innerHTML += `<div class="ps-3">
-  <div class="row align-items-center">
-    <h3 class="ps-3 mb-0 col-8" style="font-size: 1rem">${p.titulo}</h3>
-    <p class="ps-3 fw-light text-dark mb-0 col-2" style="font-size: 0.8rem;">${p.tipo}</p>
-    <a class="text-decoration-none text-dark col-2" style="font-size: 0.8rem;" target="_blank" href=${p.url}>Ver proyecto</a>
+  proj.innerHTML += `<div class="ps-0 mt-2">
+  <div class="row align-items-between">
+    <h3 class="ps-2 mb-0 col-8 fw-bold" style="font-size: 1rem">${p.titulo}</h3>
+    <p class="ps-0 fw-light text-dark mb-0 col-4" style="font-size: 0.8rem;">${p.tipo}</p>
   </div>
-  <p class="ps-1 mb-0">${p.descripcion}</p>
-  <ul class="ps-1" style="list-style: none;">
+  <p class="ps-0 mb-0">${p.descripcion}</p>
+  <ul class="ps-0" style="list-style: none;">
     ${p.tags.map(t => `<li class="badge bg-dark text-light me-1">${t}</li>`).join('')}
   </ul>
+  <a class="see-project-btn d-inline-block text-decoration-none text-dark col py-1 mx-auto btn btn-outline-dark" style="font-size: 1rem;" target="_blank" href=${p.url}>Ver proyecto</a>
   `
 }
 // Sidebar
@@ -55,6 +55,6 @@ detallesDiv.innerHTML += `<p class="my-0"><i class="fa-solid fa-location-pin"></
 <a class="d-block text-decoration-none text-dark fw-bold" href="${details.telegramUrl}" target="_blank"><i class="fa-brands fa-telegram"></i> ${details.telegramHandle}</a>
 <a class="d-inline-block text-decoration-none fw-bold text-dark" href="${details.form}" target="_blank"><i class="fa-solid fa-file"></i> &nbsp;Contacto</a>
 
-<h2 class="fs-5 mb-1 mt-3">Redes Sociales</h2>
+<h2 class="fs-5 mb-1 mt-3"><i class="fa-solid fa-thumbs-up"></i> Redes Sociales</h2>
 <a class="d-block text-decoration-none text-dark fw-bold" href="${details.githubUrl}" target="_blank"><i class="fa-brands fa-github"></i> ${details.githubHandle}</a>
 <a class="d-block text-decoration-none text-dark fw-bold" href="${details.linkedinUrl}" target="_blank"><i class="fa-brands fa-linkedin"></i> ${details.linkedinHandle}</a>`

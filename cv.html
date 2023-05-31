@@ -16,19 +16,16 @@
     <!-- Hoja de estilos para impresión -->
     <link rel="stylesheet" href="css/print.css">
   </head>
-  <body class="p-3">
+  <body class="px-1 py-1">
     <!-- Container principal -->
     <div class="container">
       <!-- Nombre -->
       <div class="row justify-content-around py-0 ps-5">
-        <div class="col-10 col-sm">
+        <div class="col-9 col-sm">
         <p class="h1 mb-0">César Patiño</p>
         <small class="text-muted fw-normal">Full-stack Senior Developer · Blockchain Consultor · Dev Instructor</small>
         <small>|</small>
         <small class="text-muted fw-light">Typescript, React, NextJS, .NET, C#</small>
-        </div>
-        <div class="col-3 px-3 col-sm text-end">
-          <img src="images/profile.jpg" width="100" height="100" class="rounded" alt="Cesar P. profile picture">
         </div>
       </div>
       <!-- Container para dos columnas -->
@@ -80,27 +77,34 @@
                 <p class="ms-2">Cargando experiencia...</p>
               </div>
             </div>
-            <div id="experiencia" style="display: none;"></div>
+            <div id="experiencia" style="display:none;"></div>
             </div>
-          <!--  Sección Proyectos -->
-          <h2 class="d-inline-block fs-4 ps-1"><i class="fa-solid fa-list-check"></i> Proyectos</h2>
-          <div id="proyectos"></div>
-          <!-- Sección Educación -->
-          <div class="p-3">
-            <h2 class="d-inline-block fs-4 ps-1"><i class="fa-solid fa-graduation-cap"></i> Educación</h2>
-            <!-- Educación #1 -->
-            <h3 class="ps-3 fs-6 mb-0">Grado en Física teórica, Universidad Complutense de Madrid</h3>
-            <!-- Espacio en blanco "ninja" -->
-            <div>&nbsp;</div>
-          </div>
         </div>
         <!-- Sidebar derecho -->
         <div class="col-3 py-2">
-          <h2 class="fs-5 mb-1 mt-2">Detalles</h2>
+          <div class="col text-center">
+            <img src="images/profile.jpg" width="150" height="150" class="rounded" alt="Cesar P. profile picture">
+          </div>
+          <h2 class="fs-4 mb-1 mt-2">Detalles</h2>
           <div id="detalles"></div>
-          <h2 class="fs-5 mb-1 mt-3 pt-2 border border-top border-dark border-top-2 border-bottom-0 border-start-0 border-end-0">
-            Idiomas</h2>
-          <div id="idiomas"></div>
+          <div class="my-3">
+            <h2
+              class="fs-5 mb-1 mt-3 pt-2 border border-top border-dark border-top-2 border-bottom-0 border-start-0 border-end-0">
+              <i class="fa-solid fa-font"></i> Idiomas
+            </h2>
+            <div id="idiomas"></div>
+          </div>
+          <!-- Sección Educación -->
+            <div class="pt-3 mt-3 border border-top border-dark border-top-2 border-bottom-0 border-start-0 border-end-0">
+              <h3 class="d-inline-block fs-5 ps-1"><i class="fa-solid fa-graduation-cap"></i> Educación</h3>
+              <!-- Educación #1 -->
+              <h4 class="ps-0 fs-6 mb-0">Grado en Física teórica, Universidad Complutense de Madrid</h4>
+              <!-- Espacio en blanco "ninja" -->
+              <div>&nbsp;</div>
+              </div>
+            <!--  Sección Proyectos -->
+            <h2 class="d-inline-block fs-4 ps-1"><i class="fa-solid fa-list-check"></i> Proyectos</h2>
+            <div id="proyectos"></div>
         </div>
         
       </div>
