@@ -149,7 +149,7 @@ Nota: usamos li::before porque ::marker no funciona en todos los navegadores
 #footer {
     margin-top: 10px;
     padding: 10px auto;
-    border-top: 1px solid black;
+    /* border-top: 1px solid black; */
     background-color: transparent;
     text-align: center;
 }
@@ -159,7 +159,7 @@ Nota: usamos li::before porque ::marker no funciona en todos los navegadores
     cursor: pointer;
 }
 .fa-facebook:hover,.fa-instagram:hover,.fa-twitter:hover,.fa-linkedin:hover, .fa-twitch:hover {
-    color: #008000;
+    color: lightgray;
 }
 .fab {
     color: #000000;
