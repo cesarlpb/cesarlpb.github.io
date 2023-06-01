@@ -1,16 +1,37 @@
+import { bio } from './bio.js'
 import { idiomas } from './idiomas.js'
 import { experiencia } from './experiencia.js'
 import { proyectos } from './proyectos.js'
 import { detalles } from './detalles.js'
 
+// Miro si hay idioma guardado en Local Storage
+const urlParams = new URLSearchParams(window.location.search);
+const LANG = urlParams.get("lang") == null ? localStorage.getItem("lang") ?? "en" : urlParams.get("lang");
+console.log(LANG)
+// Cambio el idioma en Local Storage:
+localStorage.setItem("lang", LANG);
+
 // Idiomas
-let el = document.getElementById("idiomas"); const langs = idiomas.es;
+const langs = idiomas[LANG];
+
+let h2 = document.getElementById("idiomas-h2");
+h2.innerHTML = LANG == "es"
+  ? `<i class="fa-solid fa-font"></i> Idiomas`
+  : `<i class="fa-solid fa-font"></i> Languages`;
+let el = document.getElementById("idiomas");
+
+el.innerHTML += `<div class="row">`
 for(const d of langs){
-  el.innerHTML += `<p class="mb-1">${d.idioma}</p>
-<div class="progress" style="height: 0.65rem;">
-  <div class="progress-bar bg bg-dark" role="progressbar" style="width: ${d.nivel}%" aria-valuenow="${d.nivel}" aria-valuemin="0" aria-valuemax="100"></div>
-</div>`
+  el.innerHTML += `<div class="lang-row border border-muted border-top-0 border-start-0 border-end-0"><p class="d-inline-block mb-1 col-4">${d.idioma}</p><p class="d-inline-block mb-1 fw-light col-8">${d.nivel}</p></div>`
 }
+el.innerHTML += `</div>`
+// Barras de progreso (para usar descomentar):
+/*
+<div class="progress" style="height: 0.65rem;">
+  <div class="progress-bar bg bg-dark" role="progressbar" style="width: ${d.progreso}%" aria-valuenow="${d.progreso}" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+*/
+//
 // Experiencia
 let exp = document.getElementById("experiencia"); const exps = experiencia.es;
 for(const e of exps.reverse()){

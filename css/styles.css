@@ -222,3 +222,7 @@ pre {
 .see-project-btn:hover {
     color: white !important;
 }
+/* Filas de idiomas */
+.lang-row:last-of-type {
+    border: 0 !important;
+}

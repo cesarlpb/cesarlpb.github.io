@@ -2,37 +2,45 @@ export const idiomas = {
   es:[ 
     {
       idioma: "Español",
-      nivel: 100
+      nivel: "Nativo",
+      progreso: 100
     },
     {
       idioma: "Inglés",
-      nivel: 100
+      nivel: "C1 - Avanzado",
+      progreso: 90
     },
     {
       idioma: "Francés",
-      nivel: 50
+      nivel: "B1 - Intermedio / Fluido",
+      progreso: 60
     },
     {
       idioma: "Alemán",
-      nivel: 25
+      nivel: "A1 - Básico / Lectura",
+      progreso: 25
     }
   ],
   en: [ 
     {
       idioma: "Spanish",
-      nivel: 100
+      nivel: "Native",
+      progreso: 100
     },
     {
       idioma: "English",
-      nivel: 100
+      nivel: "C1 - Advanced",
+      progreso: 90
     },
     {
       idioma: "French",
-      nivel: 50
+      nivel: "B1 - Intermediate / Fluent",
+      progreso: 60
     },
     {
-      idioma: "German", 
-      nivel: 25
+      idioma: "German",
+      nivel: "A1 - Basic / Reading",
+      progreso: 25
     }
   ]
 }
