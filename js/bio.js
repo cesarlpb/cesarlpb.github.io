@@ -29,7 +29,7 @@ export const bio = {
   </ul>
   `,
   en: `
-  <p class="ps-3">Hello!, this is César, <b>full-stack developer</b> with <b>+10 year experience</b> in coding.
+  <p class="ps-3">Hello! this is César, <b>full-stack developer</b> with <b>+10 year experience</b> in coding.
   I am a graduate <b>theorethical physicist</b> by the Complutense University of Madrid. I've always liked tech and solving problems, 
   that's why I find coding fun and rewarding at the same time.</p>
   <p class="ps-3">Some frameworks I have used most often are:

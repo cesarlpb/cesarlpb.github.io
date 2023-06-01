@@ -60,6 +60,63 @@ export const experiencia = {
     },
   ],
   en:[
-
+    {
+      empresa: "Freelance",
+      cargo: ".NET Developer",
+      periodo: "2019 - jan 2022",
+      descripcion: ".NET, C#, Angular, React Web development",
+      tags: ["C#", ".NET", "Angular", "React"]
+    },
+    {
+      empresa: "Freelance at Upwork",
+      cargo: "Web App Developer & Website Designer",
+      periodo: "jan 2014 - feb 2022",
+      descripcion: "Web development and web app design for demanding clients looking for high quality products.",
+      tags: ["PHP", "C#", ".NET", "Python"]
+    },
+    {
+      empresa: "Evosoft",
+      cargo: "Senior Software Engineer",
+      periodo: "feb 2022 - aug 2022",
+      descripcion: ".NET backend development for final client Codere",
+      tags: [".NET", "C#", "Full Stack Development", "API", "Sport bets", "Sportsbook"]
+    },
+    {
+      empresa: "Minery Report S.L.",
+      cargo: "Blockchain Director",
+      periodo: "jan 2022 - may 2023",
+      descripcion: `<ul class="mb-0">
+      <li>Blockchain strategy leadership</li>
+      <li>Assesment and selection of suitable blockchain technologies</li>
+      <li>Develop and delployment of turnkey blockchain solutions</li>
+      </ul>`,
+      tags: ["Blockchain", "Ethereum", "Smart contracts", "React.js", "Django", "Django REST framework", "Next.js"]
+    },
+    {
+      empresa: "Blue Goat Labs",
+      cargo: "Co-Founder & CTO",
+      periodo: "jul 2022 - present",
+      descripcion: `<ul class="mb-0">
+      <li>We develop software solutions for clients from all industries</li>
+      <li>Web Apps, Native Apps, dApps</li>
+      <li>Blockchain, Web 3, NFTs</li>
+      <li>Training, Coaching, Consulting</li>
+      </ul>`,
+      tags: ["API Development", "TypeScript", "Back-end web development", "Front-end development", "Programming", "JavaScript", "SQL", "ASP.NET MVC", "Teamwork", "Software development", "HTML", "CSS"]
+    },
+    {
+      empresa: "Inkor Formaciones",
+      cargo: "Programming Instructor for Level 3 Professional Certifications (Spain)",
+      periodo: "oct 2022 - apr 2023",
+      descripcion: "Object-oriented Programming (IFCD0112) and Computer Systems Programming (IFCT0609)",
+      tags: [".NET", "C#", "Full-stack Development", "API", "MySQL", "Python", "Javascript", "HTML", "CSS", "Bootstrap", "Git"]
+    },
+    {
+      empresa: "CDM Formaciones",
+      cargo: "Programming Instructor for Level 3 Professional Certifications (Spain)",
+      periodo: "abr 2022 - present",
+      descripcion: "Computer Systems Programming (IFCT0609)",
+      tags: ["Full-stack Development", "API", "MySQL", "Python", "Javascript", "HTML", "CSS", "Bootstrap", "TailwindCSS", "Typescript", "T3", "NextJS", "Vercel", "Prisma", "Axiom", "Git"]
+    },
   ]
 }

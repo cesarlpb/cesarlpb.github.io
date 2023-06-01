@@ -11,6 +11,17 @@ console.log(LANG)
 // Cambio el idioma en Local Storage:
 localStorage.setItem("lang", LANG);
 
+// Bio
+const bioHtml = bio[LANG];
+// h2
+let bioH2 = document.getElementById("bio-h2");
+bioH2.innerHTML = LANG == "es"
+  ? `<i class="fa-solid fa-user"></i> Perfil`
+  : `<i class="fa-solid fa-user"></i> Profile`;
+// Texto
+let bioEl = document.getElementById("bio");
+bioEl.innerHTML = bioHtml;
+
 // Idiomas
 const langs = idiomas[LANG];
 
@@ -33,7 +44,14 @@ el.innerHTML += `</div>`
 */
 //
 // Experiencia
-let exp = document.getElementById("experiencia"); const exps = experiencia.es;
+// h2
+let expH2 = document.getElementById("experiencia-h2");
+expH2.innerHTML = LANG == "es"
+  ? `<i class="fa-solid fa-suitcase"></i> Experiencia`
+  : `<i class="fa-solid fa-suitcase"></i> Experience`;
+// Texto
+let exp = document.getElementById("experiencia");
+const exps = experiencia[LANG];
 for(const e of exps.reverse()){
   exp.innerHTML += `<div class="ps-4">
   <div class="row align-items-center ps-1">
@@ -57,7 +75,12 @@ document.getElementById("proyectos").style.display = "block";
 //   }, 1000)
 // }
 // Proyectos
-let proj = document.getElementById("proyectos"); const projects = proyectos.es;
+// h2
+let projH2 = document.getElementById("proyectos-h2");
+projH2.innerHTML = LANG == "es" ? "Proyectos" : "Projects";
+// contenido
+let proj = document.getElementById("proyectos");
+const projects = proyectos[LANG];
 for(const p of projects.reverse()){
   proj.innerHTML += `<div class="ps-0 mt-2">
   <div class="row align-items-between">
@@ -72,13 +95,37 @@ for(const p of projects.reverse()){
   `
 }
 // Sidebar
+// h2
+let sidebarH2 = document.getElementById("detalles-h2");
+sidebarH2.innerHTML = LANG == "es" ? "Detalles" : "Details";
+// contenido
 let detallesDiv = document.getElementById("detalles"); const details = detalles.es;
 detallesDiv.innerHTML += `<p class="my-0"><i class="fa-solid fa-location-pin"></i> &nbsp;${details.ciudad}</p>
 <p class="my-0"><i class="fa-solid fa-globe"></i> ${details.pais}</p>
 <a class="d-block text-decoration-none text-dark fw-bold" href="${details.telegramUrl}" target="_blank"><i class="fa-brands fa-telegram"></i> ${details.telegramHandle}</a>
-<a class="d-inline-block text-decoration-none fw-bold text-dark" href="${details.form}" target="_blank"><i class="fa-solid fa-file"></i> &nbsp;Contacto</a>
+<a class="d-inline-block text-decoration-none fw-bold text-dark" href="${details.form}" target="_blank"><i class="fa-solid fa-file"></i> &nbsp;${LANG == "es" ? "Contacto" : "Contact" }</a>
 
-<h2 class="fs-5 mb-1 mt-3"><i class="fa-solid fa-link"></i> Enlaces</h2>
+<h2 class="fs-5 mb-1 mt-3"><i class="fa-solid fa-link"></i> ${LANG == "es" ? "Enlaces" : "Links" }</h2>
 <a class="d-block text-decoration-none text-dark fw-bold" href="${details.portfolioUrl}" target="_blank"><i class="fa-solid fa-file"></i> &nbsp;${details.portfolioText}</a>
 <a class="d-block text-decoration-none text-dark fw-bold" href="${details.githubUrl}" target="_blank"><i class="fa-brands fa-github"></i> ${details.githubHandle}</a>
 <a class="d-block text-decoration-none text-dark fw-bold" href="${details.linkedinUrl}" target="_blank"><i class="fa-brands fa-linkedin"></i> ${details.linkedinHandle}</a>`
+
+// Educación
+// h3
+let eduH3 = document.getElementById("educacion-h3");
+eduH3.innerHTML = LANG == "es"
+  ? `<i class="fa-solid fa-graduation-cap"></i> Educación`
+  : `<i class="fa-solid fa-graduation-cap"></i> Education`;
+// contenido
+let edu = document.getElementById("educacion");
+edu.innerHTML = LANG == "es"
+  ? `
+<h4 class="ps-0 fs-6 mb-0">Grado en Física teórica, Universidad Complutense de Madrid</h4>
+<!-- Espacio en blanco "ninja" -->
+<div>&nbsp;</div>
+`
+  : `
+<h4 class="ps-0 fs-6 mb-0">Bachelor's degree in Theoretical Physics, Complutense University of Madrid.</h4>
+<!-- Espacio en blanco "ninja" -->
+<div>&nbsp;</div>
+` 
