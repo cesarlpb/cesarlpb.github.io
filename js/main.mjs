@@ -26,13 +26,15 @@ for(const e of exps.reverse()){
   </ul>
   `
 }
-window.onload = () => {    
-  setTimeout(() => {
-    // document.getElementById("spinner").style.display = "none";
-    document.getElementById("experiencia").style.display = "block";
-    document.getElementById("proyectos").style.display = "block";
-  }, 1000)
-}
+document.getElementById("experiencia").style.display = "block";
+document.getElementById("proyectos").style.display = "block";
+// window.onload = () => {    
+//   setTimeout(() => {
+//     // document.getElementById("spinner").style.display = "none";
+//     document.getElementById("experiencia").style.display = "block";
+//     document.getElementById("proyectos").style.display = "block";
+//   }, 1000)
+// }
 // Proyectos
 let proj = document.getElementById("proyectos"); const projects = proyectos.es;
 for(const p of projects.reverse()){
