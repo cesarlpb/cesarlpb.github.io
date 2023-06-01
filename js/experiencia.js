@@ -25,8 +25,7 @@ export const experiencia = {
       empresa: "Minery Report S.L.",
       cargo: "Blockchain Director",
       periodo: "ene 2022 - may 2023",
-      descripcion: `Algunas de mis tareas en este puesto: 
-      <ul>
+      descripcion: `<ul class="mb-0">
       <li>Liderar la estrategia blockchain</li>
       <li>Evaluar y seleccionar tecnologías blockchain adecuadas</li>
       <li>Desarrollar e implantar soluciones blockchain</li>
@@ -37,11 +36,12 @@ export const experiencia = {
       empresa: "Blue Goat Labs",
       cargo: "Co-Founder & CTO",
       periodo: "jul 2022 - actualidad",
-      descripcion: `Desarrollamos software a medida para clientes de todas las industrias.
-      <ul>
+      descripcion: `<ul class="mb-0">
+      <li>Desarrollamos software a medida para clientes de todas las industrias.</li>
       <li>Web Apps, Native Apps, dApps</li>
       <li>Blockchain, Web 3, NFTs</li>
-      <li>Training, Coaching, Consulting</li>`,
+      <li>Training, Coaching, Consulting</li>
+      </ul>`,
       tags: ["API Development", "TypeScript", "Desarrollo web back end", "Desarrollo front end", "Programación", "Desarrollo front end", "Desarrollo de back end", "JavaScript", "SQL", "ASP.NET MVC", "Trabajo en equipo", "Desarrollo de software", "HTML", "CSS"]
     },
     {

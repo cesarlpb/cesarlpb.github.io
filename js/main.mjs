@@ -14,14 +14,14 @@ for(const d of langs){
 // Experiencia
 let exp = document.getElementById("experiencia"); const exps = experiencia.es;
 for(const e of exps.reverse()){
-  exp.innerHTML += `<div class="ps-3">
-  <div class="row align-items-center">
+  exp.innerHTML += `<div class="ps-4">
+  <div class="row align-items-center ps-1">
     <h3 class="ps-3 mb-0 col-6 fw-bold" style="font-size: 1rem">${e.cargo}</h3>
-    <p class="ps-3 fw-light text-dark mb-0 col-2" style="font-size: 0.8rem;">${e.empresa}</p>
-    <p class="ps-1 fw-light text-muted mb-0 col-4" style="font-size: 0.8rem;">${e.periodo}</p>
+    <p class="ps-3 fw-light text-dark mb-0 col-3" style="font-size: 0.8rem;">${e.empresa}</p>
+    <p class="ps-1 fw-light text-muted mb-0 col-3" style="font-size: 0.8rem;">${e.periodo}</p>
   </div>
-  <p class="ps-1 mb-0">${e.descripcion}</p>
-  <ul class="ps-1" style="list-style: none;">
+  <p class="ps-2 mb-0">${e.descripcion}</p>
+  <ul class="ps-1 mt-0 mb-3" style="list-style: none;">
     ${e.tags.map(t => `<li class="badge bg-dark text-light me-1">${t}</li>`).join('')}
   </ul>
   `
@@ -55,6 +55,7 @@ detallesDiv.innerHTML += `<p class="my-0"><i class="fa-solid fa-location-pin"></
 <a class="d-block text-decoration-none text-dark fw-bold" href="${details.telegramUrl}" target="_blank"><i class="fa-brands fa-telegram"></i> ${details.telegramHandle}</a>
 <a class="d-inline-block text-decoration-none fw-bold text-dark" href="${details.form}" target="_blank"><i class="fa-solid fa-file"></i> &nbsp;Contacto</a>
 
-<h2 class="fs-5 mb-1 mt-3"><i class="fa-solid fa-thumbs-up"></i> Redes Sociales</h2>
+<h2 class="fs-5 mb-1 mt-3"><i class="fa-solid fa-link"></i> Enlaces</h2>
+<a class="d-block text-decoration-none text-dark fw-bold" href="${details.portfolioUrl}" target="_blank"><i class="fa-solid fa-file"></i> &nbsp;${details.portfolioText}</a>
 <a class="d-block text-decoration-none text-dark fw-bold" href="${details.githubUrl}" target="_blank"><i class="fa-brands fa-github"></i> ${details.githubHandle}</a>
 <a class="d-block text-decoration-none text-dark fw-bold" href="${details.linkedinUrl}" target="_blank"><i class="fa-brands fa-linkedin"></i> ${details.linkedinHandle}</a>`

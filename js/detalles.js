@@ -10,5 +10,7 @@ export const detalles = {
       githubHandle: "@cesarlpb",
       linkedinHandle: "@cesarlpb89",
       linkedinUrl: "https://www.linkedin.com/in/cesarlpb89/",
+      portfolioText: "Portafolio",
+      portfolioUrl: "https://cesarlpb.github.io"
     }
 }
