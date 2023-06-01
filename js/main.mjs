@@ -28,7 +28,7 @@ for(const e of exps.reverse()){
 }
 window.onload = () => {    
   setTimeout(() => {
-    document.getElementById("spinner").style.display = "none";
+    // document.getElementById("spinner").style.display = "none";
     document.getElementById("experiencia").style.display = "block";
     document.getElementById("proyectos").style.display = "block";
   }, 1000)
