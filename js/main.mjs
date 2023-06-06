@@ -91,7 +91,7 @@ for(const p of projects.reverse()){
   <ul class="ps-0" style="list-style: none;">
     ${p.tags.map(t => `<li class="badge bg-dark text-light me-1">${t}</li>`).join('')}
   </ul>
-  <a class="see-project-btn d-inline-block text-decoration-none text-dark col py-1 mx-auto btn btn-outline-dark" style="font-size: 1rem;" target="_blank" href=${p.url}>Ver proyecto</a>
+  <a class="see-project-btn d-inline-block text-decoration-none text-dark col py-1 mx-auto btn btn-outline-dark" style="font-size: 1rem;" target="_blank" href=${p.url}>${LANG == "es" ? "Ver proyecto" : "See project" }</a>
   `
 }
 // Sidebar
