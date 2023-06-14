@@ -2,17 +2,17 @@ export const experiencia = {
   es:[ 
     {
       empresa: "Freelance",
-      cargo: "Desarrollador de .NET",
-      periodo: "2019 - ene 2022",
-      descripcion: "Desarrollo de apps con .NET, C#, Angular, React",
-      tags: ["C#", ".NET", "Angular", "React"]
+      cargo: "Desarrollador de .NET y Java",
+      periodo: "2012 - 2022",
+      descripcion: "Desarrollo de apps escalables con Java/Kotlin, .NET/C#, Angular, React",
+      tags: ["Java", "Kotlin", "C#", ".NET", "Angular", "React"]
     },
     {
       empresa: "Freelance en Upwork",
-      cargo: "Web App Developer & Website Designer",
+      cargo: "Web App Developer & Website Designer | Tech Consultor",
       periodo: "ene 2014 - feb 2022",
-      descripcion: "Desarrollo de páginas web y web apps a medida para clientes exigentes que buscan productos de alta calidad.",
-      tags: ["PHP", "C#", ".NET", "Python"]
+      descripcion: "Consultoría para desarrollos de páginas web y web apps a medida para clientes exigentes que buscan productos de alta calidad.",
+      tags: ["Java", "PHP", "C#", ".NET", "Python", "React", "Nextjs"]
     }, 
     {
       empresa: "Evosoft",
@@ -24,7 +24,7 @@ export const experiencia = {
     {
       empresa: "Minery Report S.L.",
       cargo: "Blockchain Director",
-      periodo: "ene 2022 - may 2023",
+      periodo: "ene 2020 - may 2023",
       descripcion: `<ul class="mb-0">
       <li>Liderar la estrategia blockchain</li>
       <li>Evaluar y seleccionar tecnologías blockchain adecuadas</li>
@@ -62,17 +62,23 @@ export const experiencia = {
   en:[
     {
       empresa: "Freelance",
-      cargo: ".NET Developer",
-      periodo: "2019 - jan 2022",
-      descripcion: ".NET, C#, Angular, React Web development",
-      tags: ["C#", ".NET", "Angular", "React"]
+      cargo: "Java Developer",
+      periodo: "2012 - 2022",
+      descripcion: `Development of scalable apps with a backend in: 
+      <ul>
+        <li><strong>Back-end:</strong> Java/Kotlin, or .NET/C#</li>
+        <li><strong>Front-end:</strong> Angular, React/NextJS</li>
+        <li><strong>Database:</strong> MySQL, PostgreSQL, MongoDB</li>
+        <li><strong>Cloud:</strong> AWS, Azure, Google Cloud</li>
+      </ul>`,
+      tags: ["Java", "Spring", "Spring Boot", "Kotlin", "C#", ".NET", "Angular", "React"]
     },
     {
       empresa: "Freelance at Upwork",
-      cargo: "Web App Developer & Website Designer",
-      periodo: "jan 2014 - feb 2022",
-      descripcion: "Web development and web app design for demanding clients looking for high quality products.",
-      tags: ["PHP", "C#", ".NET", "Python"]
+      cargo: "Web App Developer & Website Designer | Tech Consultor",
+      periodo: "ene 2014 - feb 2022",
+      descripcion: "Consultant for web app and website development.",
+      tags: ["Java", "PHP", "C#", ".NET", "Python", "React", "Nextjs"]
     },
     {
       empresa: "Evosoft",
@@ -84,7 +90,7 @@ export const experiencia = {
     {
       empresa: "Minery Report S.L.",
       cargo: "Blockchain Director",
-      periodo: "jan 2022 - may 2023",
+      periodo: "jan 2020 - may 2023",
       descripcion: `<ul class="mb-0">
       <li>Blockchain strategy leadership</li>
       <li>Assesment and selection of suitable blockchain technologies</li>

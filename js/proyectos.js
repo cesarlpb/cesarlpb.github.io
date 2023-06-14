@@ -57,6 +57,13 @@ export const proyectos = {
       descripcion: "NFT generator for the Polygon and Mumbai blockchains",
       url: "https://purple-rice-5682.on.fleek.co/",
       tags: ["React", "Nextjs", "Hardhat", "Solidity", "Infura", "Fleek", "CD/CI"]
+    }, 
+    {
+      tipo: "",
+      titulo: "Blue Goat Labs Website",
+      descripcion: "Corporate website from Blue Goat Labs",
+      url: "https://www.bluegoatlabs.com/",
+      tags: ["React", "Firebase", "CD/CI"]
     }
   ]
 }

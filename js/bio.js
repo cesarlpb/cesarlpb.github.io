@@ -23,10 +23,25 @@ export const bio = {
     en proyectos para extender o crear nuevas funcionalidades.
   </p>
   <h3 class="fs-6 ps-3">Proyectos personales destacados:</h3>
-  <ul class="list-unstyled ps-3">
-    <li><a class="text-dark fw-bold" href="https://punkznftgenerator.com" target="_blank">Punkz NFT Generator</a> - Un generador de NFTs en las redes de Mumbai y Polygon.</li>
-    <li><a class="text-dark fw-bold" href="https://bluegoatlabs.com/" target="_blank">Blue Goat Labs</a> - Página web de mi empresa.</li>
-  </ul>
+  
+  <table class="table">
+  <tr>
+    <td>
+      <a class="text-dark fw-bold" href="https://punkznftgenerator.com" target="_blank">Punkz NFT Generator</a>
+    </td>
+    <td>
+    Un generador de NFTs en las redes de Mumbai y Polygon.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a class="text-dark fw-bold" href="https://bluegoatlabs.com/" target="_blank">Blue Goat Labs</a>
+    </td>
+    <td>
+      Página web de Blue Goat Labs, una empresa de desarrollo de software.
+    </td>
+  </tr>
+  </table>
   `,
   en: `
   <p class="ps-3">Hello! this is César, <b>full-stack developer</b> with <b>+10 year experience</b> in coding.
@@ -52,9 +67,24 @@ export const bio = {
     in projects to extend or create new functionalities.
   </p>
   <h3 class="fs-6 ps-3">Personal projects:</h3>
-  <ul class="list-unstyled ps-3">
-    <li><a class="text-dark fw-bold" href="https://punkznftgenerator.com" target="_blank">Punkz NFT Generator</a> - An NFT generator for the Mumbai and Polygon networks.</li>
-    <li><a class="text-dark fw-bold" href="https://bluegoatlabs.com/" target="_blank">Blue Goat Labs</a> - My company's website.</li>
-  </ul>
+  
+  <table class="table">
+  <tr>
+    <td>
+      <a class="text-dark fw-bold" href="https://punkznftgenerator.com" target="_blank">Punkz NFT Generator</a>
+    </td>
+    <td>
+      An NFT generator for the Mumbai and Polygon networks.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a class="text-dark fw-bold" href="https://bluegoatlabs.com/" target="_blank">Blue Goat Labs</a>
+    </td>
+    <td>
+      Corporate website.
+    </td>
+  </tr>
+  </table>
   `
 }

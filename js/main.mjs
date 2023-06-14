@@ -52,7 +52,7 @@ expH2.innerHTML = LANG == "es"
 // Texto
 let exp = document.getElementById("experiencia");
 const exps = experiencia[LANG];
-for(const e of exps.reverse()){
+for(const e of exps){
   exp.innerHTML += `<div class="ps-4">
   <div class="row align-items-center ps-1">
     <h3 class="ps-3 mb-0 col-6 fw-bold" style="font-size: 1rem">${e.cargo}</h3>
@@ -83,6 +83,7 @@ let proj = document.getElementById("proyectos");
 const projects = proyectos[LANG];
 for(const p of projects.reverse()){
   proj.innerHTML += `<div class="ps-0 mt-2">
+  ${LANG == "en" ? `<p class="text-muted">More projects upon demand</p>` : ""}
   <div class="row align-items-between">
     <h3 class="ps-2 mb-0 col-8 fw-bold" style="font-size: 1rem">${p.titulo}</h3>
     <p class="ps-0 fw-light text-dark mb-0 col-4" style="font-size: 0.8rem;">${p.tipo}</p>
