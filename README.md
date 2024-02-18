@@ -1,16 +1,12 @@
-# Instrucciones para clonar
+## Portfolio
 
-Primero, navegad a la carpeta donde vais a clonar:
-```
-cd carpeta_para_clonar_esto
-```
+Basado en el proyecto de [@midudev](https://github.com/midudev) en [https://github.com/midudev/porfolio.dev](https://github.com/midudev/porfolio.dev).
 
-Si quieres clonar todas las ramas:
-```
-git clone https://github.com/cesarlpb/cesarlpb.github.io.git
-```
+WIP
 
-Si solo quieres la rama `master`:
-```
-git clone -b master --single-branch https://github.com/cesarlpb/cesarlpb.github.io.git
-```
+## TODO
+
+[ ] Cambiar datos personales
+[ ] Cambiar proyectos
+[ ] Desplegar a Github Pages
+[ ] Cambios o modificaciones necesarias
