@@ -33,7 +33,7 @@ let el = document.getElementById("idiomas");
 
 el.innerHTML += `<div class="row">`
 for(const d of langs){
-  el.innerHTML += `<div class="lang-row border border-muted border-top-0 border-start-0 border-end-0"><p class="d-inline-block mb-1 col-4">${d.idioma}</p><p class="d-inline-block mb-1 fw-light col-8">${d.nivel}</p></div>`
+  el.innerHTML += `<div class="lang-row border border-muted border-top-0 border-start-0 border-end-0"><p class="d-inline-block mb-1 col-4">${d.idioma}</p><br><p class="d-inline-block mb-1 fw-light col-8">${d.nivel}</p></div>`
 }
 el.innerHTML += `</div>`
 // Barras de progreso (para usar descomentar):
