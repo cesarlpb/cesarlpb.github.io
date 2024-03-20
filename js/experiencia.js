@@ -54,9 +54,16 @@ export const experiencia = {
     {
       empresa: "CDM Formaciones",
       cargo: "Instructor de Programación para Certificados Profesionales de Nivel 3",
-      periodo: "abr 2022 - actualidad",
+      periodo: "abr 2022 - oct 2023",
       descripcion: "Programación de Sistemas Informáticos (IFCT0609)",
       tags: ["Desarrollo Full Stack", "API", "MySQL", "Python", "Javascript", "HTML", "CSS", "Bootstrap", "TailwindCSS", "Typescript", "T3", "NextJS", "Vercel", "Prisma", "Axiom", "Git"]
+    },
+    {
+      empresa: "Onets",
+      cargo: "Senior full-stack developer (Spain)",
+      periodo: "oct 2023 - presente",
+      descripcion: "Python Django full-stack developer",
+      tags: ["Full-stack Development", "API", "MySQL", "Python", "Javascript", "HTML", "CSS", "Bootstrap", "Git", "Github"]
     },
   ],
   en:[
@@ -120,9 +127,16 @@ export const experiencia = {
     {
       empresa: "CDM Formaciones",
       cargo: "Programming Instructor for Level 3 Professional Certifications (Spain)",
-      periodo: "abr 2022 - present",
+      periodo: "abr 2022 - oct 2023",
       descripcion: "Computer Systems Programming (IFCT0609)",
       tags: ["Full-stack Development", "API", "MySQL", "Python", "Javascript", "HTML", "CSS", "Bootstrap", "TailwindCSS", "Typescript", "T3", "NextJS", "Vercel", "Prisma", "Axiom", "Git"]
+    },
+    {
+      empresa: "Onets",
+      cargo: "Senior full-stack developer (Spain)",
+      periodo: "oct 2023 - present",
+      descripcion: "Python Django full-stack developer",
+      tags: ["Full-stack Development", "API", "MySQL", "Python", "Javascript", "HTML", "CSS", "Bootstrap", "Git", "Github"]
     },
   ]
 }
