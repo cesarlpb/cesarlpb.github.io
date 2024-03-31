@@ -1,0 +1,109 @@
+{
+  "roles": [
+    {
+      "nombre": "Desarrollador Junior (utilizable)",
+      "icono": "<i class='gg-user'></i>",
+      "resumen": "Se enfoca en el desarrollo de aplicaciones web y/o móviles. Conoce las herramientas esenciales del sector y sabe actualizar una app. Recomendable: tener perfiles habituales y algún proyecto hecho para compartir.",
+      "video": "",
+      "itinerario": [
+        ["esencial", "HTML", {
+          "videos":[],
+          "docs":[
+            {"order": 1, "duracion": "varias horas", "titulo": "HTML en W3schools.", "url": "https://www.w3schools.com/html/default.asp",
+            "descripcion": "Lo esencial es hasta <a href='https://www.w3schools.com/html/html_responsive.asp' target='_blank' rel='noreferrer'>HTML Responsive</a>."},
+            {"order": 2, "duracion": "varias horas", "titulo": "HTML Form en FreeCodeCamp.", "url": "https://www.freecodecamp.org/espanol/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form",
+            "descripcion": "Forma interactiva de hacer un formulario con HTML, requiere crear cuenta. Completando 5 proyectos de <strong>Certification</strong> recibes un diploma de <strong>Responsive Web Design</strong>."}
+          ]
+        }],
+        ["básico", "CSS", {
+          "videos":[],
+          "docs":[
+            {"order": 1, "duracion": "varias horas", "titulo": "CSS en W3schools.", "url": "https://www.w3schools.com/css/default.asp"}
+          ]
+        }],
+        ["esencial", "Javascript y/o Python", {
+          "videos":[],
+          "docs":[
+            {"order": 1, "duracion": "varias horas", "titulo": "Javascript en W3schools.", "url": "https://www.w3schools.com/js/default.asp"}
+          ]
+        }],
+        ["esencial", "Git", {
+          "videos":[],
+          "docs":[
+            {"order": 1, "duracion": "varias horas", "titulo": "Git en W3schools.", "url": "https://www.w3schools.com/git/default.asp"}
+          ]
+        }],
+        ["básico", "Github", {
+          "videos":[],
+          "docs":[
+            {"order": 1, "duracion": "varias horas", "titulo": "Git y Github en W3schools.", "url": "https://www.w3schools.com/git/git_remote_getstarted.asp?remote=github"}
+          ]
+        }],
+        ["básico", "Comandos Linux", {
+          "videos":[],
+          "docs":[
+            {"order": 1, "duracion": "1 h", "titulo": "Comandos de Linux útiles para tareas habituales en FreeCodeCamp.", "url": "https://www.freecodecamp.org/espanol/news/comandos-de-linux/"}
+          ]
+        }],
+        ["básico", "Despliegue en servidor", {
+          "videos":[],
+          "docs":[
+            {"order": 1, "duracion": "1-2 h", "titulo": "Despliegue de una app de Node.js con PM2 en Ubuntu 20.04", "url": "https://www.freecodecamp.org/espanol/news/como-desplegar-una-aplicacion-node-js-desde-la-configuracion-del-servidor-hasta-el-entorno-de-produccion/"}
+          ]
+        }],
+        ["Recomendable", "Otras habilidades o destrezas recomendables: Linkedin, CV, portafolio, presentación, comunicación", ""]
+      ]
+    },
+    {
+      "nombre": "Desarrollador Front-end (WIP)",
+      "icono": "<i class='gg-brush'></i>",
+      "resumen": "Se enfoca en el desarrollo de la interfaz de usuario y la experiencia del usuario en aplicaciones web y móviles.",
+      "itinerario": [
+        ["nivel medio/avanzado", "HTML"],
+        ["nivel medio/avanzado", "CSS"],
+        ["nivel medio/avanzado", "Javascript"],
+        ["nivel medio", "React"],
+        ["nivel medio", "Astro"],
+        ["nivel medio", "Maquetación de diseños responsive"],
+        ["nivel medio", "Conocimientos de UX/UI"]
+      ]
+    },
+    {
+      "nombre": "Desarrollador Back-end (WIP)",
+      "icono": "<i class='gg-code-slash'></i>",
+      "resumen": "Se encarga del desarrollo de la lógica y la funcionalidad detrás de las aplicaciones web y móviles.",
+      "itinerario": [
+        ["nivel medio/avanzado", "Python"],
+        ["Recomendable", "Node.js"],
+        ["nivel medio", "Conexión a bases de datos habituales: SQLite (dev), MySQL (recomendable), Postgres"],
+        ["nivel medio/avanzado", "Django"],
+        ["Recomendable", "Flask y/o Express"],
+        ["nivel medio/avanzado", "RESTful APIs"],
+        ["nivel medio/avanzado", "Autenticación y autorización"]
+      ]
+    },
+    {
+      "nombre": "Database Engineer (WIP)",
+      "icono": "<i class='gg-database'></i>",
+      "resumen": "Se encarga del diseño y administración de bases de datos.",
+      "itinerario": [
+        ["Esencial", "SQL"],
+        ["Nivel medio/avanzado", "Diseño de bases de datos"],
+        ["Nivel medio", "Uso de ORMs (Object-Relational Mapping) como el de Django u otros"],
+        ["Esencial", "PostgreSQL"]
+      ]
+    },
+    {
+      "nombre": "DevOps (WIP)",
+      "icono": "<i class='gg-server'></i>",
+      "resumen": "Encargado de la integración y despliegue continuo, automatización y gestión de la infraestructura.",
+      "itinerario": [
+        ["Nivel medio", "Contenedores: Docker / Podman"],
+        ["Nivel medio", "Orquestadores: Kubernetes"],
+        ["Nivel medio", "Pipelines: Jenkins o herramientas similares"],
+        ["Nivel medio", "CD/CI: Flujos de trabajo (workflows)"],
+        ["Nivel medio", "Automatización de pruebas en pipeline (testing) y generación de reportes"]
+      ]
+    }
+  ]
+}
