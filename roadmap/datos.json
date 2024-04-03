@@ -104,6 +104,113 @@
         ["Nivel medio", "CD/CI: Flujos de trabajo (workflows)"],
         ["Nivel medio", "Automatización de pruebas en pipeline (testing) y generación de reportes"]
       ]
+    },
+    {
+      "nombre": "Administración de Sistemas Informáticos y Redes (ASIR)",
+      "icono": "<i class='gg-database'></i>",
+      "resumen": "Administración de sistemas informáticos, sys-admins. Es decir, los <em>dueños de las llaves del reino</em>.",
+      "video": "",
+      "itinerario": [
+        ["esencial", "Comandos de Linux", {
+          "videos": [],
+          "docs": [
+            {
+              "order": 1,
+              "duracion": "1-2 horas",
+              "titulo": "Comandos de Linux útiles para tareas habituales en FreeCodeCamp.", 
+              "url": "https://www.freecodecamp.org/espanol/news/comandos-de-linux/",
+              "descripcion": "Listado de comandos para hacer tareas habituales en Linux. Usad Ubuntu 20 y/o 22 LTS."
+            },
+            {
+              "order": 2,
+              "duracion": "varias horas",
+              "titulo": "Cursos gratis para aprender a usar Linux",
+              "url": "https://www.edx.org/es/school/linuxfoundationx#programs",
+              "descripcion": "Recomiendo empezar por el <a href='https://www.edx.org/es/learn/linux/the-linux-foundation-introduccion-a-linux' target='_blank'>Introducción a Linux</a> o similar."
+            }
+          ]
+        }],
+        ["esencial", "Ubuntu 20 y/o 22", {
+          "videos": [],
+          "docs": [
+            {
+              "order": 1,
+              "duracion": "varias horas",
+              "titulo": "Guía de instalación de Ubuntu",
+              "url": "https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview",
+              "descripcion": "Instrucciones detalladas sobre cómo instalar Ubuntu en un equipo."
+            }
+          ]
+        }],
+        ["esencial", "Configuración de entorno de trabajo", {
+          "videos": [],
+          "docs": [
+            {
+              "order": 1,
+              "duracion": "varias horas",
+              "titulo": "Configuración de entorno de trabajo para desarrolladores en Ubuntu",
+              "url": "https://dev.to/dailydotdev/setup-developer-environment-ubuntu-2o18",
+              "descripcion": "Guía para configurar un entorno de desarrollo en Ubuntu."
+            }
+          ]
+        }],
+        ["esencial", "Despliegue de apps de Django en Ubuntu", {
+          "videos": [],
+          "docs": [
+            {
+              "order": 1,
+              "duracion": "varias horas",
+              "titulo": "Despliegue de aplicaciones web con Django",
+              "url": "https://docs.djangoproject.com/en/3.2/howto/deployment/",
+              "descripcion": "Documentación oficial de Django sobre cómo desplegar aplicaciones web."
+            }
+          ]
+        }],
+        ["básico", "Bash", {
+          "videos": [],
+          "docs": [
+            {
+              "order": 1,
+              "duracion": "1-2 horas",
+              "titulo": "Introducción a la línea de comandos de Bash y scripting en FreeCodeCamp",
+              "url": "https://www.freecodecamp.org/espanol/news/la-guia-definitiva-de-linea-de-comandos-de-linux-tutorial-completo-de-bash/",
+              "descripcion": "Post de FCC introductorio a BASH."
+            },
+            {
+              "order": 2,
+              "duracion": "varias horas",
+              "titulo": "Blog con ejemplos de línea de comandos de Bash y scripting",
+              "url": "https://territoriohacker.com/bash-ejercicios-de-bash-scripting/",
+              "descripcion": "Blog con varios scripts para aprender cómo funciona Bash. Es introductorio solo para familiarizarse con el lenguaje."
+            }
+          ]
+        }],
+        ["esencial", "Git y Github", {
+          "videos": [],
+          "docs": [
+            {
+              "order": 1,
+              "duracion": "varias horas",
+              "titulo": "Curso completo de Git y GitHub en W3Schools",
+              "url": "https://www.w3schools.com/git/default.asp",
+              "descripcion": "Tutorial introductorio para aprender a usar Git y Github."
+            }
+          ]
+        }],
+        ["esencial", "Conexión por SSH", {
+          "videos": [],
+          "docs": [
+            {
+              "order": 1,
+              "duracion": "< 1 hora",
+              "titulo": "Conexión segura a servidores con SSH",
+              "url": "https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-es",
+              "descripcion": "Guía paso a paso sobre cómo conectarse de forma segura a servidores remotos utilizando SSH."
+            }
+          ]
+        }]
+      ]
     }
+    
   ]
 }
