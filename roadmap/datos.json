@@ -3,6 +3,7 @@
     {
       "nombre": "Desarrollador Junior (utilizable)",
       "icono": "<i class='gg-user'></i>",
+      "id": "path-01",
       "resumen": "Se enfoca en el desarrollo de aplicaciones web y/o móviles. Conoce las herramientas esenciales del sector y sabe actualizar una app. Recomendable: tener perfiles habituales y algún proyecto hecho para compartir.",
       "video": "",
       "itinerario": [
@@ -57,6 +58,7 @@
     {
       "nombre": "Desarrollador Front-end (WIP)",
       "icono": "<i class='gg-brush'></i>",
+      "id": "path-02",
       "resumen": "Se enfoca en el desarrollo de la interfaz de usuario y la experiencia del usuario en aplicaciones web y móviles.",
       "itinerario": [
         ["nivel medio/avanzado", "HTML"],
@@ -71,6 +73,7 @@
     {
       "nombre": "Desarrollador Back-end (WIP)",
       "icono": "<i class='gg-code-slash'></i>",
+      "id": "path-03",
       "resumen": "Se encarga del desarrollo de la lógica y la funcionalidad detrás de las aplicaciones web y móviles.",
       "itinerario": [
         ["nivel medio/avanzado", "Python"],
@@ -85,6 +88,7 @@
     {
       "nombre": "Database Engineer (WIP)",
       "icono": "<i class='gg-database'></i>",
+      "id": "path-04",
       "resumen": "Se encarga del diseño y administración de bases de datos.",
       "itinerario": [
         ["Esencial", "SQL"],
@@ -96,6 +100,7 @@
     {
       "nombre": "DevOps (WIP)",
       "icono": "<i class='gg-server'></i>",
+      "id": "path-05",
       "resumen": "Encargado de la integración y despliegue continuo, automatización y gestión de la infraestructura.",
       "itinerario": [
         ["Nivel medio", "Contenedores: Docker / Podman"],
@@ -108,6 +113,7 @@
     {
       "nombre": "Administración de Sistemas Informáticos y Redes (ASIR)",
       "icono": "<i class='gg-database'></i>",
+      "id": "path-06",
       "resumen": "Administración de sistemas informáticos, sys-admins. Es decir, los <em>dueños de las llaves del reino</em>.",
       "video": "",
       "itinerario": [
@@ -210,7 +216,58 @@
           ]
         }]
       ]
-    }
-    
+    },
+    {
+      "nombre": "Desarrollo de Aplicaciones Multiplataforma (DAM)",
+      "icono": "<i class='gg-server'></i>",
+      "id": "path-07",
+      "resumen": "Desarrollo de apps multiplataforma: web y móvil. Continuar con lo necesario en <a href='#path-01'>itinerario Junior Dev</a>",
+      "video": "",
+      "itinerario": [
+        ["esencial", "Python en W3schools", {
+          "videos": [],
+          "docs": [
+            {
+              "order": 1,
+              "duracion": "pocas horas",
+              "titulo": "Introducción a Python.", 
+              "url": "https://www.w3schools.com/python/default.asp",
+              "descripcion": "El objetivo es conocer lo básico del lenguaje para pasar a Django. Esencial hasta Python Functions."
+            },
+            {
+              "order": 2,
+              "duracion": "2-4 horas",
+              "titulo": "Django en W3Schools",
+              "url": "https://www.w3schools.com/django/index.php",
+              "descripcion": "Introducción al framework de Django."
+            }
+          ]
+        }],
+        ["esencial", "Django Docs", {
+          "videos": [],
+          "docs": [
+            {
+              "order": 1,
+              "duracion": "varias horas",
+              "titulo": "Django Docs",
+              "url": "https://docs.djangoproject.com/en/5.0/intro/tutorial01/",
+              "descripcion": "8 tutoriales para alcanzar el éxito en <s>la vida</s> Django."
+            }
+          ]
+        }],
+        ["esencial", "Continuar con lo necesario del itinerario Junio", {
+          "videos": [],
+          "docs": [
+            {
+              "order": 1,
+              "duracion": "varias horas",
+              "titulo": "Itinerario Junior Dev",
+              "url": "#path-1",
+              "descripcion": "Itinerario Junior Dev."
+            }
+          ]
+        }]
+      ]
+    } 
   ]
 }
