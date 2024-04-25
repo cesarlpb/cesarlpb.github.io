@@ -1,0 +1,37 @@
+/* Tablas */
+
+body {
+    background-color: rgb(150, 224, 200);
+    padding: 10px;
+}
+
+/* table, td, th {
+    border: 1px solid black;
+} */
+  
+table {
+    border-collapse: collapse;
+    width: 80%;
+    /* Este margin es para centrar la tabla: */
+    margin: 10px auto;
+    margin-bottom: 20px;
+}
+  
+th {
+    height: 70px;
+}
+
+td {
+    padding-left: 20px;
+    height: 30px;
+    /* Alineación vertical de texto: */
+    vertical-align: center;
+}
+
+th, td {
+    border-bottom: 1px solid #111;
+}
+
+tr:hover {
+    background-color: coral;
+}
