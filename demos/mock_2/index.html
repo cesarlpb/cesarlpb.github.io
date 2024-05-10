@@ -123,6 +123,217 @@
       style="aspect-ratio: 600 / 400; object-fit: cover;"
     />
   </div>
+
+  <div class="bg-[#4A2C2A] text-white">
+    <div class="px-6 py-12">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">Our Process</h2>
+        <p class="text-lg leading-relaxed mb-8">
+          At CoffeeHub, we take pride in our process from bean to cup. Our coffee beans are sourced from small-scale farmers who use sustainable farming practices. We then carefully roast the beans to bring out their unique flavors, resulting in a rich and aromatic cup of coffee.
+        </p>
+        <p class="text-lg leading-relaxed mb-8">
+          Our dedication to quality doesn't stop there. We ensure that every step of the way, from packaging to delivery, maintains the integrity of our product. When you choose CoffeeHub, you're not just getting a cup of coffee – you're getting an experience.
+        </p>
+        <p class="text-lg leading-relaxed">
+          Explore our range of coffee beans and automatic machines to start your coffee journey today.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="bg-[#4A2C2A] text-white">
+    <div class="px-6 py-12">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">Coffee Gallery</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Image 1 -->
+          <div>
+            <img src="cafe_especialidad.jpg" alt="Coffee Cup" class="w-full h-auto" style="aspect-ratio: 4/3; object-fit: cover;">
+          </div>
+          <!-- Image 2 -->
+          <div>
+            <img src="cafe_especialidad.jpg" alt="Coffee Cup" class="w-full h-auto" style="aspect-ratio: 4/3; object-fit: cover;">
+          </div>
+          <!-- Image 3 -->
+          <div>
+            <img src="cafe_especialidad.jpg" alt="Coffee Cup" class="w-full h-auto" style="aspect-ratio: 4/3; object-fit: cover;">
+          </div>
+          <!-- Image 4 -->
+          <div>
+            <img src="cafe_especialidad.jpg" alt="Coffee Cup" class="w-full h-auto" style="aspect-ratio: 4/3; object-fit: cover;">
+          </div>
+          <!-- Add more images as needed -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-[#4A2C2A] text-white">
+    <div class="px-6 py-12">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">Testimonials</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Testimonial 1 -->
+          <div class="bg-[#8C6D62] p-6 rounded-lg">
+            <p class="text-lg mb-4">"I've been a coffee enthusiast for years, but CoffeeHub takes it to a whole new level. Their beans are unmatched in quality and flavor."</p>
+            <p class="font-semibold">- John Doe</p>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="bg-[#8C6D62] p-6 rounded-lg">
+            <p class="text-lg mb-4">"As a busy professional, I rely on my morning coffee to kickstart my day. CoffeeHub delivers the perfect brew every time."</p>
+            <p class="font-semibold">- Jane Smith</p>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="bg-[#8C6D62] p-6 rounded-lg">
+            <p class="text-lg mb-4">"I love supporting local businesses, especially when they're as passionate about coffee as CoffeeHub. Their commitment to sustainability is commendable."</p>
+            <p class="font-semibold">- Michael Johnson</p>
+          </div>
+          <!-- Add more testimonials as needed -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div id="map" style="height: 400px;"></div>
+
+  <script>
+    // Función para inicializar el mapa
+    function initMap() {
+      var iconColor = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'; 
+      // Coordenadas del centro del mapa
+      var center = { lat: 41.381064697912834, lng: 2.141714739129453 };
+
+      // Opciones del mapa
+      var mapOptions = {
+        zoom: 16,
+        center: center
+      };
+
+      // Crear el mapa
+      var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+      // Ejemplo de marcador en una ubicación
+      var marker1 = new google.maps.Marker({
+      position: { lat: 41.37975259044942, lng: 2.144418363240255 },
+      map: map,
+      title: 'Cafeteria Flor i Nata',
+      icon: {
+        url: 'https://cesarlpb.github.io/img/coffeeIcon.png',
+        scaledSize: new google.maps.Size(50, 50)
+      }
+
+      });
+
+      var marker2 = new google.maps.Marker({
+        position: { lat: 41.381241880043255, lng: 2.1420365774499945 },
+        map: map,
+        title: 'Cafetería Sun',
+        icon: {
+          url: 'https://cesarlpb.github.io/img/coffeeIcon.png',
+          scaledSize: new google.maps.Size(50, 50)
+      }
+
+      });
+
+      var marker3 = new google.maps.Marker({
+        position: { lat: 41.38079108893779, lng: 2.1409636839816284 },
+        map: map,
+        title: 'Cafetería Volcán Dorado',
+        icon: {
+          url: 'https://cesarlpb.github.io/img/coffeeIcon.png',
+          scaledSize: new google.maps.Size(50, 50)
+      }
+
+      });
+    }
+  </script>
+
+  <!-- Llama a la función initMap() para inicializar el mapa -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBE_TcmYRd0OfQz7pJApBaYONra2gnPtLI&callback=initMap"></script>
+
+  <section class="bg-gray-400 py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Recomendaciones</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Tarjeta de recomendación 1 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-md">
+          <img src="cafe_especialidad.jpg" alt="Coffee" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">¡El mejor café que he probado!</h3>
+            <ul class="text-gray-700">
+              <li><strong>Origen:</strong> Colombia</li>
+              <li><strong>Tipo de grano:</strong> Arabica</li>
+              <li><strong>Tueste:</strong> Medio</li>
+              <li><strong>Sabor:</strong> Notas de chocolate y caramelo</li>
+              <li><strong>Aroma:</strong> Intenso y dulce</li>
+            </ul>
+            <p class="text-gray-600 mt-4">- Juan Pérez</p>
+          </div>
+        </div>
+        <!-- Tarjeta de recomendación 2 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-md">
+          <img src="cafe_especialidad.jpg" alt="Coffee" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Excelente calidad y servicio</h3>
+            <ul class="text-gray-700">
+              <li><strong>Origen:</strong> Etiopía</li>
+              <li><strong>Tipo de grano:</strong> Robusta</li>
+              <li><strong>Tueste:</strong> Oscuro</li>
+              <li><strong>Sabor:</strong> Notas de frutos secos y especias</li>
+              <li><strong>Aroma:</strong> Profundo y ahumado</li>
+            </ul>
+            <p class="text-gray-600 mt-4">- María González</p>
+          </div>
+        </div>
+        <!-- Tarjeta de recomendación 3 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-md">
+          <img src="cafe_especialidad.jpg" alt="Coffee" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Un lugar acogedor con café delicioso</h3>
+            <ul class="text-gray-700">
+              <li><strong>Origen:</strong> Guatemala</li>
+              <li><strong>Tipo de grano:</strong> Mezcla de Arabica y Robusta</li>
+              <li><strong>Tueste:</strong> Medio oscuro</li>
+              <li><strong>Sabor:</strong> Notas de frutas tropicales y cacao</li>
+              <li><strong>Aroma:</strong> Floral y afrutado</li>
+            </ul>
+            <p class="text-gray-600 mt-4">- Roberto López</p>
+          </div>
+        </div>
+        <!-- Puedes agregar más tarjetas de recomendación según sea necesario -->
+      </div>
+    </div>
+  </section>
+  
+
+  
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="mb-4 md:mb-0">
+          <h4 class="text-lg font-bold">Contacto</h4>
+          <p class="mt-2">Dirección: Calle Principal, Ciudad, País</p>
+          <p>Teléfono: +123 456 789</p>
+          <p>Email: info@tuempresa.com</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-2">Síguenos</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+              
+            </a>
+            <!-- Puedes agregar más íconos de redes sociales aquí -->
+          </div>
+        </div>
+      </div>
+      <div class="mt-6 text-center text-sm">
+        <p>&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  
 </div>
 </body>
 </html>
