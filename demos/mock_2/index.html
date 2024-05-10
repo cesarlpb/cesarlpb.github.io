@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mock 2</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <!--
+// v0 by Vercel.
+// https://v0.dev/t/oXzkWsGE0em
+-->
+
+<div class="bg-[#4A2C2A] text-white min-h-screen">
+  <div class="pt-4 px-6 pb-8 border-b border-[#8C6D62]">
+    <div class="flex justify-between items-center">
+      <h1 class="font-bold text-2xl">CoffeeHub</h1>
+      <nav class="space-x-4">
+        <a class="hover:text-[#DAB997]" href="#">
+          Shop
+        </a>
+        <a class="hover:text-[#DAB997]" href="#">
+          Subscription
+        </a>
+        <a class="hover:text-[#DAB997]" href="#">
+          About
+        </a>
+        <a class="hover:text-[#DAB997]" href="#">
+          Learn
+        </a>
+        <a class="hover:text-[#DAB997]" href="#">
+          Promotions
+        </a>
+      </nav>
+      <div class="space-x-2">
+        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-[#DAB997] border-[#DAB997]">
+          Contact
+        </button>
+        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-[#DAB997] border-[#DAB997]">
+          For Business
+        </button>
+        <button
+          type="button"
+          role="combobox"
+          aria-controls="radix-:rc:"
+          aria-expanded="false"
+          aria-autocomplete="none"
+          dir="ltr"
+          data-state="closed"
+          data-placeholder=""
+          class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          id="language"
+        >
+          <span style="pointer-events: none;">EN</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4 opacity-50"
+            aria-hidden="true"
+          >
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mt-4">
+      <div class="flex justify-between items-center">
+        <div class="font-light text-sm">
+          Limited Time: 20% off on your first order or new coffee subscription! 🎉
+        </div>
+        <div class="font-semibold text-xs">Free Shipping from $50 | Delivered in 48h</div>
+      </div>
+      <div class="text-right font-medium text-xs mt-2">Coupon: COFFEEHUB20</div>
+    </div>
+  </div>
+  <div class="pt-12 pb-16 px-6">
+    <h2 class="text-5xl font-bold leading-tight mb-3">Speciality Coffee Beans, Freshly Roasted</h2>
+    <p class="text-lg leading-relaxed max-w-2xl mb-6">
+      Partnering with small-scale farmers, we locally roast to bring you the finest natural coffee beans right to
+      your doorstep.
+    </p>
+    <div class="flex space-x-6">
+      <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 px-4 py-2 bg-[#8C6D62] hover:bg-[#DAB997]">
+        Buy Coffee Beans
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 px-4 py-2 bg-[#8C6D62] hover:bg-[#DAB997]">
+        Automatic Machines
+      </button>
+    </div>
+  </div>
+
+  <style>
+    .cafe-img {
+      display: block;
+      margin: 0 auto;
+      width: 80%; /* Tamaño medio en PC */
+      height: auto;
+      object-fit: cover;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      .cafe-img {
+        width: 100%; /* Tamaño completo en dispositivos móviles */
+      }
+    }
+  </style>
+
+  <div class="px-6 pb-8">
+    <img
+      src="cafe_especialidad.jpg"
+      alt="Coffee Cup"
+      class="cafe-img"
+      width="600"
+      height="400"
+      style="aspect-ratio: 600 / 400; object-fit: cover;"
+    />
+  </div>
+</div>
+</body>
+</html>
