@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Redirección temporal -->
     <script>
-        window.onload = function() {
-          // window.location.href = "https://cesarlpb.github.io/roadmap/"; 
-        };
-      </script>
+    // window.onload = function() {
+    //   window.location.href = "https://cesarlpb.github.io/roadmap/"; 
+    // };
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,7 @@
     <link rel="stylesheet" href="./css/fontawesome.min.css">
     <!-- Hoja de estilos personalizada -->
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Mi Portafolio Web - César Patiño</title>
+    <title>César Patiño | senior developer & instructor</title>
     <link rel="shortcut icon" href="images/c.png" type="image/x-icon">
     <style>
         html, body, :root {
@@ -25,26 +26,19 @@
             background-color: rgb(236, 228, 228);
         }
     </style>
+    <script src="https://cesarlpb.github.io/lib/jQ/dist/jq.js" defer></script>
 </head>
 <body>
   
-  
-<!-- Aviso de página en mantenimiento -->
 <main class="container p-0">
     
-    <div class="row">
-        <div class="row">
-            <a href="https://prod.liveshare.vsengsaas.visualstudio.com/join?7309008A3BAA6FE4A6F9BC3A401E9B51775A">https://prod.liveshare.vsengsaas.visualstudio.com/join?7309008A3BAA6FE4A6F9BC3A401E9B51775A</a>
-        </div>
-        
-        <hr>
-        
+    <div class="row">  
         <div class="col-12 text-center mt-5">
-            <h1 class="display-3 text-danger">Página en renovación</h1>
-            <p class="lead">Estoy actualizando esta página.</p>
-            <a href="https://t.me/cesarlpb" class="btn btn-primary">Contáctame</a>
-            <a href="https://www.linkedin.com/in/cesarlpb89/" class="btn btn-secondary">LinkedIn</a>
-            <a href="https://www.github.com/cesarlpb/" class="btn btn-dark">GitHub</a>
+            <h1 id="welcome" class="display-3 text-danger">Bienvenid@ a mi página</h1>
+            <p id="description" class="lead">Soy César Patiño, programador senior e instructor.</p>
+            <a id="contact-me" href="https://t.me/cesarlpb" class="btn btn-primary">Contáctame</a>
+            <a id="linkedIn" href="https://www.linkedin.com/in/cesarlpb89/" class="btn btn-secondary">LinkedIn</a>
+            <a id="gitHub" href="https://www.github.com/cesarlpb/" class="btn btn-dark">GitHub</a>
             <br>
             <br>
             <a href="/cv.html?lang=en" class="btn btn-outline-primary">🇺🇸 Resume</a>
@@ -56,7 +50,7 @@
     <footer id="footer" class="fixed-bottom">
     
     <div class="container-fluid mt-3 pt-3 pb-0 mb-0 bg bg-dark text-light">
-        <p class="py-1 mb-0 fs-6 text-light">Portafolio web de César Patiño &copy; <span id="year">2024</span></p>
+        <p class="py-1 mb-0 fs-6 text-light"><span>Portafolio web de César Patiño</span> &copy; <span id="year">2024</span></p>
         <script defer>
             document.getElementById('year').textContent = new Date().getFullYear();
         </script>
@@ -74,7 +68,29 @@
     </footer>
 
 </main>
+    <script>
+        function isLangEn() {
+        // Obtener los parámetros de la URL actual
+        const params = new URLSearchParams(window.location.search);
 
-    <script src="./js/bootstrap.min.js"></script>
+        // Comprobar si existe el parámetro 'lang' y si su valor es 'en'
+        if (params.has('lang') && params.get('lang') === 'en') {
+            return true;
+        }
+        return false;
+        }
+
+    if (isLangEn()) {
+        console.log('La URL contiene lang=en');
+        $('#welcome').innerText("Welcome to my site!");
+        $('description').innerText("I am César Patiño, senior developer & instructor.")
+        $('contact-me').innerText("Contact me")
+        $('footer-text').innerText("César Patiño's website")
+    } else {
+        console.log('La URL no contiene lang=en');
+    }
+        
+    </script>
+    <!-- <script src="./js/bootstrap.min.js"></script> -->
 </body>
 </html>
