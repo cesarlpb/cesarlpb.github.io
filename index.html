@@ -25,72 +25,187 @@
             margin: 0;
             background-color: rgb(236, 228, 228);
         }
+        body {
+            background-image: url("images/bg.jpeg");
+            background-size: cover;
+            background-position: center center;
+        }
+        .btn-outline-muted {
+            border: 1px solid rgb(164, 164, 164);
+            box-shadow: 1px 1px rgb(200, 200, 200);
+        }
+        .btn-outline-muted:hover {
+            border: 1px solid #fff;
+        }
+        .text-h1 {
+            color: lightgray
+        }
+        .text-h2 {
+            color: rgb(225, 225, 225);
+            text-decoration: underline;
+        }
+        p.lead {
+            color: rgb(200, 200, 200);
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 50px;
+        }
+        .spacer {
+            min-height: 2.25rem;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.35);
+            z-index: 1;
+        }
+        main {
+            z-index: 2;
+        }
+        ul {
+            text-align: center;
+        }
+        .badge-pill {
+            color: rgb(225, 225, 225);
+            font-size: 1rem;
+            padding: 10px 15px;
+            margin: 5px;
+            text-transform: capitalize;
+            text-shadow: 1px 1px black;
+            text-decoration: none;
+        }
+        .badge-pill > span {
+            text-decoration: underline;
+        }
+        #footer {
+            width: 100vw;
+            margin: 0;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
     </style>
-    <script src="https://cesarlpb.github.io/lib/jQ/dist/jq.js" defer></script>
 </head>
 <body>
-  
-<main class="container p-0">
     
-    <div class="row">  
-        <div class="col-12 text-center mt-5">
-            <h1 id="welcome" class="display-3 text-danger">Bienvenid@ a mi página</h1>
-            <p id="description" class="lead">Soy César Patiño, programador senior e instructor.</p>
-            <a id="contact-me" href="https://t.me/cesarlpb" class="btn btn-primary">Contáctame</a>
-            <a id="linkedIn" href="https://www.linkedin.com/in/cesarlpb89/" class="btn btn-secondary">LinkedIn</a>
-            <a id="gitHub" href="https://www.github.com/cesarlpb/" class="btn btn-dark">GitHub</a>
-            <br>
-            <br>
-            <a href="/cv.html?lang=en" class="btn btn-outline-primary">🇺🇸 Resume</a>
-            <a href="/cv.html?lang=es" class="btn btn-outline-primary">🇪🇸 CV Español</a>
-        </div>
-    </div>
+    <div class="overlay"></div>
 
-    <!-- Footer section-->
-    <footer id="footer" class="fixed-bottom">
-    
-    <div class="container-fluid mt-3 pt-3 pb-0 mb-0 bg bg-dark text-light">
-        <p class="py-1 mb-0 fs-6 text-light"><span>Portafolio web de César Patiño</span> &copy; <span id="year">2024</span></p>
-        <script defer>
-            document.getElementById('year').textContent = new Date().getFullYear();
-        </script>
-        <!-- social media icons -->
-        <div class="d-flex justify-content-center gap-3 social-icons pb-2 text-center mx-auto"
-            style="font-size: 2rem; width: 30%;">
-            <a class="d-inline-block text-white" href="https://t.me/cesarlpb" target="_blank"><i
-                    class="fa-brands fa-telegram"></i></a>
-            <a class="d-inline-block text-white" href="https://www.linkedin.com/in/cesarlpb89/" target="_blank"><i
-                    class="fa-brands fa-linkedin"></i></a>
-            <a class="d-inline-block text-white" href="https://www.github.com/cesarlpb/" target="_blank"><i
-                    class="fa-brands fa-github"></i></a>
-        </div>
-    </div>
-    </footer>
-
-</main>
-    <script defer>
-        function isLangEn() {
-        // Obtener los parámetros de la URL actual
-        const params = new URLSearchParams(window.location.search);
-
-        // Comprobar si existe el parámetro 'lang' y si su valor es 'en'
-        if (params.has('lang') && params.get('lang') === 'en') {
-            return true;
-        }
-        return false;
-        }
-
-    if (isLangEn()) {
-        console.log('La URL contiene lang=en');
-        $('#welcome').innerText("Welcome to my site!");
-        $('description').innerText("I am César Patiño, senior developer & instructor.")
-        $('contact-me').innerText("Contact me")
-        $('footer-text').innerText("César Patiño's website")
-    } else {
-        console.log('La URL no contiene lang=en');
-    }
+    <main class="container p-0">
         
+        <div class="row">  
+            <div class="col-12 text-center mt-5">
+                <h1 id="welcome" class="display-4 text-h1">Bienvenid@ a mi página</h1>
+                <p id="description" class="lead">Soy César Patiño, programador senior e instructor.</p>
+                <a id="contact-me" href="https://t.me/cesarlpb" class="btn btn-primary">Contáctame</a>
+                <a id="linkedIn" href="https://www.linkedin.com/in/cesarlpb89/" class="btn btn-secondary">LinkedIn</a>
+                <a id="gitHub" href="https://www.github.com/cesarlpb/" class="btn btn-dark">GitHub</a>
+                <br>
+                <br>
+                <a href="/cv.html?lang=en" class="btn btn-outline-muted text-light" target="_blank">🇺🇸 Resume</a>
+                <a href="/cv.html?lang=es" class="btn btn-outline-muted text-light" target="_blank">🇪🇸 CV Español</a>
+            </div>
+        </div>
+
+        <!-- Links de interés y proyectos -->
+        <div class="spacer"></div>
+        
+        <div class="container mt-5">
+            <h2 class="text-h2 text-center">Techs</h2>
+            <ul class="list-inline mx-auto w-75">
+                <li class="list-inline-item">
+                    <a href="#" class="badge badge-pill badge-primary"><i class="fa-brands fa-js"></i> <span> #JavaScript</span></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="badge badge-pill badge-secondary"><i class="fa-brands fa-html5"></i> <span>#HTML</span></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="badge badge-pill badge-success"><i class="fa-brands fa-css3-alt"></i> <span>#CSS</span></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="badge badge-pill badge-danger"><i class="fa-brands fa-react"></i> <span>#React</span></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="badge badge-pill badge-warning"><i class="fa-brands fa-node"></i> <span>#NodeJS</span></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="badge badge-pill badge-info"><i class="fa-brands fa-bootstrap"></i> <span>#Bootstrap</span></a>
+                </li>
+            </ul>
+            <p class="lead text-center">... y más</p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        <div class="content">
+            <h2 class="text-h2">Proyectos</h2>
+            <p class="row lead">Coming soon</p>
+        </div>
+
+        <div class="spacer"></div>
+
+        <!-- Footer section-->
+        <footer id="footer" class="">
+        
+        <div class="container-fluid mt-3 pt-3 pb-0 mb-0 bg bg-dark text-light">
+            <p class="py-1 mb-0 fs-6 text-light"><span id="footer-text">Portafolio web de César Patiño</span> &copy; <span id="year">2024</span></p>
+            <script defer>
+                document.getElementById('year').textContent = new Date().getFullYear();
+            </script>
+            <!-- social media icons -->
+            <div class="d-flex justify-content-center gap-3 social-icons pb-2 text-center mx-auto"
+                style="font-size: 2rem; width: 30%;">
+                <a class="d-inline-block text-white" href="https://t.me/cesarlpb" target="_blank"><i
+                        class="fa-brands fa-telegram"></i></a>
+                <a class="d-inline-block text-white" href="https://www.linkedin.com/in/cesarlpb89/" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a class="d-inline-block text-white" href="https://www.github.com/cesarlpb/" target="_blank"><i
+                        class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+        </footer>
+
+    </main>
+
+    <script src="https://cesarlpb.github.io/lib/jQ/dist/jq.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function isLangEn() {
+                // Obtener los parámetros de la URL actual
+                const params = new URLSearchParams(window.location.search);
+
+                // Comprobar si existe el parámetro 'lang' y si su valor es 'en'
+                return params.has('lang') && params.get('lang') === 'en';
+            }
+
+            if (isLangEn()) {
+                $('#welcome').first().html("Welcome to my site!");
+                $('#description').html("I am César Patiño, senior developer & instructor.");
+                $('#contact-me').html("Contact me");
+                $('#footer-text').html("César Patiño's website");
+            } else {
+                $('#welcome').first().html("Bienvenid@ a mi web");
+                $('#description').html("Soy César Patiño, programador senior e instructor.");
+                $('#contact-me').html("Contáctame");
+                $('#footer-text').html("Sitio web de César Patiño");
+            }
+        });
     </script>
-    <!-- <script src="./js/bootstrap.min.js"></script> -->
+
+    <!-- JS de Bootstrap -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 </body>
 </html>
