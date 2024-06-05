@@ -1,0 +1,15 @@
+body {
+    font-family: monospace;
+    text-align: center;
+}
+
+#board {
+    /* background-color: black; */
+    background: url(space-fondo.jpg);
+    background-size: cover;
+}
+
+
+.button-container {
+    margin: 10px;
+}
