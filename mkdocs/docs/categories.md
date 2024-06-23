@@ -1,3 +1,0 @@
-# Categorías
-
-<!-- material/categories -->
