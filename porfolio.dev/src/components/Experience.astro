@@ -1,30 +1,40 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
-const EXPERIENCIE = [
+import LinkInline from "./LinkInline.astro"
+const EXPERIENCE = [
   {
-    date: "Actualmente...",
-    title: "Creador de Contenido",
-    company: "Twitch",
+    date: "marzo 2024 - actualmente",
+    title: "Formador de Bootcamp",
+    company: "Fundación Esplai",
     description:
-      "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
-    link: "https://twitch.tv/midudev",
+      "Enseño contenido full-stack orientado a Python, machine learning y entrenamiento de modelos de IA usando las tecnologías actuales para facilitar el desarrollo con Django y librerías de Python.",
+    link: "https://fundacionesplai.org/",
   },
   {
-    date: "Septiembre 2022",
-    title: "Principal Frontend Engineer",
-    company: "Adevinta Spain",
+    date: "abril 2024 - actualmente",
+    title: "CTO",
+    company: "Método Bitcoin",
     description:
-      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
+      "Responsable de desarrollo de un exchange de criptomonedas que unifica tencologías actuales y servicios de proveedores para facilitar la experiencia a los usuarios.",
+    link: "https://metodobitcoin.com/",
   },
 ]
+const cvLink = "https://cesarlpb.github.io/cv?lang=es"
 ---
 
 <ol class="relative mt-16">
   {
-    EXPERIENCIE.map((experiencie) => (
+    EXPERIENCE.map((experience) => (
       <li class="">
-        <ExperienceItem {...experiencie} />
+        <ExperienceItem {...experience} />
       </li>
     ))
   }
 </ol>
+
+<p>
+  Para ver mi trayectoria en más detalle, échale un vistazo a mi 
+  <LinkInline href={cvLink} target>
+    curriculum
+  </LinkInline>.
+</p>

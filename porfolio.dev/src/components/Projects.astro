@@ -1,39 +1,52 @@
 ---
 import GitHub from "./icons/GitHub.astro"
 import NextJS from "./icons/NextJS.astro"
+import AstroIcon from "./icons/AstroIcon.astro"
 import Tailwind from "./icons/Tailwind.astro"
+import React from "./icons/React.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
 const TAGS = {
   NEXT: {
     name: "Next.js",
-    class: "bg-black text-white",
+    class: "bg-black text-slate-200",
     icon: NextJS,
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
+    class: "bg-[#003159] text-slate-200",
     icon: Tailwind,
   },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-black-500 text-slate-200",
+    icon: AstroIcon,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-[#003159] text-slate-200",
+    icon: React,
+  }
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Web del Hackathon ODS de Fundación Esplai",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Sitio responsive hecho con Astro y Tailwindcss para el evento de Hackathon ODS organizado por Fundación Esplai y patrocinadores en Barcelona.",
+    github: "",
+    link: "https://hackathon.fundacionesplai.org/",
+    image: "/hero-image-hackaton.png",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "Open Punkz - NFT minter en Polygon",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Proyecto de un minter de NFTs en Mumbai y Polygon network. ¡Crea tus Open Punkz en solo unos clics!",
+    github: "",
+    link: "https://purple-rice-5682.on.fleek.co/",
+    image: "/open-punkz.png",
+    tags: [TAGS.REACT, TAGS.TAILWIND],
   },
 ]
 ---
