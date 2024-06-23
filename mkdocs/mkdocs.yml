@@ -1,0 +1,78 @@
+site_name: Tutoriales de Django 🚀
+
+theme:
+  logo: 'img/c.svg'
+  favicon: 'img/c.svg'
+  language: es
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Toggle dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Toggle light mode
+  features:
+    - navigation.instant
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.tabs
+    - navigation.expand
+    - navigation.path
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - navigation.footer
+
+extra:
+  alternate:
+    - name: Español
+      link: / 
+      lang: es
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cesarlpb
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+
+plugins:
+  - glightbox
+  - search
+  - blog:
+      categories: true
+      categories_name: Categories
+  - tags:
+      tags_file: tags.md 
+  - rss:
+      categories:
+        - categories
+        - tags 
+
+nav:
+  - Home: index.md
+  - Blog: blog/
+  - Django:
+        - Primeros Pasos:
+            - "Instalar Python": ""
+            - "Crear venv": ""
+            - "Ejecutar Django": ""
+        - Primer Proyecto:
+            - "MiPrimerDjango": ""
+        - W3schools:
+            - "Tutorial de W3schools": ""
+        - Django Docs:
+            - "Documentación oficial de Django": ""
+        - Como Servir HTML:
+            - "Paso 1: setup": django/como-servir-html/01.index.md
+            - "Paso 2: crear template": django/como-servir-html/02.crear_template.md
+            - "Paso 3: crear view": django/como-servir-html/03.crear_view.md
+            - "Paso 4: crear url": django/como-servir-html/04.crear_url.md
+            - "Paso 5: servir": django/como-servir-html/05.servir.md

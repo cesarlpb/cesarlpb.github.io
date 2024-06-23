@@ -1,0 +1,14 @@
+language:
+  locale: es
+  search:
+    label: "Buscar"
+    placeholder: "Buscar en la documentación"
+    result_initial: "Escribe para comenzar a buscar"
+    result_none: "No se encontraron resultados"
+    result_one: "1 resultado encontrado"
+    result_other: "# resultados encontrados"
+  toc:
+    title: "En esta página"
+  nav:
+    next: "Siguiente"
+    previous: "Anterior"
