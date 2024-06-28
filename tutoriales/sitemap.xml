@@ -2,117 +2,127 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://cesarlpb.github.io/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/categories/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/blog/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/blog/category/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://cesarlpb.github.io/blog/2024/07/26/azure-fundamentals-AZ900/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <loc>https://cesarlpb.github.io/blog/2024/06/26/azure-fundamentals-AZ900/</loc>
+         <lastmod>2024-06-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cesarlpb.github.io/blog/2024/06/28/librerias-fundamentales-python/</loc>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/blog/2024/06/13/intro-a-django/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/django/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/django/como-servir-html/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/django/como-servir-html/02.crear_template/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/django/como-servir-html/03.crear_view/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/django/como-servir-html/04.crear_url/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/django/como-servir-html/05.servir/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/django/django-docs/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/django/mi-primer-django/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/django/primeros-pasos/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/django/primeros-pasos/crear-venv/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/django/primeros-pasos/ejecutar-django/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/django/w3schools/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/blog/archive/2024/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cesarlpb.github.io/blog/category/python/</loc>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/blog/category/azure/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/blog/category/microsoft/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/blog/category/django/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://cesarlpb.github.io/tags/</loc>
-         <lastmod>2024-06-26</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
