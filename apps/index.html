@@ -67,47 +67,53 @@
             <button onclick="startCountdown()">Start</button>
         </div>
     </div>
+    <audio id="endSound" src="alert-33762.mp3"></audio>
     <script>
-      let countdownInterval;
+        let countdownInterval;
 
-function startCountdown() {
-    const minutesElement = document.getElementById('minutes');
-    const secondsElement = document.getElementById('seconds');
-    const inputMinutes = document.getElementById('inputMinutes').value;
-    const inputSeconds = document.getElementById('inputSeconds').value;
-    let totalSeconds = parseInt(inputMinutes) * 60 + parseInt(inputSeconds);
+        function startCountdown() {
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+            const inputMinutes = document.getElementById('inputMinutes').value;
+            const inputSeconds = document.getElementById('inputSeconds').value;
+            let totalSeconds = parseInt(inputMinutes) * 60 + parseInt(inputSeconds);
 
-    clearInterval(countdownInterval);
-
-    countdownInterval = setInterval(() => {
-        if (totalSeconds <= 0) {
             clearInterval(countdownInterval);
-            return;
+
+            countdownInterval = setInterval(() => {
+                if (totalSeconds <= 0) {
+                    clearInterval(countdownInterval);
+                    playEndSound();
+                    return;
+                }
+
+                totalSeconds--;
+
+                const minutes = Math.floor(totalSeconds / 60);
+                const seconds = totalSeconds % 60;
+
+                minutesElement.textContent = String(minutes).padStart(2, '0');
+                secondsElement.textContent = String(seconds).padStart(2, '0');
+
+                animateCountdown(minutesElement);
+                animateCountdown(secondsElement);
+
+                document.getElementsByClassName("controls")[0].style.display = "none";
+
+            }, 1000);
         }
 
-        totalSeconds--;
+        function animateCountdown(element) {
+            element.classList.add('animate');
+            setTimeout(() => {
+                element.classList.remove('animate');
+            }, 300);
+        }
 
-        const minutes = Math.floor(totalSeconds / 60);
-        const seconds = totalSeconds % 60;
-
-        minutesElement.textContent = String(minutes).padStart(2, '0');
-        secondsElement.textContent = String(seconds).padStart(2, '0');
-
-        animateCountdown(minutesElement);
-        animateCountdown(secondsElement);
-
-        document.getElementsByClassName("controls")[0].style.display = "none";
-
-    }, 1000);
-}
-
-function animateCountdown(element) {
-    element.classList.add('animate');
-    setTimeout(() => {
-        element.classList.remove('animate');
-    }, 300);
-}
-s
+        function playEndSound() {
+            const endSound = document.getElementById('endSound');
+            endSound.play();
+        }
     </script>
 </body>
 </html>
