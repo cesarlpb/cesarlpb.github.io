@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+      body, html {
+          height: 100%;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #282c34;
+          color: white;
+          font-family: Arial, sans-serif;
+      }
+
+      .container {
+          text-align: center;
+      }
+
+      .countdown {
+          font-size: 5em;
+          margin-bottom: 20px;
+      }
+
+      .controls {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .controls input {
+          width: 80px;
+          font-size: 1.2em;
+          text-align: center;
+          margin: 0 5px;
+      }
+
+      .controls button {
+          padding: 10px 20px;
+          font-size: 1.2em;
+          margin-left: 10px;
+          cursor: pointer;
+      }
+
+      .countdown span {
+          transition: transform 0.3s ease;
+      }
+
+      .animate {
+          transform: scale(1.2);
+      } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="countdown">
+            <h1>Tiempo restante
+              <span id="minutes">00</span>:<span id="seconds">00</span>
+            </h1>
+        </div>
+        <div class="controls">
+            <input type="number" id="inputMinutes" placeholder="Minutes" min="0">
+            <input type="number" id="inputSeconds" placeholder="Seconds" min="0" max="59">
+            <button onclick="startCountdown()">Start</button>
+        </div>
+    </div>
+    <script>
+      let countdownInterval;
+
+function startCountdown() {
+    const minutesElement = document.getElementById('minutes');
+    const secondsElement = document.getElementById('seconds');
+    const inputMinutes = document.getElementById('inputMinutes').value;
+    const inputSeconds = document.getElementById('inputSeconds').value;
+    let totalSeconds = parseInt(inputMinutes) * 60 + parseInt(inputSeconds);
+
+    clearInterval(countdownInterval);
+
+    countdownInterval = setInterval(() => {
+        if (totalSeconds <= 0) {
+            clearInterval(countdownInterval);
+            return;
+        }
+
+        totalSeconds--;
+
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+
+        minutesElement.textContent = String(minutes).padStart(2, '0');
+        secondsElement.textContent = String(seconds).padStart(2, '0');
+
+        animateCountdown(minutesElement);
+        animateCountdown(secondsElement);
+
+        document.getElementsByClassName("controls")[0].style.display = "none";
+
+    }, 1000);
+}
+
+function animateCountdown(element) {
+    element.classList.add('animate');
+    setTimeout(() => {
+        element.classList.remove('animate');
+    }, 300);
+}
+s
+    </script>
+</body>
+</html>
