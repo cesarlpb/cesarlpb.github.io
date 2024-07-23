@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery Template</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body, html {
+          height: 100%;
+          font-family: Arial, sans-serif;
+      }
+
+      .container {
+          display: flex;
+          height: 100vh;
+      }
+
+      .sidebar {
+          width: 25%;
+          background-color: #f4f4f4;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          padding: 20px;
+      }
+
+      .gallery {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+      }
+
+      .gallery img {
+          width: 100%;
+          height: auto;
+          border: 1px solid #ddd;
+          padding: 5px;
+          background-color: #fff;
+      }
+
+      .main-content {
+          width: 75%;
+          /* background-color: #f3e14e; */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+      }
+
+      .description {
+          width: 300px;
+          text-align: left;
+          /* background-color: #f3e14e; */
+      }
+
+      .description p {
+          margin-bottom: 10px;
+      }
+
+      .description ul {
+        list-style-type: none;
+      }
+      .description ul li {
+        margin-bottom: 1rem;
+      }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+          <div class="description">
+            <p>Rito pls</p>
+            <p>RITORITO<br>
+            <ul>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+            </ul>
+            </p>
+        </div>
+        </div>
+        <div class="main-content">
+          <div class="gallery">
+            <!-- Add your photo gallery items here -->
+            <img src="https://i.ytimg.com/vi/oUba8V1VodE/maxresdefault.jpg" alt="Photo 1">
+            <img src="https://i.ytimg.com/vi/oUba8V1VodE/maxresdefault.jpg" alt="Photo 2">
+            <img src="https://i.ytimg.com/vi/oUba8V1VodE/maxresdefault.jpg" alt="Photo 3">
+            <!-- Add more photos as needed -->
+        </div>
+            
+        </div>
+    </div>
+</body>
+</html>
