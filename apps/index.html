@@ -52,18 +52,26 @@
       .animate {
           transform: scale(1.2);
       } 
+      .controls input {
+        height: 3rem;
+        font-size: 3rem;
+      }
+      .controls button {
+        font-size: 2.5rem;
+        padding: 2px 10px;
+      }
     </style>
 </head>
 <body>
     <div class="container">
+        <h2 style="font-size: 5rem; margin-bottom: 0;">Ejercicio # <span id="number"></span></h2>
         <div class="countdown">
-            <h1>Tiempo restante
-              <span id="minutes">00</span>:<span id="seconds">00</span>
-            </h1>
+            <h2 style="margin: 0;">Tiempo restante</h2>
+            <h2><span id="minutes">00</span>:<span id="seconds">00</span></h2>
         </div>
         <div class="controls">
-            <input type="number" id="inputMinutes" placeholder="Minutes" min="0">
-            <input type="number" id="inputSeconds" placeholder="Seconds" min="0" max="59">
+            <input type="number" id="inputMinutes" placeholder="Minutes" min="0" value="5">
+            <input type="number" id="inputSeconds" placeholder="Seconds" min="0" max="59" value="0">
             <button onclick="startCountdown()">Start</button>
         </div>
     </div>
@@ -114,6 +122,21 @@
             const endSound = document.getElementById('endSound');
             endSound.play();
         }
+
+        function obtenerNumeroAleatorio() {
+    // Math.random() genera un número decimal aleatorio entre 0 (inclusive) y 1 (exclusivo)
+    // Multiplicamos por 20 para obtener un rango de 0 a 19.999...
+    // Math.floor() redondea hacia abajo al entero más cercano, resultando en un rango de 0 a 19
+    // Sumamos 1 para obtener un rango de 1 a 20
+    let numeroAleatorio = Math.floor(Math.random() * 20) + 1;
+    return numeroAleatorio;
+}
+
+// Imprime un número entero aleatorio entre 1 y 20
+document.getElementById("number").innerText = obtenerNumeroAleatorio();
+
+
+
     </script>
 </body>
 </html>
