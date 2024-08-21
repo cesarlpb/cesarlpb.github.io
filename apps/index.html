@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timer</title>
+    <link rel="shortcut icon" href="c.png" type="image/x-icon">
+    <title>Simulador de Entrevista</title>
     <style>
         body, html {
             height: 100%;
@@ -21,7 +22,7 @@
         }
 
         .countdown {
-            font-size: 3.75em;
+            font-size: 2.25em;
             margin-bottom: 20px;
         }
 
@@ -108,12 +109,20 @@
             <div class="light amber"></div>
             <div class="light green active"></div>
         </div>
+        <h2 style="font-size: 1.75rem;">Llamada 1 con RRHH</h2>
+        <ol style="text-align: left;">
+            <li>Toma de contacto (alguna pregunta informal) => conectar</li>
+            <li>Confirmación de aplicación => ¿estás interesad@ en el puesto?</li>
+            <li>Tecnologías: lista de cosas que se pregunta (checkboxes)</li>
+            <li>Rango salarial => ¿Cuánto quieres cobrar mensual o anual?</li>
+            <li>Palabras finales => aprovechad para mostrar interés y comentad algo que os llame la atención (y si no te lo inventas)</li>
+        </ol>
         <div class="countdown">
-            <h2 style="margin: 0;">Tiempo restante</h2>
+            <h2 style="margin: 0; font-size: 1.75rem;">Tiempo restante</h2>
             <h2><span id="minutes">00</span>:<span id="seconds">00</span></h2>
         </div>
         <div class="controls">
-            <input type="number" id="inputMinutes" placeholder="Minutes" min="0" value="5">
+            <input type="number" id="inputMinutes" placeholder="Minutes" min="0" value="10">
             <input type="number" id="inputSeconds" placeholder="Seconds" min="0" max="59" value="0">
             <button onclick="startCountdown()">Start</button>
         </div>
