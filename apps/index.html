@@ -5,66 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown Timer</title>
     <style>
-      body, html {
-          height: 100%;
-          margin: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #282c34;
-          color: white;
-          font-family: Arial, sans-serif;
-      }
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #282c34;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
 
-      .container {
-          text-align: center;
-      }
+        .container {
+            text-align: center;
+        }
 
-      .countdown {
-          font-size: 5em;
-          margin-bottom: 20px;
-      }
+        .countdown {
+            font-size: 3.75em;
+            margin-bottom: 20px;
+        }
 
-      .controls {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-      }
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-      .controls input {
-          width: 80px;
-          font-size: 1.2em;
-          text-align: center;
-          margin: 0 5px;
-      }
+        .controls input {
+            width: 80px;
+            font-size: 1.2em;
+            text-align: center;
+            margin: 0 5px;
+        }
 
-      .controls button {
-          padding: 10px 20px;
-          font-size: 1.2em;
-          margin-left: 10px;
-          cursor: pointer;
-      }
+        .controls button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            margin-left: 10px;
+            cursor: pointer;
+        }
 
-      .countdown span {
-          transition: transform 0.3s ease;
-      }
+        .countdown span {
+            transition: transform 0.3s ease;
+        }
 
-      .animate {
-          transform: scale(1.2);
-      } 
-      .controls input {
-        height: 3rem;
-        font-size: 3rem;
-      }
-      .controls button {
-        font-size: 2.5rem;
-        padding: 2px 10px;
-      }
+        .animate {
+            transform: scale(1.2);
+        } 
+        .controls input {
+            height: 3rem;
+            font-size: 3rem;
+        }
+        .controls button {
+            font-size: 2.5rem;
+            padding: 2px 10px;
+        }
+
+        /* Traffic light styles */
+        .traffic-light {
+            width: 100px;
+            height: 300px;
+            background-color: #333;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .light {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: grey;
+        }
+
+        .active {
+            background-color: grey;
+        }
+
+        .red.active {
+            background-color: red;
+        }
+
+        .amber.active {
+            background-color: yellow;
+        }
+
+        .green.active {
+            background-color: green;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <h2 style="font-size: 5rem; margin-bottom: 0;">Ejercicio # <span id="number"></span></h2>
+        <h2 style="font-size: 5rem; margin-bottom: 0; display:none;">Ejercicio # <span id="number"></span></h2>
+        <div class="traffic-light">
+            <div class="light red"></div>
+            <div class="light amber"></div>
+            <div class="light green active"></div>
+        </div>
         <div class="countdown">
             <h2 style="margin: 0;">Tiempo restante</h2>
             <h2><span id="minutes">00</span>:<span id="seconds">00</span></h2>
@@ -78,6 +121,7 @@
     <audio id="endSound" src="alert-33762.mp3"></audio>
     <script>
         let countdownInterval;
+        let currentLight = 'green';
 
         function startCountdown() {
             const minutesElement = document.getElementById('minutes');
@@ -124,18 +168,41 @@
         }
 
         function obtenerNumeroAleatorio() {
-    // Math.random() genera un número decimal aleatorio entre 0 (inclusive) y 1 (exclusivo)
-    // Multiplicamos por 20 para obtener un rango de 0 a 19.999...
-    // Math.floor() redondea hacia abajo al entero más cercano, resultando en un rango de 0 a 19
-    // Sumamos 1 para obtener un rango de 1 a 20
-    let numeroAleatorio = Math.floor(Math.random() * 20) + 1;
-    return numeroAleatorio;
-}
+            let numeroAleatorio = Math.floor(Math.random() * 20) + 1;
+            return numeroAleatorio;
+        }
 
-// Imprime un número entero aleatorio entre 1 y 20
-document.getElementById("number").innerText = obtenerNumeroAleatorio();
+        document.getElementById("number").innerText = obtenerNumeroAleatorio();
 
+        // Traffic light control
+        document.addEventListener('keydown', function(event) {
+            if (event.code === 'Space') {
+                changeLight();
+            }
+        });
 
+        function changeLight() {
+            const redLight = document.querySelector('.light.red');
+            const amberLight = document.querySelector('.light.amber');
+            const greenLight = document.querySelector('.light.green');
+
+            // Remove 'active' class from all lights
+            redLight.classList.remove('active');
+            amberLight.classList.remove('active');
+            greenLight.classList.remove('active');
+
+            // Cycle through the lights
+            if (currentLight === 'green') {
+                amberLight.classList.add('active');
+                currentLight = 'amber';
+            } else if (currentLight === 'amber') {
+                redLight.classList.add('active');
+                currentLight = 'red';
+            } else if (currentLight === 'red') {
+                greenLight.classList.add('active');
+                currentLight = 'green';
+            }
+        }
 
     </script>
 </body>
