@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Fullscreen</title>
+    <style>
+        /* Hacer que el video ocupe toda la pantalla */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* El video se ajustará completamente a la pantalla */
+        }
+    </style>
+</head>
+<body>
+    <video id="myVideo" autoplay muted loop playsinline>
+        <!-- Ruta del video. Cambia "video.mp4" por la ruta de tu video -->
+        <source src="video.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento video.
+    </video>
+
+    <script>
+        // Seleccionamos el video
+        var videoElement = document.getElementById('myVideo');
+
+        // Cuando se carga la página, hacemos que el video entre en pantalla completa
+        window.onload = function() {
+            if (videoElement.requestFullscreen) {
+                videoElement.requestFullscreen();
+            } else if (videoElement.mozRequestFullScreen) { // Para Firefox
+                videoElement.mozRequestFullScreen();
+            } else if (videoElement.webkitRequestFullscreen) { // Para Chrome y Safari
+                videoElement.webkitRequestFullscreen();
+            } else if (videoElement.msRequestFullscreen) { // Para Edge
+                videoElement.msRequestFullscreen();
+            }
+        };
+
+        // Eliminar controles del video
+        videoElement.controls = false;
+    </script>
+</body>
+</html>
