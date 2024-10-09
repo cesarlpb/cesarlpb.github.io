@@ -27,18 +27,18 @@ export const bio = {
   <table class="table">
   <tr>
     <td>
-      <a class="text-dark fw-bold" href="https://punkznftgenerator.com" target="_blank">Punkz NFT Generator</a>
+      <a class="text-dark fw-bold" href="https://codersforyou.es/" target="_blank">CodersForYou</a>
     </td>
     <td>
-    Un generador de NFTs en las redes de Mumbai y Polygon.
+    Sitio web de CodersForYou
     </td>
   </tr>
   <tr>
     <td>
-      <a class="text-dark fw-bold" href="https://bluegoatlabs.com/" target="_blank">Blue Goat Labs</a>
+      <a class="text-dark fw-bold" href="https://methodobitcoin.com/" target="_blank">Methodo Bitcoin</a>
     </td>
     <td>
-      Página web de Blue Goat Labs, una empresa de desarrollo de software.
+      Página del exchange Methodo Bitcoin.
     </td>
   </tr>
   </table>
@@ -71,18 +71,18 @@ export const bio = {
   <table class="table">
   <tr>
     <td>
-      <a class="text-dark fw-bold" href="https://punkznftgenerator.com" target="_blank">Punkz NFT Generator</a>
+      <a class="text-dark fw-bold" href="https://codersforyou.es/" target="_blank">CodersForYou</a>
     </td>
     <td>
-      An NFT generator for the Mumbai and Polygon networks.
+      CodersForYou website.
     </td>
   </tr>
   <tr>
     <td>
-      <a class="text-dark fw-bold" href="https://bluegoatlabs.com/" target="_blank">Blue Goat Labs</a>
+      <a class="text-dark fw-bold" href="https://methodobitcoin.com/" target="_blank">Methodo Bitcoin</a>
     </td>
     <td>
-      Corporate website.
+      Exchange site.
     </td>
   </tr>
   </table>
