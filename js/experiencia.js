@@ -1,18 +1,18 @@
 export const experiencia = {
   es:[ 
     {
-      empresa: "Freelance",
-      cargo: "Desarrollador de .NET y Java",
-      periodo: "2012 - 2022",
-      descripcion: "Desarrollo de apps escalables con Java/Kotlin, .NET/C#, Angular, React",
-      tags: ["Java", "Kotlin", "C#", ".NET", "Angular", "React"]
-    },
+      "empresa": "Freelance",
+      "cargo": "Senior Python Developer",
+      "periodo": "2019 - Presente",
+      "descripcion": "Desarrollo y mantenimiento de los sistemas backend principales de clientes, las APIs y las bases de datos utilizando Python, Flask y PostgreSQL. Mentoría a desarrolladores junior y colaboración con equipos multidisciplinarios para diseñar e implementar una arquitectura escalable. Fuerte énfasis en la calidad del código y la mejora continua.",
+      "tags": ["Python", "Flask", "PostgreSQL", "AWS", "SQLAlchemy", "ORM", "Software Architecture", "Mentorship", "APIs", "Backend Development"]
+    },    
     {
       empresa: "Freelance en Upwork",
       cargo: "Web App Developer & Website Designer | Tech Consultor",
       periodo: "ene 2014 - feb 2022",
       descripcion: "Consultoría para desarrollos de páginas web y web apps a medida para clientes exigentes que buscan productos de alta calidad.",
-      tags: ["Java", "PHP", "C#", ".NET", "Python", "React", "Nextjs"]
+      tags: ["Python", "C#", ".NET", "React", "Nextjs"]
     }, 
     {
       empresa: "Evosoft",
@@ -61,24 +61,26 @@ export const experiencia = {
   ],
   en:[
     {
-      empresa: "Freelance",
-      cargo: "Java Developer",
-      periodo: "2012 - 2022",
-      descripcion: `Development of scalable apps with a backend in: 
+      "empresa": "Freelance",
+      "cargo": "Senior Python Developer",
+      "periodo": "2019 - Present",
+      "descripcion": `Development and maintenance of core backend systems clients:
       <ul>
-        <li><strong>Back-end:</strong> Java/Kotlin, or .NET/C#</li>
-        <li><strong>Front-end:</strong> Angular, React/NextJS</li>
-        <li><strong>Database:</strong> MySQL, PostgreSQL, MongoDB</li>
-        <li><strong>Cloud:</strong> AWS, Azure, Google Cloud</li>
-      </ul>`,
-      tags: ["Java", "Spring", "Spring Boot", "Kotlin", "C#", ".NET", "Angular", "React"]
-    },
+        <li><strong>Back-end:</strong> Python, Flask, SQLAlchemy</li>
+        <li><strong>Database:</strong> PostgreSQL</li>
+        <li><strong>Cloud:</strong> AWS (RDS, EC2, SQS, SNS)</li>
+        <li><strong>Testing & CI/CD:</strong> Pytest, GitHub Actions</li>
+        <li><strong>Infrastructure:</strong> Terraform</li>
+      </ul>
+      Mentoring junior developers and collaborating with cross-functional teams to design and implement scalable architecture. Strong emphasis on code quality and continuous improvement.`,
+      "tags": ["Python", "Flask", "SQLAlchemy", "PostgreSQL", "AWS", "Pytest", "GitHub Actions", "Terraform", "Software Architecture", "Mentorship"]
+    },    
     {
       empresa: "Freelance at Upwork",
       cargo: "Web App Developer & Website Designer | Tech Consultor",
       periodo: "ene 2014 - feb 2022",
       descripcion: "Consultant for web app and website development.",
-      tags: ["Java", "PHP", "C#", ".NET", "Python", "React", "Nextjs"]
+      tags: ["Python", "C#", ".NET", "React", "Nextjs"]
     },
     {
       empresa: "Evosoft",
