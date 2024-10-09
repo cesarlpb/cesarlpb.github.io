@@ -81,9 +81,9 @@ projH2.innerHTML = LANG == "es" ? "Proyectos" : "Projects";
 // contenido
 let proj = document.getElementById("proyectos");
 const projects = proyectos[LANG];
+proj.innerHTML += `${LANG == "en" ? `<p class="text-muted">More projects upon demand</p>` : `<p class="text-muted">Más proyectos bajo demanda</p>`}`
 for(const p of projects.reverse()){
   proj.innerHTML += `<div class="ps-0 mt-2">
-  ${LANG == "en" ? `<p class="text-muted">More projects upon demand</p>` : ""}
   <div class="row align-items-between">
     <h3 class="ps-2 mb-0 col-8 fw-bold" style="font-size: 1rem">${p.titulo}</h3>
     <p class="ps-0 fw-light text-dark mb-0 col-4" style="font-size: 0.8rem;">${p.tipo}</p>
