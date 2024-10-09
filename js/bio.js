@@ -1,6 +1,6 @@
 export const bio = {
   es: `
-  <p class="ps-3">¡Hola!, soy César, <b>desarrollador full-stack</b> con <b>experiencia de +10 años</b> en programación.
+  <p class="ps-3">¡Hola!, soy César, <b>desarrollador full-stack</b> con <b>experiencia de +12 años</b> en programación.
   Soy <b>físico teórico</b> graduado en la UCM. Siempre me ha gustado la tecnología y la resolución de problemas, por
   ello encuentro la programación entretenida y apasionante al mismo tiempo.</p>
   <p class="ps-3">Los frameworks que he utilizado con más frecuencia son:
@@ -44,7 +44,7 @@ export const bio = {
   </table>
   `,
   en: `
-  <p class="ps-3">Hello! this is César, <b>full-stack developer</b> with <b>+10 year experience</b> in coding.
+  <p class="ps-3">Hello! this is César, <b>full-stack developer</b> with <b>+12 year experience</b> in coding.
   I am a graduate <b>theorethical physicist</b> by the Complutense University of Madrid. I've always liked tech and solving problems, 
   that's why I find coding fun and rewarding at the same time.</p>
   <p class="ps-3">Some frameworks I have used most often are:
