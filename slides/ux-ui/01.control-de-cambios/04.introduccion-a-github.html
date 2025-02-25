@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Identificación de los elementos de Internet</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+    <style>
+      p + img, p > img, p:has(img) {
+        margin:0!important;
+      }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 0 -->
+            <!-- Slide de presentación del curso -->
+            <section>
+                <h2>Control de Cambios</h2>
+                <h3>Trabajo en Remoto con Github</h3>
+                <hr>
+                <p>César Patiño</p>
+                <small>2025</small>
+            </section>
+
+            <!-- Slide 1 -->
+ 
+            <section data-markdown>
+              <textarea data-template>
+
+                <!-- Tema Trabajo con Git de forma remota (con Github) 
+                 desde pág 108 - 131 -->
+                # ¿Qué es Github?
+                <!-- 108  -->
+
+                - Github es una empresa y un servicio en la nube para alojar 
+                proyectos que suelen ser de código
+                - Subir proyectos es gratis: puedes crear repositorios públicos 
+                y privados de forma ilimitada
+                - [Github](https://github.com/) es la principal nube de 
+                alojamiento de código a nivel mundial, sus alternativas son: 
+                [Gitlab](https://about.gitlab.com/) 
+                y 
+                [Bitbucket](https://bitbucket.org/)
+                - Hay alternativas open source, como [Gitea](https://about.gitea.com/)
+                
+                ---
+
+                # Repositorios
+
+                - Igual que en git, la unidad base para trabajar en Github es un 
+                repositorio
+                - Un proyecto puede tener uno o más repositorios. Es habitual
+                separar el `front-end` del `back-end` y de otras áreas
+                
+                ## Visibilidad
+
+                - **Público:** lo puede ver (y leer) cualquier usuario de Github
+                - **Privado:** solo pueden interactuar usuarios con permiso 
+                previamente invitados
+                ---
+                
+
+                # Licencias
+
+                Si bien los repositorios públicos los puede leer cualquier persona
+                si vamos a dedicar "mucho tiempo" a un proyecto se recomienda
+                añadir una licencia para aclarar las normas de uso en la comunidad.
+
+                En un repositorio privado, la licencia puede ser más opcional 
+                y se comparte con usuarios determinados.
+
+                - [Repositorio con plantillas de licencias](https://github.com/licenses/license-templates)
+                - Es suficiente con crear un archivo `LICENSE` con el contenido 
+                adaptado al proyecto
+
+
+                ---
+
+                ### Crear nuevo repositorio en Github
+
+                Abrimos la página [github.com/new](https://github.com/new/) o [repo.new](https://new.new/)
+                y rellenamos el formulario con los datos del repositorio:
+
+                - **Nombre:** sin espacios ni caracteres especiales (usad `-` o `_` o mayúsculas)
+                - Descripción (opcional)
+                - **Acceso:** público o privado
+                - Añadir `README.md` es opcional -> si no lo marcas aparecen después comandos para clonar
+                - Añadir `.gitignore` (opcional)
+                - Añadir licencia
+                
+                ---
+                ### Formulario para crear repositorio
+
+                ![Formulario creación de repositorio](./github/repo.new.png)
+                ---
+
+                # Clonar repositorio: git clone
+
+                - HTTPS (solo públicos):
+                ```bash
+                  git clone <https://github.com/<username>/<repositorio>>
+                ```
+                - SSH (públicos y privados):
+                ```bash
+                  git clone <git@github.com:<username>/<repositorio>.git
+                ```
+
+                **Las urls en < ... > en ambos casos se copian del repositorio**
+                ---
+                # URLs para clonar repositorios
+
+                ![URLs para git clone en Github](./github/urls-git-clone.png)
+                ---
+
+                <!-- Hasta aquí págs 108 - 116 -->
+
+                ### Sincronizar con remote: git pull
+
+                - `git pull` actualiza el repositorio local con todas los cambios
+                nuevos que tenga el repositorio asociado en remoto (en Github)
+                - Si queremos especificar la rama `main` usamos:
+                
+                ```bash
+                    git pull origin main
+                ```
+
+                - `git pull` ejecuta `git fetch` y `git merge`
+                  - Si solo queréis bajar los cambios sin fusionar en rama local -> `git fetch`
+                  - Después, tendrías que hacer merge desde `main`: `git merge remotes/origin/main`
+                
+                - Si queremos los cambios en la rama local para trabajar -> `git pull`
+                  - Como `git pull` hacer un merge de remotes a rama local => puede causar conflicto de merge
+
+                ---
+                    ![Ejemplo de git pull en repositorio IFCD65](./github/git-pull.png)
+                ---
+
+                # Subir cambios a remote: git push
+
+                - `git push` se usa para sincronizar de local a remoto
+                - Al subir tus cambios a una rama en un repositorio remoto, no
+                puede haber conflicto de merge => solo te dejará subir los cambios
+                **si no existe conflicto**
+
+                - Para subir tu cambios de la rama `main`:
+
+                ```bash
+                    git push origin main
+                ```
+                
+                - Si no hay conflicto, saldrá un mensaje de confirmación con información 
+                de la subida
+
+                ---
+                
+                ![Ejemplo de git push a rama main de Github](./github/git-push.png)
+                
+                ---
+
+                # Flujo de Trabajo en Remoto con Github
+
+                ## sin conflictos de merge
+
+                1. Clonamos repositorio
+                2. Subimos cambios con `git push`
+                3. Hacemos un cambio desde Github y actualicamos con `git pull`
+
+                ---
+
+                # Flujo de Trabajo en Remoto con Github
+
+                ## con conflictos de merge
+                
+                1. Clonamos repositorio
+                    
+                Con SSH:
+                ```bash
+                  git clone git@github.com:cesarlpb/IFCD65.git curso-front-end
+                ```
+
+                2. Subimos cambios con `git push` (después de hacer cambio, pasarlo
+                a staging y hacer el commit):
+                
+                ```bash
+                  git push origin main
+                ```
+                
+                3. Hacemos un cambio desde Github y actualicamos con `git pull`
+
+                ---
+                ### git push (parte 1)
+
+                ![git clone y git push](./github/git-push-1.png)
+
+                ---
+
+                ### git push (parte 2)
+
+                ![git clone y git push](./github/git-push-2.png)
+
+                ---
+
+                ### git pull sin conflictos
+
+                ![git pull sin conflictos](./github/git-pull-sin-conflictos.png)
+
+
+                # Solución de problemas: git pull y git push
+
+                - Normalmente, hay un conflicto de merge cuando una de las versiones
+                (local o remota) no coincide con la otra
+                - Es posible que un archivo o varios tengan cambios que no se 
+                pueden resolver automáticamente -> en la misma(s) línea(s) cada 
+                archivo pone algo distinto
+
+                Si es porque tenemos cambios pendientes en local:
+
+                ```bash
+                git stash
+                git pull
+                git stash apply 0 # aplicar los cambios encima de la actualización
+                ```
+                ---
+
+                ### git stash (parte 1)
+                
+                ![Ejemplo de uso de git stash](./github/git-pull-con-conflictos-1.png)
+
+                ---
+                ### git stash (parte 2)
+
+                ![Ejemplo de uso de git stash](./github/git-pull-con-conflictos-2.png)
+
+                ---
+
+                <!-- hasta aquí la página 122 del libro -->
+
+                # Trabajo en Equipo: Pull Requests
+                <!--  pág 123 -->
+                
+                ---
+
+                # Colaborar con Proyectos: Forks
+
+                ---
+
+              </textarea>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+    <script>
+      Reveal.initialize({
+        plugins: [RevealMarkdown],
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Identificación de los elementos de Internet</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 0 -->
+            <!-- Slide de presentación del curso -->
+            <section>
+                <h2>Control de Cambios</h2>
+                <h3>Trabajo Local con Git</h3>
+                <hr>
+                <p>César Patiño</p>
+                <small>2025</small>
+            </section>
+
+            <!-- Slide 1 -->
+ 
+            <section data-markdown>
+              <textarea data-template>
+
+                <!-- Tema Trabajando con Git de forma local, págs. 31 - 60-->
+                # Git de forma local
+
+                - Git, al ser un software de control de cambio, permite trabajar offline y en local (en tu ordenador o dispositivo en tu red local)
+                - No es necesario subir el código fuente o proyecto a la nube
+                - A menudo, subir el repositorio a una nube tiene ventajas pero se puede usar Git al completo sin esta opción o usando servidores propios
+                ---
+
+                # Crear repositorio
+
+                ```bash
+                mkdir repo # creas la carpeta
+                cd repo    # entramos en la carpeta
+                git init   # creamos un repositorio vacío
+                ```
+
+                O al revés:
+
+                ```bash
+                git init repo # creas un repositorio en una carpeta "repo"
+                cd repo       # entras en esa carpeta
+                ```
+
+                Para abrir la carpeta con VS Code desde terminal:
+
+                ```bash
+                code repo # cambiar "repo" por ruta a la carpeta o nombre
+                ```
+
+                ---
+
+                # Rama inicial
+
+                Actualmente, la rama inicial de un repositorio es `main` pero se 
+                puede cambiar cuando se crea, después, 
+                o configurar la rama por defecto en nuestra máquina:
+
+                ```bash
+                git init repo --initial-branch=nombre-de-tu-rama-inicial
+                ```
+
+                En config:
+
+                ```bash
+                git config --global init.defaultBranch nombre-de-tu-rama-inicial
+                ```
+
+                ---
+
+                # ¿Cómo sabemos que una carpeta es repositorio?
+
+                - Una comprobación simple es entrar en la carpeta y buscar una subcarpeta `.git`
+                - No se debe borrar la carpeta `.git` ya que puedes perder el historial del repositorio 
+                - Como es una carpeta oculta, es posible que debas habilitar esta opción en tu sistema
+
+                En sistemas Unix:
+
+                ```bash
+                ls -a
+                ```
+
+                En Windows:
+
+                ```cmd
+                  dir /ah 
+                ```
+                
+                Más información: https://www.computerhope.com/issues/ch001039.htm
+
+                ---
+
+                # ¿Cómo sabemos que una carpeta es repositorio? (parte 2)
+
+                Otra opción es ejecutar algún comando de git en el posible 
+                repositorio:
+
+                ```bash
+                git log
+                git status
+                # etc
+                ```
+
+                Cualquier comando de git nos puede dar una pista.
+                
+                ---
+
+                # Directorio de Trabajo
+                <!-- página 34 -->
+                Debemos seleccionar una carpeta para organizar nuestros proyectos.
+
+                La carpeta que tiene nuestro repositorio se denomina **carpeta o directorio de trabajo**.
+
+                Normalmente, abrimos esta carpeta en VS Code.
+
+                Para abrir la carpeta podemos ejecutar `code carpeta` 
+                o desde VS Code `Archivo > Abrir carpeta`
+
+                ---
+                
+                # Ejemplo Práctico
+                ## (para iniciar proyecto nuevo)
+
+                En un terminal:
+
+                ```bash
+                mkdir repo
+                cd repo
+                git init
+                code .
+                ```
+
+                - Crear carpeta "repo"
+                - Entrar en carpeta
+                - Crear repositorio (vacío)
+                - Abrir carpeta "repo" en VS Code
+
+                ---
+                # Carpeta "repo" abierta en VS Code
+
+                ![carpeta repo en VS Code](./repo-en-vs-code.png)
+
+                ---
+
+                # Ejemplo Práctico (parte 2)
+
+                - Creamos un `README.md`
+                - Creamos un `index.html`
+                
+                (por el momento, el contenido de los archivos da igual)
+
+                - Añadimos ambos a `staging`
+                - Confirmamos commits
+
+                ---
+                # Cambios de Ejemplo
+
+                ![Cambios de ejemplo](./cambios-index-readme.png)
+                ---
+                # Ejemplo mensaje commit sin confirmar
+
+                ![Ejemplo de mensaje para commit](./ejemplo-mensaje-commit.png)
+                ---
+                # Primer commit confirmado
+
+                ![Primer commit en repo](./primer-commit.png)
+                ---
+                # Ejemplo con dos commits
+
+                ![Ejemplo dos commits](./ejemplo-dos-commits.png)
+                ---
+
+                # Hacer commit
+
+                Desde VS Code:
+                
+                - Usando el control de cambio (icono de las ramas), añadimos a `staging` con el `+` y quitamos de staging con el `-`
+                - Colocamos mensaje y confirmar
+                
+                Desde terminal:
+
+                ```bash
+                git add index.html # ruta al archivo
+                git add . # añade todo a staging
+                git commit -m "Título del commit" -m "Mensaje"
+                ---
+                # Commit desde VS Code
+
+                ![Commit desde VS Code](./commit-desde-vs-code.png)
+
+                ---
+
+                # Commit desde Terminal
+
+                ![Commit desde Terminal](./commit-desde-terminal.png)
+
+                ---
+
+                # git restore
+                
+                Deshacer un cambio o revertir archivo(s) a un estado anterior
+
+                Si hacemos un cambio no deseado en `index.html`:
+
+                ```bash
+                # restauramos index a la versión anterior
+                git restore index.html
+
+                # restaurar todo el directorio de trabajo
+                git restore .
+                
+                # restaurar todos los archivos terminados en *.html
+                git restore '*.html'
+                ```
+
+                **Nota:** git restore existe desde la versión `2.23`. 
+                En el momento de la edición del documento, se usa la versión 
+                `2.39.2`.
+
+                ---
+
+                # git clean
+
+                - Sirve para borrar archivos o directorios que no estamos siguiendo en un commit anterior
+                - Permite hacer `dry-run`, es decir, ver el resultado del comando sin ejecutarlo
+
+                ```bash
+
+                git clean -f # fuerza el borrado sin confirmar 🚨¡¡PELIGRO!!🚨
+
+                git clean -d # borra también carpetas 🚨¡¡PELIGRO!!🚨
+
+                git clean -i # modo interactivo (pregunta antes de borrar)
+
+                git clean -n # ejecuta el dry run (no borra nada)
+                ```
+
+                ---
+
+                # Ejemplos de uso de git clean
+
+                ![git clean](./git-clean.png)
+
+                ---
+                
+                <!-- continuar en pág 40 -->
+
+                # Ejemplo Práctico
+
+                ## añadir archivo al staging
+                
+                En un repositorio, creamos un archivo `html` y ejecutamos alguno de los siguientes comandos:
+
+                ```bash
+                # añadir un archivo html por nombre:
+                git add about.html
+                
+                # añadir todos los html:
+                git add *.html
+
+                # añadir todos los de la carpeta actual:
+                git add .
+                ```
+
+                ---
+
+                # About en Staging
+
+                ![about.html en staging](./about-en-staging.png)
+
+                ---
+
+                # Comandos para añadir archivos
+
+                ![comandos para añadir archivos](./añador-archivos-a-staging.png)
+
+                ---
+
+                # Comandos para añadir carpeta
+
+                ![comandos para añadir carpeta](./añadir-carpeta-a-staging.png)
+
+                ---
+                
+                # Quitar archivos de staging
+
+                Es suficiente con hacer un reset del archivo (no lo borra)
+
+                ```bash
+
+                # añadimos about.html a staging
+                git add about.html
+
+                # comprobamos que está en staging (sale en verde)
+                # git status
+
+                # quitamos el archivo del staging
+                git reset about.html
+
+                # comprobamos que ya NO está en staging
+                git status
+
+                ```
+
+                ---
+
+                # Quitar un archivo de staging
+
+                ![quitar de staging](./quitar-archivo-de-staging.png)
+
+                ---
+
+                # Commits
+
+                Commits o confirmaciones son puntos de guardado que contienen toda
+                la información del repositorio en el momento en el que se hacen.
+
+                - Hay metadatos como el autor, la fecha, etc.
+                - Se guardan los cambios de los archivos que sigue Git -> lo que se ignora (`.gitignore`) no se incluye
+                - Se puede volver a cualquier commit anterior desde terminal o navegando en Github
+
+                ---
+
+                # Cómo hacer commits
+
+                ```bash
+                
+                # comprobamos qué tenemos en staging
+                git status
+
+                # añadimos about.html a staging
+                git add about.html
+
+                # creamos el commit con un mensaje control
+                git commit -m "Creamos about.html"
+
+                # comprobamos el estado y vemos el commit
+                git status
+                git log
+                ```
+
+                - Nota: se sale del git log con `Q`
+                - Puedes moverte con las flechas arriba / abajo en el log
+
+                ---
+
+                # Ejemplo de creación de Commit
+
+                ![creamos un commit](./creamos-commit-local.png)
+
+                <!-- Saltamos páginas 49 y 50
+                git commit -am ... solo sirve con archivos anteriormente
+                añadidos en el historial.
+                
+                Personalmente, no lo uso, siempre lo hago mediante staging :)
+                -->
+
+                # Buenas Prácticas para hacer commits
+
+                1. Usar verbos imperativos como: Añadir, Arreglar, Borrar, etc.
+                ```
+                Crear index.html
+                Añadir about.html
+                ```
+                2. No usar puntos ni puntos suspensivos en títulos.
+                3. Máximo 50 caracteres para el título
+
+                ```bash
+                git commit -m "Esto es un título"
+                git commit -m "- Esto es un título de un commit de 50 caracteres-"
+                ```
+
+                ---
+
+                # Buenas Prácticas para hacer commits (parte 2)
+
+                4. Añadimos todo el contexto necesario en el cuerpo del mensaje
+
+                ```bash
+
+                git commit -m "Título" -m "Esto es el cuerpo del mensaje donde
+                podemos añadir más información del commit que estamos haciendo
+                para que se entienda mejor."
+                ```
+
+                5. Se pueden añadir prefijos para informar del tipo de cambio
+
+                ```bash
+
+                feat(frontend): Añadir navbar en landing page
+                fix(web): Corregir responsive de homepage
+                ```
+
+                6. Considerar utilidades como husky para ayudar en commits
+                
+                ---
+
+                # HEAD
+
+                - Es el puntero o la referencia de "dónde" estamos situados en el
+                historial del repositorio
+                - Por defecto, se ubica en el último commit de la rama en la que 
+                estamos trabajando
+                - Se puede mover el HEAD a un commit anterior o posterior para 
+                ver el proyecto en ese momento
+
+                Comandos para ver información del HEAD:
+                  ```bash
+                  git symbolic-ref HEAD # saca el valor de referencia del HEAD
+
+                  git rev-parse HEAD # saca el commit donde está el HEAD
+                ```
+                
+                ---
+
+                # git reset --soft
+
+                ## **Disclaimer:** De verdad espero que sepas lo que haces.
+
+                ```bash
+                # retrocede el HEAD un commit:
+                git reset --soft HEAD~1
+                # si necesitas retroceder más, cambia el número
+
+                # para volver a avanzar el HEAD una posición sin especificar hash de commit:
+                git reset --soft HEAD@{1}
+                ```
+                
+                `--soft` nos """garantiza""" que no perderemos nada de los archivos.
+                Aún así, tened cuidado al probar estos comandos.
+
+                --- 
+
+                # 🚨 git reset --hard 🚨
+
+                Borra los cambios y resetea al commit anterior:
+
+                ```bash
+                git reset --hard HEAD~1
+                ```
+
+                > Un gran poder conlleva una gran responsabilidad -- Tío Ben.
+
+                ---
+
+                # Corregir el mensaje del último commit
+
+                ```bash
+                git commit --amend -m "Este es el mensaje correcto"
+                ```
+
+                - Solo sirve para editar el **último** commit
+                - Permite cambiar los mensajes
+                - No cambia el contenido (archivos añadidos) del commit
+
+                # Ejemplo de git commit --amend
+
+                ![git commit --amend](./git-commit-amend.png)
+
+                # ¿Y si añadimos los archivos incorrectos?
+
+                En caso de añadir los archivos incorrectos a un commit sería 
+                necesario hacer `git reset --soft HEAD~1` (o la cantidad de commits necesarios)
+                y volveríamos a añadir los cambios necesarios desde ese punto.
+
+                El flujo sería así:
+
+                1. Retroceder algunos commits
+                2. Volver añadir los cambios y archivos
+                3. Hacer otro commit para actualizar
+
+                El commit "incorrecto" se cambia por el "correcto" en local 
+                **SOLO SI** no se ha subido al remoto con `git push`.
+      
+                # Ejemplo de corrección en historial
+
+                ![corrección en historial](./correccion-en-historial.png)
+
+                ---
+
+                # Ignorar archivos (no hacer seguimiento)
+
+                Archivos que se pueden ignorar:
+
+                - Archivos que tengan credenciales o llaves de API (no deberías subirlas al
+                repositorio, simplemente inyectarlas por variable de entorno)
+                - Carpetas de configuración de tu editor (/.vscode)
+                - Archivos de registro (log files)
+                - Archivos de sistema como .DS_Store
+                - Carpetas generadas con archivos estáticos o compilaciones como /dist o /build
+                - Dependencias que pueden ser descargadas (/node_modules)
+                - Coverage del testing (/coverage)
+
+                ---
+
+                # Ignorar archivos (no hacer seguimiento) (parte 2)
+
+                ## ¿Por qué ignorar estas cosas?
+
+                Hay varios motivos posibles:
+                
+                - **Seguridad:** contraseñas no deben llegar a Github
+                - **Espacio:** carpetas como `node_modules`
+                - **Binarios o ejecutables:** pueden no servir en otros equipos
+                - **Otros motivos:** dependiendo del caso o de las indicaciones 
+                de trabajo, puede haber más razones para no subir ciertos archivos
+
+                ---
+
+                # .gitignore
+
+                - Archivo para indicar a Git qué cosas debe dejar de seguir
+                - Puedes ignorar archivos o carpetas haciendo 
+                click derecho > Añadir a `.gitignore` (desde Control de Código Fuente)
+                - También, puedes generar un `.gitignore` desde https://www.toptal.com/developers/gitignore
+                - Los archivos o carpetas ignorados **aparecen en gris** en VS Code
+
+                ---
+
+                # Ejemplo de archivo ignorado
+
+                ![archivo ignorado en VS Code](./archivo-ignorado.png)
+
+                <!-- Por el momento, en front-end no vamos a hacer una 
+                 configuración global de .gitignore => saltamos págs. 58 y 59 -->
+
+                # Dejar de seguir un archivo o carpeta
+
+                Hay dos opciones:
+                - Borrar el archivo o carpeta y hacer un commit con esos cambios
+                - Ejecutar el comando siguiente para mantener el archivo o carpeta
+                pero sin hacerle más seguimiento en Git:
+
+                ```bash
+                git rm --cached ignorado.html
+                ```
+                
+                Hay que hacer un commit posterior para comprobar que se deja de seguir.
+
+                # Ejemplo de untrack de temp.html
+
+                Dejamos de seguir el archivo
+
+                ![dejar de seguir temp.html](./untrack-temp.png)
+
+                ---
+
+                
+
+              </textarea>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+    <script>
+      Reveal.initialize({
+        plugins: [RevealMarkdown],
+      });
+    </script>
+</body>
+</html>

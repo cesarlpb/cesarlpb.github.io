@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Identificación de los elementos de Internet</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+    <style>
+      p + img, p > img, p:has(img) {
+        margin:0!important;
+      }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 0 -->
+            <!-- Slide de presentación del curso -->
+            <section>
+                <h2>Control de Cambios</h2>
+                <h3>Ramas en Git</h3>
+                <hr>
+                <p>César Patiño</p>
+                <small>2025</small>
+            </section>
+
+            <!-- Slide 1 -->
+ 
+            <section data-markdown>
+              <textarea data-template>
+
+                <!-- Tema Ramas, págs. 64 - 91 -->
+                # Ramas en Git
+
+                Las ramas son versiones (identificador / nombre único) que se pueden tener en paralelo en un
+                repositorio, tienen estas características:
+
+                - Puedes tener tantas como necesites
+                - Se crean a partir de un commit
+                - Se pueden fusionar con otras ramas
+
+                Sirven para mantener versiones o añadir nuevas funcionalidades
+                y para trabajar en equipo.
+
+                ---
+
+                ![diagrama de ramas en Git](./diagrama_ramas.png)
+                
+                ---
+
+                ### Ejemplo 1: trabajando con dos ramas
+
+                [Historial de comandos en Git Shools](./git-log-1.md)
+
+                ![diagrama de ramas de Git School 1](./diagrama_ramas_git_school_1.png)
+
+                ---
+                
+                ### Ejemplo 2: fast-forward 
+
+                [Historial de comandos en Git Shools](./git-log-2.md)
+                
+                ![diagrama de ramas de Git School 2](./diagrama_ramas_git_school_2.png)
+
+                ---
+
+                ### Ejemplo 3: commit de merge
+
+                [Historial de comandos en Git Shools](./git-log-3.md)
+                
+                ![diagrama de ramas de Git School 3](./diagrama_ramas_git_school_3.png)
+
+                ---
+
+                <!-- Los ejemplos anteriores abarcan las páginas 71 a 77 -->
+
+                ### git merge y tipos de merge
+
+                - **Fast-forward:** con el mismo historial, se fusiona la rama 
+                origen en la rama destino y el historial queda lineal **sin commit de merge**.
+
+                - **No Fast-forward:** se hace un commit de merge con el texto "Merge branch '<branch>'"
+                  para unir los historiales de las ramas.
+
+                - **Squash:** se hace un commit que une todos los cambios en la rama destino. 
+                El historial queda más limpio.
+                ---
+
+                ### Ejemplo de 3 modos de merge
+
+                - [Historial](./git-log-4.md)
+                - Repositorio de ejemplo -> `merge.zip` (en releases)
+
+                ![Ejemplo de 3 modos de merge](./ejemplo-3-modos-de-merge.png)
+
+                ---
+
+                # Modificar mensaje de git merge
+
+                Existe la opción de editar mensaje y de no hacer commit cuandos 
+                se hace un `git merge`:
+
+                
+                ```bash
+                # Abre el editor antes de hacer el commit
+                git merge --edit
+                ```
+
+                ```bash
+                # Evita que haga commit automáticamente
+                # y te deja los cambios preparados para hacer commit
+                git merge --no-commit
+                ```
+                ---
+
+                <!-- Hasta aquí páginas 77 a 83 del libro -->
+
+                # Conflictos en Git
+
+                - [Historial de comandos](./git-log-5.md)
+                - Ejemplo en archivo `conflictos.zip`
+
+                ---
+
+                ### Visualización del conflicto en VS Code
+
+                ![Resolución de conflictos de merge](./conflicto-de-merge-1.png)
+
+                ---
+
+                ### Resolvemos conflicto en VS Code
+
+                ![Resolución de conflictos de merge](./conflicto-de-merge-2.png)
+
+                ---
+
+                ### Conflicto resuelto
+
+                ![Resolución de conflictos de merge](./conflicto-de-merge-3.png)
+
+                ---
+
+                <!-- Resolución de conflictos de merge desde pág 84 a pág 90 -->
+
+                # Borrar ramas en Git
+
+                - **Recomendación:** revisad si la rama ha sido fusionada o si de
+                verdad no es necesaria. Es posible que sea necesario preguntar a 
+                un compañero de trabajo. 
+
+                ```bash
+                # Borrado en local:
+                git branch -D <nombre-de-la-rama>
+                # Eliminado ... (commit)
+                ```
+
+                - Este cambio puede ser irreversible si no tenemos un `remote` 
+                asociado en Github ni otra copia del repositorio.
+
+                ---
+
+                <!-- hasta página 93 - final del tema de Ramas -->
+
+                <!-- El tema de Rebase (págs. 94 - 104) nos lo saltamos porque no lo vamos a usar
+                 en un futuro cercano -->
+
+                <!-- Tema Rebase vs Merge -> vamos a usar merge (págs. 105 - 107) -->
+
+                # Trabajo remoto con Git (Github)
+                
+                Continúa en [Introducción a Github](./04.introduccion-a-github.html)
+                
+                
+              </textarea>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+    <script>
+      Reveal.initialize({
+        plugins: [RevealMarkdown],
+      });
+    </script>
+</body>
+</html>
