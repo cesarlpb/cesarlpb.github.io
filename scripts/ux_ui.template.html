@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Diapositivas de Front UX/UI - {{tema}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+    <link rel="shortcut icon" href="../c.png" type="image/x-icon">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 0 -->
+            <!-- Slide de portada -->
+            <section>
+              <h1>Front End Web Developer: UX UI</h1>
+                <p>Tema: {{tema}}</p>
+                <p><strong>Formador:</strong> César Patiño</p>
+                <small>2025</small>
+            </section>
+
+            <!-- Slides -->
+ 
+            <section data-markdown>
+              <textarea data-template>
+
+{{markdown}}
+
+              </textarea>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+    <script>
+      Reveal.initialize({
+        plugins: [RevealMarkdown],
+      });
+    </script>
+</body>
+</html>
