@@ -1,0 +1,44 @@
+/* Ejemplo de selectores en acción */
+/* selector de etiqueta: */
+h1 {
+  color: brown;
+  text-align: center;
+}
+/* selector de id: */
+#p1 {
+  text-align: center;
+  color: blue;
+}
+/* selector de clase: */
+.p {
+  text-align: center; 
+  text-transform: uppercase;
+  font-size: small;
+}
+/* etiqueta body */
+body {
+  background-color: beige;
+}
+/* todos los div */
+div {
+  border: 1px solid black;
+  background-color: gray;
+}
+/* los p dentro de div */
+div > p {
+  color: white;
+  margin-left: 10px;
+}
+/* Pikachu */
+#pika{
+  background-image: url("https://www.pngall.com/wp-content/uploads/5/Pokemon-Pikachu-180x180.png");
+  height: 180px;
+  aspect-ratio: 1 / 1;
+  background-color: beige;
+}
+/* Estilos para resaltar el texto: */
+#pika p {
+  text-align: center;
+  text-shadow: 0 0 5px rgb(193, 3, 246), 0 0 10px rgb(193, 3, 246), 0 0 15px rgb(193, 3, 246);
+
+}
