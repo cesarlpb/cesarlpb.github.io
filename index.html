@@ -1,102 +1,870 @@
-<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="description" content="Desarrollador Web Senior &#38; Instructor"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.1.3"><title>Porfolio de César P. - Desarrollador y Programador Web con +15 años de experiencia</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><link rel="stylesheet" href="/bundle/components.B1qbe0cX.css" /><script type="module" src="/bundle/hoisted.CAwUA6X8.js"></script></head> <body class="relative text-black dark:text-white"> <div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> <header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2" data-astro-cid-3ef6ksr2> <nav class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center" data-astro-cid-3ef6ksr2> <a class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400" aria-label="experiencia" href="/#experiencia" data-astro-cid-3ef6ksr2> Experiencia </a><a class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400" aria-label="proyectos" href="/#proyectos" data-astro-cid-3ef6ksr2> Proyectos </a><a class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400" aria-label="sobre-mi" href="/#sobre-mi" data-astro-cid-3ef6ksr2> Sobre mí </a><a class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400" aria-label="contacto" href="https://www.linkedin.com/in/cesarlpb89/" data-astro-cid-3ef6ksr2> Linkedin </a><a class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400" aria-label="blog" href="/tutoriales" data-astro-cid-3ef6ksr2> Blog </a> <div class="relative ml-1 mr-1" data-astro-cid-x3pjskd3> <button id="theme-toggle-btn" class="appearance-none border-none flex hover:scale-125 transition" data-astro-cid-x3pjskd3> <span class="sr-only" data-astro-cid-x3pjskd3>Elige el tema</span> <svg id="light" class="theme-toggle-icon size-5 transition-all" data-astro-cid-x3pjskd3 width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path> <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path> </svg> <svg id="dark" class="theme-toggle-icon absolute size-5 transition-all" data-astro-cid-x3pjskd3 width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path> </svg> <svg id="system" class="theme-toggle-icon absolute size-5 transition-all" data-astro-cid-x3pjskd3 width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z"></path> <path d="M7 20h10"></path> <path d="M9 16v4"></path> <path d="M15 16v4"></path> </svg> </button> <div id="themes-menu" class="absolute opacity-0 scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/70 dark:bg-gray-900/70 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md" data-astro-cid-x3pjskd3> <ul data-astro-cid-x3pjskd3> <li class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm" data-astro-cid-x3pjskd3> Light </li><li class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm" data-astro-cid-x3pjskd3> Dark </li><li class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm" data-astro-cid-x3pjskd3> System </li> </ul> </div> </div>  <script>
-  let remove = null
-  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)")
-  const themesMenu = document.getElementById("themes-menu")
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Desarrollador Web Senior &#38; Instructor"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content="Astro v4.1.3" />
+    <title>
+      Porfolio de César P. - Desarrollador y Programador Web con +15 años de
+      experiencia
+    </title>
+    <meta name="astro-view-transitions-enabled" content="true" />
+    <meta name="astro-view-transitions-fallback" content="animate" />
+    <link rel="stylesheet" href="/bundle/components.B1qbe0cX.css" />
+    <script type="module" src="/bundle/hoisted.CAwUA6X8.js"></script>
+  </head>
+  <body class="relative text-black dark:text-white">
+    <div
+      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    ></div>
+    <header
+      class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+      data-astro-cid-3ef6ksr2
+    >
+      <nav
+        class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+        data-astro-cid-3ef6ksr2
+      >
+        <a
+          class="relative block px-2 py-2 font-bold transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          aria-label="experiencia"
+          href="/slides/ux-ui/"
+          data-astro-cid-3ef6ksr2
+        >
+          Slides
+        </a>
+        <a
+          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          aria-label="experiencia"
+          href="/#experiencia"
+          data-astro-cid-3ef6ksr2
+        >
+          Experiencia 
+        </a>
+        <a
+          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          aria-label="proyectos"
+          href="/#proyectos"
+          data-astro-cid-3ef6ksr2
+        >
+          Proyectos </a
+        ><a
+          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          aria-label="sobre-mi"
+          href="/#sobre-mi"
+          data-astro-cid-3ef6ksr2
+        >
+          Sobre mí </a
+        ><a
+          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          aria-label="contacto"
+          href="https://www.linkedin.com/in/cesarlpb89/"
+          data-astro-cid-3ef6ksr2
+        >
+          Linkedin </a
+        ><a
+          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          aria-label="blog"
+          href="/tutoriales"
+          data-astro-cid-3ef6ksr2
+        >
+          Blog
+        </a>
+        <div class="relative ml-1 mr-1" data-astro-cid-x3pjskd3>
+          <button
+            id="theme-toggle-btn"
+            class="appearance-none border-none flex hover:scale-125 transition"
+            data-astro-cid-x3pjskd3
+          >
+            <span class="sr-only" data-astro-cid-x3pjskd3>Elige el tema</span>
+            <svg
+              id="light"
+              class="theme-toggle-icon size-5 transition-all"
+              data-astro-cid-x3pjskd3
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+              <path
+                d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"
+              ></path>
+            </svg>
+            <svg
+              id="dark"
+              class="theme-toggle-icon absolute size-5 transition-all"
+              data-astro-cid-x3pjskd3
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+              ></path>
+            </svg>
+            <svg
+              id="system"
+              class="theme-toggle-icon absolute size-5 transition-all"
+              data-astro-cid-x3pjskd3
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z"
+              ></path>
+              <path d="M7 20h10"></path>
+              <path d="M9 16v4"></path>
+              <path d="M15 16v4"></path>
+            </svg>
+          </button>
+          <div
+            id="themes-menu"
+            class="absolute opacity-0 scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/70 dark:bg-gray-900/70 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
+            data-astro-cid-x3pjskd3
+          >
+            <ul data-astro-cid-x3pjskd3>
+              <li
+                class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm"
+                data-astro-cid-x3pjskd3
+              >
+                Light
+              </li>
+              <li
+                class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm"
+                data-astro-cid-x3pjskd3
+              >
+                Dark
+              </li>
+              <li
+                class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm"
+                data-astro-cid-x3pjskd3
+              >
+                System
+              </li>
+            </ul>
+          </div>
+        </div>
+        <script>
+          let remove = null;
+          const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+          const themesMenu = document.getElementById("themes-menu");
 
-  const getThemePreference = () => {
-    if (typeof localStorage !== "undefined") {
-      return localStorage.getItem("theme") ?? "system"
-    }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light"
-  }
+          const getThemePreference = () => {
+            if (typeof localStorage !== "undefined") {
+              return localStorage.getItem("theme") ?? "system";
+            }
+            return window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          };
 
-  const updateIcon = (themePreference) => {
-    document.querySelectorAll(".theme-toggle-icon").forEach((element) => {
-      element.style.scale = element.id === themePreference ? "1" : "0"
-    })
-  }
+          const updateIcon = (themePreference) => {
+            document
+              .querySelectorAll(".theme-toggle-icon")
+              .forEach((element) => {
+                element.style.scale =
+                  element.id === themePreference ? "1" : "0";
+              });
+          };
 
-  const updateTheme = () => {
-    if (remove != null) {
-      remove()
-    }
-    matchMedia.addEventListener("change", updateTheme)
-    remove = () => {
-      matchMedia.removeEventListener("change", updateTheme)
-    }
+          const updateTheme = () => {
+            if (remove != null) {
+              remove();
+            }
+            matchMedia.addEventListener("change", updateTheme);
+            remove = () => {
+              matchMedia.removeEventListener("change", updateTheme);
+            };
 
-    const themePreference = getThemePreference()
-    const isDark =
-      themePreference === "dark" ||
-      (themePreference === "system" && matchMedia.matches)
+            const themePreference = getThemePreference();
+            const isDark =
+              themePreference === "dark" ||
+              (themePreference === "system" && matchMedia.matches);
 
-    updateIcon(themePreference)
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark")
-  }
+            updateIcon(themePreference);
+            document.documentElement.classList[isDark ? "add" : "remove"](
+              "dark"
+            );
+          };
 
-  updateTheme()
+          updateTheme();
 
-  document.addEventListener("click", () => themesMenu.classList.remove("open"))
+          document.addEventListener("click", () =>
+            themesMenu.classList.remove("open")
+          );
 
-  document.getElementById("theme-toggle-btn").addEventListener("click", (e) => {
-    e.stopPropagation()
-    const isClosed = !themesMenu.classList.contains("open")
-    themesMenu.classList[isClosed ? "add" : "remove"]("open")
-  })
+          document
+            .getElementById("theme-toggle-btn")
+            .addEventListener("click", (e) => {
+              e.stopPropagation();
+              const isClosed = !themesMenu.classList.contains("open");
+              themesMenu.classList[isClosed ? "add" : "remove"]("open");
+            });
 
-  document.querySelectorAll(".themes-menu-option").forEach((element) => {
-    element.addEventListener("click", (e) => {
-      localStorage.setItem("theme", e.target.innerText.toLowerCase().trim())
-      updateTheme()
-    })
-  })
-</script> </nav> </header>    <main class="px-4"> <section class="section py-16 md:py-36 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">  <div class="max-w-xl"> <div class="flex gap-4 mb-4"> <img class="rounded-full shadow-lg size-16" src="/me.png" alt="César P."> <a href="https://linkedin.com/in/cesarlpb89" target="_blank" rel="noopener" class="flex items-center transition md:justify-center md:hover:scale-105"> <div class="flex items-center "> <span class="relative inline-flex overflow-hidden rounded-full p-[1px]"> <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"></span> <div class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-green-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap"> Disponible para trabajar </div> </span> </div> </a> </div> <h1 class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white">
-¡Hola mundo, soy César!
-</h1> <p class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300">
-+15 años de experiencia. <strong>Físico teórico &gt; desarrollador senior & instructor</strong> de Perú 🇵🇪, residiendo en España 🇪🇸. 
-    Especializado en el desarrollo de aplicaciones web.
-</p> <nav class="flex flex-wrap gap-4 mt-8"> <a href="https://linkedin.com/in/cesarlpb89" target="_blank" rel="noopener noreferrer" role="link" class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 group max-w-fit hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M8 11l0 5"></path><path d="M8 8l0 .01"></path><path d="M12 16l0 -5"></path><path d="M16 16v-3a2 2 0 0 0 -4 0"></path></svg>
-LinkedIn
- </a> <a href="https://github.com/cesarlpb" target="_blank" rel="noopener noreferrer" role="link" class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 group max-w-fit hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg>
-LinkedIn
- </a> <a href="https://cesarlpb.github.io/cv?lang=es" target="_blank" rel="noopener noreferrer" role="link" class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 group max-w-fit hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" width="200" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"> <!-- Fondo negro y forma circular --> <circle cx="100" cy="100" r="100" fill="black"></circle> <!-- Letra "C" blanca inclinada a 45 grados --> <g transform="translate(55, 190) rotate(315)"> <text x="0" y="0" font-family="Arial" font-size="100" fill="white">&lt;C&gt;</text> </g> </svg>
-Curriculum
- </a> </nav> </div>  </section> <div class="space-y-24"> <section id="experiencia" data-section="experiencia" class="section undefined w-full mx-auto container lg:max-w-4xl md:max-w-2xl">  <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"> <svg class="size-8" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path><path d="M12 12l0 .01"></path><path d="M3 13a20 20 0 0 0 18 0"></path></svg>
-Experiencia laboral
-</h2> <ol class="relative mt-16"> <li class=""> <div class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"> <div class="relative pb-12 md:col-span-2"> <div class="sticky top-0"> <span class="text-yellow-400 -left-[42px] absolute rounded-full text-5xl">&bull;</span> <h3 class="text-xl font-bold text-yellow-400">Formador de Bootcamp</h3> <h4 class="font-semibold text-xl text-gray-600 dark:text-white">Fundación Esplai</h4> <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">marzo 2024 - actualmente</time> </div> </div> <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3"> Enseño contenido full-stack orientado a Python, machine learning y entrenamiento de modelos de IA usando las tecnologías actuales para facilitar el desarrollo con Django y librerías de Python. <a href="https://fundacionesplai.org/" role="link" class="inline-flex items-center text-lg font-medium text-yellow-500 dark:text-yellow-200 dark:hover:text-yellow-300 hover:text-yellow-700" target="_self"> Fundación Esplai <svg xmlns="http://www.w3.org/2000/svg" class="w-5 icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M9 6l6 6l-6 6"></path>  </svg>  </a> </div> </div> </li><li class=""> <div class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"> <div class="relative pb-12 md:col-span-2"> <div class="sticky top-0"> <span class="text-yellow-400 -left-[42px] absolute rounded-full text-5xl">&bull;</span> <h3 class="text-xl font-bold text-yellow-400">CTO</h3> <h4 class="font-semibold text-xl text-gray-600 dark:text-white">Método Bitcoin</h4> <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">abril 2024 - actualmente</time> </div> </div> <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3"> Responsable de desarrollo de un exchange de criptomonedas que unifica tencologías actuales y servicios de proveedores para facilitar la experiencia a los usuarios. <a href="https://metodobitcoin.com/" role="link" class="inline-flex items-center text-lg font-medium text-yellow-500 dark:text-yellow-200 dark:hover:text-yellow-300 hover:text-yellow-700" target="_self"> Método Bitcoin <svg xmlns="http://www.w3.org/2000/svg" class="w-5 icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M9 6l6 6l-6 6"></path>  </svg>  </a> </div> </div> </li> </ol> <p>
-Para ver mi trayectoria en más detalle, échale un vistazo a mi
-<a href="https://cesarlpb.github.io/cv?lang=es" role="link" class="inline-flex items-center text-lg font-medium text-yellow-500 dark:text-yellow-200 dark:hover:text-yellow-300 hover:text-yellow-700" target="_blank"> 
-curriculum
- </a>.
-</p>  </section> <section id="proyectos" data-section="proyectos" class="section undefined w-full mx-auto container lg:max-w-4xl md:max-w-2xl">  <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"> <svg class="size-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path d="M14 4l-4 16"></path></svg>
-Proyectos
-</h2> <div class="flex flex-col gap-y-16"> <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0"> <div class="w-full md:w-1/2"> <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"> <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src="/hero-image-hackaton.png"> </div> </div> <div class="w-full md:w-1/2 md:max-w-lg"> <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100"> Web del Hackathon ODS de Fundación Esplai </h3> <div class="flex flex-wrap mt-2"> <ul class="flex flex-row mb-2 gap-x-2"> <li> <span class="flex gap-x-2 rounded-full text-xs bg-black-500 text-slate-200 py-1 px-2 "> <svg class="size-4" width="85" height="107" viewBox="0 0 85 107" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M27.5894 91.1365C22.7555 86.7178 21.3444 77.4335 23.3583 70.7072C26.8503 74.948 31.6888 76.2914 36.7005 77.0497C44.4375 78.2199 52.0359 77.7822 59.2232 74.2459C60.0454 73.841 60.8052 73.3027 61.7036 72.7574C62.378 74.714 62.5535 76.6892 62.318 78.6996C61.7452 83.5957 59.3086 87.3778 55.4332 90.2448C53.8835 91.3916 52.2437 92.4167 50.6432 93.4979C45.7262 96.8213 44.3959 100.718 46.2435 106.386C46.2874 106.525 46.3267 106.663 46.426 107C43.9155 105.876 42.0817 104.24 40.6845 102.089C39.2087 99.8193 38.5066 97.3081 38.4696 94.5909C38.4511 93.2686 38.4511 91.9345 38.2733 90.6309C37.8391 87.4527 36.3471 86.0297 33.5364 85.9478C30.6518 85.8636 28.37 87.6469 27.7649 90.4554C27.7187 90.6707 27.6517 90.8837 27.5847 91.1341L27.5894 91.1365Z" fill="white"></path> <path d="M27.5894 91.1365C22.7555 86.7178 21.3444 77.4335 23.3583 70.7072C26.8503 74.948 31.6888 76.2914 36.7005 77.0497C44.4375 78.2199 52.0359 77.7822 59.2232 74.2459C60.0454 73.841 60.8052 73.3027 61.7036 72.7574C62.378 74.714 62.5535 76.6892 62.318 78.6996C61.7452 83.5957 59.3086 87.3778 55.4332 90.2448C53.8835 91.3916 52.2437 92.4167 50.6432 93.4979C45.7262 96.8213 44.3959 100.718 46.2435 106.386C46.2874 106.525 46.3267 106.663 46.426 107C43.9155 105.876 42.0817 104.24 40.6845 102.089C39.2087 99.8193 38.5066 97.3081 38.4696 94.5909C38.4511 93.2686 38.4511 91.9345 38.2733 90.6309C37.8391 87.4527 36.3471 86.0297 33.5364 85.9478C30.6518 85.8636 28.37 87.6469 27.7649 90.4554C27.7187 90.6707 27.6517 90.8837 27.5847 91.1341L27.5894 91.1365Z" fill="url(#paint0_linear_1_59)"></path> <path d="M0 69.5866C0 69.5866 14.3139 62.6137 28.6678 62.6137L39.4901 29.1204C39.8953 27.5007 41.0783 26.3999 42.4139 26.3999C43.7495 26.3999 44.9325 27.5007 45.3377 29.1204L56.1601 62.6137C73.1601 62.6137 84.8278 69.5866 84.8278 69.5866C84.8278 69.5866 60.5145 3.35233 60.467 3.21944C59.7692 1.2612 58.5911 0 57.0029 0H27.8274C26.2392 0 25.1087 1.2612 24.3634 3.21944C24.3108 3.34983 0 69.5866 0 69.5866Z" fill="white"></path> <defs> <linearGradient id="paint0_linear_1_59" x1="22.4702" y1="107" x2="69.1451" y2="84.9468" gradientUnits="userSpaceOnUse"> <stop stop-color="#D83333"></stop> <stop offset="1" stop-color="#F041FF"></stop> </linearGradient> </defs> </svg> Astro </span> </li><li> <span class="flex gap-x-2 rounded-full text-xs bg-[#003159] text-slate-200 py-1 px-2 "> <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33"><g clip-path="url(#a)"><path fill="#38bdf8" fill-rule="evenodd" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z" clip-rule="evenodd"></path></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h54v32.4H0z"></path></clipPath></defs></svg> Tailwind CSS </span> </li> </ul> <div class="mt-2 text-gray-700 dark:text-gray-400">Sitio responsive hecho con Astro y Tailwindcss para el evento de Hackathon ODS organizado por Fundación Esplai y patrocinadores en Barcelona.</div> <footer class="flex items-end justify-start mt-4 gap-x-4">  <a href="https://hackathon.fundacionesplai.org/" role="link" class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-Preview
- </a> </footer> </div> </div> </article><article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0"> <div class="w-full md:w-1/2"> <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"> <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src="/open-punkz.png"> </div> </div> <div class="w-full md:w-1/2 md:max-w-lg"> <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100"> Open Punkz - NFT minter en Polygon </h3> <div class="flex flex-wrap mt-2"> <ul class="flex flex-row mb-2 gap-x-2"> <li> <span class="flex gap-x-2 rounded-full text-xs bg-[#003159] text-slate-200 py-1 px-2 "> <svg class="size-4" viewBox="0 0 34 32" fill="currentColor" height="1em" width="1em"> <path fill="currentColor" d="M19.314 15.987a2.392 2.392 0 11-4.784 0 2.392 2.392 0 014.784 0z"></path> <path fill="currentColor" d="M16.922 24.783c1.878 1.826 3.729 2.906 5.221 2.906.489 0 .952-.103 1.337-.334 1.337-.772 1.826-2.701 1.363-5.453-.077-.489-.18-.977-.309-1.492.514-.154.977-.309 1.44-.463 2.598-1.003 4.038-2.392 4.038-3.909 0-1.543-1.44-2.932-4.038-3.909-.463-.18-.926-.334-1.44-.463.129-.514.232-1.003.309-1.492.437-2.803-.051-4.758-1.389-5.53-.386-.231-.849-.334-1.337-.334-1.466 0-3.344 1.08-5.221 2.906-1.852-1.826-3.704-2.906-5.195-2.906-.489 0-.952.103-1.337.334-1.337.772-1.826 2.701-1.363 5.453.077.489.18.977.309 1.492-.514.154-.977.309-1.44.463-2.598 1.003-4.038 2.392-4.038 3.909 0 1.543 1.44 2.932 4.038 3.909.463.18.926.334 1.44.463a16.882 16.882 0 00-.309 1.492c-.437 2.752.051 4.707 1.363 5.453.386.232.849.334 1.337.334 1.492.051 3.344-1.029 5.221-2.829zm-1.441-3.472c.463.026.952.026 1.44.026s.977 0 1.44-.026a24.523 24.523 0 01-1.44 1.723 24.252 24.252 0 01-1.44-1.723zm-3.189-2.649c.257.437.489.849.772 1.26a27.786 27.786 0 01-2.263-.386c.232-.694.489-1.415.797-2.135.206.411.437.849.694 1.26zM10.8 12.463c.72-.154 1.466-.283 2.263-.386-.257.412-.514.823-.772 1.26s-.489.849-.694 1.286a17.109 17.109 0 01-.797-2.161zm1.415 3.524c.334-.694.694-1.389 1.106-2.083.386-.669.823-1.337 1.26-2.006a35.293 35.293 0 014.682 0c.463.669.874 1.337 1.26 2.006.412.694.772 1.389 1.106 2.083a26.922 26.922 0 01-1.106 2.083c-.386.669-.823 1.337-1.26 2.006a35.293 35.293 0 01-4.682 0 28.695 28.695 0 01-1.26-2.006 27.106 27.106 0 01-1.106-2.083zm10.057-1.389l-.694-1.286c-.257-.437-.489-.849-.772-1.26.797.103 1.543.232 2.263.386-.231.72-.489 1.44-.797 2.161zm0 2.778c.309.72.566 1.44.797 2.135-.72.154-1.466.283-2.263.386.257-.412.514-.823.772-1.26.232-.386.463-.823.694-1.26zm.591 8.925c-.206.129-.463.18-.746.18-1.26 0-2.829-1.029-4.372-2.572a26.868 26.868 0 002.186-2.701 23.619 23.619 0 003.447-.54c.129.463.206.926.283 1.389.36 2.186.077 3.755-.797 4.244zm1.338-13.555c2.881.823 4.604 2.083 4.604 3.241 0 1.003-1.183 2.006-3.266 2.804-.412.154-.874.309-1.337.437a27.01 27.01 0 00-1.26-3.241c.514-1.106.952-2.186 1.26-3.241zm-2.058-7.253c.283 0 .514.051.746.18.849.489 1.157 2.032.797 4.244-.077.437-.18.9-.283 1.389a33.072 33.072 0 00-3.447-.54 23.774 23.774 0 00-2.186-2.701c1.543-1.518 3.112-2.572 4.372-2.572zm-3.781 5.17c-.463-.026-.952-.026-1.44-.026s-.977 0-1.44.026c.463-.617.952-1.183 1.44-1.723.489.54.977 1.132 1.44 1.723zm-7.382-4.99c.206-.129.463-.18.746-.18 1.26 0 2.829 1.029 4.372 2.572a26.756 26.756 0 00-2.186 2.701 23.619 23.619 0 00-3.447.54c-.129-.463-.206-.926-.283-1.389-.36-2.186-.077-3.729.797-4.244zM9.643 19.228c-2.881-.823-4.604-2.083-4.604-3.241 0-1.003 1.183-2.006 3.266-2.803.412-.154.874-.309 1.337-.437a27.01 27.01 0 001.26 3.241c-.514 1.106-.952 2.212-1.26 3.241zm.54 2.829c.077-.437.18-.9.283-1.389 1.08.232 2.238.412 3.447.54a23.774 23.774 0 002.186 2.701c-1.543 1.517-3.112 2.572-4.372 2.572-.283 0-.514-.051-.746-.18-.875-.489-1.157-2.058-.797-4.244z"></path> </svg> React </span> </li><li> <span class="flex gap-x-2 rounded-full text-xs bg-[#003159] text-slate-200 py-1 px-2 "> <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33"><g clip-path="url(#a)"><path fill="#38bdf8" fill-rule="evenodd" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z" clip-rule="evenodd"></path></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h54v32.4H0z"></path></clipPath></defs></svg> Tailwind CSS </span> </li> </ul> <div class="mt-2 text-gray-700 dark:text-gray-400">Proyecto de un minter de NFTs en Mumbai y Polygon network. ¡Crea tus Open Punkz en solo unos clics!</div> <footer class="flex items-end justify-start mt-4 gap-x-4">  <a href="https://purple-rice-5682.on.fleek.co/" role="link" class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-Preview
- </a> </footer> </div> </div> </article> </div>  </section> <section id="sobre-mi" data-section="sobre-mi" class="section undefined w-full mx-auto container lg:max-w-4xl md:max-w-2xl">  <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"> <svg class="size-8" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path><path d="M6 21v-2a4 4 0 0 1 4 -4h4"></path><path d="M15 19l2 2l4 -4"></path></svg>
-Sobre mí
-</h2> <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"> <div class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"> <p>
-Soy César Patiño, físico teórico por la Universidad Complutense de Madrid, 
-      apasionado por la tecnología desde siempre. Me dedico a diario a la
-<strong>resolución de problemas complejos</strong> en desarrollos de mis clientes.
-</p> <p>
-He trabajado con grandes empresas como
-<strong>Codere</strong> y gran número de startups. 
-      He estado relacionado con el sector del blockchain desde 2016.
-</p> <p>
-Compagino mi trabajo de desarrollador con otra de mis pasiones,
-<strong>la enseñanza</strong>.
-      Actualmente, estoy impartiendo una formación en <em class="italic">Fundación Esplai</em> de <strong>Python</strong>
-y
-<strong>machine learning</strong>. 
-      
-      Mi objetivo es ayudar a todos mis alumn@s a iniciarse o reforzar sus habilidades en desarrollo de aplicaciones y/o en el sector de IT.
-</p> </div> <img width="200" height="200" src="/me.png" alt="César P." class="order-1 object-cover w-64 h-full p-1 bg-white md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl dark:bg-yellow-500/5 ring-1 ring-white/20 " style="object-position: 50% 50%"> </article> <!-- FRASES PROHIBIDAS EN VUESTRO PORTFOLIO
+          document
+            .querySelectorAll(".themes-menu-option")
+            .forEach((element) => {
+              element.addEventListener("click", (e) => {
+                localStorage.setItem(
+                  "theme",
+                  e.target.innerText.toLowerCase().trim()
+                );
+                updateTheme();
+              });
+            });
+        </script>
+      </nav>
+    </header>
+    <main class="px-4">
+      <section
+        class="section py-16 md:py-36 w-full mx-auto container lg:max-w-4xl md:max-w-2xl"
+      >
+        <div class="max-w-xl">
+          <div class="flex gap-4 mb-4">
+            <img
+              class="rounded-full shadow-lg size-16"
+              src="/me.png"
+              alt="César P."
+            />
+            <a
+              href="https://linkedin.com/in/cesarlpb89"
+              target="_blank"
+              rel="noopener"
+              class="flex items-center transition md:justify-center md:hover:scale-105"
+            >
+              <div class="flex items-center">
+                <span
+                  class="relative inline-flex overflow-hidden rounded-full p-[1px]"
+                >
+                  <span
+                    class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"
+                  ></span>
+                  <div
+                    class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-green-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap"
+                  >
+                    Disponible para trabajar
+                  </div>
+                </span>
+              </div>
+            </a>
+          </div>
+          <h1
+            class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+          >
+            ¡Hola mundo, soy César!
+          </h1>
+          <p
+            class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+          >
+            +15 años de experiencia.
+            <strong
+              >Físico teórico &gt; desarrollador senior & instructor</strong
+            >
+            de Perú 🇵🇪, residiendo en España 🇪🇸. Especializado en el desarrollo
+            de aplicaciones web.
+          </p>
+          <nav class="flex flex-wrap gap-4 mt-8">
+            <a
+              href="https://linkedin.com/in/cesarlpb89"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="link"
+              class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 group max-w-fit hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+            >
+              <svg
+                class="size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-brand-linkedin"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
+                ></path>
+                <path d="M8 11l0 5"></path>
+                <path d="M8 8l0 .01"></path>
+                <path d="M12 16l0 -5"></path>
+                <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+              </svg>
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/cesarlpb"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="link"
+              class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 group max-w-fit hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+            >
+              <svg
+                class="size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-brand-github"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                ></path>
+              </svg>
+              LinkedIn
+            </a>
+            <a
+              href="https://cesarlpb.github.io/cv?lang=es"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="link"
+              class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 group max-w-fit hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+            >
+              <svg
+                class="size-4"
+                width="200"
+                height="200"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 200 200"
+              >
+                <!-- Fondo negro y forma circular -->
+                <circle cx="100" cy="100" r="100" fill="black"></circle>
+                <!-- Letra "C" blanca inclinada a 45 grados -->
+                <g transform="translate(55, 190) rotate(315)">
+                  <text
+                    x="0"
+                    y="0"
+                    font-family="Arial"
+                    font-size="100"
+                    fill="white"
+                  >
+                    &lt;C&gt;
+                  </text>
+                </g>
+              </svg>
+              Curriculum
+            </a>
+          </nav>
+        </div>
+      </section>
+      <div class="space-y-24">
+        <section
+          id="experiencia"
+          data-section="experiencia"
+          class="section undefined w-full mx-auto container lg:max-w-4xl md:max-w-2xl"
+        >
+          <h2
+            class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+          >
+            <svg
+              class="size-8"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"
+              ></path>
+              <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path>
+              <path d="M12 12l0 .01"></path>
+              <path d="M3 13a20 20 0 0 0 18 0"></path>
+            </svg>
+            Experiencia laboral
+          </h2>
+          <ol class="relative mt-16">
+            <li class="">
+              <div
+                class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
+              >
+                <div class="relative pb-12 md:col-span-2">
+                  <div class="sticky top-0">
+                    <span
+                      class="text-yellow-400 -left-[42px] absolute rounded-full text-5xl"
+                      >&bull;</span
+                    >
+                    <h3 class="text-xl font-bold text-yellow-400">
+                      Formador de Bootcamp
+                    </h3>
+                    <h4
+                      class="font-semibold text-xl text-gray-600 dark:text-white"
+                    >
+                      Fundación Esplai
+                    </h4>
+                    <time
+                      class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80"
+                      >marzo 2024 - actualmente</time
+                    >
+                  </div>
+                </div>
+                <div
+                  class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3"
+                >
+                  Enseño contenido full-stack orientado a Python, machine
+                  learning y entrenamiento de modelos de IA usando las
+                  tecnologías actuales para facilitar el desarrollo con Django y
+                  librerías de Python.
+                  <a
+                    href="https://fundacionesplai.org/"
+                    role="link"
+                    class="inline-flex items-center text-lg font-medium text-yellow-500 dark:text-yellow-200 dark:hover:text-yellow-300 hover:text-yellow-700"
+                    target="_self"
+                  >
+                    Fundación Esplai
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-5 icon icon-tabler icon-tabler-chevron-right"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M9 6l6 6l-6 6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="">
+              <div
+                class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
+              >
+                <div class="relative pb-12 md:col-span-2">
+                  <div class="sticky top-0">
+                    <span
+                      class="text-yellow-400 -left-[42px] absolute rounded-full text-5xl"
+                      >&bull;</span
+                    >
+                    <h3 class="text-xl font-bold text-yellow-400">CTO</h3>
+                    <h4
+                      class="font-semibold text-xl text-gray-600 dark:text-white"
+                    >
+                      Método Bitcoin
+                    </h4>
+                    <time
+                      class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80"
+                      >abril 2024 - actualmente</time
+                    >
+                  </div>
+                </div>
+                <div
+                  class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3"
+                >
+                  Responsable de desarrollo de un exchange de criptomonedas que
+                  unifica tencologías actuales y servicios de proveedores para
+                  facilitar la experiencia a los usuarios.
+                  <a
+                    href="https://metodobitcoin.com/"
+                    role="link"
+                    class="inline-flex items-center text-lg font-medium text-yellow-500 dark:text-yellow-200 dark:hover:text-yellow-300 hover:text-yellow-700"
+                    target="_self"
+                  >
+                    Método Bitcoin
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-5 icon icon-tabler icon-tabler-chevron-right"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M9 6l6 6l-6 6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ol>
+          <p>
+            Para ver mi trayectoria en más detalle, échale un vistazo a mi
+            <a
+              href="https://cesarlpb.github.io/cv?lang=es"
+              role="link"
+              class="inline-flex items-center text-lg font-medium text-yellow-500 dark:text-yellow-200 dark:hover:text-yellow-300 hover:text-yellow-700"
+              target="_blank"
+            >
+              curriculum </a
+            >.
+          </p>
+        </section>
+        <section
+          id="proyectos"
+          data-section="proyectos"
+          class="section undefined w-full mx-auto container lg:max-w-4xl md:max-w-2xl"
+        >
+          <h2
+            class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+          >
+            <svg
+              class="size-7"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M7 8l-4 4l4 4"></path>
+              <path d="M17 8l4 4l-4 4"></path>
+              <path d="M14 4l-4 16"></path>
+            </svg>
+            Proyectos
+          </h2>
+          <div class="flex flex-col gap-y-16">
+            <article
+              class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0"
+            >
+              <div class="w-full md:w-1/2">
+                <div
+                  class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"
+                >
+                  <img
+                    alt="Recién llegado vs 5 años en Nueva Zelanda"
+                    class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                    loading="lazy"
+                    src="/hero-image-hackaton.png"
+                  />
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 md:max-w-lg">
+                <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+                  Web del Hackathon ODS de Fundación Esplai
+                </h3>
+                <div class="flex flex-wrap mt-2">
+                  <ul class="flex flex-row mb-2 gap-x-2">
+                    <li>
+                      <span
+                        class="flex gap-x-2 rounded-full text-xs bg-black-500 text-slate-200 py-1 px-2"
+                      >
+                        <svg
+                          class="size-4"
+                          width="85"
+                          height="107"
+                          viewBox="0 0 85 107"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M27.5894 91.1365C22.7555 86.7178 21.3444 77.4335 23.3583 70.7072C26.8503 74.948 31.6888 76.2914 36.7005 77.0497C44.4375 78.2199 52.0359 77.7822 59.2232 74.2459C60.0454 73.841 60.8052 73.3027 61.7036 72.7574C62.378 74.714 62.5535 76.6892 62.318 78.6996C61.7452 83.5957 59.3086 87.3778 55.4332 90.2448C53.8835 91.3916 52.2437 92.4167 50.6432 93.4979C45.7262 96.8213 44.3959 100.718 46.2435 106.386C46.2874 106.525 46.3267 106.663 46.426 107C43.9155 105.876 42.0817 104.24 40.6845 102.089C39.2087 99.8193 38.5066 97.3081 38.4696 94.5909C38.4511 93.2686 38.4511 91.9345 38.2733 90.6309C37.8391 87.4527 36.3471 86.0297 33.5364 85.9478C30.6518 85.8636 28.37 87.6469 27.7649 90.4554C27.7187 90.6707 27.6517 90.8837 27.5847 91.1341L27.5894 91.1365Z"
+                            fill="white"
+                          ></path>
+                          <path
+                            d="M27.5894 91.1365C22.7555 86.7178 21.3444 77.4335 23.3583 70.7072C26.8503 74.948 31.6888 76.2914 36.7005 77.0497C44.4375 78.2199 52.0359 77.7822 59.2232 74.2459C60.0454 73.841 60.8052 73.3027 61.7036 72.7574C62.378 74.714 62.5535 76.6892 62.318 78.6996C61.7452 83.5957 59.3086 87.3778 55.4332 90.2448C53.8835 91.3916 52.2437 92.4167 50.6432 93.4979C45.7262 96.8213 44.3959 100.718 46.2435 106.386C46.2874 106.525 46.3267 106.663 46.426 107C43.9155 105.876 42.0817 104.24 40.6845 102.089C39.2087 99.8193 38.5066 97.3081 38.4696 94.5909C38.4511 93.2686 38.4511 91.9345 38.2733 90.6309C37.8391 87.4527 36.3471 86.0297 33.5364 85.9478C30.6518 85.8636 28.37 87.6469 27.7649 90.4554C27.7187 90.6707 27.6517 90.8837 27.5847 91.1341L27.5894 91.1365Z"
+                            fill="url(#paint0_linear_1_59)"
+                          ></path>
+                          <path
+                            d="M0 69.5866C0 69.5866 14.3139 62.6137 28.6678 62.6137L39.4901 29.1204C39.8953 27.5007 41.0783 26.3999 42.4139 26.3999C43.7495 26.3999 44.9325 27.5007 45.3377 29.1204L56.1601 62.6137C73.1601 62.6137 84.8278 69.5866 84.8278 69.5866C84.8278 69.5866 60.5145 3.35233 60.467 3.21944C59.7692 1.2612 58.5911 0 57.0029 0H27.8274C26.2392 0 25.1087 1.2612 24.3634 3.21944C24.3108 3.34983 0 69.5866 0 69.5866Z"
+                            fill="white"
+                          ></path>
+                          <defs>
+                            <linearGradient
+                              id="paint0_linear_1_59"
+                              x1="22.4702"
+                              y1="107"
+                              x2="69.1451"
+                              y2="84.9468"
+                              gradientUnits="userSpaceOnUse"
+                            >
+                              <stop stop-color="#D83333"></stop>
+                              <stop offset="1" stop-color="#F041FF"></stop>
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                        Astro
+                      </span>
+                    </li>
+                    <li>
+                      <span
+                        class="flex gap-x-2 rounded-full text-xs bg-[#003159] text-slate-200 py-1 px-2"
+                      >
+                        <svg
+                          class="size-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 54 33"
+                        >
+                          <g clip-path="url(#a)">
+                            <path
+                              fill="#38bdf8"
+                              fill-rule="evenodd"
+                              d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </g>
+                          <defs>
+                            <clipPath id="a">
+                              <path fill="#fff" d="M0 0h54v32.4H0z"></path>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        Tailwind CSS
+                      </span>
+                    </li>
+                  </ul>
+                  <div class="mt-2 text-gray-700 dark:text-gray-400">
+                    Sitio responsive hecho con Astro y Tailwindcss para el
+                    evento de Hackathon ODS organizado por Fundación Esplai y
+                    patrocinadores en Barcelona.
+                  </div>
+                  <footer class="flex items-end justify-start mt-4 gap-x-4">
+                    <a
+                      href="https://hackathon.fundacionesplai.org/"
+                      role="link"
+                      class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+                    >
+                      <svg
+                        class="size-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="link"
+                      >
+                        <path
+                          d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+                        ></path>
+                        <path
+                          d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+                        ></path>
+                      </svg>
+                      Preview
+                    </a>
+                  </footer>
+                </div>
+              </div>
+            </article>
+            <article
+              class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0"
+            >
+              <div class="w-full md:w-1/2">
+                <div
+                  class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"
+                >
+                  <img
+                    alt="Recién llegado vs 5 años en Nueva Zelanda"
+                    class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                    loading="lazy"
+                    src="/open-punkz.png"
+                  />
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 md:max-w-lg">
+                <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+                  Open Punkz - NFT minter en Polygon
+                </h3>
+                <div class="flex flex-wrap mt-2">
+                  <ul class="flex flex-row mb-2 gap-x-2">
+                    <li>
+                      <span
+                        class="flex gap-x-2 rounded-full text-xs bg-[#003159] text-slate-200 py-1 px-2"
+                      >
+                        <svg
+                          class="size-4"
+                          viewBox="0 0 34 32"
+                          fill="currentColor"
+                          height="1em"
+                          width="1em"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M19.314 15.987a2.392 2.392 0 11-4.784 0 2.392 2.392 0 014.784 0z"
+                          ></path>
+                          <path
+                            fill="currentColor"
+                            d="M16.922 24.783c1.878 1.826 3.729 2.906 5.221 2.906.489 0 .952-.103 1.337-.334 1.337-.772 1.826-2.701 1.363-5.453-.077-.489-.18-.977-.309-1.492.514-.154.977-.309 1.44-.463 2.598-1.003 4.038-2.392 4.038-3.909 0-1.543-1.44-2.932-4.038-3.909-.463-.18-.926-.334-1.44-.463.129-.514.232-1.003.309-1.492.437-2.803-.051-4.758-1.389-5.53-.386-.231-.849-.334-1.337-.334-1.466 0-3.344 1.08-5.221 2.906-1.852-1.826-3.704-2.906-5.195-2.906-.489 0-.952.103-1.337.334-1.337.772-1.826 2.701-1.363 5.453.077.489.18.977.309 1.492-.514.154-.977.309-1.44.463-2.598 1.003-4.038 2.392-4.038 3.909 0 1.543 1.44 2.932 4.038 3.909.463.18.926.334 1.44.463a16.882 16.882 0 00-.309 1.492c-.437 2.752.051 4.707 1.363 5.453.386.232.849.334 1.337.334 1.492.051 3.344-1.029 5.221-2.829zm-1.441-3.472c.463.026.952.026 1.44.026s.977 0 1.44-.026a24.523 24.523 0 01-1.44 1.723 24.252 24.252 0 01-1.44-1.723zm-3.189-2.649c.257.437.489.849.772 1.26a27.786 27.786 0 01-2.263-.386c.232-.694.489-1.415.797-2.135.206.411.437.849.694 1.26zM10.8 12.463c.72-.154 1.466-.283 2.263-.386-.257.412-.514.823-.772 1.26s-.489.849-.694 1.286a17.109 17.109 0 01-.797-2.161zm1.415 3.524c.334-.694.694-1.389 1.106-2.083.386-.669.823-1.337 1.26-2.006a35.293 35.293 0 014.682 0c.463.669.874 1.337 1.26 2.006.412.694.772 1.389 1.106 2.083a26.922 26.922 0 01-1.106 2.083c-.386.669-.823 1.337-1.26 2.006a35.293 35.293 0 01-4.682 0 28.695 28.695 0 01-1.26-2.006 27.106 27.106 0 01-1.106-2.083zm10.057-1.389l-.694-1.286c-.257-.437-.489-.849-.772-1.26.797.103 1.543.232 2.263.386-.231.72-.489 1.44-.797 2.161zm0 2.778c.309.72.566 1.44.797 2.135-.72.154-1.466.283-2.263.386.257-.412.514-.823.772-1.26.232-.386.463-.823.694-1.26zm.591 8.925c-.206.129-.463.18-.746.18-1.26 0-2.829-1.029-4.372-2.572a26.868 26.868 0 002.186-2.701 23.619 23.619 0 003.447-.54c.129.463.206.926.283 1.389.36 2.186.077 3.755-.797 4.244zm1.338-13.555c2.881.823 4.604 2.083 4.604 3.241 0 1.003-1.183 2.006-3.266 2.804-.412.154-.874.309-1.337.437a27.01 27.01 0 00-1.26-3.241c.514-1.106.952-2.186 1.26-3.241zm-2.058-7.253c.283 0 .514.051.746.18.849.489 1.157 2.032.797 4.244-.077.437-.18.9-.283 1.389a33.072 33.072 0 00-3.447-.54 23.774 23.774 0 00-2.186-2.701c1.543-1.518 3.112-2.572 4.372-2.572zm-3.781 5.17c-.463-.026-.952-.026-1.44-.026s-.977 0-1.44.026c.463-.617.952-1.183 1.44-1.723.489.54.977 1.132 1.44 1.723zm-7.382-4.99c.206-.129.463-.18.746-.18 1.26 0 2.829 1.029 4.372 2.572a26.756 26.756 0 00-2.186 2.701 23.619 23.619 0 00-3.447.54c-.129-.463-.206-.926-.283-1.389-.36-2.186-.077-3.729.797-4.244zM9.643 19.228c-2.881-.823-4.604-2.083-4.604-3.241 0-1.003 1.183-2.006 3.266-2.803.412-.154.874-.309 1.337-.437a27.01 27.01 0 001.26 3.241c-.514 1.106-.952 2.212-1.26 3.241zm.54 2.829c.077-.437.18-.9.283-1.389 1.08.232 2.238.412 3.447.54a23.774 23.774 0 002.186 2.701c-1.543 1.517-3.112 2.572-4.372 2.572-.283 0-.514-.051-.746-.18-.875-.489-1.157-2.058-.797-4.244z"
+                          ></path>
+                        </svg>
+                        React
+                      </span>
+                    </li>
+                    <li>
+                      <span
+                        class="flex gap-x-2 rounded-full text-xs bg-[#003159] text-slate-200 py-1 px-2"
+                      >
+                        <svg
+                          class="size-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 54 33"
+                        >
+                          <g clip-path="url(#a)">
+                            <path
+                              fill="#38bdf8"
+                              fill-rule="evenodd"
+                              d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </g>
+                          <defs>
+                            <clipPath id="a">
+                              <path fill="#fff" d="M0 0h54v32.4H0z"></path>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        Tailwind CSS
+                      </span>
+                    </li>
+                  </ul>
+                  <div class="mt-2 text-gray-700 dark:text-gray-400">
+                    Proyecto de un minter de NFTs en Mumbai y Polygon network.
+                    ¡Crea tus Open Punkz en solo unos clics!
+                  </div>
+                  <footer class="flex items-end justify-start mt-4 gap-x-4">
+                    <a
+                      href="https://purple-rice-5682.on.fleek.co/"
+                      role="link"
+                      class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+                    >
+                      <svg
+                        class="size-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="link"
+                      >
+                        <path
+                          d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+                        ></path>
+                        <path
+                          d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+                        ></path>
+                      </svg>
+                      Preview
+                    </a>
+                  </footer>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section
+          id="sobre-mi"
+          data-section="sobre-mi"
+          class="section undefined w-full mx-auto container lg:max-w-4xl md:max-w-2xl"
+        >
+          <h2
+            class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+          >
+            <svg
+              class="size-8"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+              <path d="M6 21v-2a4 4 0 0 1 4 -4h4"></path>
+              <path d="M15 19l2 2l4 -4"></path>
+            </svg>
+            Sobre mí
+          </h2>
+          <article
+            class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"
+          >
+            <div
+              class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+            >
+              <p>
+                Soy César Patiño, físico teórico por la Universidad Complutense
+                de Madrid, apasionado por la tecnología desde siempre. Me dedico
+                a diario a la
+                <strong>resolución de problemas complejos</strong> en
+                desarrollos de mis clientes.
+              </p>
+              <p>
+                He trabajado con grandes empresas como
+                <strong>Codere</strong> y gran número de startups. He estado
+                relacionado con el sector del blockchain desde 2016.
+              </p>
+              <p>
+                Compagino mi trabajo de desarrollador con otra de mis pasiones,
+                <strong>la enseñanza</strong>. Actualmente, estoy impartiendo
+                una formación en <em class="italic">Fundación Esplai</em> de
+                <strong>Python</strong>
+                y
+                <strong>machine learning</strong>. Mi objetivo es ayudar a todos
+                mis alumn@s a iniciarse o reforzar sus habilidades en desarrollo
+                de aplicaciones y/o en el sector de IT.
+              </p>
+            </div>
+            <img
+              width="200"
+              height="200"
+              src="/me.png"
+              alt="César P."
+              class="order-1 object-cover w-64 h-full p-1 bg-white md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl dark:bg-yellow-500/5 ring-1 ring-white/20"
+              style="object-position: 50% 50%"
+            />
+          </article>
+          <!-- FRASES PROHIBIDAS EN VUESTRO PORTFOLIO
 
 <p>
   Mi sueño es encontrar mi primer empleo en el mundo de la programación. Una empresa donde pueda seguir aprendiendo. ❌
@@ -138,6 +906,43 @@ y
   Además de participar activamente en la comunidad, he participado en la Hackathon de Midudev quedando en 3er puesto con mi proyecto _Chatty_, donde usando IA podías interactuar con un PDF. ¡Échale un vistazo!
 </p>
 
--->  </section> </div> </main>  <footer class="rounded-lg shadow m-4 bg-black/5 dark:bg-black/20 backdrop-blur-lg w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"> <div class="w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between"> <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90">© 2024 <a href="https://midu.dev/" class="hover:underline">César P.</a>. 
-      Portafolio basado en el de <a href="https://github.com/midudev/porfolio.dev" target="_blank">midudev</a>.
-</span> <ul class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"> <li> <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a> </li> <li> <a id="contacto" href="https://www.linkedin.com/in/cesarlpb89/" class="hover:underline">Linkedin</a> </li> </ul> </div> </footer>  </body> </html>
+-->
+        </section>
+      </div>
+    </main>
+    <footer
+      class="rounded-lg shadow m-4 bg-black/5 dark:bg-black/20 backdrop-blur-lg w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
+    >
+      <div
+        class="w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between"
+      >
+        <span
+          class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
+          >© 2024
+          <a href="https://midu.dev/" class="hover:underline">César P.</a>.
+          Portafolio basado en el de
+          <a href="https://github.com/midudev/porfolio.dev" target="_blank"
+            >midudev</a
+          >.
+        </span>
+        <ul
+          class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
+        >
+          <li>
+            <a href="/#sobre-mi" class="hover:underline me-4 md:me-6"
+              >Sobre mí</a
+            >
+          </li>
+          <li>
+            <a
+              id="contacto"
+              href="https://www.linkedin.com/in/cesarlpb89/"
+              class="hover:underline"
+              >Linkedin</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
