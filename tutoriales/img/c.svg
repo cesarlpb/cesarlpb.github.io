@@ -1,9 +1,0 @@
-<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <!-- Fondo negro y forma circular -->
-  <circle cx="100" cy="100" r="100" fill="black" />
-  
-  <!-- Letra "C" blanca inclinada a 45 grados -->
-  <g transform="translate(55, 190) rotate(315)">
-    <text x="0" y="0" font-family="Arial" font-size="100" fill="white">&lt;C&gt;</text>
-  </g>
-</svg>
