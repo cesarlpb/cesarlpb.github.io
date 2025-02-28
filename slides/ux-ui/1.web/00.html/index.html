@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Identificación de los elementos de Internet</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+    <link rel="shortcut icon" href="../c.png" type="image/x-icon">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 0 -->
+            <!-- Slide de presentación del curso -->
+            <section>
+              <h1>Front End Web Developer: UX UI</h1>
+                <p>Tema: HTML</p>
+                <p><strong>Formador:</strong> César Patiño</p>
+                <small>2025</small>
+            </section>
+
+            <!-- Slide 1 -->
+ 
+            <section data-markdown>
+              <textarea data-template>
+
+# Fundamentos de HTML
+
+Presentación sobre la estructura y etiquetas fundamentales de HTML
+
+---
+
+## Etiqueta Base HTML
+
+```html
+<!-- La etiqueta base es html -->
+<html>
+  Contenido
+</html>
+```
+
+---
+
+## DOCTYPE
+
+```html
+<!-- Añadimos DOCTYPE para indicar que usamos versión actual de HTML 5.x -->
+<!DOCTYPE html> <!-- la etiqueta no tiene otra de cierre -->
+<html>
+  Contenido
+</html>
+```
+
+---
+
+## head y body
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Etiquetas de cabecero -->
+    <!-- Importaciones (hojas de estilo, iconos, etc.) -->
+    <!-- Metadatos: imagen en miniatura, descripción, etc. -->
+  </head>
+  <body>
+    <!-- Cuerpo del documento -->
+    Contenido
+  </body>
+</html>
+
+```
+
+---
+
+## Plantilla inicial de HTML 5
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Etiquetas de cabecero -->
+    <!-- Importaciones (hojas de estilo, iconos, etc.) -->
+    <!-- Metadatos: imagen en miniatura, descripción, etc. -->
+    <title>Título de la página</title>
+  </head>
+  <body>
+    <!-- Cuerpo del documento -->
+    <!-- Contenido principal -->
+    <h1>Encabezado 1</h1>
+    <p>Párrafo</p>
+  </body>
+</html>
+```
+
+---
+
+## Encabezados o headings
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encabezados</title>
+</head>
+<body>
+  <h1>Encabezados</h1>
+  <p>Se usan para organizar por temas o apartados el contenido de una página.</p>
+  <p>Habitualmente, se tiene un h1 por página y puede haber varios h2...h6</p>
+  
+  <h1>Encabezado 1</h1>
+  <h2>Encabezado 2</h2>
+  <h3>Encabezado 3</h3>
+  <h4>Encabezado 4</h4>
+  <h5>Encabezado 5</h5>
+  <h6>Encabezado 6</h6>
+
+  <p>Se debe intentar evitar colocar más de un h1 por página.</p>
+  
+</body>
+</html>
+```
+
+---
+
+## Etiquetas Básicas: Encabezados
+
+**Encabezados (h1 a h6)**  
+Ejemplo de contenidos de un libro de HTML:
+
+```html
+<h1>Libro de HTML</h1>
+
+      <h2>Tema 1: ¿Qué es HTML?</h2>
+
+        <h3>1.1 Historia de HTML</h3>
+        <h3>1.2 Versiones de HTML</h3>
+        <h3>1.3 Nuevo logo de HTML</h3>
+
+      <h2>Tema 2: Sintáxis de HTML</h2>
+
+        <h3>Estructura de una etiqueta</h3>
+        <h3>Atributos</h3>
+        <h3>Buenas prácticas</h3>
+      
+      <h2>Tema 3: Etiquetas básicas de HTML</h2>
+
+        <h3>DOCTYPE</h3>    
+        <h3>Encabezados</h3>
+        <h3>Otras etiquetas</h3>
+```
+
+---
+
+- **Libro de HTML**
+  - **Tema 1: ¿Qué es HTML?**
+    - 1.1 Historia de HTML
+    - 1.2 Versiones de HTML
+    - 1.3 Nuevo logo de HTML
+  - **Tema 2: Sintáxis de HTML**
+    - Estructura de una etiqueta
+    - Atributos
+    - Buenas prácticas
+  - **Tema 3: Etiquetas básicas de HTML**
+    - DOCTYPE
+    - Encabezados
+    - Otras etiquetas
+
+*Nota:* Se recomienda usar un solo `<h1>` por página.
+
+---
+
+## Etiqueta de párrafo: `<p>`
+
+Ejemplo de párrafos en HTML:
+
+```html
+<p>Esto es un párrafo.</p>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit...</p>
+<p>Texto con indentación.</p>
+<p>Texto con salto de línea.</p>
+<p>Párrafo 1</p>
+<p>Párrafo 2</p>
+<p>Párrafo 3</p>
+```
+
+---
+
+## Enlaces
+
+```html
+<p>
+  Enlace: <a href="https://www.google.es/">Abrir Google</a>
+</p>
+<p>
+  <a href="https://www.google.es/" target="_blank">Abrir Google</a>
+</p>
+<p>
+  <a href="#">Enlace interno</a>
+</p>
+<p>
+  Documento de encabezados. <a href="04.encabezados.html">Abrir</a>
+</p>
+```
+
+---
+
+<p>
+  Enlace: <a href="https://www.google.es/">Abrir Google</a>
+</p>
+<p>
+  <a href="https://www.google.es/" target="_blank">Abrir Google</a>
+</p>
+<p>
+  <a href="#">Enlace interno</a>
+</p>
+<p>
+  Documento de encabezados. <a href="04.encabezados.html">Abrir</a>
+</p>
+
+---
+
+## link
+
+```html
+<!-- Ejemplo con Water CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+```
+
+---
+
+## Imágenes, vídeo y audio
+
+### img
+
+```html
+<img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Pok%C3%A9mon_Pikachu_art.png" alt="Pikachu">
+<img src="code.jpg" alt="HTML" width="250" height="auto">
+```
+
+<div>
+  <img src="https://upload.wikimedia.org/wikipedia/en/a/a6/Pok%C3%A9mon_Pikachu_art.png" alt="Pikachu">
+  <br>
+  <img src="code.jpg" alt="HTML" width="250" height="auto">
+</div>
+
+---
+
+### video
+
+```html
+<video src="video.mp4" controls autoplay muted loop></video>
+
+<video controls poster="https://icon-library.com/images/video-icon-flat/video-icon-flat-12.jpg" width="500">
+  <source src="algo-que-no-existe.mp4" type="video/mp4">
+  <p>Este vídeo no está disponible</p>
+</video>
+```
+
+<div>
+  <video src="video.mp4" controls autoplay muted loop width="350"></video>
+  
+  <br>
+  
+  <video controls poster="https://icon-library.com/images/video-icon-flat/video-icon-flat-12.jpg" width="350">
+    <source src="algo-que-no-existe.mp4" type="video/mp4">
+    <p>Este vídeo no está disponible</p>
+  </video>
+</div>
+
+---
+
+### audio
+
+```html
+<audio src="audio.mp3" controls></audio>
+```
+
+<div>
+  <audio src="audio.mp3" controls></audio>
+</div>
+
+---
+
+## Modificadores de texto
+
+```html
+  <b>Texto en negrita</b>
+  <strong>Texto importante</strong>
+
+  <i>Texto en cursiva</i>
+  <em>Texto enfatizado</em>
+
+  <mark>Texto resaltado</mark>
+
+  <small>Texto pequeño</small>
+
+  <del>Texto borrado</del>
+  <ins>Texto insertado</ins>
+
+  Subíndice: H<sub>2</sub>O  
+  Superíndice: m<sup>2</sup>
+```
+
+---
+
+## Formato en texto
+
+<b>Texto en negrita</b>
+<strong>Texto importante</strong>
+
+<i>Texto en cursiva</i>
+<em>Texto enfatizado</em>
+
+<mark>Texto resaltado</mark>
+
+<small>Texto pequeño</small>
+
+<del>Texto borrado</del>
+<ins>Texto insertado</ins>
+
+Subíndice: H<sub>2</sub>O  
+Superíndice: m<sup>2</sup>
+
+              </textarea>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+    <script>
+      Reveal.initialize({
+        plugins: [RevealMarkdown],
+      });
+    </script>
+</body>
+</html>

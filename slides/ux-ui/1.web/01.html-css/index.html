@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Identificación de los elementos de Internet</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+    <link rel="shortcut icon" href="../c.png" type="image/x-icon">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 0 -->
+            <!-- Slide de presentación del curso -->
+            <section>
+              <h1>Front End Web Developer: UX UI</h1>
+                <p>Tema: HTML y CSS</p>
+                <p><strong>Formador:</strong> César Patiño</p>
+                <small>2025</small>
+            </section>
+
+            <!-- Slide 1 -->
+ 
+            <section data-markdown>
+              <textarea data-template>
+                
+# Fundamentos de CSS
+
+CSS es la herramienta que usamos para dar estilo a las páginas web. Se puede aplicar de tres formas:
+
+- Inline (atributo *style*)
+- Interno (dentro de &lt; style &gt;)
+- Externo (archivo *.css*)
+
+---
+
+# Formas de aplicar CSS
+
+```html
+<!-- Ejemplo inline e interno -->
+<h1 style="text-align: center;">CSS</h1>
+<p style="font-size: large; text-align: center;">Añadimos estilos al HTML con CSS.</p>
+
+<!-- Ejemplo de inclusión de CSS externo -->
+<link rel="stylesheet" href="00.style.css">
+```
+
+---
+
+# Selectores de CSS
+
+Tipos principales de selectores:
+
+- Etiqueta: Selecciona por nombre, ej. p, h1.
+- Clase: Selecciona por clase, ej. .p.
+- ID: Selecciona por identificador único, ej. #p1.
+
+---
+
+```css
+/* Ejemplo de selectores en acción */
+h1 {
+  color: brown;
+  text-align: center;
+}
+#p1 {
+  text-align: center;
+}
+.p {
+  text-align: center; 
+  text-transform: uppercase;
+}
+```
+
+---
+
+# Ejemplos de Selectores
+Demostración práctica de selectores y reglas avanzadas.
+
+```html
+<!-- Ejemplo HTML de selectores -->
+<h1 id="h1">Ejemplos de selectores</h1>
+<p class="parrafos">Lorem, ipsum dolor.</p>
+<p class="parrafos">Lorem, ipsum dolor.</p>
+<p class="parrafos">Lorem, ipsum dolor.</p>
+```
+
+---
+
+```css
+/* Múltiples selectores y parent-child */
+h1, h2 {
+  text-decoration: underline;
+}
+div {
+  border: 1px solid black;
+  background-color: lightgray;
+  padding: 5px;
+}
+div > p {
+  text-align: center;
+  border: 1px solid brown;
+  background-color: gray;
+  color: white;
+  padding: 5px;
+}
+```
+
+---
+
+## Propiedades de Background
+
+Los backgrounds permiten asignar colores e imágenes de fondo.
+
+```css
+/* Ejemplo de fondo con color */
+.bg-gray {
+  background-color: gray;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Ejemplo de fondo con imagen */
+.bg-css {
+  background-image: url("bg-css.webp");
+  height: 300px;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+```
+
+---
+
+## Ejemplo de uso de background
+
+```html
+<!-- Ejemplo HTML de background -->
+<p class="bg-gray">Texto con fondo gris.</p>
+<div class="bg-css">
+  <p>div con imagen de fondo</p>
+</div>                
+```
+
+---
+
+## Propiedades de Border
+
+Las propiedades de border permiten definir el estilo, ancho y color de los bordes.
+
+```css
+/* Ejemplo de bordes simples y compuestos */
+p.border {
+  border: 1px solid brown;
+}
+p.border-2 {
+  border-left: 5px solid red;
+  padding-left: 5px;
+}
+p.border-3 {
+  border-bottom: 5px solid red;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  word-spacing: 10px;
+}
+```
+
+---
+
+# Ejemplo de uso de border 
+
+```html
+<!-- Ejemplo HTML de bordes -->
+<p class="border">Texto con borde simple.</p>
+<p class="border-2">Texto con borde izquierdo grueso.</p>
+<p class="border-3">Texto con borde inferior estilizado.</p>                
+```
+
+              </textarea>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+    <script>
+      Reveal.initialize({
+        plugins: [RevealMarkdown],
+      });
+    </script>
+</body>
+</html>
