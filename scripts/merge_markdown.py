@@ -30,19 +30,20 @@ div_slide_header = """
 <div id="{{id_slide}}" class="page-header">{{contenido_header}}</div>
 """
 div_slide_footer = """
-<div class="page-footer">{{archivo}} {{numero_pagina}}</div>
+<div class="page-footer">{{archivo}} - {{numero_pagina}}</div>
 """
 
 # Recorrer cada subcarpeta dentro de la carpeta principal (cada una es un tema)
 for tema in sorted(os.listdir(carpeta_principal)):
     ruta_tema = os.path.join(carpeta_principal, tema)
-
+    numero_pagina = NUMERACION_INICIAL
     # Verificar que sea un directorio
     if os.path.isdir(ruta_tema):
         markdown_completo = ""
-
+        
+        lista_ordenada_archivos = sorted(os.listdir(ruta_tema))
         # Recorrer archivos .md dentro de la subcarpeta del tema
-        for archivo in sorted(os.listdir(ruta_tema)):
+        for archivo in lista_ordenada_archivos:
             numero_pagina += 1
             str_numero_pagina = formatear_numero_pagina(numero_pagina)
             if archivo.endswith(".md"):
@@ -53,7 +54,9 @@ for tema in sorted(os.listdir(carpeta_principal)):
                     markdown_completo += f.read()
                     markdown_completo += f"\n{div_slide_footer}\n"
                     # separador de slides:
-                    markdown_completo += f"\n---\n"
+                    print(numero_pagina)
+                    if numero_pagina < len(lista_ordenada_archivos):
+                        markdown_completo += f"\n---\n"
                     # replace de header y footer:
                     markdown_completo = markdown_completo.replace("{{id_slide}}", f"slide-{str_numero_pagina}")
                     markdown_completo = markdown_completo.replace("{{contenido_header}}", f"")
