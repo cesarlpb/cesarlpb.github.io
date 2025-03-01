@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
     <link rel="shortcut icon" href="../c.png" type="image/x-icon">
     <style>
-      .page-header{ display: none; }
-      .page-footer{ color: gray; font-size: large; position: absolute; bottom: -3em; right: 0.1em; }
+      .page-header { display: none; }
+      .page-footer { 
+        color: gray; font-size: large; position: absolute; padding-top: 10px;
+        padding-right: 5px; bottom: -3em; right: 0.1em; width: 250px; 
+        border-top: 1px solid gray; text-align: right; }
 
       /* width */
       .w-15 { display: inline-block; width: 15%!important; }
@@ -111,6 +114,40 @@
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
       }
+      .print-only {
+        display: none!important;
+      }
+
+      @media print {
+        div.profile-picture.rotating-frame {
+          display: none!important;
+        }
+        .no-print {
+          display: none!important;
+        }
+        .print-only {
+          display: inline-block!important;
+          text-decoration: none!important;
+          margin-right: 5px!important;
+        }
+        span.print-only { text-decoration: none!important; }
+        .no-underline { text-decoration: none; }
+        .col {
+          display: block;
+          margin: 1em!important;
+          padding: 1em!important;
+        }
+        .row {
+          display: block;
+          margin-left: 16px;
+        }
+        .row:last-of-type {
+          margin-bottom: 2em;
+        }
+        a {
+          text-decoration: none!important;
+        }
+      }
     </style>
 </head>
 <body>
@@ -140,23 +177,29 @@
 
                   <div class="col my-0">
                     <p class="row my-0">
-                      <a class="d-inline-block row text-white underline" href="https://github.com/cesarlpb" target="_blank">
+                      <a class="d-inline-block row text-white " href="https://github.com/cesarlpb" target="_blank">
                         <span class="pt-[5px]">
-                          <img class="d-inline-block my-0 mr-1" src="https://cesarlpb.github.io/images/icons/github.svg" alt="Github" width="32px">
-                        </span> 
+                          <img class="d-inline-block my-0 mr-1 no-print" src="https://cesarlpb.github.io/images/icons/github.svg" alt="Github" width="32px">
+                        </span>
+                        <span class="print-only">
+                          Github:
+                        </span>
                         <span class="fs-075">
-                          @cesarlpb
+                          @<span class="underline">cesarlpb</span>
                         </span>
                       </a>
 
-                      <span class="px-2 v-center">·</span>
+                      <span class="px-2 v-center no-print">·</span>
                       
-                      <a class="d-inline-block row text-white underline" href="https://www.linkedin.com/in/cesarlpb89/" target="_blank">
+                      <a class="d-inline-block row text-white" href="https://www.linkedin.com/in/cesarlpb89/" target="_blank">
                         <span class="pt-5px">
-                          <img class="d-inline-block my-0 mr-1"src="https://cesarlpb.github.io/images/icons/linkedin.svg" alt="Linkedin" width="32px">
-                        </span> 
+                          <img class="d-inline-block my-0 mr-1 no-print"src="https://cesarlpb.github.io/images/icons/linkedin.svg" alt="Linkedin" width="32px">
+                        </span>
+                        <span class="print-only">
+                          Linkedin:
+                        </span>
                         <span class="fs-075">
-                            @cesarlpb89
+                            @<span class="underline">cesarlpb89</span>
                         </span>
                       </a>
                     </p>
