@@ -30,9 +30,9 @@
     "topic": "Etiquetas básicas de HTML"
   },
   "6": {
-    "question": "¿Qué etiqueta se usa para una lista ordenada?",
-    "answer": "<ol>",
-    "hint": "orden",
+    "question": "¿Qué etiqueta se usa para una lista desordenada?",
+    "answer": "<ul>",
+    "hint": "unordered",
     "topic": "Etiquetas básicas de HTML"
   },
   "7": {
@@ -58,5 +58,275 @@
     "answer": "div tiene display block y lo tiene span inline",
     "hint": "¿bloque o en línea?",
     "topic": "Estructura básica de HTML"
+  },
+  "11": {
+    "question": "¿Qué etiqueta se usa para crear un párrafo en HTML?",
+    "answer": "<p>",
+    "hint": "párrafo",
+    "topic": "Etiquetas de texto"
+  },
+  "12": {
+    "question": "¿Cómo se define un encabezado grande en HTML?",
+    "answer": "h1",
+    "hint": "heading",
+    "topic": "Etiquetas de texto"
+  },
+  "13": {
+    "question": "¿Cuál es la diferencia entre <b> y <strong>?",
+    "answer": "<b> no tiene significado semántico, <strong> sí",
+    "hint": "semántica",
+    "topic": "Etiquetas de texto"
+  },
+  "14": {
+    "question": "¿Cómo se escribe una línea de salto en HTML?",
+    "answer": "<br>",
+    "hint": "break",
+    "topic": "Etiquetas de texto"
+  },
+  "15": {
+    "question": "¿Qué etiqueta se usa para definir una cita corta en HTML?",
+    "answer": "<q>",
+    "hint": "quote",
+    "topic": "Etiquetas de texto"
+  },
+  "16": {
+    "question": "¿Qué etiqueta se usa para una lista ordenada?",
+    "answer": "<ol>",
+    "hint": "ordered",
+    "topic": "Listas y tablas"
+  },
+  "17": {
+    "question": "¿Qué etiqueta se usa para definir un elemento de una lista?",
+    "answer": "<li>",
+    "hint": "item",
+    "topic": "Listas y tablas"
+  },
+  "18": {
+    "question": "¿Con qué etiqueta se inicia una tabla en HTML?",
+    "answer": "<table>",
+    "hint": "tabla",
+    "topic": "Listas y tablas"
+  },
+  "19": {
+    "question": "¿Cuál es la etiqueta para definir una celda en una tabla?",
+    "answer": "<td>",
+    "hint": "data",
+    "topic": "Listas y tablas"
+  },
+  "20": {
+    "question": "¿Cómo se define un encabezado de tabla?",
+    "answer": "Usando <thead>",
+    "hint": "head",
+    "topic": "Listas y tablas"
+  },
+  "21": {
+    "question": "¿Qué etiqueta se usa para insertar una video en HTML?",
+    "answer": "<video>",
+    "hint": "._.",
+    "topic": "Imágenes y multimedia"
+  },
+  "22": {
+    "question": "¿Qué atributo se usa para definir el texto alternativo en una imagen?",
+    "answer": "alt",
+    "hint": "alternativo",
+    "topic": "Imágenes y multimedia"
+  },
+  "23": {
+    "question": "¿Cómo se define el ancho de una imagen en HTML?",
+    "answer": "width",
+    "hint": "w",
+    "topic": "Imágenes y multimedia"
+  },
+  "24": {
+    "question": "¿Qué etiqueta se usa para incrustar un audio?",
+    "answer": "<audio>",
+    "hint": "._.",
+    "topic": "Imágenes y multimedia"
+  },
+  "25": {
+    "question": "¿Cómo se coloca un video en reproducción automática en HTML?",
+    "answer": "Con el atributo autoplay",
+    "hint": "auto",
+    "topic": "Imágenes y multimedia"
+  },
+  "26": {
+    "question": "¿Con qué etiqueta se importa una hoja de estilos en HTML?",
+    "answer": "<link>",
+    "hint": "enlace",
+    "topic": "Enlaces e hipervínculos"
+  },
+  "27": {
+    "question": "¿Qué atributo se usa para especificar la URL en un enlace?",
+    "answer": "href",
+    "hint": "hipervínculo",
+    "topic": "Enlaces e hipervínculos"
+  },
+  "28": {
+    "question": "¿Cómo se abre un enlace en una nueva pestaña?",
+    "answer": "Usando el atributo target con el valor _blank",
+    "hint": "blank",
+    "topic": "Enlaces e hipervínculos"
+  },
+  "29": {
+    "question": "¿Cuál es la diferencia entre un enlace absoluto y un enlace relativo?",
+    "answer": "El enlace absoluto se puede acceder desde cualquier dispositivo",
+    "hint": "internet",
+    "topic": "Enlaces e hipervínculos"
+  },
+  "30": {
+    "question": "¿Cómo se hace que un enlace apunte a un correo electrónico?",
+    "answer": "Colocando mailto: delante del email o enlace",
+    "hint": "Mail",
+    "topic": "Enlaces e hipervínculos"
+  },
+  "31": {
+    "question": "¿Con qué etiqueta se inicia un formulario en HTML?",
+    "answer": "<form>",
+    "hint": "._.",
+    "topic": "Formularios en HTML"
+  },
+  "32": {
+    "question": "¿Qué etiqueta se usa para un campo de texto en un formulario?",
+    "answer": "input con type=text",
+    "hint": "text",
+    "topic": "Formularios en HTML"
+  },
+  "33": {
+    "question": "¿Cómo se define un botón de envío en un formulario HTML?",
+    "answer": "input con type submit",
+    "hint": "submit",
+    "topic": "Formularios en HTML"
+  },
+  "34": {
+    "question": "¿Cómo se agrupan elementos de un formulario en HTML?",
+    "answer": "Usando <fieldset>",
+    "hint": "set",
+    "topic": "Formularios en HTML"
+  },
+  "35": {
+    "question": "¿Qué etiqueta se usa para agregar una opción de selección en un formulario?",
+    "answer": "<select>",
+    "hint": "seleccionar",
+    "topic": "Formularios en HTML"
+  },
+  "36": {
+    "question": "¿Qué es una etiqueta semántica en HTML?",
+    "answer": "Una etiqueta relevante en SEO",
+    "hint": "._.",
+    "topic": "Estructura semántica en HTML5"
+  },
+  "37": {
+    "question": "¿Qué etiqueta se usa para definir la cabecera de una sección?",
+    "answer": "<header>",
+    "hint": "cabecera",
+    "topic": "Estructura semántica en HTML5"
+  },
+  "38": {
+    "question": "¿Cuál es la diferencia entre <section> y <article>?",
+    "answer": "<section> divide la página en apartados y <article> es contenido independiente. <section> puede contener <section> o <article>",
+    "hint": "razones",
+    "topic": "Estructura semántica en HTML5"
+  },
+  "39": {
+    "question": "¿Qué etiqueta se usa para el pie de página de un sitio web?",
+    "answer": "<footer>",
+    "hint": "pie",
+    "topic": "Estructura semántica en HTML5"
+  },
+  "40": {
+    "question": "¿Cómo se define una barra de navegación en HTML5?",
+    "answer": "A menudo usando <ul> con enlaces, para semántica dentro de <nav>",
+    "hint": "enlaces",
+    "topic": "Estructura semántica en HTML5"
+  },
+  "41": {
+    "question": "¿Dónde se colocan las etiquetas <meta> en un documento HTML?",
+    "answer": "En <head>",
+    "hint": "metadatos",
+    "topic": "Metadatos y enlaces a CSS/JS"
+  },
+  "42": {
+    "question": "¿Qué atributo de <meta> define la codificación de caracteres?",
+    "answer": "charset",
+    "hint": "conjunto de caracteres",
+    "topic": "Metadatos y enlaces a CSS/JS"
+  },
+  "43": {
+    "question": "¿Cómo se coloca el zoom adecuado para el viewport de dispositivos móviles?",
+    "answer": "Usando <meta> con name=viewport y content=\"width=device-width, initial-scale=1.0\"",
+    "hint": "viewport",
+    "topic": "Metadatos y enlaces a CSS/JS"
+  },
+  "44": {
+    "question": "¿Cómo se agrega un script de JavaScript en HTML?",
+    "answer": "Usandp <script>",
+    "hint": "script",
+    "topic": "Metadatos y enlaces a CSS/JS"
+  },
+  "45": {
+    "question": "¿En qué parte del documento se recomienda colocar los scripts de JavaScript?",
+    "answer": "Habitualmente, antes del cierre de body",
+    "hint": "body",
+    "topic": "Metadatos y enlaces a CSS/JS"
+  },
+  "46": {
+    "question": "¿Cómo se define un comentario en HTML?",
+    "answer": "Usando <!-- -->",
+    "hint": "< >",
+    "topic": "Otras etiquetas importantes"
+  },
+  "47": {
+    "question": "¿Qué etiqueta se usa para crear una línea horizontal en una página web?",
+    "answer": "<hr>",
+    "hint": "horizontal",
+    "topic": "Otras etiquetas importantes"
+  },
+  "48": {
+    "question": "¿Cómo se define un ícono de página web (favicon) en HTML?",
+    "answer": "Usando <link>",
+    "hint": "enlaces",
+    "topic": "Otras etiquetas importantes"
+  },
+  "49": {
+    "question": "¿Qué etiqueta se usa para agrupar elementos de bloque en HTML??",
+    "answer": "<div>",
+    "hint": "division",
+    "topic": "Otras etiquetas importantes"
+  },
+  "50": {
+    "question": "¿Cuántos niveles de encabezados hay?",
+    "answer": "6",
+    "hint": "5+1",
+    "topic": "Otras etiquetas importantes"
+  },
+  "51": {
+    "question": "¿Por qué es importante usar el atributo alt en las imágenes?",
+    "answer": "Se presenta en caso de no tener la img disponible y lo usan los lectores de pantalla",
+    "hint": "razones",
+    "topic": "Buenas prácticas y accesibilidad"
+  },
+  "52": {
+    "question": "¿Cómo se puede mejorar la accesibilidad de un formulario en HTML con labels?",
+    "answer": "Colocando los labels correctos para cada <input>",
+    "hint": "etiquetas",
+    "topic": "Buenas prácticas y accesibilidad"
+  },
+  "53": {
+    "question": "¿Qué es la validación de HTML y para qué sirve?",
+    "answer": "Comproba que el documento es correcto y sigue los estándares recomendados de W3C",
+    "hint": "razones",
+    "topic": "Buenas prácticas y accesibilidad"
+  },
+  "54": {
+    "question": "¿Por qué es importante escribir HTML semántico?",
+    "answer": "Mejora el posicionamiento de la página (SEO) y hace que el código sea más entendible",
+    "hint": "enlaces",
+    "topic": "Buenas prácticas y accesibilidad"
+  },
+  "55": {
+    "question": "¿Cómo se puede comprobar si un documento HTML está bien estructurado?",
+    "answer": "Se puede hacer un validador de HTML para revisar el documento",
+    "hint": "validar",
+    "topic": "Buenas prácticas y accesibilidad"
   }
 }
