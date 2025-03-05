@@ -1,0 +1,62 @@
+{
+  "1": {
+    "question": "¿Qué significa HTML?",
+    "answer": "Hypertext Markup Language",
+    "hint": "H...T...M...L...",
+    "topic": "Estructura básica de HTML"
+  },
+  "2": {
+    "question": "¿Con qué etiqueta comienza un documento HTML?",
+    "answer": "<html>",
+    "hint": "Una etiqueta para envolverlas a todas...",
+    "topic": "Estructura básica de HTML"
+  },
+  "3": {
+    "question": "¿Qué etiqueta se usa para definir un enlace?",
+    "answer": "<a>",
+    "hint": "⚓︎", 
+    "topic": "Enlaces e hipervínculos"
+  },
+  "4": {
+    "question": "¿Cómo se inserta una imagen en HTML?",
+    "answer": "Usando la etiqueta <img>",
+    "hint": "image",
+    "topic": "Etiquetas básicas de HTML"
+  },
+  "5": {
+    "question": "¿Cuál es la diferencia entre <div> y <span>?",
+    "answer": "div tiene display block y lo tiene span inline",
+    "hint": "¿bloque o en línea?",
+    "topic": "Etiquetas básicas de HTML"
+  },
+  "6": {
+    "question": "¿Qué etiqueta se usa para una lista ordenada?",
+    "answer": "<ol>",
+    "hint": "orden",
+    "topic": "Etiquetas básicas de HTML"
+  },
+  "7": {
+    "question": "¿Cuál es la etiqueta que encierra todo el contenido visible en una página web?",
+    "answer": "<body>",
+    "hint": "cuerpo",
+    "topic": "Estructura básica de HTML"
+  },
+  "8": {
+    "question": "¿Qué etiqueta se usa para definir la cabecera de un documento HTML?",
+    "answer": "<head>",
+    "hint": "encabezamiento",
+    "topic": "Estructura básica de HTML"
+  },
+  "9": {
+    "question": "¿Cómo se define el título de una página web?",
+    "answer": "<title>",
+    "hint": "título",
+    "topic": "Estructura básica de HTML"
+  },
+  "10": {
+    "question": "¿Cuál es la diferencia entre <div> y <span>?",
+    "answer": "div tiene display block y lo tiene span inline",
+    "hint": "¿bloque o en línea?",
+    "topic": "Estructura básica de HTML"
+  }
+}
