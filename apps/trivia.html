@@ -57,6 +57,16 @@
             padding: 1em;
             border-radius: 0.5em;
         }
+        #hint {
+          margin-top: 1em;
+          padding: 0.5em;
+          color: #525252;
+        }
+        #answer {
+          padding: 0.5em;
+          color: #dc2626;
+          font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -65,36 +75,35 @@
       HTML Trivia
     </h1>
     <div class="flashcard">Presiona "Nueva Pregunta"</div>
+    <div id="hint" style="display: none;"></div>
+    <div id="answer" style="display: none;"></div>
     <div class="timer">Tiempo restante: --</div>
     <div class="controls">
         <button id="reload-btn" onclick="location.reload()" style="display: none;">Reiniciar</button>
         <button class="set-time-btn" onclick="setTime(15)">Tiempo: 15s</button>
         <button class="set-time-btn" onclick="setTime(30)">Tiempo: 30s</button>
         <button class="set-time-btn" onclick="setTime(60)">Tiempo: 1min</button>
+        <button id="hint-btn" onclick="showHint()" style="display: none;">Ver Pista</button>
+        <button id="answer-btn" onclick="showAnswer()" style="display: none;">Ver Respuesta</button>
         <button id="new-question-btn" onclick="nextQuestion()">Nueva Pregunta</button>
     </div>
 
     <script>
-      fetch('questions-and-answers.json')
-      .then(response => response.json()) // Parse JSON
-      .then(data => console.log(data)) // Work with JSON data
-      .catch(error => console.error('Error fetching JSON:', error));
+      let questions = {};
+      async function loadJSON() {
+          try {
+              const response = await fetch('html-trivia.json');
+              questions = await response.json();
+              // console.log(questions);
+              // console.log(Object.keys(questions).length)
+          } catch (error) {
+              console.error('Error fetching JSON:', error);
+          }
+      }
+      loadJSON();
     </script>
     <script>
-        const questions = [
-            "¿Qué significa HTML?",
-            "¿Cuál es la etiqueta principal en un documento HTML?",
-            "¿Qué etiqueta se usa para definir un enlace?",
-            "¿Cómo se inserta una imagen en HTML?",
-            "¿Cuál es la diferencia entre <div> y <span>?",
-            "¿Qué etiqueta se usa para una lista ordenada?",
-            "¿Qué significa CSS?",
-            "¿Cómo se crea un formulario en HTML?",
-            "¿Qué atributo en <img> define un texto alternativo?",
-            "¿Cómo se define un comentario en HTML?"
-        ];
-
-        let currentQuestionIndex = -1;
+        let currentQuestionIndex = 0;
         let timer;
         let timeLeft = 30; // Valor inicial
 
@@ -104,8 +113,13 @@
             
             setTimeout(() => {
                 toggleButtons();
-                currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
-                document.querySelector(".flashcard").innerText = questions[currentQuestionIndex];
+                const randomIdx = Number.parseInt(Math.random() * Object.keys(questions).length) + 1;
+                currentQuestionIndex = randomIdx % Object.keys(questions).length;
+                console.log(currentQuestionIndex)
+                const currentQuestion = questions[currentQuestionIndex];
+                document.querySelector(".flashcard").innerText = currentQuestion.question;
+                document.querySelector("#hint").innerText = currentQuestion.hint;
+                document.querySelector("#answer").innerText = currentQuestion.answer;
                 startTimer();
             }, 300);
         }
@@ -149,6 +163,16 @@
         function toggleButtons() {
           document.querySelectorAll(".set-time-btn").forEach(el => el.style.display = "none");
           document.querySelector("#reload-btn").style.display = "inline-block";
+          document.querySelector("#answer-btn").style.display = "inline-block";
+          document.querySelector("#hint-btn").style.display = "inline-block";
+          document.querySelector("#hint").style.display = "none";
+          document.querySelector("#answer").style.display = "none";
+        }
+        function showHint(){
+          document.querySelector("#hint").style.display = "inline-block";
+        }
+        function showAnswer(){
+          document.querySelector("#answer").style.display = "inline-block";
         }
     </script>
 
