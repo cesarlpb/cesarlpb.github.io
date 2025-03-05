@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./c.png" type="image/x-icon">
+    <title>Flashcards con Temporizador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #94a3b8;
+            flex-direction: column;
+        }
+        .flashcard {
+            width: 80%;
+            max-width: 600px;
+            background: #cbd5e1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 1.5em;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .controls {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .set-time-btn {
+          background: #6b7280;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .timer {
+            margin-top: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #262626;
+            background-color: rgba(229, 229, 229, 0.2);
+            padding: 1em;
+            border-radius: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="display: flex; align-items: center">
+      <img style="display: inline-block; margin-right: 1em;" src="./flashcard.svg" alt="logo" width=60px">
+      HTML Trivia
+    </h1>
+    <div class="flashcard">Presiona "Nueva Pregunta"</div>
+    <div class="timer">Tiempo restante: --</div>
+    <div class="controls">
+        <button id="reload-btn" onclick="location.reload()" style="display: none;">Reiniciar</button>
+        <button class="set-time-btn" onclick="setTime(15)">Tiempo: 15s</button>
+        <button class="set-time-btn" onclick="setTime(30)">Tiempo: 30s</button>
+        <button class="set-time-btn" onclick="setTime(60)">Tiempo: 1min</button>
+        <button id="new-question-btn" onclick="nextQuestion()">Nueva Pregunta</button>
+    </div>
+
+    <script>
+      fetch('questions-and-answers.json')
+      .then(response => response.json()) // Parse JSON
+      .then(data => console.log(data)) // Work with JSON data
+      .catch(error => console.error('Error fetching JSON:', error));
+    </script>
+    <script>
+        const questions = [
+            "¿Qué significa HTML?",
+            "¿Cuál es la etiqueta principal en un documento HTML?",
+            "¿Qué etiqueta se usa para definir un enlace?",
+            "¿Cómo se inserta una imagen en HTML?",
+            "¿Cuál es la diferencia entre <div> y <span>?",
+            "¿Qué etiqueta se usa para una lista ordenada?",
+            "¿Qué significa CSS?",
+            "¿Cómo se crea un formulario en HTML?",
+            "¿Qué atributo en <img> define un texto alternativo?",
+            "¿Cómo se define un comentario en HTML?"
+        ];
+
+        let currentQuestionIndex = -1;
+        let timer;
+        let timeLeft = 30; // Valor inicial
+
+        function nextQuestion() {
+            clearTimeout(timer);
+            document.querySelector(".flashcard").innerText = "Cargando...";
+            
+            setTimeout(() => {
+                toggleButtons();
+                currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+                document.querySelector(".flashcard").innerText = questions[currentQuestionIndex];
+                startTimer();
+            }, 300);
+        }
+
+        function startTimer() {
+          let countdown = timeLeft;
+          const timerElement = document.querySelector(".timer");
+      
+          function updateTimerColor() {
+              if (countdown > timeLeft / 3 * 2) {
+                  timerElement.style.color = "#15803d";
+              } else if (countdown > timeLeft / 3) {
+                  timerElement.style.color = "#c2410c";
+              } else if (countdown > 3){
+                  timerElement.style.color = "#ef4444";
+              } else {
+                  timerElement.style.color = "#dc2626";
+              }
+          }
+      
+          timerElement.innerText = `Tiempo restante: ${countdown}s`;
+          updateTimerColor();
+      
+          timer = setInterval(() => {
+              countdown--;
+              timerElement.innerText = `Tiempo restante: ${countdown}s`;
+              updateTimerColor();
+      
+              if (countdown <= 0) {
+                  clearInterval(timer);
+                  timerElement.innerText = "¡Tiempo agotado! 🥵";
+                  timerElement.style.color = "#57534e";
+              }
+          }, 1000);
+        }      
+
+        function setTime(seconds) {
+            timeLeft = seconds;
+            alert(`Tiempo configurado en ${seconds} segundos`);
+        }
+        function toggleButtons() {
+          document.querySelectorAll(".set-time-btn").forEach(el => el.style.display = "none");
+          document.querySelector("#reload-btn").style.display = "inline-block";
+        }
+    </script>
+
+</body>
+</html>
