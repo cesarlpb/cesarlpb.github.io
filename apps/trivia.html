@@ -1,180 +1,424 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./c.png" type="image/x-icon">
-    <title>Flashcards con Temporizador</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./c.png" type="image/x-icon" />
+    <title>HTML trivia</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #94a3b8;
-            flex-direction: column;
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #94a3b8;
+        flex-direction: column;
+      }
+      .flashcard {
+        width: 80%;
+        max-width: 600px;
+        background: #cbd5e1;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        font-size: 1.5em;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .controls {
+        display: flex;
+        margin-top: 20px;
+        & button {
+          margin-right: 1em;
         }
-        .flashcard {
-            width: 80%;
-            max-width: 600px;
-            background: #cbd5e1;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            font-size: 1.5em;
-            min-height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 1.2em;
+        cursor: pointer;
+        background: #3b82f6;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        transition: 0.3s;
+      }
+      .set-time-btn {
+        display: flex;
+        align-items: center;
+        background: #6b7280;
+        font-size: 1.1em;
+        width: 100px;
+        & img {
+          display: inline-block;
+          margin-right: 0.15em;
         }
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      .timer {
+        margin-top: 15px;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #262626;
+        background-color: rgba(229, 229, 229, 0.2);
+        padding: 1em;
+        border-radius: 0.5em;
+      }
+      #hint {
+        margin-top: 1em;
+        padding: 0.5em;
+        color: #525252;
+      }
+      #answer {
+        padding: 0.5em;
+        color: #dc2626;
+        font-weight: bold;
+      }
+      #logo {
+        display: inline-block;
+        margin-right: 0.25em;
+      }
+      @media screen and (max-width: 756px) {
         .controls {
-            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            & button {
+                margin-bottom: 0.25em;
+            }
         }
-        button {
-            padding: 10px 20px;
-            font-size: 1.2em;
-            cursor: pointer;
-            background: #3b82f6;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            transition: 0.3s;
+      }
+      .active {
+        border: 2px solid white;
+      }
+
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .modal-content {
+        background: #e2e8f0;
+        padding: 1em 3em 1em;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        text-align: center;
+        & div {
+          text-align: end;
+          /*width: 100%;*/
+          /*margin-left: 1.75em;*/
+          cursor: pointer;
         }
-        .set-time-btn {
-          background: #6b7280;
+        & div > img {
+          border: 1.5px solid rgba(0, 0, 0, 0.50);
+          border-radius: 5px;
+          padding: 0.25em;
         }
-        button:hover {
-            background: #0056b3;
+        & h2 {
+          margin-top: 0.25em;
         }
-        .timer {
-            margin-top: 15px;
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #262626;
-            background-color: rgba(229, 229, 229, 0.2);
-            padding: 1em;
-            border-radius: 0.5em;
+        & ol > li {
+          text-align: start;
+          margin: 0.5em auto;
         }
-        #hint {
-          margin-top: 1em;
-          padding: 0.5em;
-          color: #525252;
+        & ol {
+          padding-left: 1.25em;
         }
-        #answer {
-          padding: 0.5em;
-          color: #dc2626;
-          font-weight: bold;
+      }
+
+      body.modal-open {
+        overflow: hidden;
+      }
+      #new-question-btn,
+      #intructions-btn {
+        display: flex;
+        align-items: center;
+        & img {
+          display: inline-block;
+          margin-right: 0.25em;
         }
+      }
+      select {
+        color: #f8fafc;
+        /*color: var(--form-text);*/
+        background-color: #1e40af;
+        /*background-color: var(--background);*/
+        font-family: inherit;
+        font-size: inherit;
+        margin-right: 6px;
+        margin-bottom: 6px;
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        outline: none;
+      }
     </style>
-</head>
-<body>
-    <h1 style="display: flex; align-items: center">
-      <img style="display: inline-block; margin-right: 1em;" src="./flashcard.svg" alt="logo" width=60px">
-      HTML Trivia
+  </head>
+  <body>
+    <h1 style="display: flex; align-items: center;">
+      <img id="logo" src="./flashcard.svg" alt="logo" width=60px"> HTML Trivia
     </h1>
-    <div class="flashcard">Presiona "Nueva Pregunta"</div>
-    <div id="hint" style="display: none;"></div>
-    <div id="answer" style="display: none;"></div>
-    <div class="timer">Tiempo restante: --</div>
+
+    <div id="instructions-modal" class="modal-overlay" style="display: none;">
+      <div class="modal-content">
+        <div style="display: flex; justify-content: space-between" onclick="closeModal()" title="Cerrar">
+          <h2 style="width: 90%; text-align:center;">Instrucciones</h2>
+          <div style="width: 10%;">
+            <img src="./close.svg" alt="close" width="24">
+          </div>
+        </div>
+        <ol>
+          <li>Selecciona tiempo</li>
+          <li>Selecciona el tema (por defecto se usan todas las preguntas)</li>
+          <li>Clica en "Pregunta"</li>
+          <li>¡A responder!</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="flashcard">Clica en "Pregunta" para empezar</div>
+    <div id="hint" style="display: none"></div>
+    <div id="answer" style="display: none"></div>
+    <div class="timer">Tiempo: --</div>
+
+    <div class="controls" style="margin: 1em auto;">
+      <select name="topic" id="topic-select">
+        <option value="loading">Cargando temas...</option>
+      </select>
+    </div>
+
     <div class="controls">
-        <button id="reload-btn" onclick="location.reload()" style="display: none;">Reiniciar</button>
-        <button class="set-time-btn" onclick="setTime(15)">Tiempo: 15s</button>
-        <button class="set-time-btn" onclick="setTime(30)">Tiempo: 30s</button>
-        <button class="set-time-btn" onclick="setTime(60)">Tiempo: 1min</button>
-        <button id="hint-btn" onclick="showHint()" style="display: none;">Ver Pista</button>
-        <button id="answer-btn" onclick="showAnswer()" style="display: none;">Ver Respuesta</button>
-        <button id="new-question-btn" onclick="nextQuestion()">Nueva Pregunta</button>
+      <button id="intructions-btn" onclick="openModal()">
+        <img src="./eye.svg" alt="instructions" width="24">
+        Instrucciones
+      </button>
+      <button id="reload-btn" onclick="location.reload()" style="display: none">
+        Reiniciar
+      </button>
+      <button class="set-time-btn active" onclick="setTime(15, event)">
+        <img src="./timer.svg" alt="timer" width="24">
+        15s
+      </button>
+      <button class="set-time-btn" onclick="setTime(30, event)">
+        <img src="./timer.svg" alt="timer" width="24">
+        30s
+      </button>
+      <button class="set-time-btn" onclick="setTime(60, event)">
+        <img src="./timer.svg" alt="timer" width="24">
+        1min
+      </button>
+      <button id="hint-btn" onclick="showHint()" style="display: none">
+        Ver Pista
+      </button>
+      <button id="answer-btn" onclick="showAnswer()" style="display: none">
+        Ver Respuesta
+      </button>
+      <button id="new-question-btn" onclick="nextQuestion()">
+        <img src="./next-question.svg" alt="Next question" width="24">
+        Pregunta
+      </button>
     </div>
 
     <script>
       let questions = {};
-      async function loadJSON() {
+      let filteredQuestions = {};
+      let currentTopic = "";
+      let topics = {};
+
+      const htmlJsonFile = "html-trivia.json";
+      const topicJsonFile = "html-topics.json";
+      
+      async function loadJSON(file, targetObject) {
           try {
-              const response = await fetch('html-trivia.json');
-              questions = await response.json();
-              // console.log(questions);
-              // console.log(Object.keys(questions).length)
+              const response = await fetch(file);
+              const data = await response.json();
+              Object.assign(targetObject, data);
+              if(!currentTopic){
+                Object.assign(filteredQuestions, data);
+              }
           } catch (error) {
-              console.error('Error fetching JSON:', error);
+              console.error("Error fetching JSON:", error);
           }
       }
-      loadJSON();
+      
+      loadJSON(htmlJsonFile, questions);
+      
     </script>
+
     <script>
-        let currentQuestionIndex = 0;
-        let timer;
-        let timeLeft = 30; // Valor inicial
+      let currentQuestionIndex = 0;
+      let timer;
+      let timeLeft = 30;
+      const timerEls = Array.from(document.querySelectorAll(".set-time-btn"));
 
-        function nextQuestion() {
-            clearTimeout(timer);
-            document.querySelector(".flashcard").innerText = "Cargando...";
-            
-            setTimeout(() => {
-                toggleButtons();
-                const randomIdx = Number.parseInt(Math.random() * Object.keys(questions).length) + 1;
-                currentQuestionIndex = randomIdx % Object.keys(questions).length;
-                console.log(currentQuestionIndex)
-                const currentQuestion = questions[currentQuestionIndex];
-                document.querySelector(".flashcard").innerText = currentQuestion.question;
-                document.querySelector("#hint").innerText = currentQuestion.hint;
-                document.querySelector("#answer").innerText = currentQuestion.answer;
-                startTimer();
-            }, 300);
-        }
+      function nextQuestion() {
+        clearTimeout(timer);
+        document.querySelector(".flashcard").innerText = "Cargando...";
 
-        function startTimer() {
-          let countdown = timeLeft;
-          const timerElement = document.querySelector(".timer");
-      
-          function updateTimerColor() {
-              if (countdown > timeLeft / 3 * 2) {
-                  timerElement.style.color = "#15803d";
-              } else if (countdown > timeLeft / 3) {
-                  timerElement.style.color = "#c2410c";
-              } else if (countdown > 3){
-                  timerElement.style.color = "#ef4444";
-              } else {
-                  timerElement.style.color = "#dc2626";
-              }
+        setTimeout(() => {
+          toggleButtons();
+          const randomIdx =
+            Number.parseInt(Math.random() * Object.keys(questions).length) + 1;
+          currentQuestionIndex = currentTopic ? randomIdx % Object.keys(filteredQuestions).length : randomIdx % Object.keys(questions).length;
+          console.log(currentQuestionIndex);
+          let currentQuestion;
+          if(!currentTopic){
+            currentQuestion = questions[currentQuestionIndex];
+          } else {
+            currentQuestion = filteredQuestions[currentQuestionIndex];
           }
-      
-          timerElement.innerText = `Tiempo restante: ${countdown}s`;
+          if(currentQuestion){
+            document.querySelector(".flashcard").innerText =
+            currentQuestion.question;
+            document.querySelector("#hint").innerText = currentQuestion.hint;
+            document.querySelector("#answer").innerText = currentQuestion.answer;
+            startTimer();
+          } else {
+            alert("No se encontraron preguntas de este tema... 🤔")
+          }
+        }, 300);
+      }
+
+      function startTimer() {
+        let countdown = timeLeft;
+        const timerElement = document.querySelector(".timer");
+
+        function updateTimerColor() {
+          if (countdown > (timeLeft / 3) * 2) {
+            timerElement.style.color = "#15803d";
+          } else if (countdown > timeLeft / 3) {
+            timerElement.style.color = "#c2410c";
+          } else if (countdown > 3) {
+            timerElement.style.color = "#ef4444";
+          } else {
+            timerElement.style.color = "#dc2626";
+          }
+        }
+
+        timerElement.innerText = `Tiempo: ${countdown}s`;
+        updateTimerColor();
+
+        timer = setInterval(() => {
+          countdown--;
+          timerElement.innerText = `Tiempo: ${countdown}s`;
           updateTimerColor();
-      
-          timer = setInterval(() => {
-              countdown--;
-              timerElement.innerText = `Tiempo restante: ${countdown}s`;
-              updateTimerColor();
-      
-              if (countdown <= 0) {
-                  clearInterval(timer);
-                  timerElement.innerText = "¡Tiempo agotado! 🥵";
-                  timerElement.style.color = "#57534e";
-              }
-          }, 1000);
-        }      
 
-        function setTime(seconds) {
-            timeLeft = seconds;
-            alert(`Tiempo configurado en ${seconds} segundos`);
-        }
-        function toggleButtons() {
-          document.querySelectorAll(".set-time-btn").forEach(el => el.style.display = "none");
-          document.querySelector("#reload-btn").style.display = "inline-block";
-          document.querySelector("#answer-btn").style.display = "inline-block";
-          document.querySelector("#hint-btn").style.display = "inline-block";
-          document.querySelector("#hint").style.display = "none";
-          document.querySelector("#answer").style.display = "none";
-        }
-        function showHint(){
-          document.querySelector("#hint").style.display = "inline-block";
-        }
-        function showAnswer(){
-          document.querySelector("#answer").style.display = "inline-block";
-        }
+          if (countdown <= 0) {
+            clearInterval(timer);
+            timerElement.innerText = "¡Tiempo agotado! 🥵";
+            timerElement.style.color = "#57534e";
+          }
+        }, 1000);
+      }
+
+      function setTime(seconds, event) {
+        timeLeft = seconds;
+        const button = event.currentTarget;
+        document.querySelectorAll(".set-time-btn").forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+      }
+          
+      function toggleButtons() {
+        document
+          .querySelectorAll(".set-time-btn")
+          .forEach((el) => (el.style.display = "none"));
+        document.querySelector("#reload-btn").style.display = "inline-block";
+        document.querySelector("#answer-btn").style.display = "inline-block";
+        document.querySelector("#hint-btn").style.display = "inline-block";
+        document.querySelector("#hint").style.display = "none";
+        document.querySelector("#answer").style.display = "none";
+      }
+      
+      function showHint() {
+        document.querySelector("#hint").style.display = "inline-block";
+      }
+      
+      function showAnswer() {
+        document.querySelector("#answer").style.display = "inline-block";
+      }
+
+      function openModal() {
+        const modal = document.getElementById("instructions-modal");
+        modal.style.display = "flex";
+        document.body.classList.add("modal-open");
+        
+          modal.setAttribute("tabindex", "-1"); 
+          modal.focus(); 
+      }
+      
+      function closeModal() {
+          const modal = document.getElementById("instructions-modal");
+          modal.style.display = "none";
+          document.body.classList.remove("modal-open");
+      }    
+
+      async function loadAndInitialize() {
+        await loadJSON(topicJsonFile, topics);
+        populateTopicSelect();
+    }
+    
+    function populateTopicSelect() {
+      const selectEl = document.getElementById("topic-select");
+      const htmlTopics = topics.html;
+  
+      if (!htmlTopics) {
+          console.error("No se han cargado los topics correctamente.");
+          return;
+      }
+      
+      const topicCounts = {};
+      Object.values(questions).forEach(q => {
+          topicCounts[q.topic] = (topicCounts[q.topic] || 0) + 1;
+      });
+  
+      let options = `<option value="-1">-- Selecciona un tema --</option>`;
+      htmlTopics.forEach((topic, index) => {
+          const count = topicCounts[topic] || 0;
+          options += `<option value="${index}">${index + 1}. ${topic} (${count})</option>`;
+      });
+  
+      selectEl.innerHTML = options;
+    }
+    
+    loadAndInitialize();
+
+    window.addEventListener("DOMContentLoaded", function(){
+      const selectEl = document.getElementById("topic-select");
+      selectEl.addEventListener("change", function(event){
+        const selectedTopic = selectEl.options[selectEl.selectedIndex].text;
+        selectTopic(selectedTopic);
+      });
+    });
+
+    function filterByTopic(questionsObj, topicString) {
+      return Object.values(questionsObj).filter(q => q.topic === topicString);
+    }
+
+    function selectTopic(currentTopicText) {
+      
+      const regex = /^\d+\.\s*(.+?)\s*\(\d+\)$/;
+      const match = currentTopicText.match(regex);
+      const topicName = match ? match[1] : currentTopicText;
+    
+      currentTopic = topicName;
+      filteredQuestions = filterByTopic(questions, topicName);
+    }    
+    
     </script>
-
-</body>
+  </body>
 </html>
