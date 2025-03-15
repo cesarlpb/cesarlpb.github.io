@@ -12,11 +12,7 @@
     <style>
       body {
         font-family: Arial, sans-serif;
-        max-width: 600px;
-        margin: 20px auto;
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
+        max-width: 100%;
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
       }
       textarea {
@@ -45,39 +41,188 @@
         white-space: pre-wrap;
       }
     </style>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        height: 100vh;
+        margin: 0;
+        padding: 2em;
+        vertical-align: middle;
+      }
+      #container {
+        display: block;
+        margin: 1em auto;
+        /* height: calc(100vh - 4em); */
+        max-width: 600px;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      #topic-selector,
+      #problem-selector {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1em auto;
+
+        & label,
+        select {
+          display: inline-block;
+          margin: 0.5em;
+        }
+      }
+      #problem-description {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      #execute-tests-btn {
+        display: inline-block;
+        margin: 1em auto 0;
+        width: 50%;
+      }
+      h3 {
+        margin: 2em auto;
+      }
+      /* Estilos para cada tema */
+      .html-theme {
+        background-color: transparent;
+        color: #d63384;
+      }
+      .css-theme {
+        background-color: transparent;
+        color: #0d6efd;
+      }
+      .js-theme {
+        background-color: transparent;
+        color: #ffc107;
+      }
+      #output {
+        min-height: 150px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1em;
+        align-items: start;
+      }
+    </style>
   </head>
   <body>
-    <h2>Totally not Leetcode 🤠</h2>
+    <div id="container">
+      <h2>Totally not Leetcode 🤠</h2>
 
-    <label for="problem-select">Selecciona un problema:</label>
-    <select id="problem-select" onchange="changeProblem()"></select>
+      <div id="topic-selector">
+        <label for="theme-selector">Selecciona un tema:</label>
+        <select id="theme-selector">
+          <!-- Opciones generadas dinámicamente -->
+        </select>
+      </div>
 
-    <hr />
+      <div id="problem-selector">
+        <label for="problem-select">Selecciona un problema:</label>
+        <select id="problem-select" onchange="changeProblem()"></select>
+      </div>
 
-    <div id="problem-container"></div>
+      <hr />
 
-    <textarea
-      id="solution"
-      placeholder="Escribe aquí tu solución..."
-    ></textarea>
-    <button onclick="runTests()">Ejecutar Pruebas</button>
+      <h3 id="problem-title"></h3>
+      <div id="problem-container"></div>
 
-    <h3>Resultados:</h3>
-    <div class="output" id="output"></div>
+      <textarea
+        id="solution"
+        placeholder="Escribe aquí tu solución..."
+      ></textarea>
+      <button id="execute-tests-btn" onclick="runTests()">
+        Ejecutar Pruebas
+      </button>
 
+      <h3>Resultados:</h3>
+      <div class="output" id="output">
+        <p>Resultado de los tests... 🧪</p>
+      </div>
+    </div>
+
+    <!-- Selector de temas -->
     <script>
+      // Definir los temas y problemas asociados
+      const themes = [
+        {
+          name: "JS",
+          description:
+            "Escribe una función que devuelva la suma de los números en un array.",
+        },
+        {
+          name: "HTML",
+          description:
+            "Escribe una estructura HTML válida para resolver el problema.",
+        },
+        {
+          name: "CSS",
+          description:
+            "Aplica un diseño responsivo con las características necesarias.",
+        },
+      ];
+
+      // Referencias a elementos HTML
+      const themeSelector = document.getElementById("theme-selector");
+      const problemDescription = document.getElementById("problem-container");
+
+      // Agregar las opciones al select
+      themes.forEach((theme, index) => {
+        let option = document.createElement("option");
+        option.value = index;
+        option.textContent = theme.name;
+        themeSelector.appendChild(option);
+      });
+
+      // Manejar el cambio de tema
+      themeSelector.addEventListener("change", function () {
+        const selectedTheme = themes[this.value].name.toLowerCase();
+
+        // Solo actualizar localStorage si el usuario cambia de tema
+        if (localStorage.getItem("topic") !== selectedTheme) {
+          localStorage.setItem("topic", selectedTheme);
+        }
+
+        // Actualizar descripción del problema
+        problemDescription.innerHTML = `
+            <h3>Descripción del Problema</h3>
+            <p>${themes[this.value].description}</p>
+        `;
+
+        // Cambiar la clase del contenedor según el tema
+        problemDescription.className = "";
+        problemDescription.classList.add(selectedTheme + "-theme");
+
+        // Cargar los problemas del nuevo tema
+        loadProblems(selectedTheme);
+      });
+
+      // Inicializar con el primer tema
+      themeSelector.dispatchEvent(new Event("change"));
+
+      // Lógica de tests de problemas
+
       let problems = []; // Variable global para almacenar los problemas
 
-      async function loadProblems() {
+      async function loadProblems(selectedTheme) {
         try {
-          // 1️⃣ Cargar el JSON de problemas desde un archivo externo
+          // 1️⃣ Cargar el JSON de problemas
           const response = await fetch("leetcode.json");
-          problems = await response.json();
+          const allProblems = await response.json();
 
-          // 2️⃣ Verificar que hay problemas en el JSON
-          if (!problems.length) throw new Error("No hay problemas en el JSON");
+          // 2️⃣ Obtener los problemas del tema seleccionado
+          problems = allProblems[selectedTheme] || [];
 
-          // 3️⃣ Llenar el select con los problemas
+          // 3️⃣ Verificar que hay problemas disponibles
+          if (!problems.length)
+            throw new Error("No hay problemas en este tema.");
+
+          // 4️⃣ Llenar el select de problemas
           const select = document.getElementById("problem-select");
           select.innerHTML = problems
             .map(
@@ -86,7 +231,7 @@
             )
             .join("");
 
-          // 4️⃣ Seleccionar el primer problema por defecto
+          // 5️⃣ Seleccionar el primer problema por defecto
           changeProblem();
         } catch (error) {
           console.error("Error cargando problemas:", error);
@@ -106,11 +251,62 @@
         document.getElementById("problem-container").innerHTML = `
               <h3>${problem.title}</h3>
               <p>${problem.description}</p>
-              <pre><code>${problem.functionSignature}</code></pre>
+              ${
+                problem.functionSignature
+                  ? `<pre><code>${problem.functionSignature}</code></pre>`
+                  : ""
+              }
           `;
 
         // Guardar en variable global para `runTests()`
         window.currentProblem = problem;
+      }
+
+      // Validadores
+      // HTML
+      /**
+       * Valida si el HTML contiene los elementos requeridos.
+       * @param {string} htmlString - Código HTML en formato string.
+       * @param {string[]} requiredElements - Lista de selectores de elementos requeridos.
+       * @returns {object} - Resultado de la validación.
+       */
+      function validateHTMLStructure(htmlString, requiredElements) {
+        // 1️⃣ Crear un parser para analizar el HTML
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlString, "text/html");
+
+        // 2️⃣ Verificar la presencia del DOCTYPE
+        const hasDoctype = document.implementation.createDocumentType
+          ? htmlString.toLowerCase().includes("<!doctype")
+          : doc.doctype !== null;
+
+        // 3️⃣ Crear un objeto con los resultados de la validación
+        let results = {
+          doctype: hasDoctype,
+          elements: {},
+        };
+
+        // 4️⃣ Recorrer la lista de elementos requeridos y verificar su existencia
+        requiredElements.forEach((selector) => {
+          results.elements[selector] = !!doc.querySelector(selector);
+        });
+
+        // 5️⃣ Verificar si todos los elementos requeridos están presentes
+        const isValid =
+          hasDoctype && Object.values(results.elements).every((v) => v);
+
+        // 6️⃣ Retornar los resultados
+        return { isValid, details: results };
+      }
+
+      /**
+       * Devuelve `true` si el HTML contiene todos los elementos requeridos, `false` en caso contrario.
+       * @param {string} htmlString - Código HTML en string.
+       * @param {string[]} requiredElements - Selectores de elementos a buscar.
+       * @returns {boolean} - `true` si es válido, `false` si no.
+       */
+      function isValidHTML(htmlString, requiredElements) {
+        return validateHTMLStructure(htmlString, requiredElements).isValid;
       }
 
       function runTests() {
@@ -124,73 +320,119 @@
         outputContainer.innerHTML = ""; // Limpiar salida
 
         const userCode = document.getElementById("solution").value;
+        const selectedTheme = localStorage.getItem("topic") || "js"; // Obtener el tema seleccionado
 
-        try {
-          // 🔍 Extraer el nombre de la función desde la firma de la función
-          const functionNameMatch =
-            problem.functionSignature.match(/function (\w+)/);
-          if (!functionNameMatch)
-            throw new Error(
-              "No se pudo detectar el nombre de la función en la firma."
-            );
-          const functionName = functionNameMatch[1]; // Nombre de la función
-
-          // 🏗️ Crear una nueva función en el contexto global
-          const functionBody = userCode.replace(/^function\s+\w+\s*/, ""); // Remueve el `function nombre`
-          window[functionName] = new Function(
-            "return function " + functionName + functionBody
-          )();
-
-          if (typeof window[functionName] !== "function")
-            throw new Error(`La función "${functionName}" no está definida.`);
-
-          let passed = 0;
-          problem.testCases.forEach((test, index) => {
-            try {
-              // 🔍 Asegurar que `test.input` es un array, si no, convertirlo en uno
-              const inputArray = Array.isArray(test.input)
-                ? test.input
-                : [test.input];
-
-              const result = window[functionName](...inputArray);
-
-              // 🔍 Asegurar que `expected` es un array solo si `result` lo es
-              const expectedArray = Array.isArray(test.expected)
-                ? test.expected
-                : [test.expected];
-              const resultArray = Array.isArray(result) ? result : [result];
-
-              // 🔍 Convertir "NaN" string en el JSON a `NaN`
-              const expectedConverted = expectedArray.map((value) =>
-                value === "NaN" ? NaN : value
+        // 🔹 Caso: Validación de código JS
+        if (selectedTheme === "js") {
+          try {
+            const functionNameMatch =
+              problem.functionSignature.match(/function (\w+)/);
+            if (!functionNameMatch)
+              throw new Error(
+                "No se pudo detectar el nombre de la función en la firma."
               );
+            const functionName = functionNameMatch[1]; // Nombre de la función
 
-              // ✅ Comparación dinámica (maneja arrays y NaN correctamente)
-              const success = arraysEqual(resultArray, expectedConverted);
+            // 🏗️ Crear una nueva función en el contexto global
+            const functionBody = userCode.replace(/^function\s+\w+\s*/, ""); // Remueve el `function nombre`
+            window[functionName] = new Function(
+              "return function " + functionName + functionBody
+            )();
 
-              outputContainer.innerHTML += `🧪 Test #${
-                index + 1
-              }: ${functionName}(${inputArray
-                .map((v) => JSON.stringify(v))
-                .join(", ")}) // ${result} → ${
-                success
-                  ? "✅ Passed"
-                  : `❌ Failed (Expected ${JSON.stringify(
-                      expectedConverted
-                    )}, got ${JSON.stringify(resultArray)})`
-              }<br>`;
+            if (typeof window[functionName] !== "function")
+              throw new Error(`La función "${functionName}" no está definida.`);
 
-              if (success) passed++;
-            } catch (err) {
-              outputContainer.innerHTML += `❌ Error en el test #${
-                index + 1
-              }: ${err.message}<br>`;
+            let passed = 0;
+            problem.testCases.forEach((test, index) => {
+              try {
+                const inputArray = Array.isArray(test.input)
+                  ? test.input
+                  : [test.input];
+                const result = window[functionName](...inputArray);
+
+                const expectedArray = Array.isArray(test.expected)
+                  ? test.expected
+                  : [test.expected];
+                const resultArray = Array.isArray(result) ? result : [result];
+                const updatedExpectedArray = expectedArray.map((i) => {
+                  if (i == "NaN") {
+                    return Number.NaN;
+                  } else {
+                    return i;
+                  }
+                });
+                // ✅ Comparación dinámica (maneja arrays y NaN correctamente)
+                const success = arraysEqual(resultArray, updatedExpectedArray);
+
+                outputContainer.innerHTML += `<p>🧪 Test #${
+                  index + 1
+                }: ${functionName}(${inputArray
+                  .map((v) => JSON.stringify(v))
+                  .join(", ")}) // ${result} → ${
+                  success
+                    ? "✅ Passed"
+                    : `❌ Failed (Expected ${JSON.stringify(
+                        expectedArray
+                      )}, got ${JSON.stringify(resultArray)})`
+                }</p>`;
+
+                if (success) passed++;
+              } catch (err) {
+                outputContainer.innerHTML += `❌ Error en el test #${
+                  index + 1
+                }: ${err.message}<br>`;
+              }
+            });
+
+            outputContainer.innerHTML += `<p>📊 Resultados: ${passed}/${problem.testCases.length} tests pasados.</p>`;
+          } catch (err) {
+            outputContainer.innerHTML = `❌ Error en tu código: ${err.message}`;
+          }
+        }
+
+        // 🔹 Caso: Validación de código HTML
+        else if (selectedTheme === "html") {
+          try {
+            // Lista de elementos requeridos
+            const requiredElements = problem.requiredElements || [
+              "html",
+              "head",
+              "body",
+            ];
+
+            // Validar el código HTML del usuario
+            const validationResults = validateHTMLStructure(
+              userCode,
+              requiredElements
+            );
+
+            if (validationResults.isValid) {
+              outputContainer.innerHTML = "✅ ¡El HTML es válido!";
+            } else {
+              outputContainer.innerHTML =
+                "❌ El HTML no cumple con la estructura requerida.<br>";
+              Object.keys(validationResults.details.elements).forEach((el) => {
+                outputContainer.innerHTML += `${el}: ${
+                  validationResults.details.elements[el]
+                    ? "✅ Presente"
+                    : "❌ Ausente"
+                }<br>`;
+              });
             }
-          });
+          } catch (err) {
+            outputContainer.innerHTML = `❌ Error al validar HTML: ${err.message}`;
+          }
+        }
 
-          outputContainer.innerHTML += `<br>📊 Resultados: ${passed}/${problem.testCases.length} tests pasados.`;
-        } catch (err) {
-          outputContainer.innerHTML = `❌ Error en tu código: ${err.message}`;
+        // 🔹 Caso: Validación de código CSS (Por implementar)
+        else if (selectedTheme === "css") {
+          outputContainer.innerHTML =
+            "⚠️ Validación de CSS no implementada aún.";
+        }
+
+        // 🔹 Si el tema no es reconocido
+        else {
+          outputContainer.innerHTML = "❌ Error: Tema no reconocido.";
         }
       }
 
@@ -214,7 +456,19 @@
       }
 
       // 6️⃣ Llamar a la función para cargar problemas al inicio
-      loadProblems();
+      // Recuperar tema desde localStorage o establecer "js" como predeterminado
+      const savedTheme = localStorage.getItem("topic") || "js";
+
+      // Establecer el valor en el select
+      themeSelector.value = themes.findIndex(
+        (t) => t.name.toLowerCase() === savedTheme
+      );
+      if (themeSelector.value === -1) {
+        themeSelector.value = 0; // Si no coincide, usar la primera opción (JS)
+      }
+
+      // Cargar problemas del tema guardado
+      loadProblems(savedTheme);
     </script>
   </body>
 </html>
