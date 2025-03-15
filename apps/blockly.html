@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blockly - Generador de Código</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      .blocklyToolboxContents,
+      .blocklyToolboxCategory {
+        color: black;
+      }
+      .blocklyToolboxCategory:hover {
+        background-color: lightgray;
+        color: rgba(50, 50, 50, 0.75);
+      }
+      #blocklyDiv {
+        height: 400px;
+        width: 100%;
+        overflow-x: hidden; /* Oculta el scroll horizontal */
+        overflow-y: auto; /* Permite el scroll vertical si es necesario */
+        position: relative;
+      }
+
+      .blocklyMainWorkspaceScrollbar {
+        position: absolute;
+        right: 0;
+      }
+      .blocklyToolboxDiv {
+        min-width: 125px; /* Ajusta el tamaño mínimo del toolbox */
+        max-width: 250px;
+        overflow-y: auto; /* Permite scroll vertical si es necesario */
+        overflow-x: hidden; /* Evita el desbordamiento horizontal */
+      }
+      #execute-btn {
+        display: block;
+        margin: 1em auto;
+      }
+      #code {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(200, 200, 200, 0.35);
+        min-height: 100px;
+        border-radius: 10px;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css"
+    />
+  </head>
+  <body>
+    <h2>Blockly - Generador de Código JavaScript</h2>
+
+    <div id="blocklyDiv" style="height: 400px; width: 100%"></div>
+
+    <button id="execute-btn" onclick="runCode()">Ejecutar Código</button>
+
+    <h3>Código Generado:</h3>
+    <pre id="code">Aquí aparecerá el código...</pre>
+
+    <script src="./blockly.min.js"></script>
+    <script>
+      let workspace;
+      // Este código se ejecutará solo después de que Blockly esté disponible
+      document.addEventListener("DOMContentLoaded", function () {
+        const toolboxXML = `
+          <xml>
+              <category name="Lógica" expanded="true">
+                  <block type="controls_if"></block>
+              </category>
+              <category name="Bucles">
+                  <block type="controls_repeat_ext"></block>
+              </category>
+              <category name="Matemáticas">
+                  <block type="math_number"></block>
+                  <block type="math_arithmetic"></block>
+              </category>
+              <category name="Texto">
+                  <block type="text">
+                      <field name="TEXT">Escribe aquí</field>
+                  </block>
+                  <block type="text_print">
+                      <value name="TEXT">
+                          <shadow type="text">
+                              <field name="TEXT">Hola mundo</field>
+                          </shadow>
+                      </value>
+                  </block>
+              </category>
+              <category name="Variables" custom="VARIABLE"></category>
+              <category name="Funciones" custom="PROCEDURE"></category>
+          </xml>`;
+        const simpleToolboxXML = `
+            <xml>
+                <block type="controls_repeat_ext"></block>
+                <block type="math_number"></block>
+                <block type="math_arithmetic"></block>
+                <block type="text"></block>
+                <block type="text_print"></block>
+            </xml>`;
+
+        workspace = Blockly.inject("blocklyDiv", {
+          toolbox: toolboxXML,
+          scrollbars: false, // Habilita el scroll vertical solo si es necesario
+          trashcan: true,
+        });
+      });
+    </script>
+    <script>
+      function runCode() {
+        // Generar el código JavaScript desde los bloques
+        var code = Blockly.JavaScript.workspaceToCode(workspace);
+        document.getElementById("code").textContent = code;
+
+        try {
+          // Ejecutar el código generado
+          eval(code);
+        } catch (e) {
+          alert("Error al ejecutar el código: " + e);
+        }
+      }
+    </script>
+  </body>
+</html>
