@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css"
+    />
+    <link rel="shortcut icon" href="./c.png" type="image/x-icon" />
+    <title>🤖 My LeetCode</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      textarea {
+        width: 100%;
+        height: 120px;
+        margin: 10px 0;
+        font-family: monospace;
+      }
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+      .output {
+        padding: 10px;
+        border: 1px solid #ddd;
+        background: #505050;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Totally not Leetcode 🤠</h2>
+
+    <label for="problem-select">Selecciona un problema:</label>
+    <select id="problem-select" onchange="changeProblem()"></select>
+
+    <hr />
+
+    <div id="problem-container"></div>
+
+    <textarea
+      id="solution"
+      placeholder="Escribe aquí tu solución..."
+    ></textarea>
+    <button onclick="runTests()">Ejecutar Pruebas</button>
+
+    <h3>Resultados:</h3>
+    <div class="output" id="output"></div>
+
+    <script>
+      let problems = []; // Variable global para almacenar los problemas
+
+      async function loadProblems() {
+        try {
+          // 1️⃣ Cargar el JSON de problemas desde un archivo externo
+          const response = await fetch("leetcode.json");
+          problems = await response.json();
+
+          // 2️⃣ Verificar que hay problemas en el JSON
+          if (!problems.length) throw new Error("No hay problemas en el JSON");
+
+          // 3️⃣ Llenar el select con los problemas
+          const select = document.getElementById("problem-select");
+          select.innerHTML = problems
+            .map(
+              (p, index) =>
+                `<option value="${index}">${p.id} - ${p.title}</option>`
+            )
+            .join("");
+
+          // 4️⃣ Seleccionar el primer problema por defecto
+          changeProblem();
+        } catch (error) {
+          console.error("Error cargando problemas:", error);
+          document.getElementById(
+            "problem-container"
+          ).innerHTML = `<p style="color:red;">Error cargando problemas.</p>`;
+        }
+      }
+
+      function changeProblem() {
+        const selectedIndex = document.getElementById("problem-select").value;
+        const problem = problems[selectedIndex];
+
+        if (!problem) return;
+
+        // Mostrar enunciado en la página
+        document.getElementById("problem-container").innerHTML = `
+              <h3>${problem.title}</h3>
+              <p>${problem.description}</p>
+              <pre><code>${problem.functionSignature}</code></pre>
+          `;
+
+        // Guardar en variable global para `runTests()`
+        window.currentProblem = problem;
+      }
+
+      function runTests() {
+        const problem = window.currentProblem;
+        if (!problem) {
+          alert("El problema no ha sido cargado todavía. Espera un momento.");
+          return;
+        }
+
+        const outputContainer = document.getElementById("output");
+        outputContainer.innerHTML = ""; // Limpiar salida
+
+        const userCode = document.getElementById("solution").value;
+
+        try {
+          // 🔍 Extraer el nombre de la función desde la firma de la función
+          const functionNameMatch =
+            problem.functionSignature.match(/function (\w+)/);
+          if (!functionNameMatch)
+            throw new Error(
+              "No se pudo detectar el nombre de la función en la firma."
+            );
+          const functionName = functionNameMatch[1]; // Nombre de la función
+
+          // 🏗️ Crear una nueva función en el contexto global
+          const functionBody = userCode.replace(/^function\s+\w+\s*/, ""); // Remueve el `function nombre`
+          window[functionName] = new Function(
+            "return function " + functionName + functionBody
+          )();
+
+          if (typeof window[functionName] !== "function")
+            throw new Error(`La función "${functionName}" no está definida.`);
+
+          let passed = 0;
+          problem.testCases.forEach((test, index) => {
+            try {
+              // 🔍 Asegurar que `test.input` es un array, si no, convertirlo en uno
+              const inputArray = Array.isArray(test.input)
+                ? test.input
+                : [test.input];
+
+              const result = window[functionName](...inputArray);
+
+              // 🔍 Asegurar que `expected` es un array solo si `result` lo es
+              const expectedArray = Array.isArray(test.expected)
+                ? test.expected
+                : [test.expected];
+              const resultArray = Array.isArray(result) ? result : [result];
+
+              // 🔍 Convertir "NaN" string en el JSON a `NaN`
+              const expectedConverted = expectedArray.map((value) =>
+                value === "NaN" ? NaN : value
+              );
+
+              // ✅ Comparación dinámica (maneja arrays y NaN correctamente)
+              const success = arraysEqual(resultArray, expectedConverted);
+
+              outputContainer.innerHTML += `🧪 Test #${
+                index + 1
+              }: ${functionName}(${inputArray
+                .map((v) => JSON.stringify(v))
+                .join(", ")}) // ${result} → ${
+                success
+                  ? "✅ Passed"
+                  : `❌ Failed (Expected ${JSON.stringify(
+                      expectedConverted
+                    )}, got ${JSON.stringify(resultArray)})`
+              }<br>`;
+
+              if (success) passed++;
+            } catch (err) {
+              outputContainer.innerHTML += `❌ Error en el test #${
+                index + 1
+              }: ${err.message}<br>`;
+            }
+          });
+
+          outputContainer.innerHTML += `<br>📊 Resultados: ${passed}/${problem.testCases.length} tests pasados.`;
+        } catch (err) {
+          outputContainer.innerHTML = `❌ Error en tu código: ${err.message}`;
+        }
+      }
+
+      // 🔍 Función para comparar arrays, considerando NaN
+      function arraysEqual(arr1, arr2) {
+        if (
+          !Array.isArray(arr1) ||
+          !Array.isArray(arr2) ||
+          arr1.length !== arr2.length
+        ) {
+          return false;
+        }
+
+        return arr1.every((value, index) => {
+          const val1 = typeof value === "string" ? value.trim() : value;
+          const val2 =
+            typeof arr2[index] === "string" ? arr2[index].trim() : arr2[index];
+
+          return (Number.isNaN(val1) && Number.isNaN(val2)) || val1 === val2;
+        });
+      }
+
+      // 6️⃣ Llamar a la función para cargar problemas al inicio
+      loadProblems();
+    </script>
+  </body>
+</html>

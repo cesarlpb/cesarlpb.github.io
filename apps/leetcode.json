@@ -1,0 +1,108 @@
+[
+  {
+    "id": 1,
+    "title": "Suma de dos números",
+    "description": "Escribe una función que tome dos números y retorne su suma.\n Es decir, si le paso los números 1 y 2 debo recibir 3 como resultado: sumaDos(1, 2); // 3",
+    "functionSignature": "function sumaDos(a, b) { // Escribe el código aquí }",
+    "hint": "Debes retornar el resultado que calculas. Puedes supones que recibes siempre dos números.",
+    "testCases": [
+      {
+        "input": [1, 2],
+        "expected": 3
+      },
+      {
+        "input": [-5, 5],
+        "expected": 0
+      },
+      {
+        "input": [10, 20],
+        "expected": 30
+      }
+    ],
+    "proposedSolution": "function sumaDos(a, b){return a+b}"
+  },
+  {
+    "id": 2,
+    "title": "Suma de tres números",
+    "description": "Escribe una función que tome tres números y retorne su suma.\n Es decir, si le paso los números 1, 2 y 3 debo recibir 6 como resultado: sumaTres(1, 2, 3); // 6",
+    "functionSignature": "function sumaTres(a, b, c) { // Escribe el código aquí }",
+    "hint": "Debes retornar el resultado que calculas. Puedes supones que recibes siempre dos números.",
+    "testCases": [
+      {
+        "input": [1, 2, 3],
+        "expected": 6
+      },
+      {
+        "input": [-5, 5, 0],
+        "expected": 0
+      },
+      {
+        "input": [10, 20, 30],
+        "expected": 60
+      }
+    ], 
+    "proposedSolution": "function sumaTres(a, b, c){return a+b+c}"
+  },
+  {
+    "id": 3,
+    "title": "Dividir sin divisor cero",
+    "description": "Escribe una función que divide dos números a, b y devuelve el resultado. Si recibe el divisor (segundo número) igual a cero debe escribir (opcional) un mensaje de error (puedes usar console.error()) y devolver Number.NaN para indicar que no es un número el resultado en este caso (requerido).",
+    "functionSignature": "function dividir(a, b) { // Escribe el código aquí }",
+    "hint": "Debes retornar el resultado que calculas. Puedes supones que recibes siempre dos números y que uno de ellos puede ser cero.",
+    "testCases": [
+      {
+        "input": [4, 2],
+        "expected": 2
+      },
+      {
+        "input": [1, 2],
+        "expected": 0.5
+      },
+      {
+        "input": [1, 0],
+        "expected": "NaN"
+      }
+    ],
+    "proposedSolution": "function dividir(a, b){if(b==0) {return Number.NaN } return a/b}"
+  },
+  {
+    "id": 4,
+    "title": "Operaciones básicas: + - * /",
+    "description": "Escribe una función operaciones que recibe dos números, a y b, y devuelve un array con los resultados de las operaciones básicas en este orden: suma, resta, multiplicación y división. Es decir, si le pasamos 1 y 1 debe devolver [2, 0, 1, 1]. En caso de divisor cero devolvemos Number.NaN.",
+    "functionSignature": "function operaciones(a, b) { // Escribe el código aquí }",
+    "hint": "Debes retornar el resultado que calculas en un array. Puedes supones que recibes siempre dos números y uno puede ser cero.",
+    "testCases": [
+      {
+        "input": [1, 2],
+        "expected": [3, -1, 2, 0.5]
+      },
+      {
+        "input": [-5, 5],
+        "expected": [0, -10, -25, -1]
+      },
+      {
+        "input": [10, 0],
+        "expected": [10, 10, 0, "NaN"]
+      }
+    ],
+    "proposedSolution": "function operaciones(a, b){return [a+b, a-b, a*b, b == 0 ? Number.NaN : a/b]}"
+  },
+  {
+    "id": 5,
+    "title": "Concatenar nombre en saludo",
+    "description": "Escribe una función saludar que recibe un string y lo concatena (añade al final) a un texto genérico de saludo: \"Hola \" (debes añadir un espacio entre el nombre y el saludo). La función debe devolver el string resultante. De forma opcional, puedes no colocar el espacio si el string que se recibe está vacío (es decir, solo \"Hola\").",
+    "functionSignature": "function saludar(nombre) { // Escribe el código aquí }",
+    "hint": "Debes retornar el string resultante. Puedes supones que recibes siempre un string.",
+    "testCases": [
+      {
+        "input": "Pepe",
+        "expected": "Hola Pepe"
+      },
+      {
+        "input": "",
+        "expected": "Hola"
+      }
+    ],
+    "proposedSolution" : "function saludar(nombre){return \"Hola \" + nombre;}"
+  }
+]
