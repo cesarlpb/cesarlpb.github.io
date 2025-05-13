@@ -2,7 +2,18 @@
 
 TweenLite.defaultEase = Expo.easeOut;
 
-initTimer("25:00"); // Set the time here
+function getMinutesFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const min = parseInt(params.get('min'), 10);
+  if (!isNaN(min) && min >= 0 && min <= 99) {
+    return min.toString().padStart(2, '0');
+  }
+  return '10'; // fallback a 10 minutos si no hay param válido
+}
+
+// initTimer("25:00"); // Set the time here
+const min = getMinutesFromURL();
+initTimer(`${min}:00`);
 
 var reloadBtn = document.querySelector('.reload');
 var timerEl = document.querySelector('.timer');
