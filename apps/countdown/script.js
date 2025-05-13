@@ -13,6 +13,7 @@ function getMinutesFromURL() {
 
 // initTimer("25:00"); // Set the time here
 const min = getMinutesFromURL();
+document.title = `Countdown ⌛️ ${min}:00`;
 initTimer(`${min}:00`);
 
 var reloadBtn = document.querySelector('.reload');
@@ -63,6 +64,7 @@ function initTimer(t) {
     timestr = time.min + time.sec;
     timeNumbers = timestr.split('');
     updateTimerDisplay(timeNumbers);
+    document.title = `⏳ ${time.min}:${time.sec}`;
 
     if (timestr === '0000')
       countdownFinished();
