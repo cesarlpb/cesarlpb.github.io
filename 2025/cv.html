@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Meta tags -->
     <!-- Primary Meta Tags -->
-    <title>César Patiño - Django Python Senior Developer, Blockchain consultor and Dev Instructor</title>
+    <title>César Patiño - Django & Angular Senior Developer, Fullstack Engineer</title>
     <meta name="title" content="César Patiño - Django Python Senior Developer, Blockchain consultor and Dev Instructor">
     <meta name="description"
       content="Hello, this is César Patiño,I'm a full-stack Typescript, React, NextJS, .NET, C# Senior Developer, Blockchain Consultor & Developers Instructor.Learn more here.">
@@ -21,7 +21,7 @@
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://cesarlpb.github.io/2025/cv">
+    <meta property="twitter:url" content="https://cesarlpb.github.io/cv">
     <meta property="twitter:title" content="César Patiño - Django Python Senior Developer, Blockchain consultor and Dev Instructor">
     <meta property="twitter:description"
       content="Hello, this is César Patiño,I'm a full-stack Python Senior Developer, Blockchain Consultor & Developers Instructor.Learn more here.">
@@ -31,22 +31,30 @@
     <!-- Importamos hoja de estilos de Bootstrap CDN -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Hoja de Fontawesome v.6.4 -->
-    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="./css/fontawesome.min.css">
     <!-- Hoja de estilos personalizada -->
     <link rel="stylesheet" href="./css/styles.css"> 
     <!-- Hoja de estilos para impresión -->
     <link rel="stylesheet" href="css/print.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
   </head>
   <body class="px-1 py-1">
     <!-- Container principal -->
     <div class="container">
       <!-- Nombre -->
-      <div class="row justify-content-around py-0 ps-5">
-        <div class="col-9 col-sm">
-        <p class="h1 mb-0">César Patiño</p>
-        <small class="text-muted fw-normal">Python Django Senior Developer · Blockchain Consultor · Dev Instructor</small>
-        <small>|</small>
-        <small class="text-muted fw-light">Typescript, React, NextJS, .NET, C#</small>
+      <div class="row justify-content-between py-0 ps-5">
+        <div class="col-9">
+          <p class="h1 mb-0">César Patiño</p>
+          <small class="text-muted fw-normal">Python Django Senior Developer · Blockchain Consultor · Dev Instructor</small>
+          <small>|</small>
+          <small class="text-muted fw-light">TS, Angular | React, Django | Python</small>
+        </div>
+        <div class="col-3 text-end pe-5">
+          <div class="language-switcher">
+            <a href="?lang=es" class="btn btn-sm btn-outline-secondary me-1" data-lang="es">ES</a>
+            <a href="?lang=en" class="btn btn-sm btn-outline-secondary" data-lang="en">EN</a>
+          </div>
         </div>
       </div>
       <!-- Container para dos columnas -->
@@ -56,42 +64,16 @@
           <!-- Perfil -->
           <div class="px-3">
             <h2 id="bio-h2" class="d-inline-block fs-4 ps-1">
-              <i class="fa-solid fa-user"></i> Perfil
+              <i class="fa-solid fa-user"></i> <span data-i18n="profile">Perfil</span>
             </h2>
             <div id="bio" class="ps-3">
-              <p class="ps-3">¡Hola!, soy César, <b>desarrollador full-stack</b> con <b>experiencia de +10 años</b> en programación.
-                Soy <b>físico teórico</b> graduado en la UCM. Siempre me ha gustado la tecnología y la resolución de problemas, por
-                ello encuentro la programación entretenida y apasionante al mismo tiempo.</p>
-              <p class="ps-3">Los frameworks que he utilizado con más frecuencia son:
-                <code>.NET</code>,
-                <code>React</code>,
-                <code>NextJS</code>,
-                <code>NodeJS</code>,
-                Wordpress.
-                Los lenguajes de programación que mas utilizo con:
-                <code>Typescript</code>,
-                <code>Javascript</code>,
-                <code>C#</code> y
-                <code>Python</code>.
-              </p>
-              <p class="ps-3">Tengo experiencia en <b>Web 3</b> e integraciones de <b>API</b>. Además, he entrenado modelos de IA e
-                implementado modelos existentes como:
-                <b>OpenAI</b>,
-                <b>DALL-E 2</b>,
-                <b>Stable Diffussion</b>, etc.
-                en proyectos para extender o crear nuevas funcionalidades.
-              </p>
-              <h3 class="fs-6 ps-3">Proyectos personales destacados:</h3>
-              <ul class="list-unstyled ps-3">
-                <li><a class="text-dark fw-bold" href="https://punkznftgenerator.com" target="_blank">Punkz NFT Generator</a> - Un generador de NFTs en las redes de Mumbai y Polygon.</li>
-                <li><a class="text-dark fw-bold" href="https://bluegoatlabs.com/" target="_blank">Blue Goat Labs</a> - Página web de mi empresa.</li>
-              </ul>
+              <!-- Bio content will be loaded dynamically from bio.js -->
             </div>
           </div>
           <!-- Sección Experiencia -->
           <div class="px-3">
             <h2 id="experiencia-h2" class="d-inline-block fs-4 ps-1">
-              <i class="fa-solid fa-suitcase"></i> Experiencia
+              <i class="fa-solid fa-suitcase"></i> <span data-i18n="experience">Experiencia</span>
             </h2>
             
             <!-- <div id="spinner">
@@ -110,36 +92,55 @@
           <div class="col text-center">
             <img src="images/profile.jpg" width="150" height="150" class="rounded" alt="Cesar P. profile picture">
           </div>
-          <h2 id="detalles-h2" class="fs-4 mb-1 mt-2">Detalles</h2>
+          <h2 id="detalles-h2" class="fs-4 mb-1 mt-2" data-i18n="details">Detalles</h2>
           <div id="detalles"></div>
           <div class="my-3">
             <h2
               id="idiomas-h2"
               class="fs-5 mb-1 mt-3 pt-2 border border-top border-dark border-top-2 border-bottom-0 border-start-0 border-end-0">
-              <i class="fa-solid fa-font"></i> Idiomas
+              <i class="fa-solid fa-language"></i> <span data-i18n="languages">Idiomas</span>
             </h2>
-            <div id="idiomas"></div>
+            <section id="idiomas-section">
+            <div id="idiomas" class="mb-3">
+              <div class="lang-row d-flex justify-content-between py-1">
+                <span>Spanish</span>
+                <span class="text-muted">Native</span>
+              </div>
+              <div class="lang-row d-flex justify-content-between py-1">
+                <span>English</span>
+                <span class="text-muted">Advanced (C1)</span>
+              </div>
+              <div class="lang-row d-flex justify-content-between py-1">
+                <span>French</span>
+                <span class="text-muted">Intermediate (B1)</span>
+              </div>
+            </div>
+            </section>
           </div>
           <!-- Sección Educación -->
+           <section id="educacion-section">
             <div class="pt-3 mt-3 border border-top border-dark border-top-2 border-bottom-0 border-start-0 border-end-0">
-              <h3 id="educacion-h3" class="d-inline-block fs-5 ps-1">
+              <h3 id="educacion-h3" class="d-inline-block fs-5 ps-1" data-i18n="education">
                 <i class="fa-solid fa-graduation-cap"></i> Educación
               </h3>
               <!-- Educación #1 -->
               <div id="educacion">
-                <h4 class="ps-0 fs-6 mb-0">Grado en Física teórica, Universidad Complutense de Madrid</h4>
+                <h4 class="ps-0 fs-6 mb-0" data-i18n="physics_degree">Grado en Física teórica, Universidad Complutense de Madrid</h4>
                 <!-- Espacio en blanco "ninja" -->
                 <div>&nbsp;</div>
               </div>
               </div>
+            </section>
             <!--  Sección Proyectos -->
+            <section id="proyectos-section">
             <h2 id="proyectos-h2" class="d-inline-block fs-4 ps-1">
-              <i class="fa-solid fa-list-check"></i> Proyectos
+              <i class="fa-solid fa-list-check"></i> <span data-i18n="projects">Proyectos</span>
             </h2>
             <div id="proyectos"></div>
+            </section>
         </div>
         
       </div>
-    <script type="module" src="./js/main.mjs"></script>
+    <script type="module" src="./js/app.js"></script>
   </body>
 </html>

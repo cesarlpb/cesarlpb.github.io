@@ -66,23 +66,23 @@ export const bio = {
     <b>Stable Diffussion</b>, etc.
     in projects to extend or create new functionalities.
   </p>
-  <h3 class="fs-6 ps-3">Personal projects:</h3>
+  <h3 class="fs-6 ps-3">Recent projects:</h3>
   
   <table class="table">
   <tr>
     <td>
-      <a class="text-dark fw-bold" href="https://codersforyou.es/" target="_blank">CodersForYou</a>
+      <a class="text-dark fw-bold" href="https://woonkly.ai/" target="_blank">Woonkly AI</a>
     </td>
     <td>
-      CodersForYou website.
+      Woonkly website
     </td>
   </tr>
   <tr>
     <td>
-      <a class="text-dark fw-bold" href="https://methodobitcoin.com/" target="_blank">Methodo Bitcoin</a>
+      <a class="text-dark fw-bold" href="https://veladio.com/" target="_blank">Methodo Bitcoin (rebrand: Veladio)</a>
     </td>
     <td>
-      Exchange site.
+      Exchange site
     </td>
   </tr>
   </table>
