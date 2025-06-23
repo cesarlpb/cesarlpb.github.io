@@ -1,0 +1,91 @@
+:root {
+  --l1: 5em;
+  --l2: calc(2 * var(--l1));
+  --l3: calc(3 * var(--l1));
+  --l4: calc(4 * var(--l1));
+  --l5: calc(5 * var(--l1));
+}
+
+body {
+  background: #111;
+  color: white;
+  margin: 0;
+}
+
+.cubo {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: 100px auto;
+  transform-style: preserve-3d;
+  transform: rotateX(20deg) rotateY(45deg);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 400px;
+  margin: 1em auto;
+}
+
+/* Triángulo equilátero con aristas desde el centro */
+#arista-vertical,
+#arista-derecha,
+#arista-izquierda {
+  position: absolute;
+  width: 2px;
+  height: 400px;
+  background: white;
+  top: 100%;
+  left: 50%;
+  transform-origin: bottom center;
+  margin-top: calc(-1 * var(--l3) / 4);
+}
+
+#arista-vertical {
+  transform: translateX(-50%) rotate(0deg);
+}
+
+#arista-derecha {
+  transform: translateX(-50%) rotate(60deg);
+}
+
+#arista-izquierda {
+  transform: translateX(-50%) rotate(-60deg);
+}
+
+/* Contenedor para el triángulo */
+.triangulo-container {
+  position: relative;
+  width: 50vw;
+  height: auto;
+  margin: 1em auto;
+}
+
+/* Slide 2: todas las aristas con pseudo-cubo */
+.cubo-completo {
+  width: 100px;
+  height: 100px;
+  transform: rotateX(30deg) rotateY(45deg) translateZ(0);
+  border: 2px solid white;
+}
+
+.cubo-completo::before,
+.cubo-completo::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid white;
+}
+
+.cubo-completo::before {
+  transform: translateZ(100px);
+}
+
+.cubo-completo::after {
+  transform: rotateY(90deg) translateZ(50px) translateX(-50px);
+}

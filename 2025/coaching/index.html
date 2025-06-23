@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Cubo Ilusión Visual</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="reveal">
+  <div class="slides">
+    <!-- Slide 1: vértice y 3 aristas -->
+    <section>
+      <h3>¿Qué es lo que ves?</h3>
+      <!-- 
+      slides:
+      1. cubo 3 aristas
+      2. cubo mas aristas
+      3. cubo completo
+      -->
+      <div class="column">
+        <div class="triangulo-container">
+          <div id="arista-vertical"></div>
+          <div id="arista-derecha"></div>
+          <div id="arista-izquierda"></div>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- Slide 2: cubo completo -->
+    <section>
+      <div class="cubo cubo-completo"></div>
+      <h3 style="position: absolute; bottom: 1em; width: 100%; text-align: center;">Slide 2: Cubo completo</h3>
+    </section>
+  </div>
+</div>
+
+<script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+<script>
+  Reveal.initialize();
+</script>
+</body>
+</html>
