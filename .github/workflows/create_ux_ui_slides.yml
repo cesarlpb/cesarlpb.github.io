@@ -1,0 +1,27 @@
+name: Make UX/UI Slides
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  merge-md-files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🛎️ Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: 🐍 Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: 📂 Fusionar archivos Markdown
+        run: python3 scripts/merge_markdown.py
+
+      - name: 🔍 Verificar salida
+        run: |
+          ls -la output/
+          head -n 5 output/merged.md || echo "⚠ No se generó el archivo merged.md"
