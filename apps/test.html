@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivia de HTML</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #f8fafc;
+    }
+    .container {
+      background: #cbd5e1;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+    }
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 1em;
+    }
+    .options button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      font-size: 1em;
+      cursor: pointer;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .options button:hover {
+      background: #2563eb;
+    }
+    .results {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+    .explanation {
+      font-size: 1em;
+      margin-top: 10px;
+      color: #6b7280;
+    }
+    .hidden {
+      display: none;
+    }
+    #question-text, #quiz-container, #results-container p {
+      color: black;
+    }
+  </style>
+  <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css"
+    />
+</head>
+<body>
+  <div class="container">
+    <h1>Trivia de HTML</h1>
+    <div id="quiz-container">
+      <div id="question-container">
+        <p class="question" id="question-text">Cargando pregunta...</p>
+        <div class="options" id="options-container"></div>
+      </div>
+      <button id="next-btn" class="hidden" onclick="nextQuestion()">Siguiente</button>
+    </div>
+    <div id="results-container" class="hidden"></div>
+  </div>
+
+  <script>
+    let questions = [];
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let selectedAnswers = [];
+
+    async function loadQuestions() {
+      try {
+        const response = await fetch("test.json");
+        const data = await response.json();
+        questions = data.questions;
+        showQuestion();
+      } catch (error) {
+        console.error("Error al cargar las preguntas:", error);
+      }
+    }
+
+    function showQuestion() {
+      if (currentQuestionIndex >= questions.length) {
+        showResults();
+        return;
+      }
+
+      const questionData = questions[currentQuestionIndex];
+      document.getElementById("question-text").textContent = questionData.question;
+
+      const optionsContainer = document.getElementById("options-container");
+      optionsContainer.innerHTML = "";
+
+      questionData.options.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.textContent = option;
+        button.onclick = () => selectAnswer(index);
+        optionsContainer.appendChild(button);
+      });
+
+      document.getElementById("next-btn").classList.add("hidden");
+    }
+
+    function selectAnswer(selectedIndex) {
+      selectedAnswers.push(selectedIndex);
+
+      const correctIndex = questions[currentQuestionIndex].correct;
+      if (selectedIndex === correctIndex) {
+        score++;
+      }
+
+      document.querySelectorAll(".options button").forEach((button, index) => {
+        button.disabled = true;
+        if (index === correctIndex) {
+          button.style.backgroundColor = "#16a34a"; // Verde si es correcta
+        } else if (index === selectedIndex) {
+          button.style.backgroundColor = "#dc2626"; // Rojo si es incorrecta
+        }
+      });
+
+      document.getElementById("next-btn").classList.remove("hidden");
+    }
+
+    function nextQuestion() {
+      currentQuestionIndex++;
+      showQuestion();
+    }
+
+    function showResults() {
+      document.getElementById("quiz-container").classList.add("hidden");
+
+      const resultsContainer = document.getElementById("results-container");
+      resultsContainer.innerHTML = `<h2>Resultados</h2>
+        <p>Tu puntuación: ${score} de ${questions.length}</p>`;
+
+      questions.forEach((question, index) => {
+        const correctIndex = question.correct;
+        const userAnswer = selectedAnswers[index];
+
+        let resultHtml = `<p><strong>${question.question}</strong></p>
+                          <p>Tu respuesta: <span style="color: ${userAnswer === correctIndex ? '#16a34a' : '#dc2626'}">
+                          ${question.options[userAnswer] || "No respondida"}</span></p>
+                          <p>Respuesta correcta: <strong>${question.options[correctIndex]}</strong></p>`;
+
+        if (question.explanation) {
+          resultHtml += `<p class="explanation">${question.explanation}</p>`;
+        }
+
+        resultsContainer.innerHTML += `<div style="margin-bottom: 1em; padding: 10px; border-bottom: 1px solid #ccc;">${resultHtml}</div>`;
+      });
+
+      resultsContainer.classList.remove("hidden");
+    }
+
+    window.onload = loadQuestions;
+  </script>
+</body>
+</html>

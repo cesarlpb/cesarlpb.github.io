@@ -1,0 +1,37 @@
+{
+  "questions": [
+    {
+      "question": "¿Cuál es la etiqueta correcta para crear un enlace en HTML?",
+      "options": [
+        "<a>",
+        "<link>",
+        "<href>",
+        "<url>"
+      ],
+      "correct": 0,
+      "explanation": "La etiqueta correcta para enlaces en HTML es <a>."
+    },
+    {
+      "question": "¿Cuál es la etiqueta para una lista ordenada en HTML?",
+      "options": [
+        "<ul>",
+        "<ol>",
+        "<li>",
+        "<list>"
+      ],
+      "correct": 1,
+      "explanation": "Las listas ordenadas en HTML se crean con <ol>."
+    },
+    {
+      "question": "¿Qué atributo en HTML especifica un texto alternativo para una imagen?",
+      "options": [
+        "alt",
+        "title",
+        "src",
+        "href"
+      ],
+      "correct": 0,
+      "explanation": "El atributo `alt` proporciona una descripción alternativa para las imágenes."
+    }
+  ]
+}
