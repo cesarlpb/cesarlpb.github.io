@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<link rel="shortcut icon" href="../images/c.png" type="image/x-icon">
-<title>CV link tree</title>
-<style>
-    /* --- Tema oscuro mínimo --- */
-    :root {
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="../images/c.png" type="image/x-icon" />
+    <title>CV link tree</title>
+    <style>
+      /* --- Tema oscuro mínimo --- */
+      :root {
         color-scheme: dark;
-    }
-    body {
+      }
+      body {
         margin: 0;
         height: 100vh;
         display: flex;
@@ -18,118 +18,132 @@
         background: #121212;
         font-family: system-ui, sans-serif;
         color: #e0e0e0;
-    }
-    h2 {
-      text-align: center;
-    }
-    ul {
+      }
+      h2 {
+        text-align: center;
+      }
+      ul {
         list-style: none;
         padding: 0;
         margin: 0;
         text-align: center;
-    }
-    li + li {
+      }
+      li + li {
         margin-top: 1rem;
-    }
-    li {
-      margin: 2em auto;
-    }
-    a {
+      }
+      li {
+        margin: 2em auto;
+      }
+      a {
         color: #90caf9;
         text-decoration: none;
         font-size: 1.25rem;
         cursor: pointer;
-        transition: color .2s;
+        transition: color 0.2s;
         border-radius: 10px;
         border: 1px solid skyblue;
         padding: 0.5em 1em;
-    }
-    a:hover {
+      }
+      a:hover {
         color: #64b5f6;
-    }
-    li p {
-      font-family: monospace;
-      margin-bottom: 2em;
-    }
-    /* Snackbar (pequeña notificación inferior) */
-    #snackbar {
+      }
+      li p {
+        font-family: monospace;
+        margin-bottom: 2em;
+      }
+      /* Snackbar (pequeña notificación inferior) */
+      #snackbar {
         visibility: hidden;
         min-width: 200px;
         background: #333;
         color: #fff;
         text-align: center;
-        padding: .75rem 1rem;
+        padding: 0.75rem 1rem;
         border-radius: 4px;
         position: fixed;
         left: 50%;
         bottom: 30px;
         transform: translateX(-50%);
         opacity: 0;
-        transition: opacity .3s, visibility .3s;
-    }
-    #snackbar.show {
+        transition: opacity 0.3s, visibility 0.3s;
+      }
+      #snackbar.show {
         visibility: visible;
         opacity: 1;
-    }
-</style>
-</head>
-<body>
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>My Link Tree</h2>
+      <ul>
+        <li>
+          <p>[Harvard] Django Python Angular React resume</p>
+          <a
+            href="#"
+            data-url="https://cesarlpb.github.io/2025/pdf/César_Patiño_Python_Django_Angular_React_TS_senior_full-stack_developer_resume.pdf"
+            >My Harvard resume</a
+          >
+        </li>
+        <li>
+          <p>[Harvard] Python + NextJS + React resume</p>
+          <a
+            href="#"
+            data-url="https://cesarlpb.github.io/2025/pdf/César_Patiño_Python_NextJS_React_TS_senior_full-stack_developer_resume.pdf"
+            >My Harvard resume</a
+          >
+        </li>
+        <li>
+          <p>[Standard] Django Python Angular React resume</p>
+          <a
+            href="#"
+            data-url="https://cesarlpb.github.io/2025/pdf/César_Patiño_Python_Django_Angular-React_Senior_Developer_Fullstack_Engineer.pdf"
+            >Standard resume</a
+          >
+        </li>
+        <hr />
+        <li>
+          <p>Portfolio</p>
+          <a href="#" data-url="https://cesarlpb.github.io/">Portfolio</a>
+        </li>
 
-  <div>
-    <h2>My Link Tree</h2>
-    <ul>
-      <li>
-        <p>[Harvard] Django Python Angular React resume</p>
-        <a href="#" data-url="https://cesarlpb.github.io/2025/pdf/César_Patiño_Python_Django_Angular_React_TS_senior_full-stack_developer_resume.pdf">My Harvard resume</a>
-      </li>
-      <li>
-        <p>[Standard] Django Python Angular React resume</p>
-        <a href="#" data-url="https://cesarlpb.github.io/2025/pdf/César_Patiño_Python_Django_Angular-React_Senior_Developer_Fullstack_Engineer.pdf">Standard resume</a>
-      </li>
-      <hr>
-      <li>
-        <p>Portfolio</p>
-        <a href="#" data-url="https://cesarlpb.github.io/">Portfolio</a>
-      </li>
+        <li>
+          <p>Portfolio</p>
+          <a href="#" data-url="placeholder">Other</a>
+        </li>
+      </ul>
+    </div>
 
-      <li>
-        <p>Portfolio</p>
-        <a href="#" data-url="placeholder">Other</a>
-      </li>
-    </ul>
-  </div>
+    <div id="snackbar">¡Copiado!</div>
 
-<div id="snackbar">¡Copiado!</div>
+    <script>
+      document.querySelectorAll("a[data-url]").forEach((anchor) => {
+        anchor.addEventListener("click", async (e) => {
+          e.preventDefault();
+          const url = anchor.dataset.url;
 
-<script>
-document.querySelectorAll('a[data-url]').forEach(anchor => {
-    anchor.addEventListener('click', async (e) => {
-        e.preventDefault();
-        const url = anchor.dataset.url;
-
-        try {
+          try {
             await navigator.clipboard.writeText(url);
-            showSnackbar('✅ Copied: ' + url);
-        } catch (err) {
+            showSnackbar("✅ Copied: " + url);
+          } catch (err) {
             // Fallback (selecciona el texto y pide al usuario copiar manualmente)
-            const tmpInput = document.createElement('input');
+            const tmpInput = document.createElement("input");
             tmpInput.value = url;
             document.body.appendChild(tmpInput);
             tmpInput.select();
-            document.execCommand('copy');
+            document.execCommand("copy");
             document.body.removeChild(tmpInput);
-            showSnackbar('Copied with alternate method');
-        }
-    });
-});
+            showSnackbar("Copied with alternate method");
+          }
+        });
+      });
 
-function showSnackbar(msg) {
-    const bar = document.getElementById('snackbar');
-    bar.textContent = msg;
-    bar.classList.add('show');
-    setTimeout(() => bar.classList.remove('show'), 2000);
-}
-</script>
-
-</body>
+      function showSnackbar(msg) {
+        const bar = document.getElementById("snackbar");
+        bar.textContent = msg;
+        bar.classList.add("show");
+        setTimeout(() => bar.classList.remove("show"), 2000);
+      }
+    </script>
+  </body>
 </html>
