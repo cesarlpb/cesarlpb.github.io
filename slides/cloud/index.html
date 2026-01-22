@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Computación en la nube para la industria turística (194407)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Estilos de Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme" />
+  <link rel="shortcut icon" href="./c.png" type="image/x-icon" />
+  <style>
+    img {
+      max-height: 70vh!important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <script type="text/template">
+
+## Computación en la nube para la industria turística
+**Código:** 194407 · **Curso:** 4º · **Créditos:** 3 ECTS  
+**Docente:** César Patiño  
+**Modalidad:** Presencial (30 h) · Dirigido (20 h) · Autónomo (25 h)
+
+---
+
+## Qué aprenderás en esta asignatura (I)
+- Entender los modelos cloud (IaaS, PaaS, SaaS) y su aplicación en turismo
+- Identificar qué datos son clave según el modelo de negocio turístico
+- Consumir APIs y diseñar flujos de datos sencillos en entornos cloud
+
+---
+## Qué aprenderás en esta asignatura (II)
+- Diseñar una solución turística escalable basada en cloud (MVP conceptual/funcional)
+- Conocer tendencias (IA, IoT, edge, green cloud) y su impacto en el sector
+
+---
+
+![cloud.avif](cloud.avif)
+
+The Cloud
+
+---
+
+![cloud-computing.png](cloud-computing.png)
+
+Cloud Computing
+
+---
+
+## Estructura del curso (visión general)
+- Tema 1: Introducción a la computación en la nube aplicada al turismo
+- Tema 2: Gestión de datos en entornos cloud
+- Tema 3: APIs, lenguajes y procesamiento de datos en la nube
+- Tema 4: Diseño de soluciones digitales en la nube
+- Tema 5: Tendencias y futuro del cloud en turismo
+
+---
+
+![tourism00.png](tourism00.png)
+
+[Noticia en ABC](https://www.abc.es/economia/espana-queda-puertas-100-millones-turistas-extranjeros-20260115123549-nt.html?ref=https%3A%2F%2Fwww.abc.es%2Feconomia%2Fespana-queda-puertas-100-millones-turistas-extranjeros-20260115123549-nt.html#goog_rewarded)
+
+---
+
+![tourism01.jpg](tourism01.jpg)
+
+---
+
+![tourism02.jpeg](tourism02.jpeg)
+![tourism03.jpeg](tourism03.jpeg)
+![tourism04.jpg](tourism04.jpg)
+
+---
+
+## Evaluación
+- **Actividad 1 (individual): 30%** · Semana 6
+- **Actividad 2 (grupal): 30%** · Semana 12
+- **Examen final (individual): 40%** · Semana de examen
+
+**Requisitos:** 
+- nota final ≥ 5 
+- y la(s) prueba(s) individual(es) ≥ 4
+
+---
+
+¿Preguntas? 👀
+
+---
+
+# Clase 1
+## Introducción al cloud ☁️ y su impacto en turismo 📷
+
+---
+
+## Agenda (Clase 1)
+- **Teoría:** qué es cloud y por qué es relevante en turismo
+- **Actividad práctica:** identificar servicios cloud en plataformas turísticas
+- **Taller:** debate guiado sobre dependencia, datos y escalabilidad
+- **Cierre:** trabajo autónomo y lectura
+
+---
+
+## Teoría (Clase 1)
+### Qué es la computación en la nube
+- Acceso a recursos informáticos **bajo demanda** (internet)
+- Pago por uso / elasticidad / disponibilidad
+- Modelos comunes: infraestructura, plataformas, software
+
+**Idea clave:** 
+
+La nube es un modelo operativo, no “un sitio”.
+
+---
+
+![cloud-computing.png](cloud-computing.png)
+
+Cloud Computing
+
+---
+
+![class1-00.png](class1-00.png)
+
+What is the cloud? ☁️
+
+---
+
+## Teoría (Clase 1)
+### Por qué el turismo es un caso natural para cloud
+- Picos de demanda (temporadas, eventos, campañas)
+- Integración constante (pagos, mapas, clima, reseñas, CRM)
+- Datos como ventaja competitiva (pricing, personalización)
+
+---
+
+![stats00.jpeg](stats00.jpeg)
+
+---
+
+![stats01.jpeg](stats01.jpeg)
+
+---
+
+![stats05.png](stats05.png)
+
+---
+
+## Actividad práctica (Clase 1)
+### “Cloud spotting” en turismo (10–15 min)
+En parejas o individual:
+1. Elegid 1 plataforma turística (ej. Booking, Airbnb, Skyscanner, una web de hotel)
+2. Listad 5 funcionalidades (búsqueda, pago, login, recomendaciones…)
+3. Marcad cuáles requieren cloud para ser viables a escala
+
+---
+
+Comentamos ☕️
+
+---
+
+![coffee.jpg](coffee.jpg)
+
+---
+
+## Cloud spotting – Booking.com
+
+| Función        | Cloud | Motivo clave |
+|---------------|-------|--------------|
+| Búsqueda       | ✅     | Escala y velocidad |
+| Reservas       | ✅     | Alta disponibilidad |
+| Pagos          | ✅     | Seguridad |
+| Recomendaciones| ✅     | Datos + IA |
+| Emails         | ✅     | Automatización |
+
+➡️ **Sin cloud: imposible operar a escala global**
+
+
+---
+
+- Búsquedas
+- Reservas
+- Pagos
+- Recomendaciones
+- Emails de confirmación
+- Web corporativa
+- Datos para la app
+
+---
+
+## Taller (Clase 1)
+### Debate guiado (15–20 min)
+1. ¿Qué riesgos aparecen al depender de un proveedor cloud?
+2. ¿Qué “dato” es más valioso en turismo: transacciones, comportamiento, reseñas?
+3. ¿Qué pasa si un sistema de reservas cae en plena temporada?
+
+
+---
+
+¿Qué riesgos aparecen al depender de un proveedor cloud?
+
+> "Nada puede malir sal" -- Anónimo
+
+---
+
+¿Qué “dato” es más valioso en turismo? 
+
+- transacciones 
+- comportamiento
+- reseñas
+
+---
+
+¿Qué pasa si un sistema de reservas cae en plena temporada?
+
+> **Spoiler:** acaba mal
+
+---
+
+![meme00.jpg](meme00.jpg)
+
+---
+
+![meme01.jpg](meme01.jpg)
+
+---
+
+
+**Output:** 3 conclusiones por grupo.
+
+---
+
+Comentamos ☕️
+
+---
+
+![coffee.jpg](coffee.jpg)
+
+---
+
+## Taller – Conclusiones
+
+| Tema | Idea principal |
+|-----|----------------|
+| 1. Dependencia | Hay riesgo, pero es asumido |
+| 2. Dato clave | Comportamiento del cliente |
+| 3. Caídas | Impacto económico inmediato |
+| Beneficio | Escalabilidad |
+| Emergencias | Plan B y redundancia |
+
+➡️ **El cloud es una decisión estratégica, no solo técnica**
+
+---
+
+## Trabajo autónomo (Clase 1)
+- Lectura breve: “Introducción a cloud y turismo” (material del campus)
+- [Lectura en Cloudflare (inglés)](https://www.cloudflare.com/learning/cloud/what-is-the-cloud/)
+- Preparar ejemplos de plataformas turísticas que usen datos para generar valor
+
+
+---
+
+¿Preguntas? 👀
+
+¡Hasta luego! ☕️
+
+---
+
+# Clase 2
+## Modelos cloud: IaaS, PaaS, SaaS
+
+---
+
+## Agenda (Clase 2)
+- Teoría: IaaS vs PaaS vs SaaS
+- Actividad práctica: clasificar herramientas turísticas por modelo
+- Taller: decidir arquitectura por caso de negocio (turismo)
+- Cierre: mini-resumen y siguiente clase
+
+---
+
+## Teoría (Clase 2)
+### IaaS, PaaS, SaaS (definición rápida)
+- **IaaS:** alquilas infraestructura (servidores, redes, almacenamiento)
+- **PaaS:** alquilas plataforma (runtime, despliegue, escalado)
+- **SaaS:** alquilas software listo (CRM, email, analítica)
+
+**Regla práctica:** cuanto más arriba, menos control; cuanto más abajo, más responsabilidad.
+
+---
+
+## Teoría (Clase 2)
+### Ejemplos (turismo)
+- **IaaS:** servidores para motor de reservas propio
+- **PaaS:** backend desplegado gestionado (APIs, colas, funciones)
+- **SaaS:** PMS/CRM/Email marketing/Analytics ya operativos
+
+---
+
+## Actividad práctica (Clase 2)
+### Clasificación por modelos (15–20 min)
+Clasifica (SaaS / PaaS / IaaS) estas categorías:
+- CRM turístico
+- Motor de reservas propio
+- Base de datos gestionada
+- Hosting de una web corporativa
+- Email marketing
+- Pipeline de datos (ETL)
+
+**Objetivo:** justificar la elección, no “acertar”.
+
+---
+
+## Taller (Clase 2)
+### Caso: “Experiencias Locales BCN”
+Necesidades:
+- Web + reservas
+- Pagos
+- CRM sencillo
+- Analítica básica
+- Escalado en temporada
+
+En grupos:
+- Define qué va en SaaS / PaaS / IaaS
+- Lista ventajas y riesgos
+
+---
+
+## Cierre (Clase 2)
+- Resumen: cómo elegir modelo cloud según negocio
+- Próxima clase: proveedores cloud (AWS / Azure / GCP) y servicios típicos en turismo
+
+---
+<!--
+# Plantilla reutilizable (para próximas clases)
+## (Copiar y adaptar)
+- Agenda
+- Teoría
+- Actividad práctica
+- Taller
+- Trabajo autónomo / lectura
+-->
+
+        </script>
+      </section>
+    </div>
+  </div>
+
+  <!-- Scripts de Reveal.js y el plugin de Markdown -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: true,
+      history: true,
+      center: true,
+      transition: "slide",
+      plugins: [RevealMarkdown],
+    });
+  </script>
+</body>
+</html>
