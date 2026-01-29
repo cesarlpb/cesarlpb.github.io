@@ -10,7 +10,7 @@
   <link rel="shortcut icon" href="./c.png" type="image/x-icon" />
   <style>
     img {
-      max-height: 70vh!important;
+      max-height: 60vh!important;
     }
   </style>
 </head>
@@ -288,9 +288,10 @@ Comentamos ☕️
 
 ## Teoría (Clase 2)
 ### IaaS, PaaS, SaaS (definición rápida)
-- **IaaS:** alquilas infraestructura (servidores, redes, almacenamiento)
-- **PaaS:** alquilas plataforma (runtime, despliegue, escalado)
+
 - **SaaS:** alquilas software listo (CRM, email, analítica)
+- **PaaS:** alquilas plataforma (runtime, despliegue, escalado)
+- **IaaS:** alquilas infraestructura (servidores, redes, almacenamiento)
 
 **Regla práctica:** cuanto más arriba, menos control; cuanto más abajo, más responsabilidad.
 
@@ -305,8 +306,10 @@ Comentamos ☕️
 ---
 
 ## Actividad práctica (Clase 2)
-### Clasificación por modelos (15–20 min)
+**Clasificación por modelos (15–20 min)**
+
 Clasifica (SaaS / PaaS / IaaS) estas categorías:
+
 - CRM turístico
 - Motor de reservas propio
 - Base de datos gestionada
@@ -317,6 +320,7 @@ Clasifica (SaaS / PaaS / IaaS) estas categorías:
 **Objetivo:** justificar la elección, no “acertar”.
 
 ---
+Note:
 
 ## Taller (Clase 2)
 ### Caso: “Experiencias Locales BCN”
@@ -333,11 +337,138 @@ En grupos:
 
 ---
 
+Note:
 ## Cierre (Clase 2)
 - Resumen: cómo elegir modelo cloud según negocio
 - Próxima clase: proveedores cloud (AWS / Azure / GCP) y servicios típicos en turismo
 
 ---
+
+![iaas-paas-saas.jpg](iaas-paas-saas.jpg)
+
+IaaS vs PaaS vs SaaS
+
+---
+
+![iaas-paas-saas-2.png](iaas-paas-saas-2.png)
+
+Infraestructura → Plataforma → Software
+
+---
+
+![iaas-paas-saas-3.png](iaas-paas-saas-3.png)
+
+Ejemplo con providers y servicios
+
+---
+
+### Slide — Idea clave (muy importante didácticamente)
+
+
+## Idea clave (Clase 2)
+
+- **No se elige IaaS / PaaS / SaaS por moda**  
+
+Se elige según:
+
+- tamaño del negocio
+- capacidad técnica
+- riesgo asumible
+- necesidad de escalar
+
+
+---
+
+## Hotel pequeño vs OTA
+
+**Hotel pequeño**
+- Web: SaaS
+- Reservas: SaaS
+- Email: SaaS
+
+**OTA**
+- **Frontend:** PaaS
+- **Backend:** PaaS / IaaS
+- Datos (db): PaaS / IaaS
+
+➡️ **El modelo depende del negocio, no del sector**
+
+
+---
+
+### Contexto de negocio
+
+
+![hotel-vs-ota.jpg](hotel-vs-ota.jpg)
+
+Escala ≠ mismas decisiones técnicas
+
+
+---
+
+## Actividad rápida (10 min)
+
+Elige **uno**:
+- hotel independiente o agencia de viajes online o empresa de experiencias locales
+
+Para ese caso:
+1. ¿Qué usarías como SaaS?
+2. ¿Qué NO tendría sentido montar en IaaS?
+3. ¿Dónde aparece el mayor riesgo?
+
+---
+
+
+Comentamos ☕️
+
+
+
+![coffee.jpg](coffee.jpg)
+
+
+---
+
+## Lectura recomendada (Clase 2)
+
+
+## Lectura recomendada
+
+- [Cloudflare – IaaS vs PaaS vs SaaS](https://www.cloudflare.com/learning/serverless/glossary/platform-as-a-service-paas/)
+  
+
+**Objetivo:** entender diferencias, no memorizar proveedores
+
+---
+
+### Slide — Cierre conceptual
+
+
+## Para llevarte hoy
+
+- SaaS = rapidez y menor riesgo
+- PaaS = equilibrio entre control y facilidad
+- IaaS = máximo control, máxima responsabilidad
+
+➡️ En turismo, **SaaS suele ser el punto de partida**
+
+
+---
+
+### Slide — Transición a Clase 3
+
+
+## Próxima clase 👀
+
+### Proveedores cloud
+- AWS
+- Azure
+- Google Cloud
+
+¿Quién usa qué… y por qué?
+
+
+---
+
 <!--
 # Plantilla reutilizable (para próximas clases)
 ## (Copiar y adaptar)
