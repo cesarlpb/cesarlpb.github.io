@@ -25,6 +25,28 @@
 
 ---
 
+## Índice del curso (Temas 1 y 2)
+
+---
+
+### Tema 1 · Introducción a la computación en la nube
+
+- [1.1 · Introducción al cloud en turismo](#/15)
+- [1.2 · Modelos IaaS, PaaS, SaaS](#/41)
+- [1.3 · Proveedores cloud y servicios](#/59)
+- [1.4 · Ventajas, riesgos y costes](#/71)
+
+---
+
+### Tema 2 · Gestión de datos en entornos cloud
+
+- [2.5 · Tipologías de datos en turismo](#/83)
+- [2.6 · Bases de datos: SQL vs NoSQL](#/93)
+- [2.7 · Consultas y análisis de datos](#/107)
+- [2.8 · Taller práctico en entorno cloud](#/121)
+
+---
+
 ## Computación en la nube para la industria turística
 **Código:** 194407 · **Curso:** 4º · **Créditos:** 3 ECTS  
 **Docente:** César Patiño  
@@ -732,6 +754,280 @@ Comentamos ☕️
 ## Próxima clase 👀
 
 Bases de datos en la nube: SQL vs NoSQL
+
+---
+
+# Clase 6
+
+## Bases de datos en la nube: SQL vs NoSQL
+
+---
+
+## Agenda (Clase 6)
+
+* Qué es una base de datos
+* Diferencias SQL vs NoSQL
+* Cuándo usar cada una
+* Actividad rápida
+
+---
+
+## ¿Qué es una base de datos?
+
+Sistema que permite:
+
+* Guardar datos
+* Organizar datos
+* Consultar datos
+* Modificar datos
+
+En turismo:
+reservas, clientes, pagos, disponibilidad.
+
+---
+
+![database-basic.png](database-basic.png)
+
+---
+
+## SQL (relacional)
+
+* Datos estructurados en tablas
+* Relaciones claras entre entidades
+* Esquema fijo
+* Lenguaje estándar: SQL
+
+Ejemplo:
+Clientes ↔ Reservas ↔ Pagos
+
+---
+
+![sql-table.png](sql-table.png)
+
+---
+
+## NoSQL (no relacional)
+
+* Estructura flexible
+* Documentos, clave-valor, grafos…
+* Escalabilidad horizontal
+* Ideal para grandes volúmenes variables
+
+Ejemplo:
+Historial de navegación, logs, recomendaciones.
+
+---
+
+![nosql-doc.png](nosql-doc.png)
+
+---
+
+## Comparación rápida
+
+| SQL                  | NoSQL                |
+| -------------------- | -------------------- |
+| Estructura rígida    | Estructura flexible  |
+| Relaciones complejas | Datos masivos        |
+| Consistencia fuerte  | Escala masiva        |
+| Ideal reservas/pagos | Ideal comportamiento |
+
+---
+
+## ¿Qué usar en turismo?
+
+* Sistema de reservas → SQL
+* Logs de usuario → NoSQL
+* CRM → SQL
+* Recomendaciones → NoSQL
+
+➡️ Muchas empresas usan ambos
+
+---
+
+## Actividad rápida (10 min)
+
+Caso: plataforma de alquiler de bicicletas.
+
+Necesita:
+
+* Usuarios
+* Reservas
+* Historial de uso
+* Datos GPS en tiempo real
+
+👉 ¿Qué iría en SQL y qué en NoSQL?
+
+Justifica.
+
+---
+
+Comentamos ☕️
+
+![coffee.jpg](coffee.jpg)
+
+---
+
+## Key points (Clase 6)
+
+* SQL = estructura y relaciones
+* NoSQL = flexibilidad y escala
+* No es competencia, es complementariedad
+* El modelo de datos impacta el negocio
+
+---
+
+## Próxima clase 👀
+
+Consultas y análisis: convertir datos en decisiones
+
+---
+
+# Clase 7
+
+## Consultas básicas y análisis de datos
+
+---
+
+## Agenda (Clase 7)
+
+* Qué es una consulta
+* SELECT, GROUP BY, COUNT
+* Datos → decisiones
+* Actividad rápida
+
+---
+
+## ¿Qué es una consulta?
+
+Una pregunta a la base de datos.
+
+Ejemplo:
+
+* ¿Cuántas reservas hoy?
+* ¿Cuál es el destino más vendido?
+* ¿Qué cliente repite más?
+
+---
+
+![query.png](query.png)
+
+[W3schools](https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_all)
+
+---
+
+## SELECT
+
+Selecciona datos.
+
+```sql
+SELECT nombre, email
+FROM clientes;
+```
+
+---
+
+## COUNT
+
+Cuenta registros.
+
+```sql
+SELECT COUNT(*)
+FROM reservas;
+```
+
+---
+
+## GROUP BY
+
+Agrupa resultados.
+
+```sql
+SELECT destino, COUNT(*)
+FROM reservas
+GROUP BY destino;
+```
+
+---
+
+## En turismo sirve para:
+
+* Detectar temporada alta
+* Analizar destinos populares
+* Calcular repetición de clientes
+* Optimizar precios
+
+---
+
+![data-analysis.png](data-analysis.png)
+
+---
+
+## Actividad rápida (8–10 min)
+
+Imagina que tienes esta tabla:
+
+| Destino | Precio |
+| ------- | ------ |
+| Roma    | 120    |
+| París   | 150    |
+| Roma    | 100    |
+| Lisboa  | 90     |
+
+👉 ¿Qué consulta usarías para saber:
+
+1. Cuántas reservas hay por destino?
+2. Precio medio por destino?
+
+(No escribir código perfecto, solo lógica)
+
+---
+
+Comentamos ☕️
+
+![coffee.jpg](coffee.jpg)
+
+---
+
+## Key points (Clase 7)
+
+* Los datos no sirven sin consultas
+* Las consultas responden preguntas de negocio
+* SQL básico ya permite análisis útiles
+* Cloud facilita ejecutar consultas a escala
+
+---
+
+## Próxima clase 👀
+
+Taller práctico con datos en entorno cloud
+
+---
+
+## Taller · Entorno cloud (45 min)
+
+### Objetivos
+
+- Entender cómo se trabaja con datos en la nube
+- Ejecutar consultas simples desde el navegador
+- Responder preguntas reales de negocio turístico
+- Visualizar cómo una empresa usa cloud en su día a día
+
+
+---
+
+## Qué necesitamos
+
+- Navegador web
+- Acceso al entorno cloud (enlace compartido)
+- Dataset turístico de ejemplo
+
+- ✅ No instalaremos nada.  
+- ✅ No configuraremos servidores.  
+- ✅ Todo se hace online.
+
+---
+
+<!-- TODO -->
 
 ---
 
