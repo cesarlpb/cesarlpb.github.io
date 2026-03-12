@@ -1,9 +1,20 @@
 export const experiencia = {
   es:[ 
     {
+      "empresa": "InnoIT Consulting SL",
+      "cargo": "Senior Full-stack Developer",
+      "periodo": "Junio 2025 - Octubre 2025",
+      "descripcion": `Implementación de servicios basados en LLM e IA en plugins para clientes de email:
+      <ul>
+        <li><strong>Tecnologías:</strong> Django, Python, FastAPI, React, Office.js</li>
+        <li><strong>Cliente:</strong> Empresa del sector de seguros con sede en Francia</li>
+      </ul>`,
+      "tags": ["FastAPI", "Python", "Seguros", "LLM", "IA"]
+    },
+    {
       "empresa": "Método Bitcoin",
       "cargo": "CTO",
-      "periodo": "Mayo 2024 - Presente",
+      "periodo": "Mayo 2024 - Febrero 2025",
       "descripcion": `Liderando un equipo multidisciplinario para desarrollar soluciones fintech innovadoras. Responsable de mejorar la arquitectura de la plataforma del exchange y crear productos financieros escalables:
       <ul>
         <li><strong>Tecnologías:</strong> Django, Python, Blockchain</li>
@@ -88,28 +99,35 @@ export const experiencia = {
       <li>Blockchain, Web 3, NFTs</li>
       <li>Training, Coaching, Consulting</li>
       </ul>`,
-      tags: ["API Development", "TypeScript", "Desarrollo web back end", "Desarrollo front end", "Programación", "Desarrollo front end", "Desarrollo de back end", "JavaScript", "SQL", "ASP.NET MVC", "Trabajo en equipo", "Desarrollo de software", "HTML", "CSS"]
+      tags: ["API Development", "TypeScript", "Desarrollo web", "Desarrollo front end", "Programación", "JavaScript", "SQL", "Desarrollo de software", "HTML", "CSS"]
     },
     {
       empresa: "Inkor Formaciones",
       cargo: "Instructor de Programación para Certificados Profesionales de Nivel 3",
       periodo: "oct 2022 - abr 2023",
       descripcion: "Programación Orientada a Objetos (IFCD0112) y Programación de Sistemas Informáticos (IFCT0609)",
-      tags: [".NET", "C#", "Desarrollo Full Stack", "API", "MySQL", "Python", "Javascript", "HTML", "CSS", "Bootstrap", "Git"]
+      tags: [".NET", "C#", "Desarrollo Full Stack", "API", "MySQL", "Python", "Javascript", "HTML", "CSS"]
     },
     {
       empresa: "CDM Formaciones",
       cargo: "Instructor de Programación para Certificados Profesionales de Nivel 3",
       periodo: "abr 2022 - actualidad",
       descripcion: "Programación de Sistemas Informáticos (IFCT0609)",
-      tags: ["Desarrollo Full Stack", "API", "MySQL", "Python", "Javascript", "HTML", "CSS", "Bootstrap", "TailwindCSS", "Typescript", "T3", "NextJS", "Vercel", "Prisma", "Axiom", "Git"]
+      tags: ["Desarrollo Full Stack", "API", "MySQL", "Python", "Javascript", "HTML", "CSS", "TailwindCSS", "Typescript", "NextJS", "Vercel"]
     },
   ],
   en:[
     {
+      "empresa": "InnoIT Consulting SL",
+      "cargo": "Senior Full-stack Developer",
+      "periodo": "June 2025 - October 2025",
+      "descripcion": "Implementation of LLM- and AI-based services in plugins for email clients:\n      <ul>\n        <li><strong>Technologies:</strong> Django, Python, FastAPI, React, Office.js</li>\n        <li><strong>Client:</strong> Insurance company based in France</li>\n      </ul>",
+      "tags": ["FastAPI", "Python", "Insurance", "LLM", "AI"]
+    },
+    {
       "empresa": "Método Bitcoin",
       "cargo": "CTO",
-      "periodo": "May 2024 - Present",
+      "periodo": "May 2024 - February 2025",
       "descripcion": `Leading a multidisciplinary team to develop cutting-edge fintech solutions. Responsible for improving the exchange's platform architecture and creating scalable financial products:
       <ul>
         <li><strong>Technologies:</strong> Django, Python, Blockchain</li>
@@ -211,14 +229,14 @@ export const experiencia = {
       cargo: "Programming Instructor for Level 3 Professional Certifications (Spain)",
       periodo: "oct 2022 - apr 2023",
       descripcion: "Object-oriented Programming (IFCD0112) and Computer Systems Programming (IFCT0609)",
-      tags: [".NET", "C#", "Full-stack Development", "API", "MySQL", "Python", "Javascript", "HTML", "CSS", "Bootstrap", "Git"]
+      tags: [".NET", "C#", "Full-stack Development", "API", "MySQL", "Python", "Javascript", "HTML", "CSS"]
     },
     {
       empresa: "CDM Formaciones",
       cargo: "Programming Instructor for Level 3 Professional Certifications (Spain)",
       periodo: "abr 2022 - present",
       descripcion: "Computer Systems Programming (IFCT0609)",
-      tags: ["Full-stack Development", "API", "MySQL", "Python", "Javascript", "HTML", "CSS", "Bootstrap", "TailwindCSS", "Typescript", "T3", "NextJS", "Vercel", "Prisma", "Axiom", "Git"]
+      tags: ["Full-stack Development", "API", "MySQL", "Python", "Javascript", "HTML", "CSS", "TailwindCSS", "Typescript", "T3", "NextJS", "Vercel"]
     },
   ]
 }

@@ -4,15 +4,14 @@ export const bio = {
   Soy <b>físico teórico</b> graduado en la UCM. Siempre me ha gustado la tecnología y la resolución de problemas, por
   ello encuentro la programación entretenida y apasionante al mismo tiempo.</p>
   <p class="ps-3">Los frameworks que he utilizado con más frecuencia son:
-  <code>.NET</code>,
-  <code>React</code>,
-  <code>NextJS</code>,
+  <code>Django</code>
   <code>NodeJS</code>,
-  Wordpress.
+  <code>React</code>,
+  <code>NextJS</code>.
   Los lenguajes de programación que mas utilizo con:
   <code>Typescript</code>,
   <code>Javascript</code>,
-  <code>C#</code> y
+  y
   <code>Python</code>.
   </p>
   <p class="ps-3">Tengo experiencia en <b>Web 3</b> e integraciones de <b>API</b>. Además, he entrenado modelos de IA e
@@ -48,15 +47,14 @@ export const bio = {
   I am a graduate <b>theorethical physicist</b> by the Complutense University of Madrid. I've always liked tech and solving problems, 
   that's why I find coding fun and rewarding at the same time.</p>
   <p class="ps-3">Some frameworks I have used most often are:
-  <code>.NET</code>,
-  <code>React</code>,
-  <code>NextJS</code>,
+  <code>Django</code>
   <code>NodeJS</code>,
-  Wordpress.
+  <code>React</code>,
+  <code>NextJS</code>.
   Programming languages I use most often are:
   <code>Typescript</code>,
   <code>Javascript</code>,
-  <code>C#</code> and
+  and
   <code>Python</code>.
   </p>
   <p class="ps-3">I also have experience in <b>Web 3</b> and <b>API</b> integrations. Moreover, I have trained AI models and

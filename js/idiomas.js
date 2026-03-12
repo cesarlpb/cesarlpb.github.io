@@ -19,7 +19,12 @@ export const idiomas = {
       idioma: "Alemán",
       nivel: "A1 - Básico / Lectura",
       progreso: 25
-    }
+    },
+    {
+      idioma: "Catalán",
+      nivel: "A1 - Básico / Lectura",
+      progreso: 33
+    },
   ],
   en: [ 
     {
@@ -41,6 +46,11 @@ export const idiomas = {
       idioma: "German",
       nivel: "A1 - Basic / Reading",
       progreso: 25
-    }
+    },
+    {
+      idioma: "Catalan",
+      nivel: "A1 - Basic / Reading",
+      progreso: 33
+    },
   ]
 }

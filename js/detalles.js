@@ -1,6 +1,6 @@
 export const detalles = { 
   es: {
-    ciudad: "Madrid",
+    ciudad: "Barcelona",
     pais: "España",
     telegramHandle: "@Cesarlpb",
     telegramUrl: "https://t.me/Cesarlpb",
@@ -13,7 +13,7 @@ export const detalles = {
     portfolioUrl: "https://cesarlpb.github.io"
   },
   en: {
-    ciudad: "Madrid",
+    ciudad: "Barcelona",
     pais: "España",
     telegramHandle: "@Cesarlpb",
     telegramUrl: "https://t.me/Cesarlpb",
