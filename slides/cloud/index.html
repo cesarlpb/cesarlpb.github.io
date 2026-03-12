@@ -228,7 +228,7 @@ Comentamos ☕️
 
 ¿Qué riesgos aparecen al depender de un proveedor cloud?
 
-> "Nada puede malir sal" -- Anónimo
+> "Nada puede salir mal" -- Anónimo
 
 ---
 
@@ -1059,6 +1059,506 @@ Todo sobre la tabla de reservas (`bookings`). El foco es SQL; Python solo para e
 1. **~30 min** – Explicación: carga de datos, `query('SQL aquí')`, ejemplos.
 2. **15–30 min** – Práctica: ejercicios para explorar el dataset con SQL.
 3. **Resto** – Resolución de ejercicios y dudas en común.
+4. **Soluciones:** [Soluciones de los ejercicios](https://colab.research.google.com/drive/1WvsB1K4fbIqHf1SHOM4tfkbCV4TiF9fL?usp=sharing)
+
+---
+
+# CLASE 8
+
+## Taller práctico en entorno cloud
+
+---
+
+ 
+## Taller · Entorno cloud (45 min)
+
+### Objetivos
+
+- Explorar una base de datos en la nube
+- Ejecutar consultas simples
+- Obtener respuestas a preguntas de negocio
+- Entender cómo trabajan los datos en cloud
+ 
+
+---
+
+ 
+## Qué necesitamos
+
+- Navegador web
+- Acceso al entorno cloud
+- Dataset turístico de ejemplo
+- Curiosidad 🙂
+ 
+
+---
+
+ 
+![cloud-database.png](cloud-database.png)
+
+Base de datos accesible desde cualquier lugar
+ 
+
+---
+
+ 
+## Qué vamos a hacer
+
+1. Explorar una tabla de datos
+2. Ejecutar consultas simples
+3. Analizar resultados
+4. Responder preguntas de negocio
+ 
+
+---
+
+ 
+## Ejemplo de preguntas
+
+- ¿Qué destino tiene más reservas?
+- ¿Cuál es el precio medio?
+- ¿Qué ciudad crece más?
+ 
+
+---
+
+ 
+## Actividad rápida
+
+Responder:
+
+1. Destino con más reservas
+2. Precio medio por destino
+3. Destino con mayor crecimiento
+ 
+
+---
+
+ 
+Comentamos ☕️
+ 
+
+ 
+![coffee.jpg](coffee.jpg)
+ 
+
+---
+
+ 
+## Key points (Tema 2)
+
+- Los datos son el activo clave del turismo digital
+- Cloud permite almacenar y analizar datos a escala
+- SQL permite responder preguntas de negocio
+- Datos → análisis → decisiones
+ 
+
+---
+
+ 
+## Próximo tema 👀
+
+APIs y procesamiento de datos
+ 
+
+---
+
+# TEMA 3
+
+# APIs y procesamiento de datos en la nube
+
+---
+
+# CLASE 9
+
+## Qué es una API
+
+**Aplication Programming Interface**
+
+---
+
+ 
+## Agenda
+
+- Qué es una API
+- Cómo funciona
+- Ejemplos en turismo
+- Actividad rápida
+ 
+
+---
+
+ 
+## API = interfaz entre sistemas
+
+Permite que dos aplicaciones se comuniquen.
+
+Ejemplo:
+
+App de viajes → API vuelos → resultados
+ 
+
+---
+
+ 
+![api-diagram.png](api-diagram.png)
+ 
+
+---
+
+ 
+## Ejemplos de APIs en turismo
+
+- vuelos
+- clima
+- mapas
+- pagos
+- reseñas
+ 
+
+---
+
+ 
+## Ejemplo real
+
+Una app de viajes puede usar:
+
+- API vuelos
+- API mapas
+- API clima
+- API pagos
+ 
+
+---
+
+ 
+![travel-api.png](travel-api.png)
+ 
+
+---
+
+ 
+## Actividad rápida
+
+Piensa en una app turística.
+
+¿Qué APIs necesitaría?
+
+Ejemplos:
+
+- vuelos
+- clima
+- mapas
+- pagos
+ 
+
+---
+
+ 
+Comentamos ☕️
+ 
+
+---
+
+ 
+## Key points
+
+- Las APIs conectan servicios
+- Permiten crear apps sin construir todo
+- El turismo depende fuertemente de APIs
+ 
+
+---
+
+![no-api.png](no-api.png)
+
+---
+
+# CLASE 10
+
+## Conectar con una API
+
+---
+
+ 
+## Agenda
+
+- Request / response
+- Datos JSON
+- Ejemplo simple
+- Actividad
+ 
+
+---
+
+ 
+## Cómo funciona una API
+
+1. La app envía una **request**
+2. El servidor responde con **datos**
+ 
+
+---
+
+ 
+![api-request-response.png](api-request-response.png)
+ 
+
+---
+
+ 
+## Ejemplo simple
+
+Consultar clima:
+
+API → devuelve datos:
+
+- temperatura
+- humedad
+- viento
+ 
+
+---
+
+## Datos en formato JSON
+
+```json
+{
+ "city": "Barcelona",
+ "temperature": 22
+}
+```
+
+---
+
+## Actividad rápida
+
+Imagina una API de vuelos.
+
+¿Qué datos debería devolver?
+
+- origen
+- destino
+- precio
+- horario
+ 
+
+---
+
+ 
+## Key points
+
+- Las APIs devuelven datos
+- Las apps los utilizan
+- JSON es el formato más común
+ 
+
+---
+
+# CLASE 11
+
+## Integración de APIs
+ 
+---
+
+ 
+## Agenda
+
+- Integrar varias APIs
+- Flujo de datos
+- Ejemplo turístico
+ 
+
+---
+
+ 
+## Integración de servicios
+
+Una app puede usar:
+
+- API vuelos
+- API hoteles
+- API clima
+- API mapas
+ 
+
+---
+
+ 
+![api-integration.png](api-integration.png)
+ 
+
+---
+
+ 
+## Ejemplo
+
+Buscador de viajes:
+
+1. Usuario busca destino
+2. API vuelos responde
+3. API hoteles responde
+4. App muestra resultados
+ 
+
+---
+
+ 
+## Actividad rápida
+
+Diseña una app de viajes.
+
+¿Qué APIs usarías?
+
+Mínimo 3.
+ 
+
+---
+
+ 
+## Key points
+
+- Las apps modernas integran múltiples APIs
+- La arquitectura es modular
+- Permite innovar más rápido
+ 
+
+---
+
+# CLASE 12
+
+## Procesamiento de datos en la nube
+
+---
+
+ 
+## Agenda
+
+- Qué es procesar datos
+- Ejemplos en turismo
+- Actividad
+ 
+
+---
+
+ 
+## Procesar datos significa
+
+- analizar
+- transformar
+- obtener insights
+ 
+
+---
+
+ 
+![data-processing.png](data-processing.png)
+ 
+
+---
+
+ 
+## Ejemplos
+
+- calcular precio medio
+- detectar destinos populares
+- predecir demanda
+ 
+
+---
+
+ 
+## Actividad rápida
+
+Con datos de reservas:
+
+¿Qué análisis harías?
+
+- destinos populares
+- precio medio
+- temporada alta
+ 
+
+---
+
+ 
+## Key points
+
+- El valor está en analizar datos
+- Cloud permite procesar grandes volúmenes
+ 
+
+---
+
+# CLASE 13
+
+## Flujo completo de datos
+
+---
+
+ 
+## Agenda
+
+- flujo de datos
+- ejemplo real
+- actividad
+ 
+
+---
+
+ 
+## Flujo típico
+
+Usuario → API → Base de datos → Análisis → Resultado
+ 
+
+---
+
+ 
+![data-pipeline.png](data-pipeline.png)
+
+---
+
+ 
+## Ejemplo turismo
+
+Usuario busca destino
+
+↓
+
+API vuelos
+
+↓
+
+Base de datos
+
+↓
+
+Resultados personalizados
+ 
+
+---
+
+ 
+## Actividad rápida
+
+Dibuja el flujo de datos de:
+
+- una app de reservas
+ 
+
+---
+
+ 
+## Key points (Tema 3)
+
+- APIs conectan servicios
+- Los datos fluyen entre sistemas
+- Cloud permite procesar y escalar
+- Los datos generan valor en turismo
+ 
+
+---
 
 ---
 
