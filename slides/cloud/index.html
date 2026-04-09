@@ -21,6 +21,18 @@
       <section data-markdown>
         <script type="text/template">
 
+## Índice por temas
+
+- [Tema 1 · Introducción a la computación en la nube](#/15)
+- [Tema 2 · Gestión de datos en entornos cloud](#/83)
+- [Tema 3 · APIs, lenguajes y procesamiento de datos en la nube](#/136)
+- [Tema 4 · Diseño de soluciones digitales en la nube](#/177)
+- [Tema 5 · Tendencias y futuro del cloud en turismo](#/221)
+- [Repaso · preguntas por tema](repaso-preguntas.html)
+- [Simulacro de examen (test interactivo)](simulacro-examen.html)
+
+---
+
 ![qr.png](qr.png)
 
 ---
@@ -1772,15 +1784,359 @@ Comentamos ☕️
 
 ## Próxima clase 👀
 
-Casos reales: Booking, Airbnb, plataformas
+**Tema 4:** casos reales (OTAs, plataformas)
 
 ---
 
-## Taller 2: Spec-driven para una web simple de viajes / reservas
+# Clase 16
+## Casos reales en turismo · Tema 4
 
-[Taller 2](talleres/taller2.md)
+OTAs, metabuscadores y plataformas
 
 ---
+
+## Agenda (Clase 16)
+
+- Qué hacen las grandes plataformas
+- Qué tienen en común
+- Qué podemos aprender
+- Actividad rápida
+
+---
+
+## Plataformas conocidas
+
+- Booking
+- Airbnb
+- Skyscanner
+- Expedia
+- Agoda, Goibibo, MakeMyTrip, Yatra… (mercados globales)
+
+---
+
+![ota-platforms.png](ota-platforms.png)
+
+---
+
+## Qué tienen en común
+
+- Uso intensivo de cloud
+- APIs para integrar servicios
+- Gestión de grandes volúmenes de datos
+- Personalización de la experiencia
+
+---
+
+## Ejemplo simplificado
+
+Usuario busca viaje
+
+↓
+
+Plataforma consulta APIs
+
+↓
+
+Procesa datos
+
+↓
+
+Muestra resultados personalizados
+
+---
+
+## Actividad rápida (8–10 min)
+
+Elige una plataforma:
+
+👉 ¿Qué datos usa?  
+👉 ¿Qué APIs podría tener?  
+👉 ¿Dónde crees que usa cloud?
+
+---
+
+## Key points (Clase 16)
+
+- El turismo digital depende de datos y APIs
+- Cloud permite escalar estas plataformas
+- El valor está en el uso inteligente de los datos
+
+---
+
+## Próxima clase 👀
+
+**Tema 4:** diseño de solución (MVP + arquitectura aplicada)
+
+---
+
+# Clase 17
+## Diseño de solución en la nube · Tema 4
+
+MVP aplicado y arquitectura
+
+---
+
+## Agenda (Clase 17)
+
+- Cómo diseñar una solución completa
+- Relación entre frontend, API y datos
+- MVP: corte vertical (funcional + usable + fiable)
+- Caso aplicado y actividad
+
+---
+
+## Qué estamos diseñando
+
+Una plataforma turística **simple pero coherente**:
+
+- Web o app (**frontend**)
+- **API** (contrato entre cliente y servidor)
+- **Base de datos** y persistencia
+- **Servicios externos** (pagos, mapas, proveedores…)
+
+---
+
+## MVP
+
+Un MVP sólido es un **corte delgado** que atraviesa **todas las capas** (no solo un trozo “funcional” aislado).
+
+![mvp.png](mvp.png)
+
+---
+
+## Arquitectura de referencia
+
+Capas típicas en cloud: cliente → API → datos → integraciones.
+
+![travel-architecture.png](travel-architecture.png)
+
+---
+
+## Ejemplo aplicado
+
+Usuario → **Login** → API → base de datos  
+
+Usuario → **Mis reservas** → API → datos → **pantalla**
+
+---
+
+## Actividad (Clase 17)
+
+Define la **arquitectura** de tu proyecto:
+
+- Frontend (qué ve el usuario)
+- API (qué operaciones expone)
+- Datos (qué guardas y dónde)
+- Servicios externos (qué integras)
+
+---
+
+## Key points (Clase 17)
+
+- La arquitectura **conecta** negocio, datos y experiencia
+- Cloud favorece **módulos** y servicios combinables
+- El diseño técnico **impacta** en el producto
+
+---
+
+## Próxima clase 👀
+
+**Tema 5:** IA en turismo (tendencias y futuro)
+
+---
+
+# Clase 18
+## IA en turismo · Tema 5
+
+Personalización y datos
+
+---
+
+## Agenda (Clase 18)
+
+- Qué aporta la IA en el sector
+- Ejemplos concretos en turismo
+- Actividad rápida
+
+---
+
+## ¿Dónde aparece la IA?
+
+- Recomendaciones de viajes y upselling
+- Precios dinámicos y demanda
+- Chatbots y atención 24/7
+- Personalización de búsqueda y ofertas
+
+---
+
+![data-processing.png](data-processing.png)
+
+Datos + modelos → decisiones y experiencia
+
+---
+
+## Ejemplo de flujo
+
+Usuario entra en una web
+
+↓
+
+El sistema **analiza** comportamiento o contexto (datos)
+
+↓
+
+**Recomienda** destinos u ofertas más relevantes
+
+---
+
+## Actividad rápida (Clase 18)
+
+Piensa en **tu** proyecto turístico:
+
+👉 ¿Dónde tendría sentido usar IA sin “inventarse” el producto?
+
+---
+
+## Key points (Clase 18)
+
+- IA potencia **personalización** y eficiencia
+- Mejora la **experiencia** si hay datos de calidad
+- Los datos son la **base**; la nube ayuda a procesarlos a escala
+
+---
+
+## Próxima clase 👀
+
+**Tema 5:** edge, IoT y sostenibilidad
+
+---
+
+# Clase 19
+## Edge, IoT y sostenibilidad · Tema 5
+
+Futuro del cloud en turismo
+
+---
+
+## Agenda (Clase 19)
+
+- Edge computing
+- IoT en destinos y alojamientos
+- Cloud sostenible (“green cloud”)
+
+---
+
+## Edge computing
+
+Procesar datos **cerca** del usuario o del dispositivo (baja latencia, menos idas y venidas al centro de datos).
+
+**Ejemplos:** aeropuerto, hotel, evento masivo, app con mucha interacción en tiempo real.
+
+---
+
+## IoT en turismo
+
+- Sensores en habitaciones (confort, mantenimiento)
+- Control de energía y ocupación
+- Experiencias conectadas en destino
+
+---
+
+## Sostenibilidad
+
+- Optimizar **recursos** (compute, almacenamiento, red)
+- Reducir **desperdicio** energético con arquitecturas eficientes
+- Elegir regiones, servicios y patrones más **sostenibles** cuando sea posible
+
+---
+
+## Actividad rápida (Clase 19)
+
+👉 ¿Qué tecnología (edge, IoT o prácticas “green”) encajaría en una **app turística del futuro** que imaginas?
+
+---
+
+## Key points (Clase 19)
+
+- El futuro combina **datos**, **dispositivos** y **ubicación**
+- Edge e IoT exigen pensar en **privacidad** y **operación**
+- La **sostenibilidad** es criterio de diseño, no solo marketing
+
+---
+
+## Próxima clase 👀
+
+Presentación final y cierre del curso
+
+---
+
+# Clase 20
+## Presentación final y cierre · Tema 5
+
+---
+
+## Objetivo (Clase 20)
+
+Presentar tu **propuesta** de aplicación turística con visión de producto y de cloud.
+
+---
+
+## Trabajo previo (entrega / taller)
+
+Especificación y diseño del producto (spec-driven):
+
+- [Taller 2 · Spec-driven](talleres/taller2.md)
+
+---
+
+## Qué presentar (2–3 min)
+
+- Idea del producto y usuario objetivo
+- Flujo principal
+- Datos clave
+- APIs y servicios externos
+- **Arquitectura** (frontend, API, datos)
+
+---
+
+## Qué se evaluará
+
+- Claridad
+- Coherencia
+- Comprensión del cloud
+- Uso de conceptos del curso (datos, APIs, arquitectura, tendencias)
+
+---
+
+## Reflexión final
+
+- ¿Qué has aprendido?
+- ¿Qué harías diferente?
+- ¿Qué aplicarías en un proyecto real?
+
+---
+
+## Cierre del curso
+
+- **Cloud** como base del turismo digital
+- **Datos** como activo y ventaja
+- **APIs** como tejido de integración
+- **IA / edge / sostenibilidad** como líneas de futuro
+
+---
+
+## Gracias 🙌
+
+¡Buen trabajo!
+
+---
+
+<!-- * Tema 1 → Clases 1–4
+* Tema 2 → Clases 5–8
+* Tema 3 → Clases 9–13
+* Tema 4 → Clases 14–17
+* Tema 5 → Clases 18–20 -->
+
 
 <!--
 # Plantilla reutilizable (para próximas clases)

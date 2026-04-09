@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Preguntas de repaso · Cloud y turismo (194407)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme" />
+  <link rel="shortcut icon" href="./c.png" type="image/x-icon" />
+  <style>
+    .reveal .slides {
+      font-size: 90%;
+    }
+    img {
+      max-height: 60vh!important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <script type="text/template">
+
+# Preguntas de repaso
+## Computación en la nube y turismo · 194407
+
+Unas preguntas por tema (sin respuestas en este deck).
+
+---
+
+## Tema 1 · Introducción a la computación en la nube
+
+1. ¿Qué es la computación en la nube en una frase, y por qué el turismo es un caso típico de uso?
+2. Explica con tus palabras la diferencia entre **IaaS**, **PaaS** y **SaaS**, con **un ejemplo turístico** de cada modelo.
+3. Nombra **dos ventajas** del cloud frente a infraestructura propia y **dos riesgos** (operativos, económicos o de dependencia).
+4. ¿Qué factores influyen en el **coste** en la nube más allá del “precio del servidor”?
+
+---
+
+## Tema 2 · Gestión de datos en entornos cloud
+
+1. ¿Qué tipos de datos aparecen con frecuencia en turismo (por ejemplo transaccionales, de cliente, operativos)?
+2. ¿Cuándo encaja mejor una base **SQL** y cuándo una **NoSQL**? Pon un ejemplo de cada una en un contexto turístico.
+3. ¿Para qué sirve **`COUNT`** y **`GROUP BY`** en SQL? Imagina una tabla de reservas con destino y fecha.
+4. ¿Qué relación hay entre **tener datos en la nube** y **poder analizarlos** (consultas, agregados, decisiones de negocio)?
+
+---
+
+## Tema 3 · APIs y procesamiento de datos en la nube
+
+1. ¿Qué es una **API** y qué problema resuelve entre dos sistemas (por ejemplo app de viajes y proveedor de vuelos)?
+2. ¿Qué es **JSON** y por qué es habitual en las respuestas de APIs?
+3. Describe el flujo **petición → respuesta** cuando un usuario busca hoteles o vuelos en una app.
+4. ¿Qué significa **procesar datos** en la nube frente a solo **almacenarlos**?
+
+---
+
+## Tema 4 · Diseño de soluciones digitales en la nube
+
+1. ¿Qué es un **MVP** y qué **no** debería incluir para no perder el foco?
+2. Lista **3–5 pantallas** o pasos razonables para un MVP de web turística (reservas, login mock, etc.).
+3. ¿Qué elementos debería cubrir un **spec** o especificación antes de programar (flujo, datos, APIs, pantallas)?
+4. ¿Cómo se relacionan **arquitectura en cloud**, **APIs** y **escalado** en una solución turística?
+
+---
+
+## Tema 5 · Tendencias, casos reales y cierre
+
+1. ¿Qué tienen en común plataformas grandes (OTAs, metabuscadores) en cuanto a **cloud**, **APIs** y **datos**?
+2. ¿Qué datos crees que son más valiosos para **personalizar** la experiencia del viajero?
+3. Si presentas tu proyecto en **2 minutos**, ¿qué tres ideas priorizarías (usuario, flujo, datos/APIs)?
+
+---
+
+## Fin del repaso
+
+- [Soluciones (se suben después de la clase)](soluciones.html)
+- [Volver al curso principal](index.html)
+
+
+        </script>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: true,
+      history: true,
+      center: true,
+      transition: "slide",
+      plugins: [RevealMarkdown],
+    });
+  </script>
+</body>
+</html>

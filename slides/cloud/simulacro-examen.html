@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulacro de examen (test) · Cloud y turismo (194407)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme" />
+  <link rel="shortcut icon" href="./c.png" type="image/x-icon" />
+  <style>
+    .reveal .slides {
+      font-size: 90%;
+    }
+    img {
+      max-height: 60vh!important;
+    }
+    .exam-slide {
+      text-align: left;
+      max-width: 42em;
+      margin: 0 auto;
+    }
+    .exam-slide h2 {
+      font-size: 1.15em;
+      margin-bottom: 0.5em;
+    }
+    .exam-slide .exam-q {
+      font-size: 0.95em;
+      line-height: 1.35;
+      margin-bottom: 0.75em;
+    }
+    .exam-slide fieldset {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+    .exam-slide label {
+      display: block;
+      margin: 0.35em 0;
+      padding: 0.25em 0.35em;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.82em;
+      line-height: 1.3;
+    }
+    .exam-slide label:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .exam-slide input {
+      margin-right: 0.45em;
+      vertical-align: middle;
+    }
+    /* Diapositiva final: scroll vertical (Reveal suele ocultar overflow en section) */
+    .reveal .slides section#slide-results {
+      max-height: 88vh;
+      overflow-y: auto !important;
+      overflow-x: hidden;
+      padding: 0.25em 0.75em 1em 0;
+      box-sizing: border-box;
+      -webkit-overflow-scrolling: touch;
+    }
+    .results-slide {
+      text-align: left;
+      max-width: 48em;
+      margin: 0 auto;
+      font-size: 0.88em;
+    }
+    .results-slide h2 {
+      font-size: 1.1em;
+      margin: 0 0 0.25em;
+    }
+    .results-slide .score-line {
+      font-size: 1.35em;
+      margin: 0.35em 0 0.5em;
+    }
+    .results-slide .score-pct {
+      opacity: 0.85;
+      font-size: 0.9em;
+      margin-bottom: 0.6em;
+    }
+    .results-slide details {
+      margin-top: 0.5em;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      padding: 0.35em 0.5em;
+      background: rgba(0, 0, 0, 0.25);
+      /* Sin max-height aquí: si no, se recorta el <summary> y no se ve la fila 13–18 */
+      overflow: visible;
+    }
+    .results-slide .details-scroll-body {
+      max-height: min(52vh, 22rem);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 0.35em;
+      padding-right: 0.25em;
+    }
+    .results-slide summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9em;
+      list-style-position: outside;
+      padding: 0.2em 0;
+      display: block;
+    }
+    .results-slide summary::-webkit-details-marker {
+      color: #fff;
+    }
+    #result-summary-heading {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.15em;
+    }
+    .result-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(3, auto);
+      gap: 0.28em;
+      width: 100%;
+      max-width: 13.5em;
+      margin: 0.45em 0 0.15em 1.1em;
+    }
+    .result-mini-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 1.65em;
+      font-size: 0.72em;
+      font-weight: 700;
+      border-radius: 4px;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+      box-sizing: border-box;
+    }
+    .result-mini-cell.ok {
+      background: #1e8449;
+    }
+    .result-mini-cell.bad {
+      background: #922b21;
+    }
+    .results-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.15em 1.25em;
+      margin-top: 0.45em;
+      font-size: 0.62em;
+      line-height: 1.25;
+      max-height: none;
+      overflow: visible;
+      padding-right: 0.35em;
+    }
+    @media (max-width: 700px) {
+      .results-detail-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .results-row {
+      padding: 0.2em 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .results-row.ok { color: #7dcea0; }
+    .results-row.bad { color: #f1948a; }
+    .results-row.skip { opacity: 0.75; }
+    .results-actions {
+      margin-top: 0.75em;
+      font-size: 0.85em;
+    }
+    .results-actions a {
+      color: #85c1e9;
+    }
+    .results-actions a#link-repeat-test {
+      font-weight: 600;
+    }
+    .btn-clear {
+      margin-left: 1em;
+      padding: 0.25em 0.6em;
+      font-size: 0.9em;
+      cursor: pointer;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: transparent;
+      color: inherit;
+    }
+    .btn-clear:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides" id="exam-slides"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+  <script>
+    (function () {
+      const STORAGE_KEY = "simulacro_examen_cloud_194407_v1";
+
+      const EXAM_QUESTIONS = [
+        { topic: "Tema 1", text: "¿Cuál describe mejor la **computación en la nube**?", options: { A: "Un único ordenador en la oficina del hotel que no usa internet", B: "Acceso bajo demanda a recursos informáticos por red, con uso elástico y pago según modelo", C: "Un tipo concreto de base de datos relacional", D: "Cualquier página web estática alojada en un USB" }, correct: "B" },
+        { topic: "Tema 1", text: "Un **PMS** (gestión hotelera) que usas solo con navegador, sin instalar servidores propios, encaja sobre todo con:", options: { A: "IaaS puro (tú administras el SO completo)", B: "PaaS exclusivamente (solo runtime, nunca aplicación)", C: "SaaS (software como servicio listo para usar)", D: "Solo hardware on-premise sin conectividad" }, correct: "C" },
+        { topic: "Tema 1", text: "Contratar **máquinas virtuales, redes y almacenamiento** gestionados como bloques básicos, y tú configuras el sistema, es típico de:", options: { A: "IaaS", B: "SaaS", C: "Solo CDN", D: "Únicamente email marketing" }, correct: "A" },
+        { topic: "Tema 1", text: "**Lock-in** (dependencia del proveedor) se refiere a:", options: { A: "Cifrado de datos en tránsito", B: "Dificultad o coste elevado de migrar servicios/datos a otro proveedor", C: "Uso obligatorio de hojas de cálculo", D: "Tener demasiadas copias de seguridad" }, correct: "B" },
+        { topic: "Tema 1", text: "En costes cloud, además del **compute**, suelen pesar mucho:", options: { A: "Solo el color del logotipo del proveedor", B: "Únicamente la licencia del editor de texto", C: "Almacenamiento, transferencia de datos saliente y servicios adicionales (BD, IA…)", D: "El número de empleados del hotel sin relación con la nube" }, correct: "C" },
+        { topic: "Tema 2", text: "Un **sistema de reservas** con tablas relacionadas (clientes, reservas, pagos) y transacciones consistentes encaja mejor con:", options: { A: "Base de datos **relacional (SQL)**", B: "Solo almacenamiento de objetos sin consultas", C: "Un documento JSON suelto sin esquema en producción crítica", D: "Caché en memoria como única fuente de verdad" }, correct: "A" },
+        { topic: "Tema 2", text: "En SQL, **`GROUP BY`** se usa principalmente para:", options: { A: "Eliminar duplicados sin agregación", B: "Crear usuarios en la base de datos", C: "Agrupar filas que comparten un valor y calcular agregados (p. ej. COUNT, AVG)", D: "Ordenar alfabéticamente sin agrupar" }, correct: "C" },
+        { topic: "Tema 2", text: "**Logs de navegación**, eventos muy numerosos y esquema variable suelen modelarse bien con:", options: { A: "Solo hoja de cálculo compartida", B: "Enfoques **NoSQL** (documentos, clave-valor, etc.) según el caso", C: "Un único archivo PDF", D: "SMTP" }, correct: "B" },
+        { topic: "Tema 2", text: "Un **data warehouse** frente a la base **operativa** del día a día se asocia sobre todo a:", options: { A: "Análisis e informes sobre datos históricos consolidados", B: "Solo la venta en taquilla en efectivo", C: "Reemplazar siempre al 100 % las transacciones online", D: "Almacenar únicamente fotos en bruto sin metadatos" }, correct: "A" },
+        { topic: "Tema 3", text: "Una **API** en el contexto de turismo digital es, ante todo:", options: { A: "Un tipo de cable de red", B: "Una forma definida de **comunicar dos sistemas** (petición/respuesta o similar)", C: "Solo el diseño gráfico de la app", D: "Un certificado SSL exclusivamente" }, correct: "B" },
+        { topic: "Tema 3", text: "**JSON** es habitual en APIs porque:", options: { A: "Es un formato binario ejecutable en el navegador", B: "Solo sirve para imágenes", C: "Es texto **estructurado** (objetos/arrays) fácil de consumir desde apps y servicios", D: "Es obligatorio para imprimir facturas en papel" }, correct: "C" },
+        { topic: "Tema 3", text: "En un flujo típico **cliente → API de vuelos**, la **petición (request)** la inicia:", options: { A: "La aplicación o cliente que necesita datos", B: "Siempre el servidor sin intervención del usuario", C: "Solo la base de datos directamente", D: "El protocolo DNS únicamente" }, correct: "A" },
+        { topic: "Tema 3", text: "**Procesar datos** en la nube frente a solo guardarlos implica, entre otras cosas:", options: { A: "Apagar todos los servidores", B: "**Transformar, agregar o analizar** datos para obtener resultados o insights", C: "Borrar siempre los datos tras 1 segundo", D: "Evitar cualquier consulta SQL" }, correct: "B" },
+        { topic: "Tema 4", text: "Un **MVP (producto mínimo viable)** se centra en:", options: { A: "Incluir todas las funcionalidades de un producto maduro", B: "La **versión mínima** que permite aprender del usuario y validar la idea", C: "Solo documentación legal sin prototipo", D: "El diseño final de packaging físico" }, correct: "B" },
+        { topic: "Tema 4", text: "Un enfoque **spec-driven** (por especificaciones) prioriza:", options: { A: "Escribir código al azar sin requisitos", B: "Solo comprar publicidad antes de definir el producto", C: "**Definir** flujos, pantallas, datos y APIs **antes** de implementar en detalle", D: "Eliminar toda comunicación con el equipo" }, correct: "C" },
+        { topic: "Tema 5", text: "Las grandes **OTAs / metabuscadores** suelen apoyarse en:", options: { A: "Ausencia total de integración entre sistemas", B: "**Cloud** para escalar, **APIs** para conectar proveedores y **grandes volúmenes de datos**", C: "Solo ficheros CSV locales sin red", D: "Un único servidor sin redundancia ni picos de tráfico" }, correct: "B" },
+        { topic: "Tema 5", text: "Ante un **pico de demanda** (temporada alta, campaña), la nube aporta sobre todo:", options: { A: "**Elasticidad**: más capacidad cuando hace falta y ajuste al bajar la demanda", B: "Imposibilidad de añadir recursos", C: "Obligación de comprar hardware nuevo fijo cada día", D: "Eliminar la web pública" }, correct: "A" },
+        { topic: "Tema 5", text: "Para cobrar con **tarjeta** en una web turística, lo habitual es integrar:", options: { A: "Solo el sistema de riego del jardín", B: "Una **pasarela o API de pagos** del proveedor correspondiente", C: "Únicamente FTP sin cifrado", D: "Un archivo de audio como único medio de pago" }, correct: "B" },
+      ];
+
+      function loadAnswers() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) return {};
+          const data = JSON.parse(raw);
+          return data && typeof data === "object" ? data : {};
+        } catch {
+          return {};
+        }
+      }
+
+      function saveAnswers(map) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(map));
+      }
+
+      function parseInlineBold(s) {
+        const parts = s.split(/\*\*(.+?)\*\*/g);
+        const frag = document.createDocumentFragment();
+        for (let i = 0; i < parts.length; i++) {
+          if (i % 2 === 1) {
+            const strong = document.createElement("strong");
+            strong.textContent = parts[i];
+            frag.appendChild(strong);
+          } else if (parts[i]) {
+            frag.appendChild(document.createTextNode(parts[i]));
+          }
+        }
+        return frag;
+      }
+
+      function buildSlides() {
+        const root = document.getElementById("exam-slides");
+        const answers = loadAnswers();
+
+        const intro = document.createElement("section");
+        intro.innerHTML =
+          "<h1>Simulacro de examen (test)</h1>" +
+          "<h2>Cloud y turismo · 194407</h2>" +
+          "<p><strong>Tiempo orientativo:</strong> ~30 min · <strong>18 preguntas</strong> · Una opción correcta por pregunta.</p>" +
+          "<p>Las respuestas se guardan en este navegador. Al final verás la <strong>puntuación</strong> y el detalle.</p>";
+        root.appendChild(intro);
+
+        EXAM_QUESTIONS.forEach(function (q, idx) {
+          const n = idx + 1;
+          const section = document.createElement("section");
+          section.className = "exam-slide";
+          const h2 = document.createElement("h2");
+          h2.textContent = "Pregunta " + n + " · " + q.topic;
+          const p = document.createElement("div");
+          p.className = "exam-q";
+          p.appendChild(parseInlineBold(q.text));
+          const fieldset = document.createElement("fieldset");
+          ["A", "B", "C", "D"].forEach(function (letter) {
+            const id = "q" + n + "_" + letter;
+            const label = document.createElement("label");
+            const input = document.createElement("input");
+            input.type = "radio";
+            input.name = "q" + n;
+            input.value = letter;
+            input.id = id;
+            if (answers[String(n)] === letter) input.checked = true;
+            label.appendChild(input);
+            label.appendChild(document.createTextNode(letter + ") "));
+            const span = document.createElement("span");
+            span.appendChild(parseInlineBold(q.options[letter]));
+            label.appendChild(span);
+            label.setAttribute("for", id);
+            fieldset.appendChild(label);
+          });
+          section.appendChild(h2);
+          section.appendChild(p);
+          section.appendChild(fieldset);
+          root.appendChild(section);
+        });
+
+        const beforeResults = document.createElement("section");
+        beforeResults.innerHTML =
+          "<h2>Fin del test</h2>" +
+          "<p>Pasa a la siguiente diapositiva para ver tu <strong>puntuación</strong> y el resumen.</p>";
+        root.appendChild(beforeResults);
+
+        const results = document.createElement("section");
+        results.className = "results-slide";
+        results.id = "slide-results";
+        results.innerHTML =
+          "<h2>Resultados</h2>" +
+          "<div class=\"score-line\" id=\"result-score\"></div>" +
+          "<div class=\"score-pct\" id=\"result-pct\"></div>" +
+          "<p id=\"result-blurb\" style=\"font-size:0.88em;margin:0.25em 0 0.4em;\"></p>" +
+          "<details id=\"result-details\">" +
+          "<summary id=\"result-summary\">" +
+          "<span id=\"result-summary-heading\"></span>" +
+          "<div class=\"result-mini-grid\" id=\"result-mini-grid\"></div>" +
+          "</summary>" +
+          "<div class=\"details-scroll-body\">" +
+          "<p class=\"detail-hint\" style=\"font-size:0.78em;opacity:0.85;margin:0 0 0.35em;\">Texto: tu opción y la correcta.</p>" +
+          "<div class=\"results-detail-grid\" id=\"result-rows\"></div>" +
+          "</div>" +
+          "</details>" +
+          "<div class=\"results-actions\">" +
+          "<a href=\"#\" id=\"link-repeat-test\">Repetir test</a> · " +
+          "<a href=\"repaso-preguntas.html\">Repaso abierto</a> · <a href=\"index.html\">Curso principal</a>" +
+          "<button type=\"button\" class=\"btn-clear\" id=\"btn-clear-answers\">Borrar respuestas guardadas</button>" +
+          "</div>";
+        root.appendChild(results);
+
+        root.addEventListener("change", function (e) {
+          const t = e.target;
+          if (t && t.matches && t.matches('input[type="radio"][name^="q"]')) {
+            const name = t.name;
+            const num = name.replace(/^q/, "");
+            const map = loadAnswers();
+            map[num] = t.value;
+            saveAnswers(map);
+          }
+        });
+
+        document.getElementById("btn-clear-answers").addEventListener("click", function () {
+          localStorage.removeItem(STORAGE_KEY);
+          document.querySelectorAll('.exam-slide input[type="radio"]').forEach(function (r) {
+            r.checked = false;
+          });
+          renderResults();
+        });
+      }
+
+      function renderResults() {
+        const answers = loadAnswers();
+        let correct = 0;
+        let answered = 0;
+        EXAM_QUESTIONS.forEach(function (q, idx) {
+          const n = idx + 1;
+          const sel = answers[String(n)];
+          if (sel) answered++;
+          if (sel === q.correct) correct++;
+        });
+        const total = EXAM_QUESTIONS.length;
+        const pct = total ? Math.round((correct / total) * 100) : 0;
+
+        const scoreEl = document.getElementById("result-score");
+        const pctEl = document.getElementById("result-pct");
+        const blurb = document.getElementById("result-blurb");
+        const summaryHeading = document.getElementById("result-summary-heading");
+        const miniGrid = document.getElementById("result-mini-grid");
+        const grid = document.getElementById("result-rows");
+        if (!scoreEl || !grid || !miniGrid || !summaryHeading) return;
+
+        scoreEl.textContent = "Aciertos: " + correct + " / " + total;
+        pctEl.textContent = "Porcentaje: " + pct + "% · Contestadas: " + answered + " / " + total;
+        blurb.textContent =
+          answered < total
+            ? "Hay preguntas sin marcar; cuentan como error en el recuento de aciertos."
+            : "Has contestado todas las preguntas.";
+
+        summaryHeading.textContent =
+          "Mapa (verde = bien, rojo = mal o sin contestar) · desplegar para detalle";
+
+        miniGrid.innerHTML = "";
+        EXAM_QUESTIONS.forEach(function (q, idx) {
+          const n = idx + 1;
+          const sel = answers[String(n)];
+          const ok = sel === q.correct;
+          const cell = document.createElement("div");
+          cell.className = "result-mini-cell " + (ok ? "ok" : "bad");
+          cell.textContent = String(n);
+          cell.setAttribute("title", ok ? "Pregunta " + n + ": correcta" : "Pregunta " + n + ": incorrecta o sin contestar");
+          miniGrid.appendChild(cell);
+        });
+
+        grid.innerHTML = "";
+        EXAM_QUESTIONS.forEach(function (q, idx) {
+          const n = idx + 1;
+          const sel = answers[String(n)];
+          const ok = sel === q.correct;
+          const row = document.createElement("div");
+          row.className = "results-row";
+          if (!sel) row.classList.add("skip");
+          else if (ok) row.classList.add("ok");
+          else row.classList.add("bad");
+
+          let status = "Sin contestar";
+          if (sel) status = ok ? "Correcta" : "Incorrecta";
+
+          row.textContent =
+            "P" +
+            n +
+            ": " +
+            status +
+            " · tu " +
+            (sel || "—") +
+            " · correcta " +
+            q.correct;
+          grid.appendChild(row);
+        });
+      }
+
+      buildSlides();
+
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        slideNumber: true,
+        history: true,
+        center: true,
+        transition: "slide",
+      });
+
+      Reveal.on("slidechanged", function (event) {
+        if (event.currentSlide && event.currentSlide.id === "slide-results") {
+          renderResults();
+        }
+      });
+
+      document.getElementById("link-repeat-test").addEventListener("click", function (e) {
+        e.preventDefault();
+        var msg =
+          "Se borrarán todas las respuestas guardadas en este navegador (no se puede deshacer). " +
+          "¿Quieres repetir el test desde el principio?";
+        if (!window.confirm(msg)) return;
+        localStorage.removeItem(STORAGE_KEY);
+        document.querySelectorAll('.exam-slide input[type="radio"]').forEach(function (r) {
+          r.checked = false;
+        });
+        Reveal.slide(0);
+      });
+    })();
+  </script>
+</body>
+</html>
