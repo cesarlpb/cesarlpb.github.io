@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tema 3 · APIs y procesamiento de datos en la nube (teoría)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme" />
+  <link rel="shortcut icon" href="./c.png" type="image/x-icon" />
+  <style>
+    .reveal .slides { font-size: 90%; }
+    img { max-height: 60vh!important; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <script type="text/template">
+
+# Tema 3 · APIs y procesamiento de datos en la nube
+
+Versión teórica (sin actividades de clase).
+
+---
+
+# CLASE 9
+
+## Qué es una API
+
+**Aplication Programming Interface**
+
+---
+
+## API = interfaz entre sistemas
+
+Permite que dos aplicaciones se comuniquen.
+
+Ejemplo:
+
+App de viajes → API vuelos → resultados
+
+---
+
+![api-diagram.png](api-diagram.png)
+
+---
+
+## Ejemplos de APIs en turismo
+
+- vuelos
+- clima
+- mapas
+- pagos
+- reseñas
+
+---
+
+## Ejemplo real
+
+Una app de viajes puede usar:
+
+- API vuelos
+- API mapas
+- API clima
+- API pagos
+
+---
+
+![travel-api.png](travel-api.png)
+
+---
+
+## Key points
+
+- Las APIs conectan servicios
+- Permiten crear apps sin construir todo
+- El turismo depende fuertemente de APIs
+
+---
+
+![no-api.png](no-api.png)
+
+---
+
+# CLASE 10
+
+## Conectar con una API
+
+---
+
+## Cómo funciona una API
+
+1. La app envía una **request**
+2. El servidor responde con **datos**
+
+---
+
+![api-request-response.png](api-request-response.png)
+
+---
+
+## Ejemplo simple
+
+Consultar clima:
+
+API → devuelve datos:
+
+- temperatura
+- humedad
+- viento
+
+---
+
+## Datos en formato JSON
+
+```json
+{
+ "city": "Barcelona",
+ "temperature": 22
+}
+```
+
+---
+
+## Key points
+
+- Las APIs devuelven datos
+- Las apps los utilizan
+- JSON es el formato más común
+
+---
+
+# CLASE 11
+
+## Integración de APIs
+
+---
+
+## Agenda
+
+- Integrar varias APIs
+- Flujo de datos
+- Ejemplo turístico
+
+---
+
+## Integración de servicios
+
+Una app puede usar:
+
+- API vuelos
+- API hoteles
+- API clima
+- API mapas
+
+---
+
+![api-integration.png](api-integration.png)
+
+---
+
+## Ejemplo
+
+Buscador de viajes:
+
+1. Usuario busca destino
+2. API vuelos responde
+3. API hoteles responde
+4. App muestra resultados
+
+---
+
+## Key points
+
+- Las apps modernas integran múltiples APIs
+- La arquitectura es modular
+- Permite innovar más rápido
+
+---
+
+# CLASE 12
+
+## Procesamiento de datos en la nube
+
+---
+
+## Procesar datos significa
+
+- analizar
+- transformar
+- obtener insights
+
+---
+
+![data-processing.png](data-processing.png)
+
+---
+
+## Ejemplos
+
+- calcular precio medio
+- detectar destinos populares
+- predecir demanda
+
+---
+
+## Key points
+
+- El valor está en analizar datos
+- Cloud permite procesar grandes volúmenes
+
+---
+
+# CLASE 13
+
+## Flujo completo de datos
+
+---
+
+## Flujo típico
+
+Usuario → API → Base de datos → Análisis → Resultado
+
+---
+
+![data-pipeline.png](data-pipeline.png)
+
+---
+
+## Ejemplo turismo
+
+Usuario busca destino
+
+↓
+
+API vuelos
+
+↓
+
+Base de datos
+
+↓
+
+Resultados personalizados
+
+---
+
+## Key points (Tema 3)
+
+- APIs conectan servicios
+- Los datos fluyen entre sistemas
+- Cloud permite procesar y escalar
+- Los datos generan valor en turismo
+
+        </script>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: true,
+      history: true,
+      center: true,
+      transition: "slide",
+      plugins: [RevealMarkdown],
+    });
+  </script>
+</body>
+</html>

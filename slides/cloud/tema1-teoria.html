@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tema 1 · Introducción a la computación en la nube (teoría)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme" />
+  <link rel="shortcut icon" href="./c.png" type="image/x-icon" />
+  <style>
+    .reveal .slides { font-size: 90%; }
+    img { max-height: 60vh!important; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <script type="text/template">
+
+# Tema 1 · Introducción a la computación en la nube
+
+Versión teórica (sin actividades de clase).
+
+---
+
+# Clase 1
+## Introducción al cloud ☁️ y su impacto en turismo 📷
+
+---
+
+## Teoría (Clase 1)
+### Qué es la computación en la nube
+- Acceso a recursos informáticos **bajo demanda** (internet)
+- Pago por uso / elasticidad / disponibilidad
+- Modelos comunes: infraestructura, plataformas, software
+
+**Idea clave:** 
+
+La nube es un modelo operativo, no “un sitio”.
+
+---
+
+![cloud-computing.png](cloud-computing.png)
+
+Cloud Computing
+
+---
+
+![class1-00.png](class1-00.png)
+
+What is the cloud? ☁️
+
+---
+
+## Teoría (Clase 1)
+### Por qué el turismo es un caso natural para cloud
+- Picos de demanda (temporadas, eventos, campañas)
+- Integración constante (pagos, mapas, clima, reseñas, CRM)
+- Datos como ventaja competitiva (pricing, personalización)
+
+---
+
+![stats00.jpeg](stats00.jpeg)
+
+---
+
+![stats01.jpeg](stats01.jpeg)
+
+---
+
+![stats05.png](stats05.png)
+
+---
+
+![coffee.jpg](coffee.jpg)
+
+---
+
+## Cloud spotting – Booking.com
+
+| Función        | Cloud | Motivo clave |
+|---------------|-------|--------------|
+| Búsqueda       | ✅     | Escala y velocidad |
+| Reservas       | ✅     | Alta disponibilidad |
+| Pagos          | ✅     | Seguridad |
+| Recomendaciones| ✅     | Datos + IA |
+| Emails         | ✅     | Automatización |
+
+➡️ **Sin cloud: imposible operar a escala global**
+
+---
+
+- Búsquedas
+- Reservas
+- Pagos
+- Recomendaciones
+- Emails de confirmación
+- Web corporativa
+- Datos para la app
+
+---
+
+¿Qué riesgos aparecen al depender de un proveedor cloud?
+
+> "Nada puede salir mal" -- Anónimo
+
+---
+
+¿Qué “dato” es más valioso en turismo? 
+
+- transacciones 
+- comportamiento
+- reseñas
+
+---
+
+¿Qué pasa si un sistema de reservas cae en plena temporada?
+
+> **Spoiler:** acaba mal
+
+---
+
+![meme00.jpg](meme00.jpg)
+
+---
+
+![meme01.jpg](meme01.jpg)
+
+---
+
+![coffee.jpg](coffee.jpg)
+
+---
+
+# Clase 2
+## Modelos cloud: IaaS, PaaS, SaaS
+
+---
+
+## Teoría (Clase 2)
+### IaaS, PaaS, SaaS (definición rápida)
+
+- **SaaS:** alquilas software listo (CRM, email, analítica)
+- **PaaS:** alquilas plataforma (runtime, despliegue, escalado)
+- **IaaS:** alquilas infraestructura (servidores, redes, almacenamiento)
+
+**Regla práctica:** cuanto más arriba, menos control; cuanto más abajo, más responsabilidad.
+
+---
+
+## Teoría (Clase 2)
+### Ejemplos (turismo)
+- **IaaS:** servidores para motor de reservas propio
+- **PaaS:** backend desplegado gestionado (APIs, colas, funciones)
+- **SaaS:** PMS/CRM/Email marketing/Analytics ya operativos
+
+---
+
+Note:
+## Cierre (Clase 2)
+- Resumen: cómo elegir modelo cloud según negocio
+- Próxima clase: proveedores cloud (AWS / Azure / GCP) y servicios típicos en turismo
+
+---
+
+![iaas-paas-saas.jpg](iaas-paas-saas.jpg)
+
+IaaS vs PaaS vs SaaS
+
+---
+
+![iaas-paas-saas-2.png](iaas-paas-saas-2.png)
+
+Infraestructura → Plataforma → Software
+
+---
+
+![iaas-paas-saas-3.png](iaas-paas-saas-3.png)
+
+Ejemplo con providers y servicios
+
+---
+
+### Slide — Idea clave (muy importante didácticamente)
+
+
+## Idea clave (Clase 2)
+
+- **No se elige IaaS / PaaS / SaaS por moda**  
+
+Se elige según:
+
+- tamaño del negocio
+- capacidad técnica
+- riesgo asumible
+- necesidad de escalar
+
+---
+
+## Hotel pequeño vs OTA
+
+**Hotel pequeño**
+- Web: SaaS
+- Reservas: SaaS
+- Email: SaaS
+
+**OTA**
+- **Frontend:** PaaS
+- **Backend:** PaaS / IaaS
+- Datos (db): PaaS / IaaS
+
+➡️ **El modelo depende del negocio, no del sector**
+
+---
+
+### Contexto de negocio
+
+
+![hotel-vs-ota.jpg](hotel-vs-ota.jpg)
+
+Escala ≠ mismas decisiones técnicas
+
+---
+
+## Lectura recomendada (Clase 2)
+
+
+## Lectura recomendada
+
+- [Cloudflare – IaaS vs PaaS vs SaaS](https://www.cloudflare.com/learning/serverless/glossary/platform-as-a-service-paas/)
+  
+
+**Objetivo:** entender diferencias, no memorizar proveedores
+
+---
+
+### Slide — Cierre conceptual
+
+
+## Para llevarte hoy
+
+- SaaS = rapidez y menor riesgo
+- PaaS = equilibrio entre control y facilidad
+- IaaS = máximo control, máxima responsabilidad
+
+➡️ En turismo, **SaaS suele ser el punto de partida**
+
+---
+
+### Slide — Transición a Clase 3
+
+
+## Próxima clase 👀
+
+### Proveedores cloud
+- AWS
+- Azure
+- Google Cloud
+
+¿Quién usa qué… y por qué?
+
+---
+
+# Clase 3
+
+## Proveedores cloud y servicios clave
+
+---
+
+## Los 3 grandes
+
+* **AWS** – líder en cuota de mercado
+* **Microsoft Azure** – fuerte en empresa tradicional
+* **Google Cloud** – fuerte en datos e IA
+
+---
+
+![aws-azure-gcp.png](aws-azure-gcp.png)
+
+---
+
+## Qué venden realmente
+
+No venden “la nube”.
+
+Venden:
+
+* Servidores (compute)
+* Almacenamiento (storage)
+* Bases de datos
+* Redes
+* Seguridad
+* Servicios de IA
+
+---
+
+## Servicios clave en turismo
+
+* Motor de reservas → Compute + DB
+* Web → Hosting + CDN
+* Pagos → Seguridad + APIs
+* Analítica → Data warehouse
+* Personalización → IA
+
+---
+
+![cloud-services-layer.png](cloud-services-layer.png)
+
+---
+
+## Key points (Clase 3)
+
+* Los proveedores ofrecen bloques modulares
+* Se combinan servicios según necesidad
+* En turismo, datos y disponibilidad son críticos
+* El proveedor importa menos que la arquitectura
+
+---
+
+## Próxima clase 👀
+
+Costes, ventajas y riesgos reales del cloud
+
+---
+
+# Clase 4
+
+## Ventajas, riesgos y costes del cloud
+
+---
+
+## Ventajas
+
+* Escalabilidad inmediata
+* Pago por uso
+* Disponibilidad global
+* Integración rápida con APIs
+
+---
+
+![scalability.png](scalability.png)
+
+---
+
+## Riesgos
+
+* Lock-in (dependencia proveedor)
+* Caídas del servicio
+* Costes mal calculados
+* Seguridad mal configurada
+
+---
+
+![server-down.jpg](server-down.jpg)
+
+---
+
+## Costes (idea simple)
+
+Pagas por:
+
+* Uso de servidor (horas)
+* Almacenamiento (GB)
+* Transferencia de datos
+* Servicios adicionales (DB, IA…)
+
+---
+
+## Key points (Clase 4)
+
+* El cloud reduce barreras de entrada
+* No elimina riesgos
+* Mal diseño = costes altos
+* Decidir cloud es decidir modelo de negocio
+
+---
+
+## Próxima clase 👀
+
+Datos en turismo: el activo más importante
+
+        </script>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: true,
+      history: true,
+      center: true,
+      transition: "slide",
+      plugins: [RevealMarkdown],
+    });
+  </script>
+</body>
+</html>

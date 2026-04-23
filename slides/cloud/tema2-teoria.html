@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tema 2 · Gestión de datos en entornos cloud (teoría)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme" />
+  <link rel="shortcut icon" href="./c.png" type="image/x-icon" />
+  <style>
+    .reveal .slides { font-size: 90%; }
+    img { max-height: 60vh!important; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <script type="text/template">
+
+# Tema 2 · Gestión de datos en entornos cloud
+
+Versión teórica (sin actividades de clase).
+
+---
+
+# Clase 5
+
+## Datos en turismo y su valor estratégico
+
+---
+
+## Tipos de datos
+
+* Transaccionales (reservas, pagos)
+* Operacionales (ocupación, disponibilidad)
+* Cliente (perfil, comportamiento)
+* Big Data (tendencias, movilidad)
+
+---
+
+![data-types.png](data-types.png)
+
+---
+
+## El dato como ventaja competitiva
+
+* Pricing dinámico
+* Recomendaciones
+* Segmentación
+* Fidelización
+
+Sin datos → no hay personalización
+
+---
+
+![data-driven.png](data-driven.png)
+
+---
+
+## Key points (Clase 5)
+
+* No todos los datos tienen el mismo valor
+* El comportamiento del cliente es oro
+* Cloud facilita almacenar y analizar datos
+* Datos → decisiones → ventaja competitiva
+
+---
+
+## Próxima clase 👀
+
+Bases de datos en la nube: SQL vs NoSQL
+
+---
+
+# Clase 6
+
+## Bases de datos en la nube: SQL vs NoSQL
+
+---
+
+## ¿Qué es una base de datos?
+
+Sistema que permite:
+
+* Guardar datos
+* Organizar datos
+* Consultar datos
+* Modificar datos
+
+En turismo:
+reservas, clientes, pagos, disponibilidad.
+
+---
+
+![database-basic.png](database-basic.png)
+
+---
+
+## SQL (relacional)
+
+* Datos estructurados en tablas
+* Relaciones claras entre entidades
+* Esquema fijo
+* Lenguaje estándar: SQL
+
+Ejemplo:
+Clientes ↔ Reservas ↔ Pagos
+
+---
+
+![sql-table.png](sql-table.png)
+
+---
+
+## NoSQL (no relacional)
+
+* Estructura flexible
+* Documentos, clave-valor, grafos…
+* Escalabilidad horizontal
+* Ideal para grandes volúmenes variables
+
+Ejemplo:
+Historial de navegación, logs, recomendaciones.
+
+---
+
+![nosql-doc.png](nosql-doc.png)
+
+---
+
+## Comparación rápida
+
+| SQL                  | NoSQL                |
+| -------------------- | -------------------- |
+| Estructura rígida    | Estructura flexible  |
+| Relaciones complejas | Datos masivos        |
+| Consistencia fuerte  | Escala masiva        |
+| Ideal reservas/pagos | Ideal comportamiento |
+
+---
+
+## ¿Qué usar en turismo?
+
+* Sistema de reservas → SQL
+* Logs de usuario → NoSQL
+* CRM → SQL
+* Recomendaciones → NoSQL
+
+➡️ Muchas empresas usan ambos
+
+---
+
+## Key points (Clase 6)
+
+* SQL = estructura y relaciones
+* NoSQL = flexibilidad y escala
+* No es competencia, es complementariedad
+* El modelo de datos impacta el negocio
+
+---
+
+## Próxima clase 👀
+
+Consultas y análisis: convertir datos en decisiones
+
+---
+
+# Clase 7
+
+## Consultas básicas y análisis de datos
+
+---
+
+## ¿Qué es una consulta?
+
+Una pregunta a la base de datos.
+
+Ejemplo:
+
+* ¿Cuántas reservas hoy?
+* ¿Cuál es el destino más vendido?
+* ¿Qué cliente repite más?
+
+---
+
+![query.png](query.png)
+
+[W3schools](https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_all)
+
+---
+
+## SELECT
+
+Selecciona datos.
+
+```sql
+SELECT nombre, email
+FROM clientes;
+```
+
+---
+
+## COUNT
+
+Cuenta registros.
+
+```sql
+SELECT COUNT(*)
+FROM reservas;
+```
+
+---
+
+## GROUP BY
+
+Agrupa resultados.
+
+```sql
+SELECT destino, COUNT(*)
+FROM reservas
+GROUP BY destino;
+```
+
+---
+
+## En turismo sirve para:
+
+* Detectar temporada alta
+* Analizar destinos populares
+* Calcular repetición de clientes
+* Optimizar precios
+
+---
+
+![data-analysis.png](data-analysis.png)
+
+---
+
+## Key points (Clase 7)
+
+* Los datos no sirven sin consultas
+* Las consultas responden preguntas de negocio
+* SQL básico ya permite análisis útiles
+* Cloud facilita ejecutar consultas a escala
+
+---
+
+## Qué necesitamos
+
+- Navegador web
+- Acceso al entorno cloud (enlace compartido)
+- Dataset turístico de ejemplo
+
+- ✅ No instalaremos nada.  
+- ✅ No configuraremos servidores.  
+- ✅ Todo se hace online.
+
+---
+
+![where-is-backup.png](where-is-backup.png)
+
+---
+
+# CLASE 8
+
+## Entorno cloud para análisis de datos
+
+---
+
+## Qué necesitamos
+
+- Navegador web
+- Acceso al entorno cloud
+- Dataset turístico de ejemplo
+- Curiosidad 🙂
+
+---
+
+![cloud-database.png](cloud-database.png)
+
+Base de datos accesible desde cualquier lugar
+
+---
+
+## Qué vamos a hacer
+
+1. Explorar una tabla de datos
+2. Ejecutar consultas simples
+3. Analizar resultados
+4. Responder preguntas de negocio
+
+---
+
+## Ejemplo de preguntas
+
+- ¿Qué destino tiene más reservas?
+- ¿Cuál es el precio medio?
+- ¿Qué ciudad crece más?
+
+---
+
+## Key points (Tema 2)
+
+- Los datos son el activo clave del turismo digital
+- Cloud permite almacenar y analizar datos a escala
+- SQL permite responder preguntas de negocio
+- Datos → análisis → decisiones
+
+---
+
+## Próximo tema 👀
+
+APIs y procesamiento de datos
+
+---
+
+# TEMA 3
+
+# APIs y procesamiento de datos en la nube
+
+        </script>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: true,
+      history: true,
+      center: true,
+      transition: "slide",
+      plugins: [RevealMarkdown],
+    });
+  </script>
+</body>
+</html>

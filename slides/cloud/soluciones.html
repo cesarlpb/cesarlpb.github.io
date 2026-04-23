@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Soluciones de repaso · Cloud y turismo (194407)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme" />
+  <link rel="shortcut icon" href="./c.png" type="image/x-icon" />
+  <style>
+    .reveal .slides {
+      font-size: 86%;
+    }
+    img {
+      max-height: 60vh !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <script type="text/template">
+
+# Soluciones de repaso
+## Computacion en la nube y turismo · 194407
+
+Respuestas cortas de muestra.
+
+---
+
+## Tema 1 · Introduccion a la computacion en la nube
+
+1. **Que es cloud y por que turismo lo usa mucho?**  
+   Uso de recursos TI por internet bajo demanda y pago por uso; en turismo encaja por picos estacionales de demanda.
+
+2. **Diferencia IaaS, PaaS, SaaS + ejemplo turistico**  
+   IaaS: infraestructura virtual (VM para motor de reservas).  
+   PaaS: plataforma gestionada (API de busquedas desplegada sin gestionar servidores).  
+   SaaS: software listo (CRM online para agencia).
+
+3. **Dos ventajas y dos riesgos**  
+   Ventajas: escalabilidad y menor inversion inicial.  
+   Riesgos: dependencia del proveedor y sobrecostes por mal control.
+
+4. **Factores de coste mas alla del servidor**  
+   Transferencia, almacenamiento, bases gestionadas, backups, monitorizacion y autoscaling.
+
+---
+
+## Tema 2 · Gestion de datos en entornos cloud
+
+1. **Tipos de datos frecuentes en turismo**  
+   Reservas/pagos (transaccionales), perfiles de cliente, operacion (ocupacion/precios) y comportamiento (clics/busquedas).
+
+2. **Cuando SQL vs NoSQL + ejemplo**  
+   SQL para datos estructurados y relaciones (reservas y pagos).  
+   NoSQL para datos flexibles o masivos (eventos de navegacion y recomendaciones).
+
+3. **Para que sirven `COUNT` y `GROUP BY`?**  
+   `COUNT` cuenta registros; `GROUP BY` agrupa por campo para agregados (ej. reservas por destino).
+
+4. **Relacion entre datos cloud y analisis**  
+   Centralizar datos en cloud facilita consultas y decisiones rapidas sobre precios, demanda y campanas.
+
+---
+
+## Tema 3 · APIs y procesamiento de datos en la nube
+
+1. **Que es una API y que problema resuelve?**  
+   Interfaz para comunicar sistemas; permite que una app turistica consulte servicios externos de vuelos/hoteles.
+
+2. **Que es JSON y por que se usa tanto?**  
+   Formato ligero y legible para intercambiar datos entre cliente y servidor.
+
+3. **Flujo peticion -> respuesta en busqueda**  
+   Usuario busca -> app envia request -> backend consulta proveedores -> devuelve resultados -> app muestra opciones.
+
+4. **Procesar datos vs almacenarlos**  
+   Almacenar es guardar; procesar es transformar y analizar para generar valor.
+
+---
+
+## Tema 4 · Diseno de soluciones digitales en la nube
+
+1. **Que es un MVP y que no debe incluir?**  
+   Version minima para validar hipotesis; no incluye extras no esenciales ni personalizaciones avanzadas.
+
+2. **3-5 pantallas para MVP turistico**  
+   Inicio/busqueda, resultados, detalle, reserva/checkout y confirmacion.
+
+3. **Que debe cubrir un spec antes de programar?**  
+   Objetivo, flujo, datos, APIs, pantallas y reglas basicas de negocio.
+
+4. **Relacion arquitectura cloud, APIs y escalado**  
+   Cloud aporta elasticidad, APIs conectan modulos y una arquitectura modular facilita escalar.
+
+---
+
+## Tema 5 · Tendencias, casos reales y cierre
+
+1. **Que comparten OTAs y metabuscadores?**  
+   Uso intensivo de cloud, integraciones por APIs y analitica de datos en tiempo real.
+
+2. **Datos mas valiosos para personalizacion**  
+   Historial de busquedas y reservas, presupuesto, fechas y preferencias de destino.
+
+3. **Proyecto en 2 minutos: 3 ideas clave**  
+   Problema del usuario, flujo principal de valor y uso de datos/APIs sobre cloud.
+
+---
+
+## Fin
+
+- [Volver a preguntas](repaso-preguntas.html)
+- [Volver al curso principal](index.html)
+
+        </script>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: true,
+      history: true,
+      center: true,
+      transition: "slide",
+      plugins: [RevealMarkdown],
+    });
+  </script>
+</body>
+</html>

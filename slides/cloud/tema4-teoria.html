@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tema 4 · Diseño de soluciones digitales en la nube (teoría)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme" />
+  <link rel="shortcut icon" href="./c.png" type="image/x-icon" />
+  <style>
+    .reveal .slides { font-size: 90%; }
+    img { max-height: 60vh!important; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <script type="text/template">
+
+# Tema 4 · Diseño de soluciones digitales en la nube
+
+Versión teórica (sin actividades de clase).
+
+---
+
+# Clase 14
+## Arquitecturas cloud en turismo
+
+---
+
+## ¿Qué es una arquitectura?
+
+Es cómo organizamos:
+
+- sistemas
+- datos
+- servicios
+
+Para que una aplicación funcione correctamente.
+
+---
+
+![architecture-basic.png](architecture-basic.png)
+
+---
+
+## Componentes típicos
+
+- Frontend (web / app)
+- Backend (lógica)
+- Base de datos
+- APIs externas
+- Servicios cloud
+
+---
+
+## Ejemplo turismo
+
+App de reservas:
+
+- Web / app
+- API backend
+- Base de datos
+- API pagos
+- API mapas
+
+---
+
+![travel-architecture.png](travel-architecture.png)
+
+---
+
+## Idea clave
+
+No es solo tecnología.
+
+Es:
+
+👉 cómo fluye la información  
+👉 cómo escala el sistema  
+👉 cómo se mantiene estable
+
+---
+
+## Key points (Clase 14)
+
+- La arquitectura define cómo funciona el sistema
+- Cloud permite arquitecturas flexibles
+- Separar componentes mejora escalabilidad
+- El diseño impacta el negocio
+
+---
+
+## Próxima clase 👀
+
+Escalabilidad y crecimiento en cloud
+
+---
+
+# Clase 15
+## Escalabilidad en cloud
+
+---
+
+## ¿Qué es escalar?
+
+Capacidad de un sistema para:
+
+👉 soportar más usuarios  
+👉 soportar más datos  
+👉 mantener rendimiento
+
+---
+
+![scaling.png](scaling.png)
+
+---
+
+## Tipos de escalabilidad
+
+- **Vertical**: un servidor -> más potencia
+- **Horizontal**:más servidores
+- **Híbrido**: vertical y horizontal
+
+☁️ → Cloud favorece la horizontal
+
+---
+
+## Ejemplo en turismo
+
+Black Friday / verano:
+
+- aumento de usuarios
+- más reservas
+- más consultas
+
+➡️ el sistema debe escalar automáticamente
+
+---
+
+![traffic-spike.png](traffic-spike.png)
+
+---
+
+## Problema sin escalabilidad
+
+- web lenta
+- errores
+- caída del sistema
+- pérdida de ventas
+
+---
+
+## Key points (Clase 15)
+
+- Escalar es clave en turismo
+- Cloud permite escalar bajo demanda
+- Sin escalabilidad = pérdida de negocio
+- La arquitectura debe anticipar crecimiento
+
+---
+
+## Próxima clase 👀
+
+**Tema 4:** casos reales (OTAs, plataformas)
+
+---
+
+# Clase 16
+## Casos reales en turismo · Tema 4
+
+OTAs, metabuscadores y plataformas
+
+---
+
+## Plataformas conocidas
+
+- Booking
+- Airbnb
+- Skyscanner
+- Expedia
+- Agoda, Goibibo, MakeMyTrip, Yatra… (mercados globales)
+
+---
+
+![ota-platforms.png](ota-platforms.png)
+
+---
+
+## Qué tienen en común
+
+- Uso intensivo de cloud
+- APIs para integrar servicios
+- Gestión de grandes volúmenes de datos
+- Personalización de la experiencia
+
+---
+
+## Ejemplo simplificado
+
+Usuario busca viaje
+
+↓
+
+Plataforma consulta APIs
+
+↓
+
+Procesa datos
+
+↓
+
+Muestra resultados personalizados
+
+---
+
+## Key points (Clase 16)
+
+- El turismo digital depende de datos y APIs
+- Cloud permite escalar estas plataformas
+- El valor está en el uso inteligente de los datos
+
+---
+
+## Próxima clase 👀
+
+**Tema 4:** diseño de solución (MVP + arquitectura aplicada)
+
+---
+
+# Clase 17
+## Diseño de solución en la nube · Tema 4
+
+MVP aplicado y arquitectura
+
+---
+
+## Qué estamos diseñando
+
+Una plataforma turística **simple pero coherente**:
+
+- Web o app (**frontend**)
+- **API** (contrato entre cliente y servidor)
+- **Base de datos** y persistencia
+- **Servicios externos** (pagos, mapas, proveedores…)
+
+---
+
+## MVP
+
+Un MVP sólido es un **corte delgado** que atraviesa **todas las capas** (no solo un trozo “funcional” aislado).
+
+![mvp.png](mvp.png)
+
+---
+
+## Arquitectura de referencia
+
+Capas típicas en cloud: cliente → API → datos → integraciones.
+
+![travel-architecture.png](travel-architecture.png)
+
+---
+
+## Ejemplo aplicado
+
+Usuario → **Login** → API → base de datos  
+
+Usuario → **Mis reservas** → API → datos → **pantalla**
+
+---
+
+## Key points (Clase 17)
+
+- La arquitectura **conecta** negocio, datos y experiencia
+- Cloud favorece **módulos** y servicios combinables
+- El diseño técnico **impacta** en el producto
+
+---
+
+## Próxima clase 👀
+
+**Tema 5:** IA en turismo (tendencias y futuro)
+
+        </script>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: true,
+      history: true,
+      center: true,
+      transition: "slide",
+      plugins: [RevealMarkdown],
+    });
+  </script>
+</body>
+</html>
