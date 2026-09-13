@@ -28,10 +28,11 @@ function mountQuiz(root, { id, questions }) {
     const pct = Math.round((100 * ok) / questions.length);
     localStorage.setItem(key, String(pct));
     root.dataset.score = String(pct);
+    const n = String(id).replace(/^c/i, "");
     root.querySelector(".result").textContent =
       `${ok} / ${questions.length} (${pct}%). ` +
       (pct === 100
-        ? "Listo: en el chat dime «checkpoint 1» y te pregunto yo, sin opciones."
+        ? `Listo: en el chat dime «checkpoint ${n}» y te pregunto yo, sin opciones.`
         : "Repasa el apartado que falló y vuelve a corregir.");
     window.dispatchEvent(new CustomEvent("quiz-scored", { detail: { id, pct } }));
   });

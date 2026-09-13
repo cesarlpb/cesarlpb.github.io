@@ -3,43 +3,121 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Entiende Navier-Stokes</title>
+  <title>Entiende Navier-Stokes | César Patiño · Full-stack Developer y Físico Teórico</title>
+  <meta name="description" content="Curso visual de Navier–Stokes: de Euler y la viscosidad hasta Leray, Clay y el blowup forzado. Apuntes, simulaciones y checkpoints. Por César Patiño, físico teórico (UCM) y desarrollador full-stack." />
+  <meta name="author" content="César Patiño" />
+  <meta name="theme-color" content="#16141f" />
+  <link rel="canonical" href="https://cesarlpb.github.io/aprende-navier-stokes/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Entiende Navier-Stokes" />
+  <meta property="og:title" content="Entiende Navier-Stokes | César Patiño" />
+  <meta property="og:description" content="De Euler al blowup forzado: curso visual con apuntes, simulaciones y checkpoints. Físico teórico y full-stack." />
+  <meta property="og:url" content="https://cesarlpb.github.io/aprende-navier-stokes/" />
+  <meta property="og:image" content="https://cesarlpb.github.io/aprende-navier-stokes/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Entiende Navier-Stokes: curso visual de Euler al blowup, por César Patiño" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Entiende Navier-Stokes | César Patiño" />
+  <meta name="twitter:description" content="Curso visual de Navier–Stokes: apuntes, simulaciones y checkpoints hasta el blowup forzado." />
+  <meta name="twitter:image" content="https://cesarlpb.github.io/aprende-navier-stokes/og.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
   <link rel="stylesheet" href="app.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Entiende Navier-Stokes",
+    "description": "Curso visual de las ecuaciones de Navier–Stokes, de Euler al blowup forzado, con apuntes y simulaciones.",
+    "inLanguage": "es",
+    "url": "https://cesarlpb.github.io/aprende-navier-stokes/",
+    "image": "https://cesarlpb.github.io/aprende-navier-stokes/og.png",
+    "provider": {
+      "@type": "Person",
+      "name": "César Patiño",
+      "jobTitle": "Full-stack developer y físico teórico",
+      "url": "https://cesarlpb.github.io/",
+      "sameAs": [
+        "https://www.linkedin.com/in/cesarlpb89/"
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
   <div class="top">
     <strong>De Newton a NS con blowup forzado</strong>
     <nav>
       <a href="index.html" aria-current="page">Hoja de ruta</a>
+      <a href="cap00-personajes.html">C0 personajes</a>
       <a href="cap01-origen.html">C1 origen</a>
-      <a href="cap08-ns-openai.html">C8 adelanto NS</a>
+      <a href="cap08-ns-openai.html">C8 adelanto</a>
+      <a href="#autor">Sobre mí</a>
     </nav>
   </div>
   <div class="wrap">
-    <p class="kicker">Curso visual · Navier–Stokes al final</p>
+    <p class="kicker">Curso interactivo · Navier–Stokes al final</p>
     <h1>Hoja de <em>ruta</em></h1>
     <p class="lead">
-      Empezamos por cómo se escribe la ecuación. Luego, en orden de complejidad:
-      vorticidad, energía, Euler, el programa de capas, y al final el paper de
-      OpenAI (Clay C/D). Cada capítulo tiene apuntes y una simulación. En los
-      checkpoints haces el quiz de la página y luego me dices
-      <code>checkpoint N</code> en el chat: te pregunto yo, sin opciones.
+      Empezamos por las personas. Luego, cómo se escribe la ecuación, y en
+      orden de complejidad: vorticidad, energía, Euler, el programa de capas,
+      y al final el paper de OpenAI (Clay C/D). Cada capítulo tiene apuntes
+      y, cuando toca, una simulación. En los checkpoints haces el quiz y
+      luego me dices <code>checkpoint N</code> en el chat: te pregunto yo,
+      sin opciones.
     </p>
 
+    <section class="author" id="autor">
+      <img src="https://cesarlpb.github.io/images/me.png" alt="César Patiño" width="72" height="72" />
+      <p>
+        <strong>César Patiño</strong> · físico teórico (UCM). Compagino
+        desarrollo (LLM, agentes, RAG; Next.js / React y Node o FastAPI) con
+        la enseñanza. Este cuaderno es el curso que voy construyendo para
+        entender Navier–Stokes hasta el blowup forzado de 2026.
+        <a href="https://cesarlpb.github.io/">Portfolio</a>
+        ·
+        <a href="https://www.linkedin.com/in/cesarlpb89/">LinkedIn</a>
+      </p>
+    </section>
+
+    <div class="cta-news">
+      <p>
+        Si te interesa el desarrollo (no solo este curso), suscríbete a mi
+        newsletter de LinkedIn
+        <a href="https://www.linkedin.com/newsletters/trabaja-como-dev-en-90-d%C3%ADas-7486737005062598656/" target="_blank" rel="noopener noreferrer">Trabaja como Dev en 90 días</a>.
+      </p>
+      <a
+        class="libutton"
+        href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7486737005062598656"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Suscribirte en LinkedIn</a>
+    </div>
+
     <div class="callout">
-      Ahora estamos en el <strong>capítulo 1</strong>. El sim del vórtice que
-      ya construimos está colgado como adelanto en el 8, para no perderlo;
-      no lo uses como punto de partida.
+      Ahora: <strong>capítulo 0</strong> (quiénes son) y después el
+      <strong>1</strong> (origen de la ecuación). El sim del vórtice está
+      colgado como adelanto en el 8; no lo uses como punto de partida.
     </div>
 
     <div class="road">
+      <a href="cap00-personajes.html" data-quiz="c0">
+        <span class="n">00</span>
+        <span>
+          <strong>Personajes</strong><br />
+          <small>Euler, Navier, Stokes, Leray, CKN, Clay, el siglo XXI, OpenAI al final.</small>
+        </span>
+        <span class="pill go">empezar</span>
+      </a>
       <a href="cap01-origen.html" data-quiz="c1">
         <span class="n">01</span>
         <span>
           <strong>Origen de la ecuación</strong><br />
           <small>Continuo, masa, momento, Euler 1755, viscosidad de Navier–Stokes. Parcela y vórtice de Lamb–Oseen.</small>
         </span>
-        <span class="pill go">empezar</span>
+        <span class="pill">siguiente</span>
       </a>
       <div class="soon">
         <span class="n">02</span>
@@ -102,8 +180,8 @@
     <h2>Cómo usamos esto</h2>
     <ul class="plain">
       <li>Lees los apuntes del capítulo en la web (van a vivir aquí, no solo en el <code>.md</code>).</li>
-      <li>Juegas con la simulación hasta que el término de la ecuación se vea.</li>
-      <li>Haces el quiz de la página. Si sale 100%, escribes en el chat <code>checkpoint 1</code>.</li>
+      <li>Juegas con la simulación cuando la haya, hasta que el término de la ecuación se vea.</li>
+      <li>Haces el quiz de la página. Si sale 100%, escribes en el chat <code>checkpoint N</code>.</li>
       <li>Ahí te pregunto con las manos vacías: derivar, interpretar, no elegir.</li>
     </ul>
     <p class="muted">Notas largas de contexto: <code>notas-blowup-ns-euler.md</code> en el repo. La web es el cuaderno que expandimos.</p>

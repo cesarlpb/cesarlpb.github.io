@@ -1,0 +1,18 @@
+Retratos locales para C0. Licencias:
+
+- euler.jpg — Jakob Emanuel Handmann, 1753. Dominio público (PD-Art).
+  https://commons.wikimedia.org/wiki/File:Leonhard_Euler.jpg
+- navier.jpg — Claude-Louis Navier. Dominio público (PD-Art).
+  https://commons.wikimedia.org/wiki/File:Claude-Louis_Navier.jpg
+- stokes.jpg — George Gabriel Stokes. Dominio público (fotógrafo fallecido hace >100 años).
+  https://commons.wikimedia.org/wiki/File:George_Gabriel_Stokes.jpg
+- leray.jpg — Konrad Jacobs, Oberwolfach 1961. CC BY-SA 2.0 DE.
+  https://commons.wikimedia.org/wiki/File:Jean_Leray.jpeg
+- caffarelli.jpg — Roberto Natalini (YouTube CC BY 3.0). CC BY 3.0.
+  https://commons.wikimedia.org/wiki/File:Luis_Caffarelli.jpg
+- fefferman.jpg — Gert-Martin Greuel, MFO 2006. CC BY-SA 2.0 DE.
+  https://commons.wikimedia.org/wiki/File:Charles_Fefferman.jpg
+- vortex.jpg — NASA / edit Wikimedia. Dominio público (obra del gobierno de EE. UU.).
+  https://commons.wikimedia.org/wiki/File:Airplane_vortex_edit.jpg
+
+No se usa el logotipo de OpenAI (marca registrada).

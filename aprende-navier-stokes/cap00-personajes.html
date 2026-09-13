@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C0 · Personajes de Navier–Stokes | César Patiño</title>
+  <meta name="description" content="Euler, Navier, Stokes, Leray, CKN, Clay y OpenAI: quién escribió cada pieza de la ecuación y del problema del milenio. Capítulo 0 del curso de César Patiño." />
+  <link rel="canonical" href="https://cesarlpb.github.io/aprende-navier-stokes/cap00-personajes.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="C0 · Personajes de Navier–Stokes | César Patiño" />
+  <meta property="og:description" content="De Euler a OpenAI: las personas detrás de la ecuación, sin cerrar Clay A/B." />
+  <meta property="og:url" content="https://cesarlpb.github.io/aprende-navier-stokes/cap00-personajes.html" />
+  <meta property="og:image" content="https://cesarlpb.github.io/aprende-navier-stokes/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://cesarlpb.github.io/aprende-navier-stokes/og.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <div class="top">
+    <strong>C0 · Personajes</strong>
+    <nav>
+      <a href="index.html">Hoja de ruta</a>
+      <a href="cap00-personajes.html" aria-current="page">C0</a>
+      <a href="cap01-origen.html">C1 origen</a>
+      <a href="cap08-ns-openai.html">C8 adelanto</a>
+      <a href="index.html#autor">Sobre mí</a>
+    </nav>
+  </div>
+  <div class="wrap">
+    <p class="kicker">Capítulo 0 · checkpoint al final</p>
+    <h1>Nombres detrás de la <em>ecuación</em></h1>
+    <p class="lead">
+      Antes de derivar términos: quién escribió cada pieza, quién demostró
+      lo que sí se sabe, y quién —en 2026— empujó el caso forzado. El último
+      de la fila es OpenAI. Eso no cierra el problema del milenio (Clay A/B).
+    </p>
+
+    <article class="person">
+      <figure class="fig">
+        <img src="img/euler.jpg" alt="Retrato de Leonhard Euler" width="200" height="258" />
+        <figcaption>Handmann, 1753. Dominio público. Wikimedia.</figcaption>
+      </figure>
+      <div class="who">
+        <h2>Leonhard Euler (1707–1783)</h2>
+        <p>
+          En 1755 escribe las ecuaciones de un fluido ideal: conservación de
+          masa y de momento, sin fricción interna. Ahí está ya el esqueleto
+          <code>∂<sub>t</sub>u + (u·∇)u = −∇p</code> (densidad 1). El resto del
+          curso es pelear con ese término convectivo y con lo que falta: la
+          viscosidad.
+        </p>
+      </div>
+    </article>
+
+    <article class="person alt">
+      <figure class="fig">
+        <img src="img/navier.jpg" alt="Retrato de Claude-Louis Navier" width="200" height="262" />
+        <figcaption>Claude-Louis Navier. Dominio público. Wikimedia.</figcaption>
+      </figure>
+      <div class="who">
+        <h2>Claude-Louis Navier (1785–1836)</h2>
+        <p>
+          Ingeniero de puentes y discípulo del entorno de Fourier. En 1822
+          propone un término de resistencia molecular: aparece <code>νΔu</code>.
+          La motivación es física (choques entre partículas), no todavía el
+          tensor de esfuerzos de un continuo newtoniano. El nombre de la
+          ecuación le debe la mitad a este paso.
+        </p>
+      </div>
+    </article>
+
+    <article class="person">
+      <figure class="fig">
+        <img src="img/stokes.jpg" alt="Retrato de George Gabriel Stokes" width="200" height="265" />
+        <figcaption>George Gabriel Stokes. Dominio público. Wikimedia.</figcaption>
+      </figure>
+      <div class="who">
+        <h2>George Gabriel Stokes (1819–1903)</h2>
+        <p>
+          En los años 1840 reobtiene el mismo término viscoso desde la
+          mecánica del continuo: fluido newtoniano, simetría del tensor de
+          esfuerzos, incompresibilidad. Navier–Stokes es esa síntesis. Stokes
+          deja además el flujo de Stokes (Re bajo) y el teorema que lleva su
+          nombre, que más adelante usaremos para hablar de vorticidad.
+        </p>
+      </div>
+    </article>
+
+    <article class="person alt">
+      <figure class="fig">
+        <img src="img/leray.jpg" alt="Jean Leray en Oberwolfach, 1961" width="200" height="287" />
+        <figcaption>Konrad Jacobs, MFO 1961. CC BY-SA 2.0 DE.</figcaption>
+      </figure>
+      <div class="who">
+        <h2>Jean Leray (1906–1998)</h2>
+        <p>
+          1934: soluciones débiles con energía finita. La viscosidad da
+          existencia global en ese sentido, no regularidad clásica. El
+          milenio pregunta si esas soluciones son suaves para siempre (o si
+          pueden romper en tiempo finito). Leray es el punto de partida del
+          análisis moderno; lo veremos en el capítulo 3.
+        </p>
+      </div>
+    </article>
+
+    <article class="person">
+      <figure class="fig">
+        <img src="img/caffarelli.jpg" alt="Luis Caffarelli" width="200" height="200" />
+        <figcaption>Roberto Natalini. CC BY 3.0. Wikimedia.</figcaption>
+      </figure>
+      <div class="who">
+        <h2>Luis Caffarelli (n. 1948) y CKN</h2>
+        <p>
+          Con Robert Kohn y Louis Nirenberg (1982): regularidad parcial. El
+          conjunto de singularidades, si existe, es “pequeño” (medida
+          parabólica cero). No resuelve Clay; acota dónde podría fallar la
+          suavidad. Beale–Kato–Majda (1984) dan el criterio en Euler: el
+          blowup equivale a que <code>∫‖ω‖<sub>∞</sub></code> diverja. Esos
+          nombres viven en los capítulos 4 y 5.
+        </p>
+      </div>
+    </article>
+
+    <article class="person alt">
+      <figure class="fig">
+        <img src="img/fefferman.jpg" alt="Charles Fefferman" width="200" height="227" />
+        <figcaption>Gert-Martin Greuel, MFO 2006. CC BY-SA 2.0 DE.</figcaption>
+      </figure>
+      <div class="who">
+        <h2>Charles Fefferman (n. 1949) y el Clay</h2>
+        <p>
+          En 2000 el Clay Mathematics Institute publica el enunciado oficial:
+          alternativas A/B (suavidad o blowup <em>sin</em> fuerza rara) frente
+          a C/D (lo mismo, pero con fuerza suave de soporte compacto).
+          Fefferman escribe el texto que todo el mundo cita. Un paper que
+          resuelve C/D no cobra el millón ni cierra A/B.
+        </p>
+      </div>
+    </article>
+
+    <div class="card">
+      <h2>El siglo XXI, en una lista</h2>
+      <ul class="plain">
+        <li><strong>Córdoba–Martínez-Zoroa</strong> y el programa de capas: blowup de Euler <em>forzado</em>, con fuerza controlada.</li>
+        <li><strong>Alpöge–Buckmaster</strong> (y trabajos vecinos): Euler forzado con <code>f</code> suave.</li>
+        <li><strong>OpenAI, Euler 2026</strong>: blowup de Euler <em>sin</em> fuerza, dato inicial <code>C∞<sub>c</sub></code>. Relacionado, no es el problema Clay.</li>
+      </ul>
+    </div>
+
+    <article class="person">
+      <figure class="fig">
+        <img src="img/vortex.jpg" alt="Vórtices de punta de ala, fotografía NASA" width="200" height="163" />
+        <figcaption>NASA. Dominio público. No es el campo del paper; ilustra vórtices reales.</figcaption>
+      </figure>
+      <div class="who">
+        <h2>OpenAI (2026) · último de la fila</h2>
+        <p>
+          El 8 de septiembre de 2026 publican un blowup de Navier–Stokes
+          <em>forzado</em>: fuerza suave de soporte compacto, dato nulo, energía
+          acotada, <code>‖u‖<sub>∞</sub> → ∞</code> en tiempo finito. Es el
+          caso Clay C/D, no A/B. Hay formalización en Lean; OpenAI dijo que no
+          reclamaría el premio. En este curso es el destino, no el punto de
+          partida: primero Euler, viscosidad, Leray, BKM, CKN, capas, y al
+          final el vórtice auto-semejante.
+        </p>
+      </div>
+    </article>
+
+    <h2>Checkpoint 0</h2>
+    <p class="muted">Cuatro preguntas de mapa. Si sale 100%, en el chat: <code>checkpoint 0</code>.</p>
+    <div class="quiz" id="quiz"></div>
+    <p class="credits">
+      Retratos vía Wikimedia; créditos y licencias en
+      <code>img/CREDITS.txt</code>. Fotos modernas: CC BY / CC BY-SA (atribución en cada pie).
+    </p>
+  </div>
+  <script src="quiz.js"></script>
+  <script>
+    mountQuiz(document.getElementById("quiz"), {
+      id: "c0",
+      questions: [
+        {
+          q: "Las ecuaciones de Euler (1755) se distinguen de Navier–Stokes sobre todo porque…",
+          opts: [
+            "Euler ya incluye viscosidad y Stokes la quita.",
+            "Euler es el fluido ideal (sin νΔu); Navier y Stokes añaden la viscosidad.",
+            "Euler solo vale en 2D y Navier–Stokes solo en 3D."
+          ],
+          a: 1
+        },
+        {
+          q: "Jean Leray (1934) garantiza, grosso modo…",
+          opts: [
+            "Existencia de soluciones débiles con energía finita, no la regularidad clásica para siempre.",
+            "Que no puede haber blowup en 3D.",
+            "La solución del problema del milenio Clay A."
+          ],
+          a: 0
+        },
+        {
+          q: "El enunciado Clay de Fefferman: A/B frente a C/D se diferencia por…",
+          opts: [
+            "A/B es 2D y C/D es 3D.",
+            "C/D admite una fuerza suave de soporte compacto; A/B es el problema homogéneo (sin esa fuerza).",
+            "C/D es Euler y A/B es Navier–Stokes."
+          ],
+          a: 1
+        },
+        {
+          q: "El paper de OpenAI de septiembre de 2026, en este curso, se cuenta como…",
+          opts: [
+            "La solución aceptada de Clay A/B y el millón de dólares.",
+            "Un blowup forzado de NS (tipo C/D), último tema; no cierra A/B.",
+            "Un resultado solo numérico, sin ecuación."
+          ],
+          a: 1
+        }
+      ]
+    });
+  </script>
+</body>
+</html>
