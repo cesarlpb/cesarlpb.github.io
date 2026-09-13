@@ -145,7 +145,8 @@ body.level1 .l1 { display: flex; flex-direction: column; gap: 10px; }
 }
 .person .fig img {
   width: 100%;
-  max-height: 280px;
+  max-width: 148px;
+  max-height: 176px;
   object-fit: cover;
   object-position: top;
   border-radius: 16px;
@@ -164,6 +165,7 @@ body.level1 .l1 { display: flex; flex-direction: column; gap: 10px; }
   .person { grid-template-columns: 200px 1fr; }
   .person.alt { grid-template-columns: 1fr 200px; }
   .person.alt .fig { order: 2; }
+  .person .fig img { max-width: none; max-height: 280px; }
 }
 .author {
   display: grid;
