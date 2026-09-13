@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+.cursor/
+.vscode/
+.git/
+*.canvas.tsx
+*.canvas.data.json
+notas-blowup*.md
+notas-*.md
+PUBLISH.md
+agent-transcripts/
+terminals/
