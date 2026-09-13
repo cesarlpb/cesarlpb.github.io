@@ -1,6 +1,27 @@
 export const experiencia = {
   es: [
     {
+      "empresa": "Spoki",
+      "cargo": "Full-stack developer",
+      "periodo": "Junio 2026 - actualidad",
+      "descripcion": `Productos con LLM, agentes y RAG. Frontend Next.js o React; backend Next.js, Node o FastAPI.`,
+      "tags": ["LLM", "Agentes", "RAG", "Next.js", "React", "Node", "FastAPI"]
+    },
+    {
+      "empresa": "CETT · UTB",
+      "cargo": "Profesor de universidad",
+      "periodo": "Abril 2026 - Junio 2026",
+      "descripcion": `Docencia universitaria en desarrollo de aplicaciones.`,
+      "tags": ["Docencia", "Universidad"]
+    },
+    {
+      "empresa": "InnoIT Consulting SL",
+      "cargo": "Consultor",
+      "periodo": "Septiembre 2025 - Marzo 2026",
+      "descripcion": `Consultora para un cliente asegurador. Servicios con LLM e IA; React / Next.js y backend Node o FastAPI.`,
+      "tags": ["FastAPI", "Python", "Seguros", "LLM", "IA"]
+    },
+    {
       "empresa": "Fundación Esplai",
       "cargo": "Instructor de Python y Desarrollo Web",
       "periodo": "Abril 2024 - Mayo 2024",
@@ -107,6 +128,27 @@ export const experiencia = {
     },
   ],
   en:[
+    {
+      "empresa": "Spoki",
+      "cargo": "Full-stack developer",
+      "periodo": "June 2026 - present",
+      "descripcion": "LLM, agents and RAG products. Frontend Next.js or React; backend Next.js, Node or FastAPI.",
+      "tags": ["LLM", "Agents", "RAG", "Next.js", "React", "Node", "FastAPI"]
+    },
+    {
+      "empresa": "CETT · UTB",
+      "cargo": "University lecturer",
+      "periodo": "April 2026 - June 2026",
+      "descripcion": "University teaching in application development.",
+      "tags": ["Teaching", "University"]
+    },
+    {
+      "empresa": "InnoIT Consulting SL",
+      "cargo": "Consultant",
+      "periodo": "September 2025 - March 2026",
+      "descripcion": "Consultancy for an insurance client. LLM/AI services; React / Next.js and Node or FastAPI.",
+      "tags": ["FastAPI", "Python", "Insurance", "LLM", "AI"]
+    },
     {
       "empresa": "Fundación Esplai",
       "cargo": "Python Instructor",
