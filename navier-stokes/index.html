@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curso · de Euler a Navier–Stokes</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <div class="top">
+    <strong>De Newton al NS con blowup forzado</strong>
+    <nav>
+      <a href="index.html" aria-current="page">Hoja de ruta</a>
+      <a href="cap01-origen.html">C1 origen</a>
+      <a href="cap08-ns-openai.html">C8 adelanto NS</a>
+    </nav>
+  </div>
+  <div class="wrap">
+    <p class="kicker">Curso visual · Navier–Stokes al final</p>
+    <h1>Hoja de <em>ruta</em></h1>
+    <p class="lead">
+      Empezamos por cómo se escribe la ecuación. Luego, en orden de complejidad:
+      vorticidad, energía, Euler, el programa de capas, y al final el paper de
+      OpenAI (Clay C/D). Cada capítulo tiene apuntes y una simulación. En los
+      checkpoints haces el quiz de la página y luego me dices
+      <code>checkpoint N</code> en el chat: te pregunto yo, sin opciones.
+    </p>
+
+    <div class="callout">
+      Ahora estamos en el <strong>capítulo 1</strong>. El sim del vórtice que
+      ya construimos está colgado como adelanto en el 8, para no perderlo;
+      no lo uses como punto de partida.
+    </div>
+
+    <div class="road">
+      <a href="cap01-origen.html" data-quiz="c1">
+        <span class="n">01</span>
+        <span>
+          <strong>Origen de la ecuación</strong><br />
+          <small>Continuo, masa, momento, Euler 1755, viscosidad de Navier–Stokes. Parcela y vórtice de Lamb–Oseen.</small>
+        </span>
+        <span class="pill go">empezar</span>
+      </a>
+      <div class="soon">
+        <span class="n">02</span>
+        <span>
+          <strong>Vorticidad y la diferencia 2D / 3D</strong><br />
+          <small>ω = curl u. En 2D se transporta; en 3D se estira. Por qué el milenio es tridimensional.</small>
+        </span>
+        <span class="pill">después</span>
+      </div>
+      <div class="soon">
+        <span class="n">03</span>
+        <span>
+          <strong>Energía y Leray (1934)</strong><br />
+          <small>Igualdad energética, soluciones débiles, lo que la viscosidad sí garantiza.</small>
+        </span>
+        <span class="pill">después</span>
+      </div>
+      <div class="soon">
+        <span class="n">04</span>
+        <span>
+          <strong>Euler y Beale–Kato–Majda</strong><br />
+          <small>Sin viscosidad. El blowup equivale a que ∫‖ω‖∞ diverja.</small>
+        </span>
+        <span class="pill">después</span>
+      </div>
+      <div class="soon">
+        <span class="n">05</span>
+        <span>
+          <strong>Regularidad parcial y el problema Clay</strong><br />
+          <small>Caffarelli–Kohn–Nirenberg. Alternativas A/B/C/D de Fefferman.</small>
+        </span>
+        <span class="pill">después</span>
+      </div>
+      <div class="soon">
+        <span class="n">06</span>
+        <span>
+          <strong>Blowups forzados: Córdoba–Martínez-Zoroa</strong><br />
+          <small>Capas que se amplifican. La fuerza se mantiene controlada.</small>
+        </span>
+        <span class="pill">después</span>
+      </div>
+      <div class="soon">
+        <span class="n">07</span>
+        <span>
+          <strong>Euler 2026</strong><br />
+          <small>Alpöge–Buckmaster (forzado, f suave) y OpenAI (sin fuerza, dato C∞c).</small>
+        </span>
+        <span class="pill">después</span>
+      </div>
+      <a href="cap08-ns-openai.html">
+        <span class="n">08</span>
+        <span>
+          <strong>Navier–Stokes forzado (OpenAI) · adelanto</strong><br />
+          <small>El vórtice que ya simulamos. Lo estudiaremos en serio al final.</small>
+        </span>
+        <span class="pill">adelanto</span>
+      </a>
+    </div>
+
+    <h2>Cómo usamos esto</h2>
+    <ul class="plain">
+      <li>Lees los apuntes del capítulo en la web (van a vivir aquí, no solo en el <code>.md</code>).</li>
+      <li>Juegas con la simulación hasta que el término de la ecuación se vea.</li>
+      <li>Haces el quiz de la página. Si sale 100%, escribes en el chat <code>checkpoint 1</code>.</li>
+      <li>Ahí te pregunto con las manos vacías: derivar, interpretar, no elegir.</li>
+    </ul>
+    <p class="muted">Notas largas de contexto: <code>notas-blowup-ns-euler.md</code> en el repo. La web es el cuaderno que expandimos.</p>
+  </div>
+  <script src="quiz.js"></script>
+  <script>markRoadmap();</script>
+</body>
+</html>

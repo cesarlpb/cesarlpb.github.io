@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C8 adelanto · campo líder NS</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body class="sim">
+  <div class="top">
+    <strong>C8 adelanto · NS OpenAI</strong>
+    <nav>
+      <a href="index.html">Hoja de ruta</a>
+      <a href="cap01-origen.html">C1 origen</a>
+      <a href="cap08-ns-openai.html" aria-current="page">C8</a>
+    </nav>
+  </div>
+  <header class="sim-head">
+    <h1>Campo líder del blowup forzado</h1>
+    <p>
+      Adelanto del último tema. Empieza por el capítulo 1. Nivel 0: servilleta.
+      Nivel 1: V<sub>0</sub> y Π de (4.7) y ajuste del residuo (4.13).
+    </p>
+  </header>
+  <main class="sim-main">
+    <canvas id="view"></canvas>
+    <aside>
+      <section>
+        <h2>Aproximación</h2>
+        <div class="row">
+          <button id="lv0" class="on">Nivel 0</button>
+          <button id="lv1">Nivel 1</button>
+        </div>
+        <p class="note" id="levelNote">
+          Servilleta: V<sub>0</sub> ≈ −U<sub>η</sub>(1−e<sup>−X</sup>). Residuo no controlado.
+        </p>
+      </section>
+      <section>
+        <h2>Tiempo</h2>
+        <label>τ = 1 − t <b id="tauLabel">0.200</b></label>
+        <input id="tau" type="range" min="0.012" max="0.80" step="0.001" value="0.20" />
+        <div class="row">
+          <button id="play" class="on">Animar colapso</button>
+          <button id="freeze">Campo fijo</button>
+        </div>
+      </section>
+      <section>
+        <h2>Vista</h2>
+        <div class="row">
+          <button id="view3d" class="on">Proyección 3D</button>
+          <button id="viewMer">Plano (r, z)</button>
+        </div>
+        <label><input id="follow" type="checkbox" checked /> Seguir al núcleo</label>
+        <label><input id="pulses" type="checkbox" /> Anillos de pulso (esquema)</label>
+        <label class="l1"><input id="residMap" type="checkbox" checked /> Mapa del residuo (4.13)</label>
+      </section>
+      <section>
+        <h2>Escalas en este τ</h2>
+        <div class="stats">
+          <div class="stat"><b id="uinf">—</b><span>|uθ| típica</span></div>
+          <div class="stat"><b id="ke">—</b><span>energía del núcleo</span></div>
+          <div class="stat"><b id="lr">—</b><span>ℓr</span></div>
+          <div class="stat"><b id="lz">—</b><span>ℓz</span></div>
+        </div>
+      </section>
+      <section>
+        <h2>Residuo líder (4.13)</h2>
+        <div class="stats">
+          <div class="stat"><b id="rms0">—</b><span>RMS servilleta</span></div>
+          <div class="stat"><b id="rms1">—</b><span>RMS nivel 1</span></div>
+        </div>
+        <div class="bar" title="RMS ajustado / RMS servilleta"><i id="rmsBar"></i></div>
+        <p class="note" id="rmsNote">Pasa a nivel 1 para imponer (4.7) y ajustar.</p>
+      </section>
+      <section class="l1">
+        <h2>Parámetros del perfil</h2>
+        <label>k<sub>F</sub> decaimiento radial E <b id="kFLab">1.00</b></label>
+        <input id="kF" type="range" min="0.35" max="2.40" step="0.01" value="1.00" />
+        <label>α sesgo axial <b id="alphaLab">0.12</b></label>
+        <input id="alpha" type="range" min="-0.20" max="0.50" step="0.01" value="0.12" />
+        <label>β dipolo de U <b id="betaLab">0.90</b></label>
+        <input id="beta" type="range" min="0.20" max="1.60" step="0.01" value="0.90" />
+        <div class="row">
+          <button id="fit">Ajustar en el núcleo</button>
+          <button id="resetP">Servilleta</button>
+        </div>
+        <p class="note" id="paramNote">F = F0(1+εη)e^{−kF X}, U = (α+β η e^{−γη²})e^{−kU X}</p>
+      </section>
+      <section>
+        <h2>Campo usado</h2>
+        <p class="note">
+          q − z² q<sup>2h</sup> = τ, X = r² / 2q, η = z / q<sup>D</sup>,
+          A = 1/2 + h, D = 1/2 − h, h = 0.01.
+        </p>
+        <p class="note" id="fieldNote">
+          <code>uθ = q<sup>−A</sup> E</code>,
+          <code>uz = q<sup>−A</sup> U</code>,
+          <code>r ur = V0</code> aproximado.
+        </p>
+      </section>
+      <p class="note">
+        Un solver web no puede verificar el teorema. El nivel 1 solo hace pequeño el
+        residuo tangencial líder dentro de X ≤ Xa; el anillo y los pulsos siguen fuera.
+      </p>
+    </aside>
+  </main>
+  <script>
+    const H = 0.01;
+    const A = 0.5 + H;
+    const D = 0.5 - H;
+    const XA = 1.15;
+    const NAPKIN = { F0: 1, eps: 0.08, kF: 1, alpha: 0.12, beta: 0.9, gam: 0.5, kU: 1 };
+    const canvas = document.getElementById("view");
+    const ctx = canvas.getContext("2d");
+    const tauInput = document.getElementById("tau");
+    const ui = {
+      tauLabel: document.getElementById("tauLabel"),
+      uinf: document.getElementById("uinf"),
+      ke: document.getElementById("ke"),
+      lr: document.getElementById("lr"),
+      lz: document.getElementById("lz"),
+      play: document.getElementById("play"),
+      freeze: document.getElementById("freeze"),
+      view3d: document.getElementById("view3d"),
+      viewMer: document.getElementById("viewMer"),
+      follow: document.getElementById("follow"),
+      pulses: document.getElementById("pulses"),
+      residMap: document.getElementById("residMap"),
+      lv0: document.getElementById("lv0"),
+      lv1: document.getElementById("lv1"),
+      levelNote: document.getElementById("levelNote"),
+      fieldNote: document.getElementById("fieldNote"),
+      rms0: document.getElementById("rms0"),
+      rms1: document.getElementById("rms1"),
+      rmsBar: document.getElementById("rmsBar"),
+      rmsNote: document.getElementById("rmsNote"),
+      kF: document.getElementById("kF"),
+      alpha: document.getElementById("alpha"),
+      beta: document.getElementById("beta"),
+      kFLab: document.getElementById("kFLab"),
+      alphaLab: document.getElementById("alphaLab"),
+      betaLab: document.getElementById("betaLab"),
+      paramNote: document.getElementById("paramNote"),
+      fit: document.getElementById("fit"),
+      resetP: document.getElementById("resetP"),
+    };
+
+    let tau = Number(tauInput.value);
+    let playing = true;
+    let mode = "3d";
+    let level = 0;
+    let particles = [];
+    let last = performance.now();
+    let params = { ...NAPKIN };
+    let rmsNapkin = 0;
+    let rmsFit = 0;
+
+    function clampParams(p) {
+      p.F0 = Math.min(2.5, Math.max(0.25, p.F0));
+      p.eps = Math.min(0.35, Math.max(-0.15, p.eps));
+      p.kF = Math.min(2.6, Math.max(0.3, p.kF));
+      p.alpha = Math.min(0.55, Math.max(-0.25, p.alpha));
+      p.beta = Math.min(1.7, Math.max(0.15, p.beta));
+      p.gam = Math.min(1.6, Math.max(0.08, p.gam));
+      p.kU = Math.min(2.6, Math.max(0.3, p.kU));
+      return p;
+    }
+
+    function gU(p, eta) {
+      return p.alpha + p.beta * eta * Math.exp(-p.gam * eta * eta);
+    }
+    function gUeta(p, eta) {
+      const e = Math.exp(-p.gam * eta * eta);
+      return p.beta * e * (1 - 2 * p.gam * eta * eta);
+    }
+    function Fof(p, X, eta) {
+      return p.F0 * (1 + p.eps * eta) * Math.exp(-p.kF * X);
+    }
+    function Uof(p, X, eta) {
+      return gU(p, eta) * Math.exp(-p.kU * X);
+    }
+    function axFactor(k, X) {
+      if (X < 1e-9) return 1;
+      return (1 - Math.exp(-k * X)) / (k * X);
+    }
+    function AXofU(p, X, eta) {
+      return gU(p, eta) * axFactor(p.kU, X);
+    }
+    function AXofUeta(p, X, eta) {
+      return gUeta(p, eta) * axFactor(p.kU, X);
+    }
+    function V0exact(p, X, eta) {
+      const dlt = 1 - eta * eta;
+      const L = 1 - 2 * H * eta * eta;
+      const U = Uof(p, X, eta);
+      return (X / L) * (2 * eta * U - 2 * D * eta * AXofU(p, X, eta) - dlt * AXofUeta(p, X, eta));
+    }
+
+    function residualAt(p, X, eta) {
+      const dlt = 1 - eta * eta;
+      const L = Math.max(1e-6, 1 - 2 * H * eta * eta);
+      const F = Fof(p, X, eta);
+      const U = Uof(p, X, eta);
+      const lhsF = -2 * L * (p.kF * p.kF * X - 2 * p.kF);
+      const lhsU = -2 * L * U * (p.kU * p.kU * X - p.kU);
+      const W = 1 - 2 * D * eta * AXofU(p, X, eta) - dlt * AXofUeta(p, X, eta);
+      const Hc = D * eta + dlt * U;
+      const l = 1 - p.kF * X;
+      const logEeta = p.eps / (1 + p.eps * eta);
+      const Sq = -W * l - H * (1 - 2 * eta * U) - Hc * logEeta;
+      const DXU = -p.kU * X * U;
+      const P0 = (p.F0 * p.F0) / (2 * p.kF);
+      const decay = Math.exp(-2 * p.kF * X);
+      const Pi = -P0 * (1 + p.eps * eta) * (1 + p.eps * eta) * decay;
+      const Pieta = -2 * P0 * p.eps * (1 + p.eps * eta) * decay;
+      const DXPi = X * F * F;
+      const Ueta = gUeta(p, eta) * Math.exp(-p.kU * X);
+      const Sn = -W * DXU - A * (1 - 2 * eta * U) * U - Hc * Ueta - dlt * Pieta + 4 * A * eta * Pi + 2 * eta * DXPi;
+      const rF = lhsF - Sq;
+      const rU = lhsU - Sn;
+      return { rF, rU, mag: Math.hypot(rF, rU) };
+    }
+
+    function residualRMS(p) {
+      let s = 0;
+      let n = 0;
+      for (let i = 0; i < 10; i++) {
+        const X = 0.04 + (XA - 0.04) * (i / 9);
+        for (let j = 0; j < 9; j++) {
+          const eta = -0.8 + 1.6 * (j / 8);
+          const r = residualAt(p, X, eta);
+          s += r.rF * r.rF + r.rU * r.rU;
+          n += 1;
+        }
+      }
+      return Math.sqrt(s / n);
+    }
+
+    function descendFrom(start) {
+      const keys = ["F0", "eps", "kF", "alpha", "beta", "gam", "kU"];
+      const step0 = { F0: 0.18, eps: 0.03, kF: 0.18, alpha: 0.06, beta: 0.12, gam: 0.08, kU: 0.18 };
+      let cur = clampParams({ ...start });
+      let best = residualRMS(cur);
+      for (let pass = 0; pass < 12; pass++) {
+        const shrink = Math.pow(0.68, pass);
+        for (const key of keys) {
+          for (const dir of [-1, 1]) {
+            const trial = { ...cur };
+            trial[key] = cur[key] + dir * step0[key] * shrink;
+            clampParams(trial);
+            const cost = residualRMS(trial);
+            if (cost < best) {
+              cur = trial;
+              best = cost;
+            }
+          }
+        }
+      }
+      return { params: cur, cost: best };
+    }
+
+    function randomStart() {
+      return clampParams({
+        F0: 0.3 + Math.random() * 1.4,
+        eps: -0.04 + Math.random() * 0.22,
+        kF: 0.35 + Math.random() * 1.3,
+        alpha: -0.08 + Math.random() * 0.35,
+        beta: 0.35 + Math.random() * 1.1,
+        gam: 0.15 + Math.random() * 0.9,
+        kU: 0.35 + Math.random() * 1.3,
+      });
+    }
+
+    function fitCore() {
+      let best = descendFrom(params);
+      const fromNapkin = descendFrom(NAPKIN);
+      if (fromNapkin.cost < best.cost) best = fromNapkin;
+      for (let i = 0; i < 6; i++) {
+        const trial = descendFrom(randomStart());
+        if (trial.cost < best.cost) best = trial;
+      }
+      params = best.params;
+      rmsFit = best.cost;
+      syncSliders();
+      updateResidualUI();
+    }
+
+    function solveQ(z, t) {
+      const twoH = 2 * H;
+      let q = t + Math.pow(Math.abs(z) + 1e-9, 1 / D);
+      for (let i = 0; i < 6; i++) {
+        const q2h = Math.pow(q, twoH);
+        const f = q - z * z * q2h - t;
+        const df = 1 - z * z * twoH * Math.pow(q, twoH - 1);
+        q = Math.max(t * 0.25, q - f / Math.max(df, 1e-6));
+      }
+      return q;
+    }
+
+    function velocity0(r, z, t) {
+      const q = solveQ(z, t);
+      const X = (r * r) / (2 * q);
+      const eta = z / Math.pow(q, D);
+      const E = Math.sqrt(Math.max(2 * X, 0)) * Math.exp(-X) * (1 + 0.08 * eta);
+      const U = (0.12 + 0.9 * eta * Math.exp(-0.5 * eta * eta)) * Math.exp(-X);
+      const Ueta = 0.9 * Math.exp(-0.5 * eta * eta) * (1 - eta * eta);
+      const V0 = -Ueta * (1 - Math.exp(-X));
+      return {
+        ur: r > 1e-6 ? V0 / r : 0,
+        uth: Math.pow(q, -A) * E,
+        uz: Math.pow(q, -A) * U,
+        X, eta, q,
+      };
+    }
+
+    function velocity1(r, z, t) {
+      const q = solveQ(z, t);
+      const X = (r * r) / (2 * q);
+      const eta = z / Math.pow(q, D);
+      const F = Fof(params, X, eta);
+      const E = Math.sqrt(Math.max(2 * X, 0)) * F;
+      const U = Uof(params, X, eta);
+      const V0 = V0exact(params, X, eta);
+      return {
+        ur: r > 1e-6 ? V0 / r : 0,
+        uth: Math.pow(q, -A) * E,
+        uz: Math.pow(q, -A) * U,
+        X, eta, q,
+      };
+    }
+
+    function velocity(r, z, t) {
+      return level === 0 ? velocity0(r, z, t) : velocity1(r, z, t);
+    }
+
+    function spawn(t) {
+      const q = t;
+      const X = -Math.log(1 - Math.random() * 0.85) * 0.55;
+      const eta = (Math.random() * 2 - 1) * 0.95;
+      return {
+        r: Math.sqrt(2 * q * X),
+        z: Math.pow(q, D) * eta,
+        th: Math.random() * Math.PI * 2,
+        age: 0,
+      };
+    }
+
+    function resetParticles() {
+      particles = Array.from({ length: 2200 }, () => spawn(tau));
+    }
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = Math.max(1, Math.floor(rect.width * dpr));
+      canvas.height = Math.max(1, Math.floor(rect.height * dpr));
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function syncSliders() {
+      ui.kF.value = String(params.kF);
+      ui.alpha.value = String(params.alpha);
+      ui.beta.value = String(params.beta);
+      ui.kFLab.textContent = params.kF.toFixed(2);
+      ui.alphaLab.textContent = params.alpha.toFixed(2);
+      ui.betaLab.textContent = params.beta.toFixed(2);
+      ui.paramNote.textContent =
+        "F0=" + params.F0.toFixed(2) +
+        "  ε=" + params.eps.toFixed(2) +
+        "  γ=" + params.gam.toFixed(2) +
+        "  kU=" + params.kU.toFixed(2);
+    }
+
+    function updateResidualUI() {
+      ui.rms0.textContent = rmsNapkin.toFixed(3);
+      ui.rms1.textContent = level === 1 ? rmsFit.toFixed(3) : "—";
+      const ratio = rmsNapkin > 1e-9 ? Math.min(1, rmsFit / rmsNapkin) : 0;
+      ui.rmsBar.style.width = level === 1 ? (100 * ratio).toFixed(1) + "%" : "100%";
+      if (level === 0) {
+        ui.rmsNote.textContent = "El RMS servilleta mide (4.13) sobre F, U de servilleta, no el V0 usado al advectar.";
+      } else {
+        const pct = rmsNapkin > 0 ? (100 * (1 - rmsFit / rmsNapkin)).toFixed(0) : "0";
+        ui.rmsNote.textContent = "Residuo líder en X ≤ " + XA + ", |η| ≤ 0.8. Bajó un " + pct + "% respecto a la servilleta.";
+      }
+    }
+
+    function updateStats() {
+      ui.tauLabel.textContent = tau.toFixed(3);
+      ui.uinf.textContent = Math.pow(tau, -A).toFixed(2);
+      ui.ke.textContent = Math.pow(tau, 0.5 - 3 * H).toFixed(3);
+      ui.lr.textContent = Math.sqrt(tau).toFixed(3);
+      ui.lz.textContent = Math.pow(tau, D).toFixed(3);
+    }
+
+    function setLevel(next) {
+      level = next;
+      document.body.classList.toggle("level1", level === 1);
+      ui.lv0.classList.toggle("on", level === 0);
+      ui.lv1.classList.toggle("on", level === 1);
+      if (level === 0) {
+        ui.levelNote.textContent = "Servilleta: V0 ≈ −Uη(1−e−X). Residuo no controlado.";
+        ui.fieldNote.innerHTML = "<code>uθ = q<sup>−A</sup> E</code>, <code>uz = q<sup>−A</sup> U</code>, <code>r ur = V0</code> aproximado.";
+      } else {
+        ui.levelNote.textContent = "V0 y Π de (4.7). El ajuste minimiza el RMS de (4.13) en el núcleo.";
+        ui.fieldNote.innerHTML = "<code>V0 = (X/L)(2ηU − 2Dη AX(U) − d ∂η AX(U))</code>, <code>ΠX = F²</code>.";
+        rmsFit = residualRMS(params);
+      }
+      resetParticles();
+      updateResidualUI();
+    }
+
+    function project(p, w, h, scale) {
+      const x = p.r * Math.cos(p.th);
+      const y = p.r * Math.sin(p.th);
+      const zVis = p.z * 2.4;
+      if (mode === "mer") {
+        return { sx: w / 2 + x * scale, sy: h / 2 - zVis * scale, depth: y, x, y };
+      }
+      return {
+        sx: w / 2 + scale * (x + 0.38 * y),
+        sy: h * 0.55 - scale * (zVis + 0.42 * y),
+        depth: y,
+        x, y,
+      };
+    }
+
+    function drawResidualMap(w, h, scale) {
+      const q = Math.max(tau, 1e-6);
+      let peak = 1e-6;
+      const cells = [];
+      for (let i = 0; i < 14; i++) {
+        for (let j = 0; j < 16; j++) {
+          const X = 0.06 + XA * (i / 13);
+          const eta = -0.95 + 1.9 * (j / 15);
+          const r = Math.sqrt(2 * q * X);
+          const z = Math.pow(q, D) * eta;
+          const mag = residualAt(params, X, eta).mag;
+          peak = Math.max(peak, mag);
+          cells.push({ r, z, mag });
+        }
+      }
+      for (const c of cells) {
+        const s = project({ r: c.r, z: c.z, th: 0 }, w, h, scale);
+        const t = Math.min(1, c.mag / peak);
+        ctx.fillStyle = "rgba(196,122,98," + (0.08 + 0.42 * t) + ")";
+        ctx.fillRect(s.sx - 5, s.sy - 5, 10, 10);
+        const sL = project({ r: c.r, z: c.z, th: Math.PI }, w, h, scale);
+        ctx.fillRect(sL.sx - 5, sL.sy - 5, 10, 10);
+      }
+    }
+
+    function step(dt) {
+      if (playing) {
+        tau = Math.max(0.012, tau * Math.exp(-0.22 * dt));
+        if (tau <= 0.0125) tau = 0.8;
+        tauInput.value = String(tau);
+      }
+      const timeScale = 0.22 * Math.pow(tau, 0.5);
+      for (const p of particles) {
+        const v = velocity(p.r, p.z, tau);
+        p.r += v.ur * dt * timeScale;
+        p.z += v.uz * dt * timeScale;
+        p.th += (p.r > 1e-4 ? v.uth / p.r : 0) * dt * timeScale;
+        p.age += dt;
+        const X = (p.r * p.r) / (2 * Math.max(tau, 1e-6));
+        const eta = p.z / Math.pow(Math.max(tau, 1e-6), D);
+        if (p.r < 0) p.r = Math.abs(p.r);
+        if (X > 2.8 || Math.abs(eta) > 1.25 || p.age > 8) {
+          const n = spawn(tau);
+          p.r = n.r; p.z = n.z; p.th = n.th; p.age = 0;
+        }
+      }
+    }
+
+    function draw() {
+      const w = canvas.clientWidth;
+      const h = canvas.clientHeight;
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = "#101214";
+      ctx.fillRect(0, 0, w, h);
+
+      const lr = Math.sqrt(tau);
+      const lz = Math.pow(tau, D);
+      const base = Math.min(w, h);
+      const zoom = ui.follow.checked
+        ? (0.34 * base) / Math.max(lr, 0.05)
+        : 0.20 * base;
+      const scale = mode === "mer" ? zoom * 0.85 : zoom;
+
+      ctx.strokeStyle = "#2a2d32";
+      ctx.beginPath();
+      ctx.moveTo(w / 2, 24);
+      ctx.lineTo(w / 2, h - 24);
+      ctx.stroke();
+
+      if (level === 1 && mode === "mer" && ui.residMap.checked) {
+        drawResidualMap(w, h, scale);
+      }
+
+      ctx.strokeStyle = "rgba(201,163,106,0.22)";
+      for (const frac of [-0.7, 0, 0.7]) {
+        ctx.beginPath();
+        for (let k = 0; k <= 72; k++) {
+          const s = project({ r: 1.15 * lr, z: frac * lz, th: (k / 72) * Math.PI * 2 }, w, h, scale);
+          if (k === 0) ctx.moveTo(s.sx, s.sy);
+          else ctx.lineTo(s.sx, s.sy);
+        }
+        ctx.closePath();
+        ctx.stroke();
+      }
+
+      if (ui.pulses.checked) {
+        const rings = 5;
+        for (let i = 0; i < rings; i++) {
+          const rr = lr * (1.55 + 0.12 * i);
+          const phase = (1 / tau + i) * 3;
+          ctx.strokeStyle = "rgba(201,163,106,0.35)";
+          ctx.beginPath();
+          for (let k = 0; k <= 64; k++) {
+            const th = (k / 64) * Math.PI * 2;
+            const wobble = 1 + 0.04 * Math.sin(6 * th + phase);
+            const q = { r: rr * wobble, z: 0.15 * lr * Math.sin(phase + i), th };
+            const s = project(q, w, h, scale);
+            if (k === 0) ctx.moveTo(s.sx, s.sy);
+            else ctx.lineTo(s.sx, s.sy);
+          }
+          ctx.closePath();
+          ctx.stroke();
+        }
+      }
+
+      const drawn = particles.map((p) => {
+        const s = project(p, w, h, scale);
+        const ahead = project({ r: p.r, z: p.z, th: p.th + 0.05 }, w, h, scale);
+        return {
+          ...s,
+          ax: ahead.sx,
+          ay: ahead.sy,
+          a: Math.min(1, 0.2 + 0.75 * Math.exp(-p.age * 0.2)),
+        };
+      }).sort((a, b) => a.depth - b.depth);
+
+      for (const p of drawn) {
+        ctx.strokeStyle = `rgba(201,163,106,${0.16 + 0.5 * p.a})`;
+        ctx.beginPath();
+        ctx.moveTo(p.sx, p.sy);
+        ctx.lineTo(p.ax, p.ay);
+        ctx.stroke();
+        ctx.fillStyle = `rgba(230,228,223,${0.18 + 0.55 * p.a})`;
+        ctx.fillRect(p.sx, p.sy, 1.4, 1.4);
+      }
+
+      ctx.fillStyle = "#9a968c";
+      ctx.font = "12px ui-monospace, monospace";
+      const viewLabel = mode === "mer" ? "plano (x, z) · eje z exagerado ×2.4" : "proyección 3D · eje z exagerado ×2.4 (en el paper h < 1/100)";
+      ctx.fillText(viewLabel, 18, 22);
+      ctx.fillStyle = "#c9a36a";
+      ctx.fillText("nivel " + level + "   t = " + (1 - tau).toFixed(3) + "   τ = " + tau.toFixed(3), 18, 40);
+    }
+
+    function frame(now) {
+      const dt = Math.min(0.05, (now - last) / 1000);
+      last = now;
+      step(dt);
+      updateStats();
+      draw();
+      requestAnimationFrame(frame);
+    }
+
+    tauInput.addEventListener("input", () => {
+      tau = Number(tauInput.value);
+      playing = false;
+      ui.play.classList.remove("on");
+      ui.freeze.classList.add("on");
+    });
+    ui.play.addEventListener("click", () => {
+      playing = true;
+      ui.play.classList.add("on");
+      ui.freeze.classList.remove("on");
+    });
+    ui.freeze.addEventListener("click", () => {
+      playing = false;
+      ui.play.classList.remove("on");
+      ui.freeze.classList.add("on");
+    });
+    ui.view3d.addEventListener("click", () => {
+      mode = "3d";
+      ui.view3d.classList.add("on");
+      ui.viewMer.classList.remove("on");
+    });
+    ui.viewMer.addEventListener("click", () => {
+      mode = "mer";
+      ui.viewMer.classList.add("on");
+      ui.view3d.classList.remove("on");
+    });
+    ui.lv0.addEventListener("click", () => setLevel(0));
+    ui.lv1.addEventListener("click", () => {
+      if (Math.abs(rmsFit - rmsNapkin) < 1e-9) fitCore();
+      setLevel(1);
+    });
+    function readSliders() {
+      params.kF = Number(ui.kF.value);
+      params.alpha = Number(ui.alpha.value);
+      params.beta = Number(ui.beta.value);
+      clampParams(params);
+      rmsFit = residualRMS(params);
+      syncSliders();
+      updateResidualUI();
+    }
+    ui.kF.addEventListener("input", readSliders);
+    ui.alpha.addEventListener("input", readSliders);
+    ui.beta.addEventListener("input", readSliders);
+    ui.fit.addEventListener("click", () => {
+      fitCore();
+      resetParticles();
+    });
+    ui.resetP.addEventListener("click", () => {
+      params = { ...NAPKIN };
+      rmsFit = residualRMS(params);
+      syncSliders();
+      updateResidualUI();
+      resetParticles();
+    });
+
+    window.addEventListener("resize", resize);
+    resize();
+    resetParticles();
+    rmsNapkin = residualRMS(NAPKIN);
+    rmsFit = rmsNapkin;
+    syncSliders();
+    updateResidualUI();
+    requestAnimationFrame(frame);
+  </script>
+</body>
+</html>

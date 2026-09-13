@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C1 · Origen de la ecuación</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <div class="top">
+    <strong>C1 · Origen de la ecuación</strong>
+    <nav>
+      <a href="index.html">Hoja de ruta</a>
+      <a href="cap01-origen.html" aria-current="page">C1</a>
+      <a href="cap08-ns-openai.html">C8 adelanto</a>
+    </nav>
+  </div>
+  <div class="wrap">
+    <p class="kicker">Capítulo 1 · checkpoint al final</p>
+    <h1>De un continuo a Euler y <em>Navier–Stokes</em></h1>
+    <p class="lead">
+      Antes de singularidades: qué se conserva, de dónde sale cada término,
+      y qué cambia al encender la viscosidad. La simulación de abajo es una
+      solución exacta (Lamb–Oseen), no un DNS.
+    </p>
+
+    <h2>1. Un fluido como continuo</h2>
+    <p>
+      En lugar de seguir moléculas, se describe un campo de velocidad
+      <code>u(x,t)</code> y una densidad <code>ρ(x,t)</code>. Una
+      <em>parcela</em> es un trozo de continuo que se mueve con el flujo.
+      La derivada material (aceleración de esa parcela) es
+    </p>
+    <pre>Du/Dt = ∂t u + (u·∇)u</pre>
+    <p>
+      El primer sumando es el cambio en un punto fijo; el segundo, el cambio
+      porque la parcela se ha desplazado. Ese segundo término es
+      <strong>no lineal</strong> y es el origen de casi toda la dificultad.
+    </p>
+
+    <h2>2. Masa: por qué ∇·u = 0</h2>
+    <p>Conservación de masa:</p>
+    <pre>∂t ρ + ∇·(ρ u) = 0</pre>
+    <p>
+      Si <code>ρ</code> es constante (agua, aire a bajo Mach, el régimen de
+      Clay), queda <code>∇·u = 0</code>: el volumen de cada parcela se
+      conserva. No puedes comprimir en una dirección sin estirar en otra.
+      Eso es la <em>incompresibilidad</em>. La presión deja de ser termodinámica
+      y pasa a ser el multiplicador de Lagrange que impone ese vínculo.
+    </p>
+
+    <h2>3. Momento: Euler (1755)</h2>
+    <p>
+      Newton para la parcela: masa × aceleración = fuerzas de superficie +
+      volumen. Si el tensor de tensiones es solo presión isotrópica
+      <code>σ = −p I</code>,
+    </p>
+    <pre>∂t u + (u·∇)u = −∇p + f ,    ∇·u = 0</pre>
+    <p>
+      Eso es Euler incompresible (con fuerza externa <code>f</code>, a menudo
+      cero). No hay fricción interna: las parcelas resbalan sin resistencia
+      al cizallamiento. Leonhard Euler lo escribe en 1755.
+    </p>
+
+    <h2>4. Viscosidad: Navier (1822) y Stokes (1845)</h2>
+    <p>
+      Un fluido real resiste el shear. El modelo newtoniano incompresible
+      añade al tensor una parte viscosa proporcional al tensor de deformación.
+      Su divergencia es lineal en <code>u</code>:
+    </p>
+    <pre>∂t u + (u·∇)u − ν Δu + ∇p = f ,    ∇·u = 0</pre>
+    <p>
+      <code>ν &gt; 0</code> es la viscosidad cinemática. El término
+      <code>ν Δu</code> <strong>suaviza gradientes</strong> (difunde vorticidad).
+      Navier lo motivó con un modelo molecular; Stokes fijó la forma constitutiva
+      que usamos. En 2D esto basta para impedir singularidades clásicas. En 3D
+      no se sabe (problema del milenio, y solo al final del curso).
+    </p>
+    <div class="callout">
+      Euler es el límite formal <code>ν → 0</code>. Ese límite es singular:
+      no puedes ser ingenuo y pasar una solución de Euler a NS o al revés
+      cerca de un blowup. El paper de OpenAI construye un objeto
+      <em>viscoso</em> desde el principio.
+    </div>
+
+    <h2>5. Qué hace cada término</h2>
+    <div class="cards cols-2">
+      <div class="card">
+        <h3>(u·∇)u</h3>
+        <p>Transporte e inercia. Estira, pliega, concentra. No lineal.</p>
+      </div>
+      <div class="card">
+        <h3>−∇p</h3>
+        <p>Mantiene ∇·u = 0. Instantánea, elíptica (un Poisson por tiempo).</p>
+      </div>
+      <div class="card">
+        <h3>ν Δu</h3>
+        <p>Fricción interna. Lineal. Compite con la concentración de gradientes.</p>
+      </div>
+      <div class="card">
+        <h3>f</h3>
+        <p>Fuerza externa. En Clay A/B es cero. En C/D puede ser suave.</p>
+      </div>
+    </div>
+
+    <h2>6. Simulación: un vórtice exacto</h2>
+    <p>
+      El vórtice de Lamb–Oseen es solución <em>exacta</em> de NS 2D (y de Euler
+      si <code>ν = 0</code>). La vorticidad es un gaussiano cuyo ancho crece
+      como <code>√(ν t)</code>:
+    </p>
+    <pre>ω(r,t) = (Γ / (4π ν (t+t0))) exp( −r² / (4ν(t+t0)) )</pre>
+    <p>
+      Con <code>ν = 0</code> el perfil se congela (Euler). Con <code>ν &gt; 0</code>
+      el mismo momento angular se reparte en un disco cada vez más grande:
+      <code>‖ω‖∞</code> baja, el gradiente se suaviza. Eso es, en una frase,
+      lo que la viscosidad “sabe hacer” cuando no hay estiramiento 3D.
+    </p>
+
+    <div class="sim-box">
+      <canvas id="lo" width="900" height="420"></canvas>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <label class="sl">ν viscosidad <b id="nuLab">0.020</b></label>
+      <input id="nu" type="range" min="0" max="0.08" step="0.001" value="0.02" />
+      <label class="sl">tiempo <b id="tLab">0.40</b></label>
+      <input id="t" type="range" min="0.05" max="3" step="0.01" value="0.40" />
+      <div class="row" style="margin:10px 0">
+        <button id="play" class="on">Animar</button>
+        <button id="freeze">Pausar</button>
+        <button id="euler">ν = 0 (Euler)</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="wmax">—</b><span>‖ω‖∞</span></div>
+        <div class="stat"><b id="width">—</b><span>ancho ~ √(ν(t+t0))</span></div>
+      </div>
+      <p class="note">Color: vorticidad. Las rayas siguen el swirl. Área del “núcleo” crece solo si ν &gt; 0.</p>
+    </div>
+
+    <h2>Checkpoint 1</h2>
+    <p class="muted">
+      Primero el quiz. Si está perfecto, vuelve al chat y escribe
+      <code>checkpoint 1</code>. Ahí te haré preguntas abiertas.
+    </p>
+    <form class="quiz" id="quiz"></form>
+
+    <p><a href="index.html">← hoja de ruta</a></p>
+  </div>
+  <script src="quiz.js"></script>
+  <script>
+    mountQuiz(document.getElementById("quiz"), {
+      id: "c1",
+      questions: [
+        {
+          q: "Si ρ es constante, ∇·u = 0 significa que…",
+          opts: [
+            "el volumen de cada parcela se conserva",
+            "la velocidad es nula",
+            "la presión es constante en el espacio",
+          ],
+          a: 0,
+        },
+        {
+          q: "El término que distingue Navier–Stokes de Euler es…",
+          opts: ["∇p", "(u·∇)u", "ν Δu"],
+          a: 2,
+        },
+        {
+          q: "ν Δu es…",
+          opts: [
+            "no lineal y concentra vorticidad",
+            "lineal y suaviza gradientes",
+            "el multiplicador de la incompresibilidad",
+          ],
+          a: 1,
+        },
+        {
+          q: "En Lamb–Oseen, al subir ν o el tiempo, ‖ω‖∞…",
+          opts: ["crece (blowup)", "baja porque el mismo Γ se reparte", "oscila"],
+          a: 1,
+        },
+        {
+          q: "El límite ν → 0 que da Euler…",
+          opts: [
+            "es regular: toda solución NS converge a una de Euler cerca de un blowup",
+            "es formal; cerca de una singularidad no puedes pasar soluciones de un lado a otro",
+            "solo existe en 2D",
+          ],
+          a: 1,
+        },
+      ],
+    });
+
+    const canvas = document.getElementById("lo");
+    const ctx = canvas.getContext("2d");
+    const nuIn = document.getElementById("nu");
+    const tIn = document.getElementById("t");
+    const ui = {
+      nuLab: document.getElementById("nuLab"),
+      tLab: document.getElementById("tLab"),
+      wmax: document.getElementById("wmax"),
+      width: document.getElementById("width"),
+      play: document.getElementById("play"),
+      freeze: document.getElementById("freeze"),
+      euler: document.getElementById("euler"),
+    };
+
+    const G = 4.2;
+    const T0 = 0.35;
+    let nu = Number(nuIn.value);
+    let time = Number(tIn.value);
+    let playing = true;
+    let last = performance.now();
+
+    function omega0(nuEff, t) {
+      return G / (4 * Math.PI * nuEff * (t + T0));
+    }
+    function width(nuEff, t) {
+      return Math.sqrt(4 * nuEff * (t + T0));
+    }
+
+    function draw() {
+      const w = canvas.clientWidth;
+      const h = canvas.clientHeight;
+      if (canvas.width !== Math.max(1, Math.floor(w))) {
+        canvas.width = Math.max(1, Math.floor(w));
+        canvas.height = Math.max(1, Math.floor(h));
+      }
+      ctx.fillStyle = "#0c0d0f";
+      ctx.fillRect(0, 0, w, h);
+      const nuEff = Math.max(nu, 1e-5);
+      const frozen = nu < 1e-6;
+      const we = frozen ? omega0(0.02, 0.4) : omega0(nuEff, time);
+      const sig = frozen ? width(0.02, 0.4) : width(nuEff, time);
+      const cx = w * 0.5;
+      const cy = h * 0.5;
+      const scale = Math.min(w, h) * 0.22;
+
+      const img = ctx.createImageData(Math.floor(w), Math.floor(h));
+      const data = img.data;
+      for (let j = 0; j < img.height; j += 2) {
+        for (let i = 0; i < img.width; i += 2) {
+          const x = (i - cx) / scale;
+          const y = (cy - j) / scale;
+          const r2 = x * x + y * y;
+          const om = we * Math.exp(-r2 / (sig * sig));
+          const tcol = Math.min(1, om / Math.max(we, 1e-6));
+          const r = Math.round(201 * tcol + 16);
+          const g = Math.round(163 * tcol + 18);
+          const b = Math.round(106 * tcol + 20);
+          for (let dj = 0; dj < 2; dj++) {
+            for (let di = 0; di < 2; di++) {
+              const p = ((j + dj) * img.width + (i + di)) * 4;
+              data[p] = r; data[p + 1] = g; data[p + 2] = b; data[p + 3] = 255;
+            }
+          }
+        }
+      }
+      ctx.putImageData(img, 0, 0);
+
+      ctx.strokeStyle = "rgba(230,228,223,0.35)";
+      const rings = 5;
+      for (let k = 1; k <= rings; k++) {
+        const rr = 0.45 * k * sig * scale;
+        ctx.beginPath();
+        ctx.arc(cx, cy, rr, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.strokeStyle = "rgba(201,163,106,0.7)";
+      for (let a = 0; a < 16; a++) {
+        const th = (a / 16) * Math.PI * 2 + 0.15 * time;
+        const r1 = 0.35 * sig * scale;
+        const r2 = 2.4 * sig * scale;
+        ctx.beginPath();
+        ctx.moveTo(cx + r1 * Math.cos(th), cy - r1 * Math.sin(th));
+        ctx.lineTo(cx + r2 * Math.cos(th + 0.35), cy - r2 * Math.sin(th + 0.35));
+        ctx.stroke();
+      }
+
+      ui.nuLab.textContent = frozen ? "0 (Euler)" : nu.toFixed(3);
+      ui.tLab.textContent = time.toFixed(2);
+      ui.wmax.textContent = we.toFixed(2);
+      ui.width.textContent = (frozen ? width(0.02, 0.4) : sig).toFixed(3);
+    }
+
+    function frame(now) {
+      const dt = Math.min(0.05, (now - last) / 1000);
+      last = now;
+      if (playing) {
+        time = Math.min(3, time + dt * 0.35);
+        if (time >= 2.98) time = 0.05;
+        tIn.value = String(time);
+      }
+      draw();
+      requestAnimationFrame(frame);
+    }
+
+    nuIn.addEventListener("input", () => { nu = Number(nuIn.value); });
+    tIn.addEventListener("input", () => {
+      time = Number(tIn.value);
+      playing = false;
+      ui.play.classList.remove("on");
+      ui.freeze.classList.add("on");
+    });
+    ui.play.addEventListener("click", () => {
+      playing = true;
+      ui.play.classList.add("on");
+      ui.freeze.classList.remove("on");
+    });
+    ui.freeze.addEventListener("click", () => {
+      playing = false;
+      ui.play.classList.remove("on");
+      ui.freeze.classList.add("on");
+    });
+    ui.euler.addEventListener("click", () => {
+      nu = 0;
+      nuIn.value = "0";
+    });
+
+    requestAnimationFrame(frame);
+  </script>
+</body>
+</html>
